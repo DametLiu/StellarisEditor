@@ -24,7 +24,7 @@ namespace StellarisEditor.mod.data
 
         public static void LoadScriptedVariables(TaskCancel cancel)
         {
-            LinkedList<VariableFileState> lines = new LinkedList<VariableFileState>();
+            LinkedList<VariableState> lines = new LinkedList<VariableState>();
             LoadScriptedVariable(lines, Properties.Settings.Default.ModPath + STELLARIS_PATH_SCRIPTED_VARIABLES, Variables, cancel);
 
             ExcuteVariableTask(lines);
@@ -53,7 +53,7 @@ namespace StellarisEditor.mod.data
         public static void LoadLocalizations(TaskCancel cancel)
         {
             Localizations.Clear();
-            LinkedList<LocalizationFileState> lines = new LinkedList<LocalizationFileState>();
+            LinkedList<LocalizationState> lines = new LinkedList<LocalizationState>();
             LoadLocalization(lines, Properties.Settings.Default.ModPath, STELLARIS_PATH_LOCALIZATION_ENGLISH, Localizations, cancel);
             LoadLocalization(lines, Properties.Settings.Default.ModPath, STELLARIS_PATH_LOCALIZATION_SIMPLE_CHINESE, Localizations, cancel);
 
