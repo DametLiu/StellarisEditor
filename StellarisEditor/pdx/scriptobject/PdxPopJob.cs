@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.pdx.scriptobject
 {
-    /// <summary>
-    /// 人口职业
-    /// </summary>
     class PdxPopJob
     {
         public string Key;
@@ -19,12 +16,14 @@ namespace StellarisEditor.pdx.scriptobject
         public PdxNumber ClothesTextureIndex;
         public string Icon;
         public LinkedList<PdxTrigger> PossiblePreTriggers;
+
         public LinkedList<PdxTrigger> Possible;
         public PdxResources Resources;
-
-        public LinkedList<PdxTriggeredPlanetModifier> TriggeredPlanetModifiers;
-        public LinkedList<PdxTriggeredPlanetModifier> TriggeredCountryModifiers;
-        public LinkedList<PdxModifier> PopModifiers;
+        public LinkedList<PdxModifier> PlanetModifier;
+        public LinkedList<PdxModifier> CountryModifier;
+        public LinkedList<PdxTriggeredPlanetModifier> TriggeredPlanetModifier;
+        public LinkedList<PdxTriggeredPlanetModifier> TriggeredCountryModifier;
+        public LinkedList<PdxModifier> PopModifier;
         public PdxWeight Weight;
     }
 }
