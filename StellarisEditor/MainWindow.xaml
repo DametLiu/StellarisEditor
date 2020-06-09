@@ -1,0 +1,19 @@
+﻿<Window x:Class="StellarisEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StellarisEditor"
+        mc:Ignorable="d"
+        Title="StellarisEditor" Height="450" Width="800" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" >
+    <Window.Background>
+        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/StellarisEditorLaucher.png"/>
+    </Window.Background>
+
+    <Grid>
+        <DockPanel VerticalAlignment="Bottom">
+            <ProgressBar x:Name="progressBar" DockPanel.Dock="Bottom" Value="0" Height="15"/>
+            <TextBlock x:Name="progressText" DockPanel.Dock="Bottom" Text="正在加载..." Foreground="White" FontSize="12"/>
+        </DockPanel>
+    </Grid>
+</Window>
