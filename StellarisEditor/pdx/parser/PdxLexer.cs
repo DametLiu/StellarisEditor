@@ -53,6 +53,26 @@ namespace StellarisEditor.pdx.parser
             return null;
         }
 
+        public PdxTechnologyCategory ParseTechnologyCategory()
+        {
+            SkipWhitespace();
+
+            String key = ParseStringKey();
+            SkipEqualSign();
+            SkipLeftBrace();
+            if (currentHanlde == '}')
+            {
+                Next();
+                return new PdxTechnologyCategory() { Key = key, Icon = "" };
+            }
+            String previously_unlocked = ParseStringKey();
+            SkipEqualSign();
+            String value = ParseStringValueInQuotes();
+            SkipRightBrace();
+
+            return new PdxTechnologyCategory() { Key = key, Icon = value };
+        }
+
         public PdxTechnologyTier ParseTechnologyTier()
         {
             SkipWhitespace();

@@ -26,10 +26,47 @@ namespace StellarisEditor.data
         public static String STELLARIS_PATH_LOCALIZATION_SIMPLE_CHINESE = @"\localisation\simp_chinese\";
         public static String STELLARIS_PATH_LOCALIZATION_SPANISH = @"\localisation\spanish\";
         public static String STELLARIS_PATH_TECHNOLOGY_TIER = @"\common\technology\tier\";
+        public static String STELLARIS_PATH_TECHNOLOGY_CATEGORY = @"\common\technology\category\";
 
         public static LinkedList<PdxVariable> Variables = new LinkedList<PdxVariable>();
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();
         public static LinkedList<PdxTechnologyTier> TechnologyTiers = new LinkedList<PdxTechnologyTier>();
+        public static LinkedList<PdxTechnologyCategory> TechnologyCategories = new LinkedList<PdxTechnologyCategory>();
+
+        public static void LoadTechnologyCategories(TaskCancel cancel)
+        {
+            LoadTechnologyCategory(Properties.Settings.Default.StellarisPath + STELLARIS_PATH_TECHNOLOGY_CATEGORY, TechnologyCategories, cancel);
+        }
+
+        public static void ExcuteTechnologyCategoryTask(object state)
+        {
+            TechnologyCategoryState technologyCategoryState = state as TechnologyCategoryState;
+            if (IsTaskCanceled(technologyCategoryState))
+                return;
+
+            LinkedList<PdxTechnologyCategory> categories = TechnologyCategoryParser.Parse(technologyCategoryState.file);
+
+            lock (technologyCategoryState.technologyCategories)
+            {
+                foreach (var tier in categories)
+                    if (!technologyCategoryState.technologyCategories.Contains(tier))
+                        technologyCategoryState.technologyCategories.Add(tier);
+            }
+        }
+
+        public static void LoadTechnologyCategory(string path, LinkedList<PdxTechnologyCategory> technologyCategories, TaskCancel cancel)
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(path);
+            FileInfo[] fileInfos = directoryInfo.GetFiles();
+            foreach (FileInfo file in fileInfos)
+                ThreadPool.UnsafeQueueUserWorkItem(new WaitCallback(ExcuteTechnologyCategoryTask), new TechnologyCategoryState() { file = file, technologyCategories = technologyCategories, cancel = cancel });
+        }
+
+        public class TechnologyCategoryState : TaskState
+        {
+            public FileInfo file;
+            public LinkedList<PdxTechnologyCategory> technologyCategories;
+        }
 
         public static void LoadTechnologyTiers(TaskCancel cancel)
         {

@@ -79,6 +79,7 @@ namespace StellarisEditor
                 {
                     LoadModProjects();
                     PdxGlobalData.LoadTechnologyTiers(null);
+                    PdxGlobalData.LoadTechnologyCategories(null);
                     //LoadScriptedVariablesData();
                     //LoadLocalizations();
 
@@ -96,6 +97,7 @@ namespace StellarisEditor
                         Thread.Sleep(new Random().Next(1, 2));
                         SetProgressValue(0.1);
                     }
+
                     OpenModManagerWindow();
                     CloseWindow();
 

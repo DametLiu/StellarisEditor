@@ -22,6 +22,12 @@ namespace StellarisEditor.mod.data
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();
         public static LinkedList<PdxVariable> Variables = new LinkedList<PdxVariable>();
         public static LinkedList<PdxTechnologyTier> TechnologyTiers = new LinkedList<PdxTechnologyTier>();
+        public static LinkedList<PdxTechnologyCategory> TechnologyCategories = new LinkedList<PdxTechnologyCategory>();
+
+        public static void LoadTechnologyCategories(TaskCancel cancel)
+        {
+            LoadTechnologyCategory(Properties.Settings.Default.ModPath + STELLARIS_PATH_TECHNOLOGY_CATEGORY, TechnologyCategories, cancel);
+        }
 
         public static void LoadScriptedVariables(TaskCancel cancel)
         {
