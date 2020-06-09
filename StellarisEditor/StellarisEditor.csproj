@@ -146,6 +146,7 @@
     <Compile Include="pdx\parser\PdxLexer.cs" />
     <Compile Include="pdx\parser\PdxRichTextPreviewParser.cs" />
     <Compile Include="pdx\parser\ScriptedVariablesParser.cs" />
+    <Compile Include="pdx\PdxPopJob.cs" />
     <Compile Include="pdx\scriptobject\PdxTechnologyTier.cs" />
     <Compile Include="pdx\scriptobject\conditiontriggers\PdxAnd.cs" />
     <Compile Include="pdx\scriptobject\conditiontriggers\PdxConditionTrigger.cs" />

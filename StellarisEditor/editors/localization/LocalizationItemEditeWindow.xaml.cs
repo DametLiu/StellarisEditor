@@ -57,7 +57,8 @@ namespace StellarisEditor.editors.localization
                     var button = new Button() {
                         Width = 24,
                         Height = 24,
-                        Name = fname
+                        Name = fname,
+                        ToolTip = fname
                     };
                     button.Click += IconClick;
                     var imageBrush = new ImageBrush {
