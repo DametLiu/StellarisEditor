@@ -87,7 +87,7 @@ namespace StellarisEditor.editors.localization
                     method?.Invoke();
                     if (value < 99)
                     {
-                        Thread.Sleep(20);
+                        Thread.Sleep(10);
                         PlusProgress();
                     }
                     else
