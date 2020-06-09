@@ -36,13 +36,14 @@ namespace StellarisEditor.editors
 
         private void OpenBuildingEditor(object sender, RoutedEventArgs e)
         {
-            var win = new StellarisEditor.editors.building.BuildingEditorWindow();
+            var win = new building.BuildingEditorWindow();
             win.ShowDialog();
         }
 
         private void OpenJobEditor(object sender, RoutedEventArgs e)
         {
-
+            var win = new JobEditorWindow();
+            win.ShowDialog();
         }
 
         private void OpenVariableEditor(object sender, RoutedEventArgs e)

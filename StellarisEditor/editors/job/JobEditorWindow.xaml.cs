@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using StellarisEditor.pdx.scriptobject;
 
 namespace StellarisEditor.editors.job
 {
@@ -19,6 +20,7 @@ namespace StellarisEditor.editors.job
     /// </summary>
     public partial class JobEditorWindow : Window
     {
+
         public JobEditorWindow()
         {
             InitializeComponent();

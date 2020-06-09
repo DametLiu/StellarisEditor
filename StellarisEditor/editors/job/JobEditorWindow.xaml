@@ -6,7 +6,63 @@
         xmlns:local="clr-namespace:StellarisEditor.editors.job"
         mc:Ignorable="d"
         Title="职业编辑器" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" >
-    <Grid >
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
 
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <CheckBox Margin="0,7,0,7" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">is_capped_by_modifier</CheckBox>
+            <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="13" Grid.Row="1" Grid.Column="0">category</Label>
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Grid.Row="1" Grid.Column="1" >pop category key</TextBox>
+            <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="13" Grid.Row="2" Grid.Column="0">condition_string</Label>
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Grid.Row="2" Grid.Column="1">localisation key</TextBox>
+            <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="13" Grid.Row="3" Grid.Column="0">building_icon</Label>
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="1" >building key</TextBox>
+            <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="13" Grid.Row="4" Grid.Column="0">clothes_texture_index</Label>
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="4" Grid.Column="1" >int</TextBox>
+            <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="13" Grid.Row="5" Grid.Column="0">icon</Label>
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="5" Grid.Column="1" >pop job key</TextBox>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <Label>possible pre triggers</Label>
+                <CheckBox Margin="0,7,0,7" HorizontalAlignment="Left" VerticalAlignment="Center">has owner</CheckBox>
+                <CheckBox Margin="0,7,0,7" HorizontalAlignment="Left" VerticalAlignment="Center">is enslaved</CheckBox>
+                <CheckBox Margin="0,7,0,7" HorizontalAlignment="Left" VerticalAlignment="Center">is being purged</CheckBox>
+                <CheckBox Margin="0,7,0,7" HorizontalAlignment="Left" VerticalAlignment="Center">is being assimilated</CheckBox>
+                <CheckBox Margin="0,7,0,7" HorizontalAlignment="Left" VerticalAlignment="Center">has planet</CheckBox>
+                <CheckBox Margin="0,7,0,7" HorizontalAlignment="Left" VerticalAlignment="Center">is sapient</CheckBox>
+
+            </StackPanel>
+        </Grid>
+        <GroupBox Grid.Row="0" Grid.Column="1" >
+            
+        </GroupBox>
     </Grid>
 </Window>
