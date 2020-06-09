@@ -42,7 +42,7 @@
             </GroupBox>
             <GroupBox Header="图标" FontSize="18">
                 <ScrollViewer x:Name="scr" Margin="0" VerticalScrollBarVisibility ="Auto">
-                    <WrapPanel>
+                    <WrapPanel Name="iconPanle">
                         <Button Width="24" Height="24" ToolTip="M" BorderBrush="Black" Style="{StaticResource DefaultButton}" x:Name="energy" Click="IconClick">
                             <Button.Background>
                                 <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/energy.png"/>
