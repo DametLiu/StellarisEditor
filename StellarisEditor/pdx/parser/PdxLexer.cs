@@ -38,12 +38,16 @@ namespace StellarisEditor.pdx.parser
                 String value = ParseStringValue();
                 bool isR = value.Contains("@");
 
-                return new PdxVariable
+                try
                 {
-                    Key = name,
-                    Value = isR ? 0 : value.Contains(".") ? Double.Parse(value) : int.Parse(value),
-                    Reference = isR ? new PdxVariable() { Key = value.Substring(1) } : null
-                };
+                    return new PdxVariable
+                    {
+                        Key = name,
+                        Value = isR ? 0 : value.Contains(".") ? Double.Parse(value) : int.Parse(value),
+                        Reference = isR ? new PdxVariable() { Key = value.Substring(1) } : null
+                    };
+                }
+                catch (Exception) { SkipLine(); }
             }
 
             return null;
