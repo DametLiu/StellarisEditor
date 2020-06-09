@@ -93,16 +93,6 @@ namespace StellarisEditor.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap diplomatic_weight {
-            get {
-                object obj = ResourceManager.GetObject("diplomatic_weight", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap energy {
             get {
                 object obj = ResourceManager.GetObject("energy", resourceCulture);
@@ -206,16 +196,6 @@ namespace StellarisEditor.Properties {
         internal static System.Drawing.Bitmap job_artisan_drone {
             get {
                 object obj = ResourceManager.GetObject("job_artisan_drone", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap job_banker {
-            get {
-                object obj = ResourceManager.GetObject("job_banker", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,16 +493,6 @@ namespace StellarisEditor.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap job_herder {
-            get {
-                object obj = ResourceManager.GetObject("job_herder", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap job_high_priest {
             get {
                 object obj = ResourceManager.GetObject("job_high_priest", resourceCulture);
@@ -556,16 +526,6 @@ namespace StellarisEditor.Properties {
         internal static System.Drawing.Bitmap job_livestock {
             get {
                 object obj = ResourceManager.GetObject("job_livestock", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap job_maintenance_drone {
-            get {
-                object obj = ResourceManager.GetObject("job_maintenance_drone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -976,6 +936,936 @@ namespace StellarisEditor.Properties {
         internal static System.Drawing.Bitmap minor_artifacts {
             get {
                 object obj = ResourceManager.GetObject("minor_artifacts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_army_attack_health_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_army_attack_health_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_army_collateral_damage_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_army_collateral_damage_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_army_defense_health_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_army_defense_health_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_army_disengage_chance_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_army_disengage_chance_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_army_experience_gain_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_army_experience_gain_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_army_health {
+            get {
+                object obj = ResourceManager.GetObject("mod_army_health", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_army_starting_experience_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_army_starting_experience_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_admin_cap_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_admin_cap_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_ascension_perks_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_ascension_perks_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_border_friction_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_border_friction_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_claim_influence_cost {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_claim_influence_cost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_command_limit_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_command_limit_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_command_limit_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_command_limit_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_defensive_war_influence_gain_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_defensive_war_influence_gain_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_diplomacy_influence_cost {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_diplomacy_influence_cost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_edict_cap_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_edict_cap_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_edict_cap_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_edict_cap_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_election_influence_cost {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_election_influence_cost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_emigration_push_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_emigration_push_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_emigration_push_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_emigration_push_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_engineering_tech_research_speed {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_engineering_tech_research_speed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_faction_influence_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_faction_influence_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_faction_influence_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_faction_influence_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_federation_fleet_contribution_discount {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_federation_fleet_contribution_discount", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_federation_naval_cap_contribution_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_federation_naval_cap_contribution_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_government_civic_points_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_government_civic_points_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_immigration_pull_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_immigration_pull_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_immigration_pull_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_immigration_pull_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_improve_relations_cost {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_improve_relations_cost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_influence_gain_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_influence_gain_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_influence_gain_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_influence_gain_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_insult_efficiency {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_insult_efficiency", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_integration_cooldown_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_integration_cooldown_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_leader_cap {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_leader_cap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_leader_pool_size {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_leader_pool_size", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_local_trade_protection_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_local_trade_protection_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_market_fee_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_market_fee_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_modify_species_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_modify_species_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_occupation_armies_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_occupation_armies_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_organic_trust_cap_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_organic_trust_cap_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_physics_tech_research_speed {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_physics_tech_research_speed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_piracy_risk_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_piracy_risk_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_previous_deals {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_previous_deals", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_resettlement_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_resettlement_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_resource_max_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_resource_max_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_rivalry_influence_gain {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_rivalry_influence_gain", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_ship_upgrade_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_ship_upgrade_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_slave_market_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_slave_market_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_society_tech_research_speed {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_society_tech_research_speed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_starbase_capacity_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_starbase_capacity_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_starbase_capacity_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_starbase_capacity_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_starbase_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_starbase_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_starbase_influence_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_starbase_influence_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_starbase_upkeep_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_starbase_upkeep_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_subject_acceptance_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_subject_acceptance_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_subject_influence_gain_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_subject_influence_gain_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_subject_integration_influence_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_subject_integration_influence_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_subject_integration_speed_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_subject_integration_speed_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_subject_power_penalty {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_subject_power_penalty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_subject_tribute_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_subject_tribute_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_subject_trust_cap_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_subject_trust_cap_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_synthetic_trust_cap_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_synthetic_trust_cap_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_terraform_speed_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_terraform_speed_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_terraforming_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_terraforming_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_trade_attractiveness {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_trade_attractiveness", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_trade_fee {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_trade_fee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_trust_cap_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_trust_cap_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_trust_growth {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_trust_growth", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_vassal_naval_capacity_contribution_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_vassal_naval_capacity_contribution_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_country_war_exhaustion_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_country_war_exhaustion_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_district_city_max {
+            get {
+                object obj = ResourceManager.GetObject("mod_district_city_max", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_district_farming_max {
+            get {
+                object obj = ResourceManager.GetObject("mod_district_farming_max", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_district_generator_max {
+            get {
+                object obj = ResourceManager.GetObject("mod_district_generator_max", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_district_hab_commercial_max {
+            get {
+                object obj = ResourceManager.GetObject("mod_district_hab_commercial_max", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_district_hab_energy_max {
+            get {
+                object obj = ResourceManager.GetObject("mod_district_hab_energy_max", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_district_hab_mining_max {
+            get {
+                object obj = ResourceManager.GetObject("mod_district_hab_mining_max", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_district_hab_science_max {
+            get {
+                object obj = ResourceManager.GetObject("mod_district_hab_science_max", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_district_hive_max {
+            get {
+                object obj = ResourceManager.GetObject("mod_district_hive_max", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_district_mining_max {
+            get {
+                object obj = ResourceManager.GetObject("mod_district_mining_max", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_district_nexus_max {
+            get {
+                object obj = ResourceManager.GetObject("mod_district_nexus_max", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_empire_size_branch_office_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_empire_size_branch_office_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_empire_size_colonies_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_empire_size_colonies_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_empire_size_districts_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_empire_size_districts_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_empire_size_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_empire_size_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_empire_size_penalty_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_empire_size_penalty_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_empire_size_pops_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_empire_size_pops_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_empire_size_systems_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_empire_size_systems_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_engineering_research_cost_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_engineering_research_cost_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_engineering_research_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_engineering_research_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_engineering_research_produces_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_engineering_research_produces_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_engineering_research_produces_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_engineering_research_produces_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_engineering_research_upkeep_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_engineering_research_upkeep_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_engineering_research_upkeep_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_engineering_research_upkeep_mult", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1783,6 +2673,66 @@ namespace StellarisEditor.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap mod_physics_research_cost_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_physics_research_cost_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_physics_research_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_physics_research_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_physics_research_produces_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_physics_research_produces_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_physics_research_produces_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_physics_research_produces_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_physics_research_upkeep_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_physics_research_upkeep_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_physics_research_upkeep_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_physics_research_upkeep_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap mod_pop_amenities_usage_add {
             get {
                 object obj = ResourceManager.GetObject("mod_pop_amenities_usage_add", resourceCulture);
@@ -2133,6 +3083,366 @@ namespace StellarisEditor.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_accuracy_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_accuracy_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_accuracy_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_accuracy_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_armor_damage_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_armor_damage_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_armor_penetration_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_armor_penetration_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_auto_repair_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_auto_repair_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_build_speed_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_build_speed_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_combat_speed_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_combat_speed_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_damage_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_damage_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_disengage_chance_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_disengage_chance_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_disengage_chance_reduction {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_disengage_chance_reduction", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_disengage_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_disengage_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_emergency_ftl {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_emergency_ftl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_emergency_ftl_min_days_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_emergency_ftl_min_days_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_emergency_ftl_min_days_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_emergency_ftl_min_days_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_experience_gain_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_experience_gain_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_ftl_jumpdrive_range_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_ftl_jumpdrive_range_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_hull_damage_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_hull_damage_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_hull_regen_add_perc {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_hull_regen_add_perc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_orbital_bombardment_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_orbital_bombardment_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_piracy_suppression_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_piracy_suppression_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_piracy_suppression_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_piracy_suppression_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_science_survey_speed {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_science_survey_speed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_shield_damage_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_shield_damage_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_shield_penetration_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_shield_penetration_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_starting_experience_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_starting_experience_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_tracking_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_tracking_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_tracking_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_tracking_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_weapon_damage {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_weapon_damage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_ship_weapon_range_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_ship_weapon_range_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_shipclass_military_station_build_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_shipclass_military_station_build_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_society_research_cost_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_society_research_cost_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_society_research_cost_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_society_research_cost_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_society_research_produces_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_society_research_produces_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_society_research_produces_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_society_research_produces_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_society_research_upkeep_add {
+            get {
+                object obj = ResourceManager.GetObject("mod_society_research_upkeep_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mod_society_research_upkeep_mult {
+            get {
+                object obj = ResourceManager.GetObject("mod_society_research_upkeep_mult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap nanites {
             get {
                 object obj = ResourceManager.GetObject("nanites", resourceCulture);
@@ -2413,9 +3723,9 @@ namespace StellarisEditor.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap strategic {
+        internal static System.Drawing.Bitmap text_icon_tile_blocker {
             get {
-                object obj = ResourceManager.GetObject("strategic", resourceCulture);
+                object obj = ResourceManager.GetObject("text_icon_tile_blocker", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

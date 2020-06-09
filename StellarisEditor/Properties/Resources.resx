@@ -154,9 +154,6 @@
   <data name="consumer_goods" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consumer_goods.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="diplomatic_weight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\diplomatic_weight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="energy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\energy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -235,9 +232,6 @@
   <data name="sr_zro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sr_zro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="strategic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\strategic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="time" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\time.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -267,9 +261,6 @@
   </data>
   <data name="job_artisan_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\job_artisan_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="job_banker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\job_banker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="job_bio_trophy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\job_bio_trophy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -358,9 +349,6 @@
   <data name="job_healthcare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\job_healthcare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="job_herder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\job_herder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="job_high_priest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\job_high_priest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -372,9 +360,6 @@
   </data>
   <data name="job_livestock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\job_livestock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="job_maintenance_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\job_maintenance_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="job_manager" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\job_manager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -838,5 +823,413 @@
   </data>
   <data name="mod_pop_war_happiness" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mod_pop_war_happiness.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_army_attack_health_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_army_attack_health_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_army_collateral_damage_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_army_collateral_damage_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_army_defense_health_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_army_defense_health_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_army_disengage_chance_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_army_disengage_chance_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_army_experience_gain_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_army_experience_gain_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_army_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_army_health.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_army_starting_experience_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_army_starting_experience_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_admin_cap_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_admin_cap_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_ascension_perks_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_ascension_perks_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_border_friction_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_border_friction_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_claim_influence_cost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_claim_influence_cost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_command_limit_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_command_limit_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_command_limit_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_command_limit_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_defensive_war_influence_gain_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_defensive_war_influence_gain_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_diplomacy_influence_cost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_diplomacy_influence_cost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_edict_cap_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_edict_cap_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_edict_cap_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_edict_cap_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_election_influence_cost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_election_influence_cost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_emigration_push_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_emigration_push_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_emigration_push_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_emigration_push_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_engineering_tech_research_speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_engineering_tech_research_speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_faction_influence_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_faction_influence_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_faction_influence_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_faction_influence_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_federation_fleet_contribution_discount" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_federation_fleet_contribution_discount.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_federation_naval_cap_contribution_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_federation_naval_cap_contribution_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_government_civic_points_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_government_civic_points_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_immigration_pull_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_immigration_pull_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_immigration_pull_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_immigration_pull_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_improve_relations_cost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_improve_relations_cost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_influence_gain_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_influence_gain_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_influence_gain_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_influence_gain_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_insult_efficiency" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_insult_efficiency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_integration_cooldown_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_integration_cooldown_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_leader_cap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_leader_cap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_leader_pool_size" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_leader_pool_size.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_local_trade_protection_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_local_trade_protection_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_market_fee_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_market_fee_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_modify_species_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_modify_species_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_occupation_armies_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_occupation_armies_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_organic_trust_cap_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_organic_trust_cap_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_physics_tech_research_speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_physics_tech_research_speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_piracy_risk_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_piracy_risk_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_previous_deals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_previous_deals.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_resettlement_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_resettlement_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_resource_max_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_resource_max_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_rivalry_influence_gain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_rivalry_influence_gain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_ship_upgrade_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_ship_upgrade_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_slave_market_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_slave_market_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_society_tech_research_speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_society_tech_research_speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_starbase_capacity_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_starbase_capacity_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_starbase_capacity_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_starbase_capacity_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_starbase_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_starbase_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_starbase_influence_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_starbase_influence_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_starbase_upkeep_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_starbase_upkeep_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_subject_acceptance_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_subject_acceptance_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_subject_influence_gain_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_subject_influence_gain_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_subject_integration_influence_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_subject_integration_influence_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_subject_integration_speed_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_subject_integration_speed_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_subject_power_penalty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_subject_power_penalty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_subject_tribute_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_subject_tribute_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_subject_trust_cap_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_subject_trust_cap_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_synthetic_trust_cap_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_synthetic_trust_cap_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_terraforming_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_terraforming_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_terraform_speed_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_terraform_speed_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_trade_attractiveness" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_trade_attractiveness.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_trade_fee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_trade_fee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_trust_cap_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_trust_cap_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_trust_growth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_trust_growth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_vassal_naval_capacity_contribution_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_vassal_naval_capacity_contribution_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_country_war_exhaustion_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_country_war_exhaustion_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_district_city_max" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_district_city_max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_district_farming_max" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_district_farming_max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_district_generator_max" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_district_generator_max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_district_hab_commercial_max" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_district_hab_commercial_max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_district_hab_energy_max" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_district_hab_energy_max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_district_hab_mining_max" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_district_hab_mining_max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_district_hab_science_max" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_district_hab_science_max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_district_hive_max" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_district_hive_max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_district_mining_max" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_district_mining_max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_district_nexus_max" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_district_nexus_max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_empire_size_branch_office_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_empire_size_branch_office_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_empire_size_colonies_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_empire_size_colonies_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_empire_size_districts_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_empire_size_districts_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_empire_size_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_empire_size_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_empire_size_penalty_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_empire_size_penalty_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_empire_size_pops_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_empire_size_pops_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_empire_size_systems_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_empire_size_systems_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_engineering_research_cost_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_engineering_research_cost_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_engineering_research_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_engineering_research_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_engineering_research_produces_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_engineering_research_produces_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_engineering_research_produces_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_engineering_research_produces_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_engineering_research_upkeep_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_engineering_research_upkeep_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_engineering_research_upkeep_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_engineering_research_upkeep_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_physics_research_cost_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_physics_research_cost_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_physics_research_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_physics_research_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_physics_research_produces_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_physics_research_produces_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_physics_research_produces_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_physics_research_produces_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_physics_research_upkeep_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_physics_research_upkeep_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_physics_research_upkeep_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_physics_research_upkeep_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_shipclass_military_station_build_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_shipclass_military_station_build_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_accuracy_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_accuracy_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_accuracy_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_accuracy_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_armor_damage_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_armor_damage_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_armor_penetration_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_armor_penetration_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_auto_repair_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_auto_repair_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_build_speed_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_build_speed_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_combat_speed_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_combat_speed_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_damage_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_damage_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_disengage_chance_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_disengage_chance_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_disengage_chance_reduction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_disengage_chance_reduction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_disengage_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_disengage_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_emergency_ftl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_emergency_ftl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_emergency_ftl_min_days_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_emergency_ftl_min_days_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_emergency_ftl_min_days_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_emergency_ftl_min_days_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_experience_gain_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_experience_gain_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_ftl_jumpdrive_range_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_ftl_jumpdrive_range_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_hull_damage_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_hull_damage_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_hull_regen_add_perc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_hull_regen_add_perc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_orbital_bombardment_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_orbital_bombardment_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_piracy_suppression_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_piracy_suppression_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_piracy_suppression_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_piracy_suppression_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_science_survey_speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_science_survey_speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_shield_damage_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_shield_damage_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_shield_penetration_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_shield_penetration_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_starting_experience_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_starting_experience_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_tracking_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_tracking_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_tracking_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_tracking_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_weapon_damage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_weapon_damage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_ship_weapon_range_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_ship_weapon_range_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_society_research_cost_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_society_research_cost_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_society_research_cost_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_society_research_cost_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_society_research_produces_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_society_research_produces_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_society_research_produces_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_society_research_produces_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_society_research_upkeep_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_society_research_upkeep_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mod_society_research_upkeep_mult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mod_society_research_upkeep_mult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text_icon_tile_blocker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\text_icon_tile_blocker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
