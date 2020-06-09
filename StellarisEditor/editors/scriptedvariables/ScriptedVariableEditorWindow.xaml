@@ -51,12 +51,7 @@
             <DockPanel DockPanel.Dock="Top">
                 <FrameworkElement x:Name="proxyElement" Visibility="Collapsed"/>
                 <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" SelectionUnit="FullRow" SelectionMode="Single" RowHeaderWidth="0" CanUserAddRows="False">
-                    <DataGrid.Resources>
-                        <Style TargetType="{x:Type DataGridRow}">
-                            <EventSetter Event="Control.MouseDoubleClick" Handler="MouseDoubleClick_EditItem"/>
-                        </Style>
-                        <RoutedUICommand x:Key="Delete" Text="Button Click"/>
-                    </DataGrid.Resources>
+                    
                     <DataGrid.InputBindings>
                         <KeyBinding Key="Delete"  Command="{StaticResource Delete}"/>
                         <KeyBinding Modifiers="Ctrl" Key="C" Command="{StaticResource Copy}"/>
@@ -75,9 +70,9 @@
                         </ContextMenu>
                     </DataGrid.ContextMenu>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="键" Width="300" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
-                        <DataGridTextColumn Header="值" Width="150" IsReadOnly="True" Binding="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                        <DataGridTextColumn Header="文件(不包括扩展名)" Width="325" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <DataGridTextColumn Header="键" Width="300" IsReadOnly="False" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+                        <DataGridTextColumn Header="值" Width="150" IsReadOnly="False" Binding="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <DataGridTextColumn Header="文件(不包括扩展名)" Width="325" IsReadOnly="False" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </DockPanel>
