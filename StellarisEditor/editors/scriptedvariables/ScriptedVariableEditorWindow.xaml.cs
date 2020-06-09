@@ -100,6 +100,46 @@ namespace StellarisEditor.editors.scriptedvariables
             }
         }
 
+        private void StartSaveTask()
+        {
+            if (SaveTask != null && ProgressTask != null && SaveTask.ThreadState != ThreadState.Stopped && ProgressTask.ThreadState != ThreadState.Stopped)
+            {
+                MessageBox.Show("请等待上一次保存任务完成");
+                return;
+            }
+
+            SaveTask = new Thread(Save);
+            SaveTask.Start();
+            ProgressTask = new Thread(() => UpdateProgress(null));
+            ProgressTask.Start();
+        }
+
+        private void MenuItemClickSave(object sender, RoutedEventArgs e)
+        {
+            StartSaveTask();
+        }
+
+        private void CommandExecuteSave(object sender, CanExecuteRoutedEventArgs e)
+        {
+            StartSaveTask();
+        }
+
+        private void Save()
+        {
+            Directory.CreateDirectory(Properties.Settings.Default.ModPath + PdxGlobalData.STELLARIS_PATH_SCRIPTED_VARIABLES);
+
+            var gs = Variables.GroupBy(l => l.FileName);
+            foreach (var g in gs)
+            {
+                MessageBox.Show($"{g.Key}");
+                String[] lines = new string[g.Count()];
+                int i = 0;
+                foreach (var l in g)
+                    lines[i++] = l.ToString();
+                File.WriteAllLines($"{Properties.Settings.Default.ModPath + PdxGlobalData.STELLARIS_PATH_SCRIPTED_VARIABLES}{g.Key}.txt", lines, new UTF8Encoding(false));
+            }
+        }
+
         private void StartProgress()
         {
             progressView.Dispatcher.BeginInvoke(new Action(() => {
@@ -124,30 +164,6 @@ namespace StellarisEditor.editors.scriptedvariables
             {
                 progressView.Value = ++value;
             }), DispatcherPriority.Normal);
-        }
-
-        private void MouseDoubleClick_EditItem(object sender, MouseButtonEventArgs e)
-        {
-            if (dataGrid.SelectedItem is PdxVariable variable)
-            {
-
-            }
-        }
-
-        private void CommandExecuteSave(object sender, CanExecuteRoutedEventArgs e)
-        {
-            
-        }
-        
-
-        private void MenuItemClickSave(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Save()
-        {
-            
         }
 
         private PdxVariable CopyVariable;
@@ -181,7 +197,9 @@ namespace StellarisEditor.editors.scriptedvariables
         {
             if (CopyVariable is PdxVariable variable)
             {
-                
+                PdxVariable pdxVariable = variable.Clone();
+                pdxVariable.Key = pdxVariable.Key + "_copy";
+                Variables.Insert(Variables.IndexOf(variable), pdxVariable);
             }
         }
 
@@ -229,7 +247,7 @@ namespace StellarisEditor.editors.scriptedvariables
         private void Add()
         {
             if (dataGrid.SelectedItem is PdxVariable variable)
-                Variables.Insert(Variables.IndexOf(variable), new PdxVariable() { Key = $"new_localization{++NewIndex}" });
+                Variables.Insert(Variables.IndexOf(variable), new PdxVariable() { Key = $"new_variable{++NewIndex}" });
         }
 
         private int NewIndex = 0;

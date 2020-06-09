@@ -94,7 +94,7 @@ namespace StellarisEditor.data
             LoadLocalization(lines, Properties.Settings.Default.StellarisPath, STELLARIS_PATH_LOCALIZATION_ENGLISH, Localizations, cancel);
             LoadLocalization(lines, Properties.Settings.Default.StellarisPath, STELLARIS_PATH_LOCALIZATION_SIMPLE_CHINESE, Localizations, cancel);
 
-            //ExcuteLocalizationTask(lines);
+            ExcuteLocalizationTask(lines);
         }
 
         public static void ExcuteLocalizationTask(LinkedList<LocalizationFileState> lines)

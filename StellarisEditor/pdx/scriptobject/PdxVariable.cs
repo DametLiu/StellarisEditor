@@ -96,5 +96,7 @@ namespace StellarisEditor.pdx.scriptobject
                    FileName == variable.FileName &&
                    EqualityComparer<PdxVariable>.Default.Equals(Reference, variable.Reference);
         }
+
+        public PdxVariable Clone() => new PdxVariable() { Key = Key, Value = Value, FileName = FileName, IsModData = IsModData, Reference = Reference };
     }
 }
