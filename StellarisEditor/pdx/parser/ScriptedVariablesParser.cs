@@ -4,48 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace StellarisEditor.pdx.parser
 {
     public class ScriptedVariablesParser
     {
-        public LinkedList<PdxVariable> ParseScriptedVariable(FileInfo file)
+        public static PdxVariable parseVariable(String line)
         {
-            LinkedList<PdxVariable> result = new LinkedList<PdxVariable>();
+            line = Regex.Replace(line, @"[\s ]", "", RegexOptions.Singleline);
+            if (String.IsNullOrWhiteSpace(line) || line.StartsWith("#") || !line.Contains("@") || !line.Contains("="))
+                return null;
 
-            string context = File.ReadAllText(file.FullName);
-            if ("".Equals(context) || context == String.Empty)
-                return result;
+            line = line.Substring(1);
+            var key = Regex.Match(line, ".*?(?==)").Value;
+            var value = Regex.Match(line, "(?<==).*").Value;
 
-            PdxLexer lexer = new PdxLexer(context);
-
-
-            for (; ; )
+            PdxVariable variable = new PdxVariable() { Key = key };
+            try
             {
-                lexer.SkipWhitespace(); // 跳过注释和空白字符
-
-                char ch = lexer.currentHanlde;
-                if (ch == '@')
-                {   // 读取变量声明
-                    var varialbe = lexer.ParseVariable();
-                    if (varialbe != null)
-                    {
-                        varialbe.FileName = file.Name.Substring(0, file.Name.LastIndexOf("."));
-                        result.AddLast(varialbe);
-                    }
-                }
-                else if (ch == (char)0)
-                {
-                    break;
-                }
+                
+                if (value.Contains("@"))
+                    variable.Reference = new PdxVariable() { Key = value.Substring(1) };
                 else
-                {
-                    lexer.Next();
-                }
+                    variable.Value = double.Parse(value);
             }
+            catch (Exception) {}
 
-            return result;
+            return variable;
         }
     }
 }

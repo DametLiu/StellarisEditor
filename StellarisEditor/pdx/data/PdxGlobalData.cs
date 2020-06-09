@@ -29,39 +29,64 @@ namespace StellarisEditor.data
         public static LinkedList<PdxVariable> Variables = new LinkedList<PdxVariable>();
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();
 
-        public static void LoadScriptedVariables()
+        public static void LoadScriptedVariables(TaskCancel cancel)
         {
-            LoadScriptedVariable(Properties.Settings.Default.StellarisPath + STELLARIS_PATH_SCRIPTED_VARIABLES, Variables);
+            LinkedList<VariableFileState> lines = new LinkedList<VariableFileState>();            
+            LoadScriptedVariable(lines, Properties.Settings.Default.StellarisPath + STELLARIS_PATH_SCRIPTED_VARIABLES, Variables, cancel);
+
+            ExcuteVariableTask(lines);
         }
 
-        public static void LoadScriptedVariable(String path, LinkedList<PdxVariable> variables)
+        public static void LoadScriptedVariable(LinkedList<VariableFileState> lines, String path, LinkedList<PdxVariable> variables, TaskCancel cancel)
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
             FileInfo[] fileInfos = directoryInfo.GetFiles();
             foreach (FileInfo file in fileInfos)
-                ThreadPool.QueueUserWorkItem(new WaitCallback(LoadScriptedVariableFile), new VariableFileState() { variables = variables, file = file });
+                Array.ForEach(File.ReadAllLines(file.FullName, new UTF8Encoding(false)), (l) => { lines.AddLast(new VariableFileState() { file = file, line = l, variables = variables, cancel = cancel }); });
         }
 
-        private static void LoadScriptedVariableFile(object state)
+        public static void ExcuteVariableTask(LinkedList<VariableFileState> lines)
         {
-            var s = state as VariableFileState;
-            ScriptedVariablesParser parser = new ScriptedVariablesParser();
-            foreach (var pdxVariable in parser.ParseScriptedVariable(s.file))
+            foreach (var line in lines)
+                ThreadPool.UnsafeQueueUserWorkItem(new WaitCallback(ParseVariableLine), line);
+        }
+
+        private static void ParseVariableLine(object state)
+        {
+            VariableFileState variableFileState = state as VariableFileState;
+            if (IsTaskCanceled(variableFileState))
+                return;
+            
+            PdxVariable variable = ScriptedVariablesParser.parseVariable(variableFileState.line);
+            
+            if (variable != null)
             {
-                lock (s.variables)
+                variable.FileName = variableFileState.file.Name.Substring(0, variableFileState.file.Name.LastIndexOf("."));
+                lock (variableFileState.variables)
                 {
-                    if (!s.variables.Contains(pdxVariable))
-                        s.variables.Add(pdxVariable);
+                    if (!variableFileState.variables.Contains(variable))
+                        variableFileState.variables.Add(variable);
                 }
             }
         }
-        public class VariableFileState
+
+        private static bool IsTaskCanceled(TaskState variableFileState)
+        {
+            return variableFileState.cancel is TaskCancel cancel && cancel.Cancel;
+        }
+
+        public class VariableFileState : TaskState
         {
             public FileInfo file;
+            public String line;
+            
             public LinkedList<PdxVariable> variables;
         }
 
-
+        public class TaskState
+        {
+            public TaskCancel cancel;
+        }
 
         public static void LoadLocalizations(TaskCancel cancel)
         {
@@ -92,14 +117,13 @@ namespace StellarisEditor.data
         }
 
 
-        public class LocalizationFileState
+        public class LocalizationFileState : TaskState
         {
             public FileInfo file;
             public String sub;
             public String path;
             public String line;
             public LinkedList<PdxLocalization> localizations;
-            public TaskCancel cancel;
         }
         public class TaskCancel
         {
@@ -108,7 +132,7 @@ namespace StellarisEditor.data
         public static void ParseLocalizationLine(object state)
         {
             LocalizationFileState localizationFileState = state as LocalizationFileState;
-            if (localizationFileState.cancel.Cancel)
+            if (IsTaskCanceled(localizationFileState))
                 return;
 
             var pdxLocalization = LocalizationParser.ParseLocalization(localizationFileState.line);
