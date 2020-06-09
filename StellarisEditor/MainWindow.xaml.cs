@@ -78,8 +78,8 @@ namespace StellarisEditor
                 new Thread(delegate ()
                 {
                     LoadModProjects();
-                    LoadScriptedVariablesData();
-                    LoadLocalizations();
+                    //LoadScriptedVariablesData();
+                    //LoadLocalizations();
 
                     SetProgressText("正在假装加载数据...");
                     while (true)
