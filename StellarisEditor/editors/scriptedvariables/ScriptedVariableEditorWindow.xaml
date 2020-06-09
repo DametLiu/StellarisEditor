@@ -33,7 +33,7 @@
     </Window.CommandBindings>
     <Grid>
         <c:WaitingProgressBar x:Name="progressView" Value="0" Width="200" Height="200" Foreground="#FF008aff"/>
-        <DockPanel x:Name="dataPanel" Visibility="Visible">
+        <DockPanel x:Name="dataPanel" Visibility="Collapsed">
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="文件(_F)">
                     <MenuItem Header="保存(_S)" InputGestureText="Ctrl+S" Click="MenuItemClickSave"/>
