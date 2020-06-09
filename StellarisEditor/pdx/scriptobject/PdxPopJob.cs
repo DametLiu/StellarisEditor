@@ -23,7 +23,7 @@ namespace StellarisEditor.pdx.scriptobject
         public PdxResources Resources;
 
         public LinkedList<PdxTriggeredPlanetModifier> TriggeredPlanetModifiers;
-        public LinkedList<PdxTriggeredCountryModifier> TriggeredCountryModifiers;
+        public LinkedList<PdxTriggeredPlanetModifier> TriggeredCountryModifiers;
         public LinkedList<PdxModifier> PopModifiers;
         public PdxWeight Weight;
     }
