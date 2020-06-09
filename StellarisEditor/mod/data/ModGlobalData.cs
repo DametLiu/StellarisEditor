@@ -21,6 +21,7 @@ namespace StellarisEditor.mod.data
         public static ObservableCollection<PdxMod> ModProjects = new ObservableCollection<PdxMod>();
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();
         public static LinkedList<PdxVariable> Variables = new LinkedList<PdxVariable>();
+        public static LinkedList<PdxTechnologyTier> TechnologyTiers = new LinkedList<PdxTechnologyTier>();
 
         public static void LoadScriptedVariables(TaskCancel cancel)
         {
@@ -28,6 +29,11 @@ namespace StellarisEditor.mod.data
             LoadScriptedVariable(lines, Properties.Settings.Default.ModPath + STELLARIS_PATH_SCRIPTED_VARIABLES, Variables, cancel);
 
             ExcuteVariableTask(lines);
+        }
+
+        public static void LoadTechnologyTiers(TaskCancel cancel)
+        {
+            LoadTechnologyTier(Properties.Settings.Default.ModPath + STELLARIS_PATH_TECHNOLOGY_TIER, TechnologyTiers, cancel);
         }
 
         public static void LoadModProjects()

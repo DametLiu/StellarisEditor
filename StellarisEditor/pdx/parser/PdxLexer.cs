@@ -53,7 +53,43 @@ namespace StellarisEditor.pdx.parser
             return null;
         }
 
-        private string ParseNumberValue()
+        public PdxTechnologyTier ParseTechnologyTier()
+        {
+            SkipWhitespace();
+
+            String key = ParseStringKey();
+            SkipEqualSign();
+            SkipLeftBrace();
+            if (currentHanlde == '}')
+            {
+                Next();
+                return new PdxTechnologyTier() { Key = key, PreviouslyUnlocked = "" };
+            }
+            String previously_unlocked = ParseStringKey();
+            SkipEqualSign();
+            String value = ParseStringValue();
+            SkipRightBrace();
+
+            return new PdxTechnologyTier() { Key = key, PreviouslyUnlocked = value };
+        }
+
+        public void SkipRightBrace()
+        {
+            while (currentHanlde != '}')
+                Next();
+            Next();
+            SkipWhitespace();
+        }
+
+        public void SkipLeftBrace()
+        {
+            while (currentHanlde != '{')
+                Next();
+            Next();
+            SkipWhitespace();
+        }
+
+        public string ParseNumberValue()
         {
             StringBuilder stringBuilder = new StringBuilder();
             while ((currentHanlde >= '0' && currentHanlde <= '9') || currentHanlde == '.' || currentHanlde == '-')
@@ -97,7 +133,7 @@ namespace StellarisEditor.pdx.parser
         public String ParseStringValue()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            while (currentHanlde != '\n' && currentHanlde != '\r' && currentHanlde != '\t' && currentHanlde != ' ' && currentHanlde != '#')
+            while (currentHanlde != '\n' && currentHanlde != '\r' && currentHanlde != '\t' && currentHanlde != ' ' && currentHanlde != '#' && currentHanlde != '}')
             {
                 // 将字符拼接起来
                 stringBuilder.Append(currentHanlde);
@@ -148,10 +184,7 @@ namespace StellarisEditor.pdx.parser
         public string ParseStringKey()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            while ((currentHanlde >= 'a' && currentHanlde <= 'z') ||
-                (currentHanlde >= 'A' && currentHanlde <= 'Z') ||
-                (currentHanlde >= '0' && currentHanlde <= '9') ||
-                currentHanlde == '_')
+            while (currentHanlde != '=')
             {
                 stringBuilder.Append(currentHanlde);
                 Next();
@@ -174,7 +207,7 @@ namespace StellarisEditor.pdx.parser
             return new { Key = key, Index = index, Value = value };
         }
 
-        public void SkipWhitespace()
+        public PdxLexer SkipWhitespace()
         {
             for (; ; )
             {
@@ -198,9 +231,11 @@ namespace StellarisEditor.pdx.parser
                     break;
                 }
             }
+
+            return this;
         }
 
-        public void SkipComment()
+        public PdxLexer SkipComment()
         {
             if (currentHanlde == '#')
             {
@@ -210,10 +245,12 @@ namespace StellarisEditor.pdx.parser
                     if (currentHanlde == '\n')
                     {
                         Next();
-                        return;
+                        return this;
                     }
                 }
             }
+
+            return this;
         }
 
         public void SkipLine()

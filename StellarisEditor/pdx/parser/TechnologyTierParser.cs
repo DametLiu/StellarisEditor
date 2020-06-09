@@ -1,4 +1,5 @@
-﻿using StellarisEditor.pdx.scriptobject;
+﻿using StellarisEditor.extension;
+using StellarisEditor.pdx.scriptobject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,9 +18,9 @@ namespace StellarisEditor.pdx.parser
             if (String.IsNullOrWhiteSpace(text))
                 return tiers;
 
-            PdxLexer lexer = new PdxLexer();
-
-
+            PdxLexer lexer = new PdxLexer(text);
+            while (lexer.currentHanlde != (char)0)
+                tiers.Add(lexer.ParseTechnologyTier());
             return tiers;
         }
     }

@@ -42,16 +42,13 @@ namespace StellarisEditor.data
             if (IsTaskCanceled(technologyTierState))
                 return;
 
-            PdxVariable variable = TechnologyTierParser.parse(technologyTierState.file);
+            LinkedList<PdxTechnologyTier> tiers = TechnologyTierParser.Parse(technologyTierState.file);
 
-            if (variable != null)
+            lock (technologyTierState.technologyTiers)
             {
-                variable.FileName = technologyTierState.file.Name.Substring(0, technologyTierState.file.Name.LastIndexOf("."));
-                lock (technologyTierState.technologyTiers)
-                {
-                    if (!technologyTierState.technologyTiers.Contains(variable))
-                        technologyTierState.technologyTiers.Add(variable);
-                }
+                foreach (var tier in tiers)
+                    if (!technologyTierState.technologyTiers.Contains(tier))
+                        technologyTierState.technologyTiers.Add(tier);
             }
         }
 
