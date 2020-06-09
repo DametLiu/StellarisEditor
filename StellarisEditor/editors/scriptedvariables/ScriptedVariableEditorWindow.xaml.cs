@@ -35,7 +35,7 @@ namespace StellarisEditor.editors.scriptedvariables
             InitializeComponent();
             dataGrid.ItemsSource = Variables;
 
-            ModGlobalData.LoadScriptedVariables();
+            ModGlobalData.LoadScriptedVariables(null);
             ProgressTask = new Thread(() => UpdateProgress(UpdateData));
             ProgressTask.Start();
         }
@@ -84,7 +84,7 @@ namespace StellarisEditor.editors.scriptedvariables
                     
                     if (!IsVisible)
                         return;
-
+                    
                     method?.Invoke();
                     if (value < 99)
                     {

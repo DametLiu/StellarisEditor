@@ -22,9 +22,12 @@ namespace StellarisEditor.mod.data
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();
         public static LinkedList<PdxVariable> Variables = new LinkedList<PdxVariable>();
 
-        public static void LoadScriptedVariables()
+        public static void LoadScriptedVariables(TaskCancel cancel)
         {
-            LoadScriptedVariable(Properties.Settings.Default.ModPath + STELLARIS_PATH_SCRIPTED_VARIABLES, Variables);
+            LinkedList<VariableFileState> lines = new LinkedList<VariableFileState>();
+            LoadScriptedVariable(lines, Properties.Settings.Default.ModPath + STELLARIS_PATH_SCRIPTED_VARIABLES, Variables, cancel);
+
+            ExcuteVariableTask(lines);
         }
 
         public static void LoadModProjects()

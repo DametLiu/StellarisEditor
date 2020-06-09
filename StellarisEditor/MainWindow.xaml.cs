@@ -174,7 +174,7 @@ namespace StellarisEditor
         private void LoadScriptedVariablesData()
         {
             SetProgressText("正在加载变量数据...");
-            PdxGlobalData.LoadScriptedVariables();
+            PdxGlobalData.LoadScriptedVariables(null);
             SetProgressValue(1);
             Thread.Sleep(new Random().Next(500, 1000));
         }
