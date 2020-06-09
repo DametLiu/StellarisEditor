@@ -23,21 +23,21 @@
             </GroupBox>
             <GroupBox Header="颜色" FontSize="18">
                 <WrapPanel>
-                    <Button x:Name="CM" Width="24" Height="24" Background="#a335ee" ToolTip="M" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CL" Width="24" Height="24" Background="#c3b091" ToolTip="L" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CG" Width="24" Height="24" Background="#29e126" ToolTip="G" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CR" Width="24" Height="24" Background="#fc5646" ToolTip="R" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CB" Width="24" Height="24" Background="#33a7ff" ToolTip="B" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CY" Width="24" Height="24" Background="#F9FF00" ToolTip="Y" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CH" Width="24" Height="24" Background="#fbaa29" ToolTip="H" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CT" Width="24" Height="24" Background="#ffffff" ToolTip="T" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CE" Width="24" Height="24" Background="#87ffcf" ToolTip="E" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CS" Width="24" Height="24" Background="#e49c2a" ToolTip="S" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CW" Width="24" Height="24" Background="#ffffff" ToolTip="W" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CP" Width="24" Height="24" Background="#e16e6e" ToolTip="P" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="Cg" Width="24" Height="24" Background="#808080" ToolTip="g" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="Cl" Width="24" Height="24" Background="#33a7ff" ToolTip="l" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
-                    <Button x:Name="CD" Width="24" Height="24" Background="#000000" ToolTip="默认" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick"/>
+                    <Button x:Name="CM" Width="24" Height="24" Background="#a335ee" ToolTip="M" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CL" Width="24" Height="24" Background="#c3b091" ToolTip="L" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CG" Width="24" Height="24" Background="#29e126" ToolTip="G" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CR" Width="24" Height="24" Background="#fc5646" ToolTip="R" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CB" Width="24" Height="24" Background="#33a7ff" ToolTip="B" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CY" Width="24" Height="24" Background="#F9FF00" ToolTip="Y" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CH" Width="24" Height="24" Background="#fbaa29" ToolTip="H" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CT" Width="24" Height="24" Background="#ffffff" ToolTip="T" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CE" Width="24" Height="24" Background="#87ffcf" ToolTip="E" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CS" Width="24" Height="24" Background="#e49c2a" ToolTip="S" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CW" Width="24" Height="24" Background="#ffffff" ToolTip="W" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CP" Width="24" Height="24" Background="#e16e6e" ToolTip="P" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="Cg" Width="24" Height="24" Background="#808080" ToolTip="g" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="Cl" Width="24" Height="24" Background="#33a7ff" ToolTip="l" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
+                    <Button x:Name="CD" Width="24" Height="24" Background="#000000" ToolTip="默认" BorderBrush="Black" Style="{StaticResource DefaultButton}" Click="ColorClick" Margin="12,5,0,0"/>
                 </WrapPanel>
             </GroupBox>
             <GroupBox Header="图标" FontSize="18">
