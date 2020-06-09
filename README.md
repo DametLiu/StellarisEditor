@@ -2,4 +2,4 @@
 1.本地化编辑器：文本编辑，颜色、图标工具，文本样式预览。
 2.脚本变量编辑器：用来定义全局变量。
 
-This is a stellaris mod editor.
+This is a stellaris mod editor....
