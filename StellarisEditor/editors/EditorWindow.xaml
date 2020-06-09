@@ -29,7 +29,7 @@
                     <Button Content="小行星带" Visibility="Collapsed"/>
                     <Button Content="AI态度" Visibility="Collapsed"/>
                     <Button Content="轨道轰炸" Visibility="Collapsed"/>
-                    <Button Content="建筑" Visibility="Collapsed"/>
+                    <Button Content="建筑" Visibility="Collapsed" Click="OpenBuildingEditor"/>
                     <Button Content="自定义UI按钮点击效果" Visibility="Collapsed"/>
                     <Button Content="超光速通道类型" Visibility="Collapsed"/>
                     <Button Content="战争理由" Visibility="Collapsed"/>
