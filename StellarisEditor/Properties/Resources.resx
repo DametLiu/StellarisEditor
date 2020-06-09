@@ -250,4 +250,247 @@
   <data name="volatile_motes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\volatile_motes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="diplo_weight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diplo_weight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_administrator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_administrator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_agri_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_agri_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_alloy_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_alloy_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_artisan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_artisan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_artisan_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_artisan_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_banker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_banker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_bio_trophy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_bio_trophy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_brain_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_brain_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_bureaucrat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_bureaucrat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_calculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_chemist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_chemist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_chemist_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_chemist_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_clerk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_clerk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_colonist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_colonist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_coordinator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_coordinator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_criminal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_criminal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_crystal_miner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_crystal_miner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_crystal_mining_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_crystal_mining_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_culture_worker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_culture_worker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_enforcer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_enforcer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_entertainer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_entertainer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_evaluator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_evaluator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_event_purge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_event_purge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_executive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_executive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_fabricator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_fabricator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_farmer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_farmer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_fe_archivist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_fe_archivist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_fe_hedonist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_fe_hedonist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_fe_xeno_ward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_fe_xeno_ward.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_foundry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_foundry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_gas_extraction_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_gas_extraction_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_gas_extractor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_gas_extractor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_gas_refiner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_gas_refiner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_gas_refiner_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_gas_refiner_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_healthcare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_healthcare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_herder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_herder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_high_priest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_high_priest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_hunter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_hunter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_hunter_gatherer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_hunter_gatherer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_livestock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_livestock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_maintenance_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_maintenance_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_manager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_manager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_merchant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_merchant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_mining_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_mining_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_mote_harvester" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_mote_harvester.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_mote_harvesting_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_mote_harvesting_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_noble" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_noble.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_odd_factory_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_odd_factory_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_odd_factory_worker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_odd_factory_worker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_organic_battery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_organic_battery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_patrol_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_patrol_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_peasant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_peasant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_pre_sapient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_pre_sapient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_priest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_priest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_primitive_bureaucrat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_primitive_bureaucrat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_primitive_farmer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_primitive_farmer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_primitive_laborer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_primitive_laborer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_primitive_noble" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_primitive_noble.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_primitive_priest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_primitive_priest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_primitive_priest_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_primitive_priest_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_primitive_researcher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_primitive_researcher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_primitive_researcher_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_primitive_researcher_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_primitive_warrior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_primitive_warrior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_primitive_warrior_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_primitive_warrior_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_purge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_purge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_ratling_scavenger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_ratling_scavenger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_replicator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_replicator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_researcher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_researcher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_roboticist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_roboticist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_servant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_servant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_soldier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_soldier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_spawning_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_spawning_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_synapse_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_synapse_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_technician" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_technician.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_technician_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_technician_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_telepath" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_telepath.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_translucer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_translucer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_translucer_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_translucer_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_underground_trade_worker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_underground_trade_worker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job_warrior_drone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job_warrior_drone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

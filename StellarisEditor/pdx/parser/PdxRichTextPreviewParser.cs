@@ -244,8 +244,104 @@ namespace StellarisEditor.pdx.parser
                 return Properties.Resources.ship_stats_special;
             else if (key == "ship_stats_speed")
                 return Properties.Resources.ship_stats_speed;
-            else if (key == "")
-                return null;
+            else if (key == "diplo_weight")
+                return Properties.Resources.diplo_weight;
+            else if (key == "job_administrator" || key == "job_primitive_bureaucrat")
+                return Properties.Resources.job_administrator;
+            else if (key == "job_agri_drone" || key == "job_farmer" || key == "job_peasant" || key == "job_primitive_farmer")
+                return Properties.Resources.job_agri_drone;
+            else if (key == "job_alloy_drone" || key == "job_fabricator" || key == "job_foundry" || key == "job_odd_factory_drone" || key == "job_odd_factory_worker" || key == "job_underground_trade_worker")
+                return Properties.Resources.job_alloy_drone;
+            else if (key == "job_bio_trophy")
+                return Properties.Resources.job_bio_trophy;
+            else if (key == "job_artisan_drone" || key == "job_artisan")
+                return Properties.Resources.job_artisan_drone;
+            else if (key == "job_banker")
+                return Properties.Resources.job_banker;
+            else if (key == "job_brain_drone")
+                return Properties.Resources.job_brain_drone;
+            else if (key == "job_bureaucrat")
+                return Properties.Resources.job_bureaucrat;
+            else if (key == "job_calculator" || key == "job_primitive_researcher" || key == "job_primitive_researcher_2" || key == "job_researcher")
+                return Properties.Resources.job_calculator;
+            else if (key == "job_chemist")
+                return Properties.Resources.job_chemist;
+            else if (key == "job_clerk")
+                return Properties.Resources.job_clerk;
+            else if (key == "job_colonist")
+                return Properties.Resources.job_colonist;
+            else if (key == "job_coordinator")
+                return Properties.Resources.job_coordinator;
+            else if (key == "job_criminal")
+                return Properties.Resources.job_criminal;
+            else if (key == "job_crystal_miner" || key == "job_crystal_mining_drone")
+                return Properties.Resources.job_crystal_miner;
+            else if (key == "job_culture_worker")
+                return Properties.Resources.job_culture_worker;
+            else if (key == "job_enforcer")
+                return Properties.Resources.job_enforcer;
+            else if (key == "job_entertainer")
+                return Properties.Resources.job_entertainer;
+            else if (key == "job_evaluator")
+                return Properties.Resources.job_evaluator;
+            else if (key == "job_event_purge" || key == "job_purge")
+                return Properties.Resources.job_event_purge;
+            else if (key == "job_executive")
+                return Properties.Resources.job_executive;
+            else if (key == "job_fe_archivist")
+                return Properties.Resources.job_fe_archivist;
+            else if (key == "job_fe_hedonist")
+                return Properties.Resources.job_fe_hedonist;
+            else if (key == "job_fe_xeno_ward")
+                return Properties.Resources.job_fe_xeno_ward;
+            else if (key == "job_gas_extraction_drone")
+                return Properties.Resources.job_gas_extraction_drone;
+            else if (key == "job_gas_extractor")
+                return Properties.Resources.job_gas_extractor;
+            else if (key == "job_healthcare")
+                return Properties.Resources.job_healthcare;
+            else if (key == "job_herder")
+                return Properties.Resources.job_herder;
+            else if (key == "job_high_priest" || key == "job_primitive_priest_2" || key == "job_primitive_priest" || key == "job_priest")
+                return Properties.Resources.job_high_priest;
+            else if (key == "job_hunter" || key == "job_hunter_gatherer" || key == "job_pre_sapient" || key == "job_primitive_warrior")
+                return Properties.Resources.job_hunter;
+            else if (key == "job_livestock")
+                return Properties.Resources.job_livestock;
+            else if (key == "job_manager")
+                return Properties.Resources.job_manager;
+            else if (key == "job_merchant")
+                return Properties.Resources.job_merchant;
+            else if (key == "job_mining_drone" || key == "job_ratling_scavenger")
+                return Properties.Resources.job_mining_drone;
+            else if (key == "job_mote_harvester" || key == "job_mote_harvesting_drone")
+                return Properties.Resources.job_mote_harvester;
+            else if (key == "job_noble" || key == "job_primitive_noble")
+                return Properties.Resources.job_noble;
+            else if (key == "job_organic_battery")
+                return Properties.Resources.job_organic_battery;
+            else if (key == "job_patrol_drone")
+                return Properties.Resources.job_patrol_drone;
+            else if (key == "job_primitive_laborer")
+                return Properties.Resources.job_primitive_laborer;
+            else if (key == "job_primitive_warrior_2" || key == "job_warrior_drone" || key == "job_soldier")
+                return Properties.Resources.job_primitive_warrior_2;
+            else if (key == "job_replicator")
+                return Properties.Resources.job_replicator;
+            else if (key == "job_roboticist")
+                return Properties.Resources.job_roboticist;
+            else if (key == "job_servant")
+                return Properties.Resources.job_servant;
+            else if (key == "job_spawning_drone")
+                return Properties.Resources.job_spawning_drone;
+            else if (key == "job_synapse_drone")
+                return Properties.Resources.job_synapse_drone;
+            else if (key == "job_technician" || key == "job_technician_drone")
+                return Properties.Resources.job_technician;
+            else if (key == "job_telepath")
+                return Properties.Resources.job_telepath;
+            else if (key == "job_translucer" || key == "job_translucer_drone")
+                return Properties.Resources.job_translucer;
 
             return Properties.Resources.placeholder;
         }

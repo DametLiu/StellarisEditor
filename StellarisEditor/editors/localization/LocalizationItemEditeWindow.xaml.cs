@@ -157,7 +157,105 @@ namespace StellarisEditor.editors.localization
                     textbox.Text = textbox.Text.Insert(selectionStart, "£ship_stats_special£");
                 else if (e.Source == ship_stats_speed)
                     textbox.Text = textbox.Text.Insert(selectionStart, "£ship_stats_speed£");
-                
+                else if (e.Source == diplo_weight)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£diplo_weight£");
+                else if (e.Source == job_administrator)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_administrator£");
+                else if (e.Source == job_agri_drone)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_agri_drone£");
+                else if (e.Source == job_alloy_drone)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_alloy_drone£");
+                else if (e.Source == job_bio_trophy)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_bio_trophy£");
+                else if (e.Source == job_artisan_drone)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_artisan_drone£");
+                else if (e.Source == job_banker)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_banker£");
+                else if (e.Source == job_brain_drone)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_brain_drone£");
+                else if (e.Source == job_bureaucrat)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_bureaucrat£");
+                else if (e.Source == job_calculator)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_calculator£");
+                else if (e.Source == job_chemist)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_chemist£");
+                else if (e.Source == job_clerk)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_clerk£");
+                else if (e.Source == job_colonist)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_colonist£");
+                else if (e.Source == job_coordinator)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_coordinator£");
+                else if (e.Source == job_criminal)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_criminal£");
+                else if (e.Source == job_crystal_miner)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_crystal_miner£");
+                else if (e.Source == job_culture_worker)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_culture_worker£");
+                else if (e.Source == job_enforcer)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_enforcer£");
+                else if (e.Source == job_entertainer)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_entertainer£");
+                else if (e.Source == job_evaluator)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_evaluator£");
+                else if (e.Source == job_event_purge)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_event_purge£");
+                else if (e.Source == job_executive)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_executive£");
+                else if (e.Source == job_fe_archivist)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_fe_archivist£");
+                else if (e.Source == job_fe_hedonist)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_fe_hedonist£");
+                else if (e.Source == job_fe_xeno_ward)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_fe_xeno_ward£");
+                else if (e.Source == job_gas_extraction_drone)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_gas_extraction_drone£");
+                else if (e.Source == job_gas_extractor)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_gas_extractor£");
+                else if (e.Source == job_healthcare)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_healthcare£");
+                else if (e.Source == job_herder)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_herder£");
+                else if (e.Source == job_high_priest)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_high_priest£");
+                else if (e.Source == job_hunter)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_hunter£");
+                else if (e.Source == job_livestock)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_livestock£");
+                else if (e.Source == job_manager)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_manager£");
+                else if (e.Source == job_merchant)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_merchant£");
+                else if (e.Source == job_mining_drone)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_mining_drone£");
+                else if (e.Source == job_mote_harvester)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_mote_harvester£");
+                else if (e.Source == job_noble)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_noble£");
+                else if (e.Source == job_organic_battery)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_organic_battery£");
+                else if (e.Source == job_patrol_drone)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_patrol_drone£");
+                else if (e.Source == job_primitive_laborer)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_primitive_laborer£");
+                else if (e.Source == job_primitive_warrior_2)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_primitive_warrior_2£");
+                else if (e.Source == job_replicator)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_replicator£");
+                else if (e.Source == job_roboticist)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_roboticist£");
+                else if (e.Source == job_servant)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_servant£");
+                else if (e.Source == job_spawning_drone)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_spawning_drone£");
+                else if (e.Source == job_synapse_drone)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_synapse_drone£");
+                else if (e.Source == job_technician)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_technician£");
+                else if (e.Source == job_telepath)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_telepath£");
+                else if (e.Source == job_translucer)
+                    textbox.Text = textbox.Text.Insert(selectionStart, "£job_translucer£");
+
                 textbox.Focus();
                 textbox.Select(selectionStart, 0);
             }
