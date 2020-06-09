@@ -146,6 +146,7 @@
     <Compile Include="pdx\parser\PdxLexer.cs" />
     <Compile Include="pdx\parser\PdxRichTextPreviewParser.cs" />
     <Compile Include="pdx\parser\ScriptedVariablesParser.cs" />
+    <Compile Include="pdx\scriptobject\PdxTechnologyTier.cs" />
     <Compile Include="pdx\scriptobject\conditiontriggers\PdxAnd.cs" />
     <Compile Include="pdx\scriptobject\conditiontriggers\PdxConditionTrigger.cs" />
     <Compile Include="pdx\scriptobject\conditiontriggers\PdxSuccessText.cs" />
@@ -169,7 +170,6 @@
     <Compile Include="pdx\scriptobject\PdxNumber.cs" />
     <Compile Include="pdx\scriptobject\PdxObject.cs" />
     <Compile Include="pdx\scriptobject\PdxPopCategory.cs" />
-    <Compile Include="pdx\scriptobject\PdxPopJob.cs" />
     <Compile Include="pdx\scriptobject\PdxResourceCost.cs" />
     <Compile Include="pdx\scriptobject\PdxResources.cs" />
     <Compile Include="pdx\scriptobject\PdxStrategicResource.cs" />
@@ -177,7 +177,7 @@
     <Compile Include="pdx\scriptobject\PdxText.cs" />
     <Compile Include="pdx\scriptobject\PdxTrigger.cs" />
     <Compile Include="pdx\scriptobject\PdxTriggeredDesc.cs" />
-    <Compile Include="pdx\scriptobject\PdxTriggeredPlanetModifier  - 复制.cs" />
+    <Compile Include="pdx\scriptobject\PdxTriggeredPlanetModifier .cs" />
     <Compile Include="pdx\scriptobject\PdxVariable.cs" />
     <Compile Include="pdx\scriptobject\PdxWeight.cs" />
     <Compile Include="pdx\scriptobject\PdxWeightModifier.cs" />
