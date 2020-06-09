@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StellarisEditor.editors.job"
         mc:Ignorable="d"
         Title="职业编辑器" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" >
-    <Grid ShowGridLines="True">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -61,8 +61,21 @@
 
             </StackPanel>
         </Grid>
-        <GroupBox Grid.Row="0" Grid.Column="1" >
-            
-        </GroupBox>
+        <StackPanel Margin="5,0,5,0" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+            <GroupBox Height="150" Header="possible" >
+            </GroupBox>
+            <GroupBox Height="150" Header="resources" >
+            </GroupBox>
+            <GroupBox Height="100" Header="weight" >
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Margin="5,0,5,0" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
+            <GroupBox Height="150" Header="星球与国家修正" >
+            </GroupBox>
+            <GroupBox Height="150" Header="pop_modifier" >
+            </GroupBox>
+
+        </StackPanel>
+
     </Grid>
 </Window>
