@@ -96,8 +96,6 @@ namespace StellarisEditor
                         Thread.Sleep(new Random().Next(1, 2));
                         SetProgressValue(0.1);
                     }
-                    foreach (var tier in PdxGlobalData.TechnologyTiers)
-                        MessageBox.Show($"{tier}");
                     OpenModManagerWindow();
                     CloseWindow();
 

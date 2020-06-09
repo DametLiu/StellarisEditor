@@ -248,6 +248,8 @@ namespace StellarisEditor.editors.scriptedvariables
         {
             if (dataGrid.SelectedItem is PdxVariable variable)
                 Variables.Insert(Variables.IndexOf(variable), new PdxVariable() { Key = $"new_variable{++NewIndex}" });
+            else
+                Variables.Insert(0, new PdxVariable() { Key = $"new_variable{++NewIndex}" });
         }
 
         private int NewIndex = 0;

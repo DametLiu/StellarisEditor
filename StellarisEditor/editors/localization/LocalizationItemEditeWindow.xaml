@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StellarisEditor.editors.localization"
         mc:Ignorable="d"
-        Title="LocalizationItemEditeWindow" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Background="White"
+        Title="本地化文本编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Background="White"
         >
 
     <Grid >

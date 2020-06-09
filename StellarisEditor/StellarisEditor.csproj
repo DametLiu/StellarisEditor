@@ -291,11 +291,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\diplomatic_weight.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\energy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -342,11 +337,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\job_artisan_drone.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\job_banker.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -496,11 +486,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_herder.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\job_high_priest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -517,11 +502,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\job_livestock.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\job_maintenance_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -1442,11 +1422,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\StellarisEditorLaucher8.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\strategic.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

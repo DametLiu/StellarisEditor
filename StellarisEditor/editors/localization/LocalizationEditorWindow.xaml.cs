@@ -295,6 +295,8 @@ namespace StellarisEditor.editors.localization
         {
             if (dataGrid.SelectedItem is PdxLocalization localization)
                 Localizations.Insert(Localizations.IndexOf(localization), new PdxLocalization() { Key = $"new_localization{++NewIndex}" });
+            else
+                Localizations.Insert(0, new PdxLocalization() { Key = $"new_localization{++NewIndex}" });
         }
 
         private int NewIndex = 0;
