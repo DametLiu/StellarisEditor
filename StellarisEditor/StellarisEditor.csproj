@@ -269,17 +269,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon.ico">
+    <None Include="Resources\icons\Icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\placeholder.png">
+    <None Include="Resources\icons\placeholder.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_administrator.png">
+    <None Include="Resources\icons\job_administrator.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -324,572 +324,572 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\alloys.png">
+    <None Include="Resources\icons\alloys.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\consumer_goods.png">
+    <None Include="Resources\icons\consumer_goods.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\diplomatic_weight.png">
+    <None Include="Resources\icons\diplomatic_weight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\energy.png">
+    <None Include="Resources\icons\energy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\engineering_research.png">
+    <None Include="Resources\icons\engineering_research.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\exotic_gases.png">
+    <None Include="Resources\icons\exotic_gases.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\food.png">
+    <None Include="Resources\icons\food.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\influence.png">
+    <None Include="Resources\icons\influence.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\minerals.png">
+    <None Include="Resources\icons\minerals.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\minor_artifacts.png">
+    <None Include="Resources\icons\minor_artifacts.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\nanites.png">
+    <None Include="Resources\icons\nanites.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\physics_research.png">
+    <None Include="Resources\icons\physics_research.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\rare_crystals.png">
+    <None Include="Resources\icons\rare_crystals.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\society_research.png">
+    <None Include="Resources\icons\society_research.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sr_dark_matter.png">
+    <None Include="Resources\icons\sr_dark_matter.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sr_living_metal.png">
+    <None Include="Resources\icons\sr_living_metal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sr_zro.png">
+    <None Include="Resources\icons\sr_zro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\strategic.png">
+    <None Include="Resources\icons\strategic.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\time.png">
+    <None Include="Resources\icons\time.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\trade_value.png">
+    <None Include="Resources\icons\trade_value.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\unity.png">
+    <None Include="Resources\icons\unity.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\volatile_motes.png">
+    <None Include="Resources\icons\volatile_motes.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_armor.png">
+    <None Include="Resources\icons\ship_stats_armor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_build_cost.png">
+    <None Include="Resources\icons\ship_stats_build_cost.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_build_time.png">
+    <None Include="Resources\icons\ship_stats_build_time.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_damage.png">
+    <None Include="Resources\icons\ship_stats_damage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_evasion.png">
+    <None Include="Resources\icons\ship_stats_evasion.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_hit_points.png">
+    <None Include="Resources\icons\ship_stats_hit_points.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_maintenance.png">
+    <None Include="Resources\icons\ship_stats_maintenance.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_piracy_suppression.png">
+    <None Include="Resources\icons\ship_stats_piracy_suppression.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_power.png">
+    <None Include="Resources\icons\ship_stats_power.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_shield.png">
+    <None Include="Resources\icons\ship_stats_shield.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_special.png">
+    <None Include="Resources\icons\ship_stats_special.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship_stats_speed.png">
+    <None Include="Resources\icons\ship_stats_speed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_agri_drone.png">
+    <None Include="Resources\icons\job_agri_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_alloy_drone.png">
+    <None Include="Resources\icons\job_alloy_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_artisan.png">
+    <None Include="Resources\icons\job_artisan.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_artisan_drone.png">
+    <None Include="Resources\icons\job_artisan_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_banker.png">
+    <None Include="Resources\icons\job_banker.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_bio_trophy.png">
+    <None Include="Resources\icons\job_bio_trophy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_brain_drone.png">
+    <None Include="Resources\icons\job_brain_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_bureaucrat.png">
+    <None Include="Resources\icons\job_bureaucrat.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_calculator.png">
+    <None Include="Resources\icons\job_calculator.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_chemist.png">
+    <None Include="Resources\icons\job_chemist.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_chemist_drone.png">
+    <None Include="Resources\icons\job_chemist_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_clerk.png">
+    <None Include="Resources\icons\job_clerk.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_colonist.png">
+    <None Include="Resources\icons\job_colonist.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_coordinator.png">
+    <None Include="Resources\icons\job_coordinator.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_criminal.png">
+    <None Include="Resources\icons\job_criminal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_crystal_miner.png">
+    <None Include="Resources\icons\job_crystal_miner.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_crystal_mining_drone.png">
+    <None Include="Resources\icons\job_crystal_mining_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_culture_worker.png">
+    <None Include="Resources\icons\job_culture_worker.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_enforcer.png">
+    <None Include="Resources\icons\job_enforcer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_entertainer.png">
+    <None Include="Resources\icons\job_entertainer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_evaluator.png">
+    <None Include="Resources\icons\job_evaluator.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_event_purge.png">
+    <None Include="Resources\icons\job_event_purge.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_executive.png">
+    <None Include="Resources\icons\job_executive.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_fabricator.png">
+    <None Include="Resources\icons\job_fabricator.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_farmer.png">
+    <None Include="Resources\icons\job_farmer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_fe_archivist.png">
+    <None Include="Resources\icons\job_fe_archivist.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_fe_hedonist.png">
+    <None Include="Resources\icons\job_fe_hedonist.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_fe_xeno_ward.png">
+    <None Include="Resources\icons\job_fe_xeno_ward.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_foundry.png">
+    <None Include="Resources\icons\job_foundry.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_gas_extraction_drone.png">
+    <None Include="Resources\icons\job_gas_extraction_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_gas_extractor.png">
+    <None Include="Resources\icons\job_gas_extractor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_gas_refiner.png">
+    <None Include="Resources\icons\job_gas_refiner.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_gas_refiner_drone.png">
+    <None Include="Resources\icons\job_gas_refiner_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_healthcare.png">
+    <None Include="Resources\icons\job_healthcare.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_herder.png">
+    <None Include="Resources\icons\job_herder.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_high_priest.png">
+    <None Include="Resources\icons\job_high_priest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_hunter.png">
+    <None Include="Resources\icons\job_hunter.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_hunter_gatherer.png">
+    <None Include="Resources\icons\job_hunter_gatherer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_livestock.png">
+    <None Include="Resources\icons\job_livestock.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_maintenance_drone.png">
+    <None Include="Resources\icons\job_maintenance_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_manager.png">
+    <None Include="Resources\icons\job_manager.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_merchant.png">
+    <None Include="Resources\icons\job_merchant.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_mining_drone.png">
+    <None Include="Resources\icons\job_mining_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_mote_harvester.png">
+    <None Include="Resources\icons\job_mote_harvester.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_mote_harvesting_drone.png">
+    <None Include="Resources\icons\job_mote_harvesting_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_noble.png">
+    <None Include="Resources\icons\job_noble.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_odd_factory_drone.png">
+    <None Include="Resources\icons\job_odd_factory_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_odd_factory_worker.png">
+    <None Include="Resources\icons\job_odd_factory_worker.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_organic_battery.png">
+    <None Include="Resources\icons\job_organic_battery.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_patrol_drone.png">
+    <None Include="Resources\icons\job_patrol_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_peasant.png">
+    <None Include="Resources\icons\job_peasant.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_pre_sapient.png">
+    <None Include="Resources\icons\job_pre_sapient.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_priest.png">
+    <None Include="Resources\icons\job_priest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_primitive_bureaucrat.png">
+    <None Include="Resources\icons\job_primitive_bureaucrat.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_primitive_farmer.png">
+    <None Include="Resources\icons\job_primitive_farmer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_primitive_laborer.png">
+    <None Include="Resources\icons\job_primitive_laborer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_primitive_noble.png">
+    <None Include="Resources\icons\job_primitive_noble.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_primitive_priest.png">
+    <None Include="Resources\icons\job_primitive_priest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_primitive_priest_2.png">
+    <None Include="Resources\icons\job_primitive_priest_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_primitive_researcher.png">
+    <None Include="Resources\icons\job_primitive_researcher.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_primitive_researcher_2.png">
+    <None Include="Resources\icons\job_primitive_researcher_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_primitive_warrior.png">
+    <None Include="Resources\icons\job_primitive_warrior.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_primitive_warrior_2.png">
+    <None Include="Resources\icons\job_primitive_warrior_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_purge.png">
+    <None Include="Resources\icons\job_purge.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_ratling_scavenger.png">
+    <None Include="Resources\icons\job_ratling_scavenger.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_replicator.png">
+    <None Include="Resources\icons\job_replicator.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_researcher.png">
+    <None Include="Resources\icons\job_researcher.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_roboticist.png">
+    <None Include="Resources\icons\job_roboticist.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_servant.png">
+    <None Include="Resources\icons\job_servant.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_soldier.png">
+    <None Include="Resources\icons\job_soldier.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_spawning_drone.png">
+    <None Include="Resources\icons\job_spawning_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_synapse_drone.png">
+    <None Include="Resources\icons\job_synapse_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_technician.png">
+    <None Include="Resources\icons\job_technician.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_technician_drone.png">
+    <None Include="Resources\icons\job_technician_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_telepath.png">
+    <None Include="Resources\icons\job_telepath.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_translucer.png">
+    <None Include="Resources\icons\job_translucer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_translucer_drone.png">
+    <None Include="Resources\icons\job_translucer_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_underground_trade_worker.png">
+    <None Include="Resources\icons\job_underground_trade_worker.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\job_warrior_drone.png">
+    <None Include="Resources\icons\job_warrior_drone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\diplo_weight.png">
+    <None Include="Resources\icons\diplo_weight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
