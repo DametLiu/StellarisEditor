@@ -32,7 +32,7 @@ namespace StellarisEditor.editors.techEditor
             InitializeComponent();
             dataGrid.ItemsSource = TechnologyCategories;
 
-            ModGlobalData.LoadScriptedVariables(null);
+            ModGlobalData.LoadTechnologyCategories(null);
             ProgressTask = new Thread(() => UpdateProgress(UpdateData));
             ProgressTask.Start();
         }
@@ -52,7 +52,7 @@ namespace StellarisEditor.editors.techEditor
                 var item = ModGlobalData.TechnologyCategories.ElementAt(i);
                 if (!TechnologyCategories.Contains(item))
                 {
-                    int a = current + (TechnologyCategories.Count / ModGlobalData.Variables.Count * (99 - current));
+                    int a = current + (TechnologyCategories.Count / ModGlobalData.TechnologyCategories.Count * (99 - current));
                     dataGrid.Dispatcher.BeginInvoke(new Action(() => {
                         TechnologyCategories.Add(item);
                         progressView.Value = value = a;
