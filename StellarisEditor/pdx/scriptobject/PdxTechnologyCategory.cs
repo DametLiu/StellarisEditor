@@ -39,6 +39,20 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
+        private String _FileName;
+        public String FileName
+        {
+            get
+            {
+                return _FileName;
+            }
+            set
+            {
+                _FileName = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FileName"));
+            }
+        }
+
         public override bool Equals(object obj) => obj is PdxTechnologyCategory category && Key == category.Key && Icon == category.Icon;
 
         public override int GetHashCode() => base.GetHashCode();

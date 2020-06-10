@@ -39,6 +39,23 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
+
+        private String _FileName;
+        public String FileName
+        {
+            get
+            {
+                return _FileName;
+            }
+            set
+            {
+                _FileName = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FileName"));
+            }
+        }
+
+
+
         public override bool Equals(object obj) => obj is PdxTechnologyTier tier && Key == tier.Key && PreviouslyUnlocked == tier.PreviouslyUnlocked;
 
         public override int GetHashCode() => base.GetHashCode();
