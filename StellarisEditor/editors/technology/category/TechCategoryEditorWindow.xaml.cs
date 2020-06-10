@@ -41,12 +41,13 @@ namespace StellarisEditor.editors.techEditor
         private int value = 0;
         delegate void DelegateThreadFunction();
 
+        private int updateCount = 0;
         private void UpdateData()
         {
-            if (TechnologyCategories.Count != 0)
+            if (TechnologyCategories.Count != 0 && updateCount > 0)
                 return;
 
-            var current = value;
+            var current = value; updateCount = ModGlobalData.TechnologyCategories.Count;
             for (int i = 0; i < ModGlobalData.TechnologyCategories.Count; i++)
             {
                 var item = ModGlobalData.TechnologyCategories.ElementAt(i);
@@ -56,6 +57,7 @@ namespace StellarisEditor.editors.techEditor
                     dataGrid.Dispatcher.BeginInvoke(new Action(() => {
                         TechnologyCategories.Add(item);
                         progressView.Value = value = a;
+                        updateCount--;
                     }), DispatcherPriority.Normal);
                 }
             }

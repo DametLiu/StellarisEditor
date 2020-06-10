@@ -41,12 +41,13 @@ namespace StellarisEditor.editors.localization
             ProgressTask.Start();
         }
 
+        private int updateCount = 0;
         private void UpdateData()
         {
-            if (Localizations.Count != 0)
+            if (Localizations.Count != 0 || updateCount > 0)
                 return;
 
-            var current = 0;
+            var current = 0; updateCount = ModGlobalData.Localizations.Count;
             dataGrid.Dispatcher.Invoke(new Action(() => {
                 current = progressView.Value;
             }), DispatcherPriority.Normal);
@@ -60,6 +61,7 @@ namespace StellarisEditor.editors.localization
                         Localizations.Add(item);
                         int a = current + (Localizations.Count / ModGlobalData.Localizations.Count * (99 - current));
                         progressView.Value = value = a;
+                        updateCount--;
                     }), DispatcherPriority.Normal);
                 }
             }

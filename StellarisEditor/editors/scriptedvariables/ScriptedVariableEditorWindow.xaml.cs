@@ -45,10 +45,12 @@ namespace StellarisEditor.editors.scriptedvariables
         private int value = 0;
         delegate void DelegateThreadFunction();
 
+        private int updateCount = 0;
         private void UpdateData()
         {
-            if (Variables.Count != 0)
+            if (Variables.Count != 0 || updateCount > 0)
                 return;
+            updateCount = ModGlobalData.Variables.Count;
 
             var current = value;
             for (int i = 0; i < ModGlobalData.Variables.Count; i++)
@@ -60,6 +62,7 @@ namespace StellarisEditor.editors.scriptedvariables
                     dataGrid.Dispatcher.BeginInvoke(new Action(() => {
                         Variables.Add(item);
                         progressView.Value = value = a;
+                        updateCount--;
                     }), DispatcherPriority.Normal);
                 }
             }
@@ -88,7 +91,7 @@ namespace StellarisEditor.editors.scriptedvariables
                     method?.Invoke();
                     if (value < 99)
                     {
-                        Thread.Sleep(10);
+                        Thread.Sleep(1);
                         PlusProgress();
                     }
                     else
