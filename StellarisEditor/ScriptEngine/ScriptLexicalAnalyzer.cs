@@ -97,6 +97,18 @@ namespace StellarisEditor.ScriptEngine
         }
 
         /// <summary>
+        /// 判断下一个词汇是否具有指定的标签
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
+        public bool NextIs(Tag tag)
+        {
+            if (Peek.Tag == tag)
+                return true;
+            return false;
+        }
+
+        /// <summary>
         /// 读取一个指定类型的词汇
         /// </summary>
         /// <param name="tag"></param>
