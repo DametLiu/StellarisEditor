@@ -112,12 +112,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="editors\technology\category\TechnologyCategoryEditorWindow.xaml.cs">
-      <DependentUpon>TechnologyCategoryEditorWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="editors\technology\tier\TechnologyTierEditorWindow.xaml.cs">
-      <DependentUpon>TechnologyTierEditorWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ScriptEngine\CharStream.cs" />
     <Compile Include="component\WaitingProgressBar.xaml.cs">
       <DependentUpon>WaitingProgressBar.xaml</DependentUpon>
@@ -140,10 +134,10 @@
     <Compile Include="editors\scriptedvariables\ScriptedVariableEditorWindow.xaml.cs">
       <DependentUpon>ScriptedVariableEditorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="editors\techEditor\TechCategoryEditorWindow.xaml.cs">
+    <Compile Include="editors\technology\category\TechCategoryEditorWindow.xaml.cs">
       <DependentUpon>TechCategoryEditorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="editors\techEditor\TechTierWindow.xaml.cs">
+    <Compile Include="editors\technology\tier\TechTierWindow.xaml.cs">
       <DependentUpon>TechTierWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="extension\LinkedListExtension.cs" />
@@ -231,19 +225,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="editors\technology\category\TechnologyCategoryEditorWindow.xaml">
+    <Page Include="editors\technology\category\TechCategoryEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="editors\technology\tier\TechnologyTierEditorWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="editors\techEditor\TechCategoryEditorWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="editors\techEditor\TechTierWindow.xaml">
+    <Page Include="editors\technology\tier\TechTierWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
