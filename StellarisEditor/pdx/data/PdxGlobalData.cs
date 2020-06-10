@@ -51,7 +51,7 @@ namespace StellarisEditor.data
                 foreach (var category in categories)
                     if (!technologyCategoryState.technologyCategories.Contains(category))
                     {
-                        category.FileName = technologyCategoryState.file.Name.Substring(0, technologyCategoryState.file.Name.LastIndexOf("."));
+                        category.FileName = technologyCategoryState.file.SimpleName();
                         technologyCategoryState.technologyCategories.Add(category);
                     }
             }
@@ -89,7 +89,7 @@ namespace StellarisEditor.data
                 foreach (var tier in tiers)
                     if (!technologyTierState.technologyTiers.Contains(tier))
                     {
-                        tier.FileName = technologyTierState.file.Name.Substring(0, technologyTierState.file.Name.LastIndexOf("."));
+                        tier.FileName = technologyTierState.file.SimpleName();
                         technologyTierState.technologyTiers.Add(tier);
                     }
             }
