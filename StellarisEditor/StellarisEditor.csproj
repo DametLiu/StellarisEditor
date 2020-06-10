@@ -236,6 +236,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\technology\tier\TechnologyTierEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="editors\techEditor\TechCategoryEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
