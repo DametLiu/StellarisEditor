@@ -1,6 +1,7 @@
 */bin
 */obj
 /.vs
-*.csproj
+*.csproj -text merge=union
+*.sln -text merge=union
 *.user
 *.htm
