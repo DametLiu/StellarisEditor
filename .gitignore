@@ -1,11 +1,3 @@
 bin/
 obj/
 /.vs
-#ignore thumbnails created by windows
-Thumbs.db
-#Ignore files build by Visual Studio
-*.user
-*.suo
-*.bak
-*.cache
-*.log

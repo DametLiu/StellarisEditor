@@ -167,6 +167,20 @@ namespace StellarisEditor.ScriptEngine
             }
             #endregion
 
+            #region 变量
+            if (c == '@')
+            {
+                c = stream.Read();
+                StringBuilder sv = new StringBuilder();
+                while (c != ' ' && c != '\n' && c != '\r' && c != '\t' && c != '=' && c != '\0')
+                {
+                    sv.Append(sv);
+                    c = stream.Read();
+                }
+                return new ScriptLexeme() { Tag = Tag.Variable, Lexeme = sv.ToString() };
+            }
+            #endregion
+
             #region 运算符
             switch (c)
             {
