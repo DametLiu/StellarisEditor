@@ -26,11 +26,13 @@ namespace StellarisEditor.mod.data
 
         public static void LoadTechnologyCategories(TaskCancel cancel)
         {
+            TechnologyCategories.Clear();
             LoadTechnologyCategory(Properties.Settings.Default.ModPath + STELLARIS_PATH_TECHNOLOGY_CATEGORY, TechnologyCategories, cancel);
         }
 
         public static void LoadScriptedVariables(TaskCancel cancel)
         {
+            Variables.Clear();
             LinkedList<VariableState> lines = new LinkedList<VariableState>();
             LoadScriptedVariable(lines, Properties.Settings.Default.ModPath + STELLARIS_PATH_SCRIPTED_VARIABLES, Variables, cancel);
 
@@ -39,6 +41,7 @@ namespace StellarisEditor.mod.data
 
         public static void LoadTechnologyTiers(TaskCancel cancel)
         {
+            TechnologyTiers.Clear();
             LoadTechnologyTier(Properties.Settings.Default.ModPath + STELLARIS_PATH_TECHNOLOGY_TIER, TechnologyTiers, cancel);
         }
 
