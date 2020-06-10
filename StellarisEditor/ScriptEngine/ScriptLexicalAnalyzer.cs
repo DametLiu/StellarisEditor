@@ -43,6 +43,17 @@ namespace StellarisEditor.ScriptEngine
         }
 
         /// <summary>
+        /// 读取一个词汇，并更新预览词汇
+        /// </summary>
+        /// <returns></returns>
+        public ScriptLexeme Read()
+        {
+            Curr = Peek;
+            Peek = Scan();
+            return Curr;
+        }
+
+        /// <summary>
         /// 读取一个指定类型的词汇
         /// </summary>
         /// <param name="tag"></param>
