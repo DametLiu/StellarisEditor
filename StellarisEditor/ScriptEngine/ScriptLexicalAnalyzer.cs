@@ -33,25 +33,14 @@ namespace StellarisEditor.ScriptEngine
         }
 
         /// <summary>
-        /// 读取一个符号，并判断是否为指定符号类型若不是 则输出异常
+        /// 读取一个指定类型的词汇
         /// </summary>
-        /// <param name="lexem"></param>
+        /// <param name="tag"></param>
         /// <returns></returns>
         public ScriptLexeme ReadIs(Tag tag)
         {
 
-            if (_peek.Tag == tag)
-            {
-                return this.Read();
-            }
-
-            string mes = "语法错误";
-            switch (tag)
-            {
-                case Tag.ID:
-                    mes = "缺少标识符";
-                    break;
-            }
+            
             
             return new ScriptLexeme();
         }
