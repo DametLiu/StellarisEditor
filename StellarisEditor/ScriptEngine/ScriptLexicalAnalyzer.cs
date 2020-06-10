@@ -12,6 +12,11 @@ namespace StellarisEditor.ScriptEngine
     /// </summary>
     public class ScriptLexicalAnalyzer
     {
+        private readonly CharStream stream;
 
+        public ScriptLexicalAnalyzer(string scriptText)
+        {
+            stream = new CharStream(scriptText);
+        }
     }
 }
