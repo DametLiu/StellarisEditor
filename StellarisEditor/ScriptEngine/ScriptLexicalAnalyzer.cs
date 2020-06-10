@@ -39,7 +39,7 @@ namespace StellarisEditor.ScriptEngine
         {
             char c = stream.Read();
 
-            #region 无用字符
+            #region 跳过空白字符和注释
             while (true)
             {
                 // 如果是空白字符则跳过字符
@@ -54,13 +54,30 @@ namespace StellarisEditor.ScriptEngine
                 }
                 // 如果读到文件末尾则直接返回结束词汇
                 else if (c == '\0')
-                    return new ScriptLexeme() { Tag = Tag.None, Lexeme = ScriptLexeme.END };
+                    return ScriptLexeme.END;
                 else
                     break;
-
             }
-
             #endregion
+
+            #region 运算符
+            switch (c)
+            {
+                case '<':
+                    if (stream.NextIs('='))
+                        return new ScriptLexeme() { Tag = Tag.Operator, Lexeme = "<=" };
+                    return new ScriptLexeme() { Tag = Tag.Operator, Lexeme = "<" };
+                case '>':
+                    if (stream.NextIs('='))
+                        return new ScriptLexeme() { Tag = Tag.Operator, Lexeme = ">=" };
+                    return new ScriptLexeme() { Tag = Tag.Operator, Lexeme = ">" };
+                case '=':
+                    return new ScriptLexeme() { Tag = Tag.Operator, Lexeme = "=" };
+            }
+            #endregion
+
+
+
 
             return null;
         }
