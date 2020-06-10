@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StellarisEditor.editors.techEditor"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="科技类别编辑器" Height="450" Width="800">
     <Grid>
         
