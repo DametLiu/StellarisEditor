@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StellarisEditor.CodeEngine
+namespace StellarisEditor.ScriptEngine
 {
     /// <summary>
     /// 字符流
