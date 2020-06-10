@@ -15,6 +15,15 @@ namespace StellarisEditor.ScriptEngine
         private readonly CharStream stream;
 
         /// <summary>
+        /// 预览词汇
+        /// </summary>
+        public ScriptLexeme Peek { get; private set; }
+        /// <summary>
+        /// 当前词汇
+        /// </summary>
+        public ScriptLexeme Curr { get; private set; }
+
+        /// <summary>
         /// 当前行数
         /// </summary>
         public int Row { get { return stream.Row; } }
@@ -30,6 +39,7 @@ namespace StellarisEditor.ScriptEngine
         public ScriptLexicalAnalyzer(string scriptText)
         {
             stream = new CharStream(scriptText);
+            Peek = Scan();
         }
 
         /// <summary>

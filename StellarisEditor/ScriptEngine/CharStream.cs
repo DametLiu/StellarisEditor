@@ -47,7 +47,7 @@ namespace StellarisEditor.ScriptEngine
         public char Peek()
         {
             int i = SourceString.Peek();
-            return i > -1 ? (char)i : '\0';
+            return i > -1 ? (char)i : end;
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace StellarisEditor.ScriptEngine
         public char Read()
         {
             int i = SourceString.Read();
-            char c = i > -1 ? (char)i : '\0';
+            char c = i > -1 ? (char)i : end;
             Col++;
             if (c == '\n')
             {
