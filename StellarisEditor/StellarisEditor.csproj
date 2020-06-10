@@ -193,6 +193,8 @@
     <Compile Include="pdx\scriptobject\PdxVariable.cs" />
     <Compile Include="pdx\scriptobject\PdxWeight.cs" />
     <Compile Include="pdx\scriptobject\PdxWeightModifier.cs" />
+    <Compile Include="ScriptEngine\ScriptExpression.cs" />
+    <Compile Include="ScriptEngine\ScriptObject.cs" />
     <Compile Include="ScriptEngine\ScriptBlock.cs" />
     <Compile Include="ScriptEngine\ScriptBlockInfo.cs" />
     <Compile Include="ScriptEngine\ScriptLexeme.cs" />
@@ -200,7 +202,9 @@
     <Compile Include="ScriptEngine\ScriptLinePragma.cs" />
     <Compile Include="ScriptEngine\ScriptParser.cs" />
     <Compile Include="ScriptEngine\ScriptParserContext.cs" />
+    <Compile Include="ScriptEngine\ScriptStatement.cs" />
     <Compile Include="ScriptEngine\ScriptStatementCollection.cs" />
+    <Compile Include="ScriptEngine\ScriptVariableReferenceExpression.cs" />
     <Compile Include="utils\BitmapUtil.cs" />
     <Compile Include="utils\FileUtil.cs" />
     <Compile Include="utils\RegexUtil.cs" />
