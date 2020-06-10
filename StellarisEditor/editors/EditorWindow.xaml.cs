@@ -30,7 +30,7 @@ namespace StellarisEditor.editors
 
         private void OpenLocalizationEditor(object sender, RoutedEventArgs e)
         {
-            LocalizationEditorWindow window = new LocalizationEditorWindow();
+            var window = new LocalizationEditorWindow();
             window.ShowDialog();
         }
 
@@ -48,7 +48,19 @@ namespace StellarisEditor.editors
 
         private void OpenVariableEditor(object sender, RoutedEventArgs e)
         {
-            ScriptedVariableEditorWindow window = new ScriptedVariableEditorWindow();
+            var window = new ScriptedVariableEditorWindow();
+            window.ShowDialog();
+        }
+
+        private void OpenTechTierEditor(object sender, RoutedEventArgs e)
+        {
+            var window = new techEditor.TechTierWindow();
+            window.ShowDialog();
+        }
+
+        private void OpenTechCategoryEditor(object sender, RoutedEventArgs e)
+        {
+            var window = new techEditor.TechCategoryEditorWindow();
             window.ShowDialog();
         }
     }
