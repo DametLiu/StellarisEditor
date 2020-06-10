@@ -54,6 +54,37 @@ namespace StellarisEditor.ScriptEngine
         }
 
         /// <summary>
+        /// 返回是否能读取指定词汇，如果可以则读取词汇并返回true，否则不读取返回false
+        /// </summary>
+        /// <param name="lexem"></param>
+        /// <returns></returns>
+        public bool Read(string lexem)
+        {
+            if (Peek.Lexeme == lexem)
+            {
+                Read();
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 返回是否能读取指定标签的词汇，如果可以则读取词汇并返回true，否则不读取返回false
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
+        public bool Read(Tag tag)
+        {
+            if (Peek.Tag == tag)
+            {
+                Read();
+                return true;
+            }
+            return false;
+
+        }
+
+        /// <summary>
         /// 读取一个指定类型的词汇
         /// </summary>
         /// <param name="tag"></param>
