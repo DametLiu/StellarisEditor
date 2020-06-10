@@ -31,6 +31,14 @@ namespace StellarisEditor.ScriptEngine
         /// 已结束
         /// </summary>
         None,
+        /// <summary>
+        /// 未知的
+        /// </summary>
+        Unknow,
+        /// <summary>
+        /// 注释
+        /// </summary>
+        Comment,
     }
 
     /// <summary>
