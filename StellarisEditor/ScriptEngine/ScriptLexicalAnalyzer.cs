@@ -85,6 +85,18 @@ namespace StellarisEditor.ScriptEngine
         }
 
         /// <summary>
+        /// 判断下一个词汇是否是指定的词汇
+        /// </summary>
+        /// <param name="lexem"></param>
+        /// <returns></returns>
+        public bool NextIs(string lexem)
+        {
+            if (Peek.Lexeme == lexem)
+                return true;
+            return false;
+        }
+
+        /// <summary>
         /// 读取一个指定类型的词汇
         /// </summary>
         /// <param name="tag"></param>
