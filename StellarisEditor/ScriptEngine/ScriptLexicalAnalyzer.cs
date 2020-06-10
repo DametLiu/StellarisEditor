@@ -39,7 +39,7 @@ namespace StellarisEditor.ScriptEngine
         {
             char c = stream.Read();
 
-            #region 跳过空白字符和注释
+            #region 空白字符和注释
             while (true)
             {
                 // 如果是空白字符则跳过字符
@@ -76,7 +76,17 @@ namespace StellarisEditor.ScriptEngine
             }
             #endregion
 
+            #region 字符串
+            if (c == '\"')
+            {
+                StringBuilder sb = new StringBuilder();
 
+                c = stream.Read();
+                while (c != '\"' && c != '\0')
+                    sb.Append(c);
+                return new ScriptLexeme() { Tag = Tag.String, Lexeme = sb.ToString() };
+            }
+            #endregion
 
 
             return null;
