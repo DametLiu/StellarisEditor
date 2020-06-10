@@ -12,24 +12,24 @@
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="文件" FontSize="12">
                     <!--菜单项为MenuItem，文字使用属性 Header-->
-                    <MenuItem Header="保存"></MenuItem>
-                    <MenuItem Header="退出"></MenuItem>
+                    <MenuItem x:Name="save" Header="保存" Click="ClickSave"></MenuItem>
+                    <MenuItem x:Name="quit" Header="退出" Click="ClickQuit"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="编辑" FontSize="12">
-                    <MenuItem Header="添加"></MenuItem>
-                    <MenuItem Header="删除"></MenuItem>
-                    <MenuItem Header="修改"></MenuItem>
-                    <MenuItem Header="复制"></MenuItem>
+                    <MenuItem x:Name="add" Header="添加" Click="ClickAdd"></MenuItem>
+                    <MenuItem x:Name="delete" Header="删除" Click="ClickDelete"></MenuItem>
+                    <MenuItem x:Name="edit" Header="修改" Click="ClickEdit"></MenuItem>
+                    <MenuItem x:Name="copy" Header="复制" Click="ClickCopy"></MenuItem>
                 </MenuItem>
             </Menu>
             <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" SelectionUnit="FullRow" SelectionMode="Single" RowHeaderWidth="0" CanUserAddRows="False">
                 <DataGrid.ContextMenu>
                     <ContextMenu  StaysOpen="true">
-                        <MenuItem Header="添加(_N)" InputGestureText="Ctrl+N"/>
-                        <MenuItem Header="删除(_X)" InputGestureText="Delete" />
+                        <MenuItem Header="添加(_N)" Click="ClickAdd" InputGestureText="Ctrl+N"/>
+                        <MenuItem Header="删除(_X)" Click="ClickDelete" InputGestureText="Delete" />
                         <Separator />
-                        <MenuItem Header="复制(_C)" InputGestureText="Ctrl+C"  />
-                        <MenuItem Header="粘贴(_P)" InputGestureText="Ctrl+V" />
+                        <MenuItem Header="复制(_C)" Click="ClickCopy" InputGestureText="Ctrl+C"  />
+                        <MenuItem Header="粘贴(_P)" Click="ClickPaste" InputGestureText="Ctrl+V" />
                     </ContextMenu>
                 </DataGrid.ContextMenu>
                 <DataGrid.Columns>

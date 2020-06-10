@@ -23,5 +23,42 @@ namespace StellarisEditor.editors.techEditor
         {
             InitializeComponent();
         }
+
+        private void ClickQuit(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void ClickSave(object sender, RoutedEventArgs e)
+        {
+            //todo
+        }
+
+        private void ClickAdd(object sender, RoutedEventArgs e)
+        {
+            //todo
+        }
+
+        private void ClickDelete(object sender, RoutedEventArgs e)
+        {
+            //todo
+
+        }
+        private void ClickEdit(object sender, RoutedEventArgs e)
+        {
+            //todo
+        }
+
+        private void ClickCopy(object sender, RoutedEventArgs e)
+        {
+            //todo
+
+        }
+
+        private void ClickPaste(object sender, RoutedEventArgs e)
+        {
+            //todo
+
+        }
     }
 }
