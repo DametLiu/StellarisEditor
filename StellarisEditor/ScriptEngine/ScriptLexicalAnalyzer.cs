@@ -88,7 +88,36 @@ namespace StellarisEditor.ScriptEngine
             }
             #endregion
 
+            #region 数字
+            if (char.IsDigit(c))
+            {
+                bool hasDot = false;
+                StringBuilder nb = new StringBuilder();
+                nb.Append(c);
 
+                while (true)
+                {
+                    c = stream.Peek();
+                    if (char.IsDigit(c))
+                    {
+                        nb.Append(c);
+                        stream.Read();
+                    }
+                    else if (c == '.' && !hasDot)
+                    {
+                        hasDot = true;
+                        nb.Append(c);
+                        stream.Read();
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                }
+                return new ScriptLexeme() { Tag = Tag.Number, Lexeme = nb.ToString() };
+            }
+            #endregion
             return null;
         }
     }
