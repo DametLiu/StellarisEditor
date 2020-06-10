@@ -109,16 +109,27 @@ namespace StellarisEditor.ScriptEngine
         }
 
         /// <summary>
-        /// 读取一个指定类型的词汇
+        /// 读取并返回指定的词汇，否则返回null
+        /// </summary>
+        /// <param name="lexem"></param>
+        /// <returns></returns>
+        public ScriptLexeme ReadIs(string lexem)
+        {
+            if (Peek.Lexeme == lexem)
+                return Read();
+            return null;
+        }
+
+        /// <summary>
+        /// 读取并返回指定标签的词汇，否则返回null
         /// </summary>
         /// <param name="tag"></param>
         /// <returns></returns>
         public ScriptLexeme ReadIs(Tag tag)
         {
-
-            
-            
-            return new ScriptLexeme();
+            if (Peek.Tag == tag)
+                return Read();
+            return null;
         }
 
         /// <summary>
