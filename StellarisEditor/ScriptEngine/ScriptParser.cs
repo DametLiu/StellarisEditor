@@ -24,5 +24,15 @@ namespace StellarisEditor.ScriptEngine
         {
             Lexical = lex;
         }
+
+        /// <summary>
+        /// 解析并返回定义集合
+        /// </summary>
+        /// <returns></returns>
+        public ScriptStatementCollection Parse()
+        {
+            ScriptStatementCollection stems = new ScriptStatementCollection();
+            return stems;
+        }
     }
 }

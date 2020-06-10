@@ -112,6 +112,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="editors\technology\category\TechnologyCategoryEditorWindow.xaml.cs">
+      <DependentUpon>TechnologyCategoryEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editors\technology\tier\TechnologyTierEditorWindow.xaml.cs">
+      <DependentUpon>TechnologyTierEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptEngine\CharStream.cs" />
     <Compile Include="component\WaitingProgressBar.xaml.cs">
       <DependentUpon>WaitingProgressBar.xaml</DependentUpon>
     </Compile>
@@ -185,6 +192,8 @@
     <Compile Include="pdx\scriptobject\PdxVariable.cs" />
     <Compile Include="pdx\scriptobject\PdxWeight.cs" />
     <Compile Include="pdx\scriptobject\PdxWeightModifier.cs" />
+    <Compile Include="ScriptEngine\ScriptLexeme.cs" />
+    <Compile Include="ScriptEngine\ScriptLexicalAnalyzer.cs" />
     <Compile Include="utils\BitmapUtil.cs" />
     <Compile Include="utils\FileUtil.cs" />
     <Compile Include="utils\RegexUtil.cs" />
@@ -213,6 +222,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\scriptedvariables\ScriptedVariableEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\technology\category\TechnologyCategoryEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\technology\tier\TechnologyTierEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
