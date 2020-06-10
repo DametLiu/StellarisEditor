@@ -131,7 +131,6 @@ namespace StellarisEditor.editors.scriptedvariables
             var gs = Variables.GroupBy(l => l.FileName);
             foreach (var g in gs)
             {
-                MessageBox.Show($"{g.Key}");
                 String[] lines = new string[g.Count()];
                 int i = 0;
                 foreach (var l in g)
