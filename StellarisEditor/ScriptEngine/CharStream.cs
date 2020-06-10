@@ -41,7 +41,7 @@ namespace StellarisEditor.ScriptEngine
         }
 
         /// <summary>
-        /// 预览下一个字符，但并不读取. 如果读到流的末尾则返回-1
+        /// 预览下一个字符，但并不读取. 如果读到流的末尾则返回'\0'
         /// </summary>
         /// <returns></returns>
         public char Peek()
@@ -51,7 +51,7 @@ namespace StellarisEditor.ScriptEngine
         }
 
         /// <summary>
-        /// 读取一个字符，如果读到流的末尾则返回-1
+        /// 读取一个字符，如果读到流的末尾则返回'\0'
         /// </summary>
         /// <returns></returns>
         public char Read()
