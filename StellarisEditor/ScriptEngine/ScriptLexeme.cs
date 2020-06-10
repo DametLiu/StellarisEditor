@@ -20,6 +20,10 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         String,
         /// <summary>
+        /// 运算符
+        /// </summary>
+        Operator,
+        /// <summary>
         /// 已结束
         /// </summary>
         None,
@@ -36,7 +40,13 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         public static readonly ScriptLexeme END = new ScriptLexeme() { Tag = Tag.None, Lexeme = "end" };
 
+        /// <summary>
+        /// 词汇标签，用来区分词汇的类型
+        /// </summary>
         public Tag Tag { get; set; }
+        /// <summary>
+        /// 词汇文本
+        /// </summary>
         public string Lexeme { get; set; }
     }
 }
