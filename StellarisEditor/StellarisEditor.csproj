@@ -112,6 +112,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="extension\FileInfoExtension.cs" />
     <Compile Include="ScriptEngine\CharStream.cs" />
     <Compile Include="component\WaitingProgressBar.xaml.cs">
       <DependentUpon>WaitingProgressBar.xaml</DependentUpon>
@@ -230,7 +231,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\technology\tier\TechTierWindow.xaml">
-      <SubType>Designer</SubType> 
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
