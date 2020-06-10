@@ -140,6 +140,12 @@
     <Compile Include="editors\scriptedvariables\ScriptedVariableEditorWindow.xaml.cs">
       <DependentUpon>ScriptedVariableEditorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="editors\techEditor\TechCategoryEditorWindow.xaml.cs">
+      <DependentUpon>TechCategoryEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editors\techEditor\TechTierWindow.xaml.cs">
+      <DependentUpon>TechTierWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="extension\LinkedListExtension.cs" />
     <Compile Include="extension\ObservableCollectionExtension.cs" />
     <Compile Include="extension\WindowCollectionExtension.cs" />
@@ -230,6 +236,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\technology\tier\TechnologyTierEditorWindow.xaml">
+    <Page Include="editors\techEditor\TechCategoryEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\techEditor\TechTierWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -113,6 +113,8 @@
                     <Button Content="战略资源" Visibility="Collapsed"/>
                     <Button Content="附庸" Visibility="Collapsed"/>
                     <Button Content="星系类型" Visibility="Collapsed"/>
+                    <Button Content="科技层级" Visibility="Visible" Click="OpenTechTierEditor"/>
+                    <Button Content="科技类别" Visibility="Visible" Click="OpenTechCategoryEditor"/>
                     <Button Content="科技" Visibility="Collapsed"/>
                     <Button Content="星球改造" Visibility="Collapsed"/>
                     <Button Content="贸易转换" Visibility="Collapsed"/>
