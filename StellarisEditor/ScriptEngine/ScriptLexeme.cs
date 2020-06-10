@@ -12,6 +12,10 @@ namespace StellarisEditor.ScriptEngine
     public enum Tag
     {
         /// <summary>
+        /// 标识符
+        /// </summary>
+        Id,
+        /// <summary>
         /// 数值
         /// </summary>
         Number,

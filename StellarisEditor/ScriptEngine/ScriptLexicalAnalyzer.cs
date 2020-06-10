@@ -118,6 +118,30 @@ namespace StellarisEditor.ScriptEngine
                 return new ScriptLexeme() { Tag = Tag.Number, Lexeme = nb.ToString() };
             }
             #endregion
+
+            #region 标识符 由字母和下划线组成
+            if (char.IsLetter(c) || c == '_')
+            {
+                StringBuilder idB = new StringBuilder();
+                idB.Append(c);
+                c = stream.Peek();
+                while (true)
+                {
+                    if (char.IsLetterOrDigit(c) || c == '_')
+                    {
+                        idB.Append(c);
+                        c = stream.Read();
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    c = stream.Peek();
+                }
+                return new ScriptLexeme { Lexeme = idB.ToString(), Tag = Tag.Id };
+            }
+            #endregion
+
             return null;
         }
     }
