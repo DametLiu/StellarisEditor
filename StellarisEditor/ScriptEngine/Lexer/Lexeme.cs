@@ -43,26 +43,31 @@ namespace StellarisEditor.ScriptEngine
         /// 注释
         /// </summary>
         Comment,
+        /// <summary>
+        /// 块结构
+        /// </summary>
+        Block,
     }
 
     /// <summary>
     /// <para>词汇</para>
     /// <para>词汇实体包括词汇的标签和词汇字符串</para>
     /// </summary>
-    public class ScriptLexeme
+    public class Lexeme : Node
     {
         /// <summary>
         /// 表示文本结束
         /// </summary>
-        public static readonly ScriptLexeme END = new ScriptLexeme() { Tag = Tag.None, Lexeme = "end" };
+        public static readonly Lexeme END = new Lexeme() { Tag = Tag.None, Content = "end" };
 
         /// <summary>
         /// 词汇标签，用来区分词汇的类型
         /// </summary>
         public Tag Tag { get; set; }
-        /// <summary>
-        /// 词汇文本
-        /// </summary>
-        public string Lexeme { get; set; }
+
+        public override string ToString()
+        {
+            return $"{{Row={Pragma.Row}, Col={Pragma.Col}, Tag={Tag.ToString()}, Content={Content}}}";
+        }
     }
 }

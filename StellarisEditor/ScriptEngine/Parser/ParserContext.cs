@@ -9,17 +9,17 @@ namespace StellarisEditor.ScriptEngine
     /// <summary>
     /// 解析器上下文
     /// </summary>
-    public class ScriptParserContext
+    public class ParserContext
     {
         /// <summary>
         /// 内置堆栈
         /// </summary>
-        private readonly Stack<ScriptBlockInfo> ContextStack = new Stack<ScriptBlockInfo>();
+        private readonly Stack<BlockInfo> ContextStack = new Stack<BlockInfo>();
 
         /// <summary>
         /// 返回当前栈顶的块
         /// </summary>
-        public ScriptBlockInfo CurrentBlock
+        public BlockInfo CurrentBlock
         {
             get
             {
@@ -32,7 +32,7 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         /// <param name="block"></param>
         /// <returns></returns>
-        public ScriptBlockInfo this[ScriptBlock block]
+        public BlockInfo this[Block block]
         {
             get
             {
@@ -45,7 +45,7 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         /// <param name="area"></param>
         /// <returns></returns>
-        private ScriptBlockInfo GetBlockInfoBy(ScriptBlock area)
+        private BlockInfo GetBlockInfoBy(Block area)
         {
             foreach (var a in ContextStack.ToArray())
                 if (a.Block == area)
@@ -58,7 +58,7 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         /// <param name="area"></param>
         /// <returns></returns>
-        public bool BlockIs(ScriptBlock area)
+        public bool BlockIs(Block area)
         {
             return GetBlockInfoBy(area) != null;
         }
@@ -67,16 +67,16 @@ namespace StellarisEditor.ScriptEngine
         /// 开始解析指定的块
         /// </summary>
         /// <param name="block"></param>
-        public void BeginBlock(ScriptBlock block)
+        public void BeginBlock(Block block)
         {
-            ContextStack.Push(new ScriptBlockInfo() { Block = block });
+            ContextStack.Push(new BlockInfo() { Block = block });
         }
 
         /// <summary>
         /// 开始解析指定的块
         /// </summary>
         /// <param name="info"></param>
-        public void BeginBlock(ScriptBlockInfo info)
+        public void BeginBlock(BlockInfo info)
         {
             ContextStack.Push(info);
         }

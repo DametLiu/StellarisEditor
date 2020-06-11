@@ -84,6 +84,7 @@ namespace StellarisEditor.editors.techEditor
                         return;
 
                     method?.Invoke();
+                    method = null;
                     if (value < 99)
                     {
                         Thread.Sleep(10);

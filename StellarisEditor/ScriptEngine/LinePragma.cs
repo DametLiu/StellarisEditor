@@ -7,25 +7,17 @@ using System.Threading.Tasks;
 namespace StellarisEditor.ScriptEngine
 {
     /// <summary>
-    /// 块类型
+    /// 脚本标识，用来标注行列
     /// </summary>
-    public enum ScriptBlock
+    public class LinePragma
     {
         /// <summary>
-        /// 上下文
+        /// 当前行数
         /// </summary>
-        Context,
+        public int Row { get; set; }
         /// <summary>
-        /// 循环
+        /// 当前列数
         /// </summary>
-        While,
-        /// <summary>
-        /// 条件语句
-        /// </summary>
-        Condition,
-        /// <summary>
-        /// 分支语句
-        /// </summary>
-        Switch,
+        public int Col { get; set; }
     }
 }

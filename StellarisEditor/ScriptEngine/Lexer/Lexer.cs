@@ -10,18 +10,18 @@ namespace StellarisEditor.ScriptEngine
     /// <para>脚本词法分析器</para>
     /// <para>本类用来扫描脚本代码，生成代码单元</para>
     /// </summary>
-    public class ScriptLexicalAnalyzer
+    public class Lexical
     {
         private readonly CharStream stream;
 
         /// <summary>
         /// 预览词汇
         /// </summary>
-        public ScriptLexeme Peek { get; private set; }
+        public Lexeme Peek { get; private set; }
         /// <summary>
         /// 当前词汇
         /// </summary>
-        public ScriptLexeme Curr { get; private set; }
+        public Lexeme Curr { get; private set; }
 
         /// <summary>
         /// 当前行数
@@ -36,7 +36,7 @@ namespace StellarisEditor.ScriptEngine
         /// 根据指定的脚本文本构造一个词法分析器
         /// </summary>
         /// <param name="scriptText"></param>
-        public ScriptLexicalAnalyzer(string scriptText)
+        public Lexical(string scriptText)
         {
             stream = new CharStream(scriptText);
             Peek = Scan();
@@ -46,7 +46,7 @@ namespace StellarisEditor.ScriptEngine
         /// 读取一个词汇，并更新预览词汇
         /// </summary>
         /// <returns></returns>
-        public ScriptLexeme Read()
+        public Lexeme Read()
         {
             Curr = Peek;
             Peek = Scan();
@@ -60,7 +60,7 @@ namespace StellarisEditor.ScriptEngine
         /// <returns></returns>
         public bool Read(string lexem)
         {
-            if (Peek.Lexeme == lexem)
+            if (Peek.Content == lexem)
             {
                 Read();
                 return true;
@@ -91,7 +91,7 @@ namespace StellarisEditor.ScriptEngine
         /// <returns></returns>
         public bool NextIs(string lexem)
         {
-            if (Peek.Lexeme == lexem)
+            if (Peek.Content == lexem)
                 return true;
             return false;
         }
@@ -113,9 +113,9 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         /// <param name="lexem"></param>
         /// <returns></returns>
-        public ScriptLexeme ReadIs(string lexem)
+        public Lexeme ReadIs(string lexem)
         {
-            if (Peek.Lexeme == lexem)
+            if (Peek.Content == lexem)
                 return Read();
             return null;
         }
@@ -125,7 +125,7 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         /// <param name="tag"></param>
         /// <returns></returns>
-        public ScriptLexeme ReadIs(Tag tag)
+        public Lexeme ReadIs(Tag tag)
         {
             if (Peek.Tag == tag)
                 return Read();
@@ -135,7 +135,7 @@ namespace StellarisEditor.ScriptEngine
         /// <summary>
         /// 对代码进行扫描，并返回一个有效的词汇
         /// </summary>
-        public ScriptLexeme Scan()
+        public Lexeme Scan()
         {
             char c = stream.Read();
 
@@ -147,23 +147,30 @@ namespace StellarisEditor.ScriptEngine
                     c = stream.Read();
                 // 如果读到文件末尾则直接返回结束词汇
                 else if (c == '\0')
-                    return ScriptLexeme.END;
+                    return new Lexeme() { Tag = Tag.None, Content = "end", Pragma = new LinePragma() { Row = Row, Col = Col } };
                 else
                     break;
+            }
+            #endregion
+
+            #region 块
+            if (c == '{' || c == '}')
+            {
+                return new Lexeme() { Tag = Tag.Block, Content = c.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion
 
             #region 注释
             if (c == '#')
             {
-                c = stream.Read();
                 StringBuilder sc = new StringBuilder();
-                while (c != '\n' && c != '\0')
+                sc.Append(c);
+                while (c != '\n' && c != '\r' && c != '\0')
                 {
-                    sc.Append(sc);
+                    sc.Append(c);
                     c = stream.Read();
                 }
-                return new ScriptLexeme() { Tag = Tag.Comment, Lexeme = sc.ToString() };
+                return new Lexeme() { Tag = Tag.Comment, Content = sc.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion
 
@@ -174,10 +181,10 @@ namespace StellarisEditor.ScriptEngine
                 StringBuilder sv = new StringBuilder();
                 while (c != ' ' && c != '\n' && c != '\r' && c != '\t' && c != '=' && c != '\0')
                 {
-                    sv.Append(sv);
+                    sv.Append(c);
                     c = stream.Read();
                 }
-                return new ScriptLexeme() { Tag = Tag.Variable, Lexeme = sv.ToString() };
+                return new Lexeme() { Tag = Tag.Variable, Content = sv.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion
 
@@ -186,14 +193,14 @@ namespace StellarisEditor.ScriptEngine
             {
                 case '<':
                     if (stream.NextIs('='))
-                        return new ScriptLexeme() { Tag = Tag.Operator, Lexeme = "<=" };
-                    return new ScriptLexeme() { Tag = Tag.Operator, Lexeme = "<" };
+                        return new Lexeme() { Tag = Tag.Operator, Content = "<=" };
+                    return new Lexeme() { Tag = Tag.Operator, Content = "<", Pragma = new LinePragma() { Row = Row, Col = Col } };
                 case '>':
                     if (stream.NextIs('='))
-                        return new ScriptLexeme() { Tag = Tag.Operator, Lexeme = ">=" };
-                    return new ScriptLexeme() { Tag = Tag.Operator, Lexeme = ">" };
+                        return new Lexeme() { Tag = Tag.Operator, Content = ">=" };
+                    return new Lexeme() { Tag = Tag.Operator, Content = ">", Pragma = new LinePragma() { Row = Row, Col = Col } };
                 case '=':
-                    return new ScriptLexeme() { Tag = Tag.Operator, Lexeme = "=" };
+                    return new Lexeme() { Tag = Tag.Operator, Content = "=", Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion
 
@@ -208,12 +215,12 @@ namespace StellarisEditor.ScriptEngine
                     sb.Append(c);
                     c = stream.Read();
                 }
-                return new ScriptLexeme() { Tag = Tag.String, Lexeme = sb.ToString() };
+                return new Lexeme() { Tag = Tag.String, Content = sb.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion
 
             #region 数字
-            if (char.IsDigit(c))
+            if (((c == '-' || c == '+') && char.IsDigit(stream.Peek())) || char.IsDigit(c))
             {
                 bool hasDot = false;
                 StringBuilder nb = new StringBuilder();
@@ -239,7 +246,7 @@ namespace StellarisEditor.ScriptEngine
                     }
 
                 }
-                return new ScriptLexeme() { Tag = Tag.Number, Lexeme = nb.ToString() };
+                return new Lexeme() { Tag = Tag.Number, Content = nb.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion
 
@@ -262,11 +269,11 @@ namespace StellarisEditor.ScriptEngine
                     }
                     c = stream.Peek();
                 }
-                return new ScriptLexeme { Lexeme = si.ToString(), Tag = Tag.Id };
+                return new Lexeme { Content = si.ToString(), Tag = Tag.Id, Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion
 
-            return new ScriptLexeme() { Tag = Tag.Unknow, Lexeme = "" + c };
+            return new Lexeme() { Tag = Tag.Unknow, Content = c.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
         }
     }
 }

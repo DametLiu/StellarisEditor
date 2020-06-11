@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StellarisEditor.ScriptEngine
+namespace StellarisEditor.ScriptEngine.Statment
 {
     /// <summary>
-    /// 脚本变量定义
+    /// 变量定义
     /// </summary>
-    public class ScriptVariableReferenceExpression : ScriptExpression
+    public class VariableStatement
     {
         /// <summary>
-        /// 变量名称
+        /// 变量表达式
         /// </summary>
-        public string Name { get; set; }
+        public ScriptVariableExpression Expression { get; set; }
     }
 }
