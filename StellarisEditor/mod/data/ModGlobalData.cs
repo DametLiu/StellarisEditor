@@ -27,22 +27,31 @@ namespace StellarisEditor.mod.data
         public static void LoadTechnologyCategories(TaskCancel cancel)
         {
             TechnologyCategories.Clear();
-            LoadTechnologyCategory(Properties.Settings.Default.ModPath + STELLARIS_PATH_TECHNOLOGY_CATEGORY, TechnologyCategories, cancel);
+            string dir_path = Properties.Settings.Default.ModPath + STELLARIS_PATH_TECHNOLOGY_CATEGORY;
+            if (Directory.Exists(dir_path)) {
+                LoadTechnologyCategory(dir_path, TechnologyCategories, cancel);
+            }
         }
 
         public static void LoadScriptedVariables(TaskCancel cancel)
         {
             Variables.Clear();
             LinkedList<VariableState> lines = new LinkedList<VariableState>();
-            LoadScriptedVariable(lines, Properties.Settings.Default.ModPath + STELLARIS_PATH_SCRIPTED_VARIABLES, Variables, cancel);
 
-            ExcuteVariableTask(lines);
+            string dir_path = Properties.Settings.Default.ModPath + STELLARIS_PATH_SCRIPTED_VARIABLES;
+            if (Directory.Exists(dir_path)) {
+                LoadScriptedVariable(lines, dir_path, Variables, cancel);
+                ExcuteVariableTask(lines);
+            }
         }
 
         public static void LoadTechnologyTiers(TaskCancel cancel)
         {
             TechnologyTiers.Clear();
-            LoadTechnologyTier(Properties.Settings.Default.ModPath + STELLARIS_PATH_TECHNOLOGY_TIER, TechnologyTiers, cancel);
+            string dir_path = Properties.Settings.Default.ModPath + STELLARIS_PATH_TECHNOLOGY_TIER;
+            if (Directory.Exists(dir_path)) {
+                LoadTechnologyTier(dir_path, TechnologyTiers, cancel);
+            }
         }
 
         public static void LoadModProjects()
@@ -51,17 +60,15 @@ namespace StellarisEditor.mod.data
 
             // 获取所有得 mod 项目文件夹
             DirectoryInfo[] directoryInfos = new DirectoryInfo(ModGlobalData.MOD_PATH_ROOT).GetDirectories();
-            foreach (DirectoryInfo directoryInfo in directoryInfos)
-            {
-                if (File.Exists(directoryInfo.Parent.FullName + @"\" + directoryInfo.Name + ".mod"))
-                {
+            foreach (DirectoryInfo directoryInfo in directoryInfos) {
+                if (File.Exists(directoryInfo.Parent.FullName + @"\" + directoryInfo.Name + ".mod")) {
                     // 获取mod配置文件
                     FileInfo fileInfo = new FileInfo(directoryInfo.Parent.FullName + @"\" + directoryInfo.Name + ".mod");
                     ModFileParser modFileParser = new ModFileParser();
                     PdxMod pdxMod = modFileParser.ParseModFile(fileInfo.FullName);
                     ModProjects.Add(pdxMod);
                 }
-               
+
             }
         }
 
@@ -71,14 +78,12 @@ namespace StellarisEditor.mod.data
             LinkedList<LocalizationState> lines = new LinkedList<LocalizationState>();
             LoadLocalization(lines, Properties.Settings.Default.ModPath, STELLARIS_PATH_LOCALIZATION_ENGLISH, Localizations, cancel);
             LoadLocalization(lines, Properties.Settings.Default.ModPath, STELLARIS_PATH_LOCALIZATION_SIMPLE_CHINESE, Localizations, cancel);
-
             ExcuteLocalizationTask(lines);
         }
 
         public static void CreateExampleModProject()
         {
-            ModProjects.Insert(0, new PdxMod()
-            {
+            ModProjects.Insert(0, new PdxMod() {
                 Name = "新建Mod",
                 Version = "1.0.0",
                 SupportedVersion = "2.6.*",

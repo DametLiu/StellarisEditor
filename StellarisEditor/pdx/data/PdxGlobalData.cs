@@ -47,11 +47,9 @@ namespace StellarisEditor.data
 
             LinkedList<PdxTechnologyCategory> categories = TechnologyCategoryParser.Parse(technologyCategoryState.file);
 
-            lock (technologyCategoryState.technologyCategories)
-            {
+            lock (technologyCategoryState.technologyCategories) {
                 foreach (var category in categories)
-                    if (!technologyCategoryState.technologyCategories.Contains(category))
-                    {
+                    if (!technologyCategoryState.technologyCategories.Contains(category)) {
                         category.FileName = technologyCategoryState.file.SimpleName();
                         technologyCategoryState.technologyCategories.Add(category);
                     }
@@ -85,11 +83,9 @@ namespace StellarisEditor.data
 
             LinkedList<PdxTechnologyTier> tiers = TechnologyTierParser.Parse(technologyTierState.file);
 
-            lock (technologyTierState.technologyTiers)
-            {
+            lock (technologyTierState.technologyTiers) {
                 foreach (var tier in tiers)
-                    if (!technologyTierState.technologyTiers.Contains(tier))
-                    {
+                    if (!technologyTierState.technologyTiers.Contains(tier)) {
                         tier.FileName = technologyTierState.file.SimpleName();
                         technologyTierState.technologyTiers.Add(tier);
                     }
@@ -101,7 +97,7 @@ namespace StellarisEditor.data
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
             FileInfo[] fileInfos = directoryInfo.GetFiles();
             foreach (FileInfo file in fileInfos)
-                ThreadPool.UnsafeQueueUserWorkItem(new WaitCallback(ExcuteTechnologyTierTask), new TechnologyTierState() {  file = file, technologyTiers = technologyTiers, cancel = cancel });
+                ThreadPool.UnsafeQueueUserWorkItem(new WaitCallback(ExcuteTechnologyTierTask), new TechnologyTierState() { file = file, technologyTiers = technologyTiers, cancel = cancel });
         }
 
         public class TechnologyTierState : TaskState
@@ -112,7 +108,7 @@ namespace StellarisEditor.data
 
         public static void LoadScriptedVariables(TaskCancel cancel)
         {
-            LinkedList<VariableState> lines = new LinkedList<VariableState>();            
+            LinkedList<VariableState> lines = new LinkedList<VariableState>();
             LoadScriptedVariable(lines, Properties.Settings.Default.StellarisPath + STELLARIS_PATH_SCRIPTED_VARIABLES, Variables, cancel);
 
             ExcuteVariableTask(lines);
@@ -137,14 +133,12 @@ namespace StellarisEditor.data
             VariableState variableFileState = state as VariableState;
             if (IsTaskCanceled(variableFileState))
                 return;
-            
+
             PdxVariable variable = ScriptedVariablesParser.parseVariable(variableFileState.line);
-            
-            if (variable != null)
-            {
+
+            if (variable != null) {
                 variable.FileName = variableFileState.file.Name.Substring(0, variableFileState.file.Name.LastIndexOf("."));
-                lock (variableFileState.variables)
-                {
+                lock (variableFileState.variables) {
                     if (!variableFileState.variables.Contains(variable))
                         variableFileState.variables.Add(variable);
                 }
@@ -160,7 +154,7 @@ namespace StellarisEditor.data
         {
             public FileInfo file;
             public String line;
-            
+
             public LinkedList<PdxVariable> variables;
         }
 
@@ -180,8 +174,7 @@ namespace StellarisEditor.data
 
         public static void ExcuteLocalizationTask(LinkedList<LocalizationState> lines)
         {
-            foreach (var line in lines)
-            {
+            foreach (var line in lines) {
                 if (line.line.StartsWith("l_english") || line.line.StartsWith("l_simp_chinese"))
                     continue;
 
@@ -192,11 +185,11 @@ namespace StellarisEditor.data
         public static void LoadLocalization(LinkedList<LocalizationState> lines, string p, string s, LinkedList<PdxLocalization> Localizations, TaskCancel cancel)
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(p + s);
-            if (directoryInfo.Exists)
+            if (directoryInfo.Exists) {
                 foreach (FileInfo file in directoryInfo.GetFiles())
                     Array.ForEach(File.ReadAllLines(file.FullName, new UTF8Encoding(true)), (l) => { lines.AddLast(new LocalizationState() { file = file, path = p, sub = s, line = l, localizations = Localizations, cancel = cancel }); });
+            }
         }
-
 
         public class LocalizationState : TaskState
         {
@@ -217,31 +210,26 @@ namespace StellarisEditor.data
                 return;
 
             var pdxLocalization = LocalizationParser.ParseLocalization(localizationFileState.line);
-            if (pdxLocalization != null)
-            {
+            if (pdxLocalization != null) {
                 var key = (String)pdxLocalization.GetType().GetProperty("Key").GetValue(pdxLocalization);
                 var value = (String)pdxLocalization.GetType().GetProperty("Value").GetValue(pdxLocalization);
 
-                lock (localizationFileState.localizations)
-                {
+                lock (localizationFileState.localizations) {
                     var localization = localizationFileState.localizations.Find(l => l.Key.Equals(key));
-                    if (localization != null)
-                    {
+                    if (localization != null) {
                         if (localizationFileState.sub == STELLARIS_PATH_LOCALIZATION_ENGLISH)
                             localization.ValueEnglish = value;
                         else if (localizationFileState.sub == STELLARIS_PATH_LOCALIZATION_SIMPLE_CHINESE)
                             localization.ValueSimpChinese = value;
                     }
-                    else
-                    {
+                    else {
                         var fileName = localizationFileState.file.Name.Substring(0, localizationFileState.file.Name.LastIndexOf("."));
                         fileName = fileName.Replace("_l_simp_chinese", "");
                         fileName = fileName.Replace("_l_english", "");
                         fileName = fileName.Replace("l_simp_chinese", "");
                         fileName = fileName.Replace("l_english", "");
 
-                        PdxLocalization newLocalization = new PdxLocalization
-                        {
+                        PdxLocalization newLocalization = new PdxLocalization {
                             Key = key,
                             FileName = fileName
                         };

@@ -89,6 +89,7 @@ namespace StellarisEditor.editors.scriptedvariables
                         return;
                     
                     method?.Invoke();
+                    method = null;
                     if (value < 99)
                     {
                         Thread.Sleep(1);
