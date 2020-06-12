@@ -28,8 +28,11 @@
                     <TextBox Width="260" Margin="15 0 0 0"/>
                     <TextBlock Text="Description" HorizontalAlignment="Center"/>
                     <TextBox Width="260" Margin="15 0 0 0"/>
+                    <GroupBox Header="Traits">
+                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="85"/>
+                    </GroupBox>
                     <GroupBox Header="Has Secondary Species">
-                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="320"/>
+                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="200"/>
                     </GroupBox>
                 </WrapPanel>
             </GroupBox>
@@ -37,10 +40,10 @@
         <DockPanel Grid.Column="1">
             <GroupBox Header="Origin" FontSize="18">
                 <WrapPanel Orientation="Vertical">
-                    <CheckBox Content="is origin" FontSize="15"/>
-                    <CheckBox Content="advanced start" FontSize="15"/>
-                    <CheckBox Content="preferred planet" FontSize="15"/>
-                    <CheckBox Content="non colonizable planet class" FontSize="15"/>
+                    <CheckBox Content="Is Origin" FontSize="15"/>
+                    <CheckBox Content="Advanced Start" FontSize="15"/>
+                    <CheckBox Content="Preferred Planet" FontSize="15"/>
+                    <CheckBox Content="Non Colonizable Planet Class" FontSize="15"/>
                     <TextBlock Text="Picture" HorizontalAlignment="Center" Margin="5 0 0 0"/>
                     <TextBox Width="260" Margin="15 0 0 0"/>
                     <TextBlock Text="Initializers " HorizontalAlignment="Center" Margin="5 0 0 0"/>
@@ -53,11 +56,11 @@
             </GroupBox>
             <GroupBox Header="Civic">
                 <WrapPanel Orientation="Vertical">
-                    <CheckBox Content="pickable at start " FontSize="15"/>
-                    <CheckBox Content="modification" FontSize="15"/>
-                    <CheckBox Content="can build ruler ship" FontSize="15"/>
+                    <CheckBox Content="Pickable At Start " FontSize="15"/>
+                    <CheckBox Content="Modification" FontSize="15"/>
+                    <CheckBox Content="Can build Ruler Ship" FontSize="15"/>
                     <GroupBox Header="Swap Type" Width="280" Margin="7 0 0 0">
-                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="240"/>
+                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="250"/>
                     </GroupBox>
                 </WrapPanel>
             </GroupBox>
