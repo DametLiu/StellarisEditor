@@ -21,6 +21,6 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         public NodeCollection Objects { get; } = new NodeCollection();
 
-        public String Content { get; set; }
+        public string Content { get; set; }
     }
 }

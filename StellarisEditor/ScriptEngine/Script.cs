@@ -9,10 +9,6 @@ namespace StellarisEditor.ScriptEngine
     public class Script
     {
         /// <summary>
-        /// 解析器配置
-        /// </summary>
-        ParserConfig Config { get; set; }
-        /// <summary>
         /// 内置解析器
         /// </summary>
         Parser Parser { get; set; }
@@ -25,7 +21,7 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         String Text { get; set; }
 
-        public Script(ParserConfig config, String text)
+        public Script(String text)
         {
             Parser = new Parser(new Lexical(text));
             Text = text;

@@ -11,11 +11,9 @@ namespace StellarisEditor.ScriptEngine
     /// </summary>
     public class IdentifierExpression : Expression
     {
-        public String Key { get; set; }
-
         public override string ToString()
         {
-            return Key;
+            return Content;
         }
     }
 }

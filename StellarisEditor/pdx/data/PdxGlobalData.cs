@@ -28,6 +28,7 @@ namespace StellarisEditor.data
         public static String STELLARIS_PATH_LOCALIZATION_SPANISH = @"\localisation\spanish\";
         public static String STELLARIS_PATH_TECHNOLOGY_TIER = @"\common\technology\tier\";
         public static String STELLARIS_PATH_TECHNOLOGY_CATEGORY = @"\common\technology\category\";
+        public static String STELLARIS_PATH_TECHNOLOGY = @"\common\technology\";
 
         public static LinkedList<PdxVariable> Variables = new LinkedList<PdxVariable>();
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();

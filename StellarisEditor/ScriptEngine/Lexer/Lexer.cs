@@ -219,13 +219,14 @@ namespace StellarisEditor.ScriptEngine
             if (c == '\"')
             {
                 StringBuilder sb = new StringBuilder();
-
+                sb.Append('"');
                 c = stream.Read();
                 while (c != '\"' && c != '\0')
                 {
                     sb.Append(c);
                     c = stream.Read();
                 }
+                sb.Append('"');
                 return new Lexeme() { Tag = Tag.String, Content = sb.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion

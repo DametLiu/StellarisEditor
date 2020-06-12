@@ -11,11 +11,9 @@ namespace StellarisEditor.ScriptEngine
     /// </summary>
     public class NumberExpression : Expression
     {
-        public string Key { get; set; }
-
         public override string ToString()
         {
-            return Key;
+            return Content;
         }
     }
 }

@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.ScriptEngine
 {
-    public class StringExpression : Expression
+    public class UnknowExpression : Expression
     {
-        public override string ToString()
-        {
-            return Content;
-        }
     }
 }

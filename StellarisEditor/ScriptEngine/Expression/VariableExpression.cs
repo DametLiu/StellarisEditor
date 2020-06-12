@@ -11,14 +11,9 @@ namespace StellarisEditor.ScriptEngine
     /// </summary>
     public class VariableExpression : Expression
     {
-        /// <summary>
-        /// 变量名称
-        /// </summary>
-        public string Key { get; set; }
-
         public override string ToString()
         {
-            return $"@{Key}";
+            return $"@{Content}";
         }
     }
 }

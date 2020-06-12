@@ -126,8 +126,14 @@
     </Compile>
     <Compile Include="extension\FileInfoExtension.cs" />
     <Compile Include="ScriptEngine\Expression\AssignExpression.cs" />
+    <Compile Include="ScriptEngine\Expression\BooleanExpression.cs" />
+    <Compile Include="ScriptEngine\Expression\EqualExpreesion.cs" />
+    <Compile Include="ScriptEngine\Expression\ExpressionCollection.cs" />
+    <Compile Include="ScriptEngine\Expression\IdentifierExpression.cs" />
     <Compile Include="ScriptEngine\Expression\NumberExpression.cs" />
     <Compile Include="pdx\scriptobject\PdxAgenda.cs" />
+    <Compile Include="ScriptEngine\Expression\StringExpression.cs" />
+    <Compile Include="ScriptEngine\Expression\UnknowExpression.cs" />
     <Compile Include="ScriptEngine\Lexer\CharStream.cs" />
     <Compile Include="component\WaitingProgressBar.xaml.cs">
       <DependentUpon>WaitingProgressBar.xaml</DependentUpon>
@@ -220,6 +226,8 @@
     <Compile Include="ScriptEngine\Parser\Parser.cs" />
     <Compile Include="ScriptEngine\Parser\ParserConfig.cs" />
     <Compile Include="ScriptEngine\Parser\ParserContext.cs" />
+    <Compile Include="ScriptEngine\Statment\ArrayStatement.cs" />
+    <Compile Include="ScriptEngine\Statment\AssignmentStatement.cs" />
     <Compile Include="ScriptEngine\Statment\ExpressionStatement.cs" />
     <Compile Include="ScriptEngine\Statment\ObjectStatement.cs" />
     <Compile Include="ScriptEngine\Statment\Statement.cs" />
@@ -229,6 +237,7 @@
     <Compile Include="ScriptEngine\Statment\VariableStatement.cs" />
     <Compile Include="utils\BitmapUtil.cs" />
     <Compile Include="utils\FileUtil.cs" />
+    <Compile Include="utils\LogUtil.cs" />
     <Compile Include="utils\RegexUtil.cs" />
     <Page Include="component\WaitingProgressBar.xaml">
       <SubType>Designer</SubType>

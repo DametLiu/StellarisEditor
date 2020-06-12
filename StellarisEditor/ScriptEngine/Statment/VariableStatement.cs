@@ -14,16 +14,18 @@ namespace StellarisEditor.ScriptEngine
         /// <summary>
         /// 变量表达式
         /// </summary>
-        public VariableExpression VariableExpression { get; set; }
+        public Expression Key { get; set; }
 
         /// <summary>
         /// 赋值表达式
         /// </summary>
-        public AssignExpression AssignExpression { get; set; }
+        public Expression Equal { get; set; }
+
+        public Expression Value { get; set; }
 
         public override string ToString()
         {
-            return $"{VariableExpression} = {AssignExpression.Express}";
+            return $"{Key} {Equal} {Value}";
         }
     }
 }

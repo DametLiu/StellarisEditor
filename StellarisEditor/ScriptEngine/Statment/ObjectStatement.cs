@@ -16,5 +16,10 @@ namespace StellarisEditor.ScriptEngine
         /// 对象集合
         /// </summary>
         public StatementCollection Statements { get; set; }
+
+        public override string ToString()
+        {
+            return Content;
+        }
     }
 }

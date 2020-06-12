@@ -8,11 +8,9 @@ namespace StellarisEditor.ScriptEngine
 {
     public class BooleanExpression : Expression
     {
-        public string Key { get; set; }
-
         public override string ToString()
         {
-            return Key;
+            return Content;
         }
     }
 }

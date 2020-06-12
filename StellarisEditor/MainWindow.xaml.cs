@@ -40,20 +40,6 @@ namespace StellarisEditor
 
         public MainWindow()
         {
-#if DEBUG
-            String c = File.ReadAllText(@"C:\Users\dametliu\Documents\Paradox Interactive\Stellaris\mod\AAA\common\technology\00_apocalypse_tech.txt");
-            Script s = new Script(new ParserConfig(), c);
-            s.Parse();
-            StringBuilder sb = new StringBuilder();
-            sb.Append(Regex.Match("", @"@?\w*").Value).Append("\n");
-            foreach (var n in s.Nodes)
-            {
-                sb.Append(n.ToString()).Append("\n");
-            }
-            File.WriteAllText(@"C:\Users\dametliu\Documents\Paradox Interactive\Stellaris\mod\AAA\common\technology\test.txt", sb.ToString());
-            Close();
-            return;
-#endif
             Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.RealTime;
             InitializeComponent();
             dispatcher = Dispatcher.CurrentDispatcher;
