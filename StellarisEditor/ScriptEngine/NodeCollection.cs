@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.ScriptEngine
 {
-    public class ScriptStatement : ScriptObject
+    public class NodeCollection : List<Node>
     {
-        public ScriptLinePragma LinePragma { get; set; }
     }
 }

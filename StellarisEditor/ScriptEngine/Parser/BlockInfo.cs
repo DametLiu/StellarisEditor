@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.ScriptEngine
 {
-    public class ScriptExpression : ScriptObject
+    public class BlockInfo
     {
+        public Block Block { get; set; }
     }
 }
