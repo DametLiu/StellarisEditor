@@ -189,22 +189,34 @@ namespace StellarisEditor.ScriptEngine
                     // 数值数组
                     else if (l.Tag == Tag.Number)
                     {
-                        ArrayStatement array = new ArrayStatement { Elements = new ExpressionCollection() };
-                        while (l.Tag != Tag.Brace_Right)
+                        m = Lexical.Read();
+                        if (m.Tag == Tag.Equal)
                         {
-                            if (l.Tag == Tag.Id)
-                                array.Elements.Add(new IdentifierExpression() { Content = l.Content });
-                            else if (l.Tag == Tag.String)
-                                array.Elements.Add(new StringExpression() { Content = l.Content });
-                            else if (l.Tag == Tag.Number)
-                                array.Elements.Add(new NumberExpression() { Content = l.Content });
-                            else
-                                array.Elements.Add(new UnknowExpression() { Content = l.Content });
-
-                            l = Lexical.Read();
+                            r = Lexical.Read();
+                            if (r.Tag == Tag.Brace_Left)
+                            {
+                                context.BeginBlock(new ObjectStatement() { Statements = new StatementCollection(), Content = $"{l.Content} {m.Content} {r.Content}" });
+                            }
                         }
-                        context.CurrentBlock.Statements.AddLast(array);
-                        context.EndBlock();
+                        else
+                        {
+                            ArrayStatement array = new ArrayStatement { Elements = new ExpressionCollection() };
+                            while (l.Tag != Tag.Brace_Right)
+                            {
+                                if (l.Tag == Tag.Id)
+                                    array.Elements.Add(new IdentifierExpression() { Content = l.Content });
+                                else if (l.Tag == Tag.String)
+                                    array.Elements.Add(new StringExpression() { Content = l.Content });
+                                else if (l.Tag == Tag.Number)
+                                    array.Elements.Add(new NumberExpression() { Content = l.Content });
+                                else
+                                    array.Elements.Add(new UnknowExpression() { Content = l.Content });
+
+                                l = Lexical.Read();
+                            }
+                            context.CurrentBlock.Statements.AddLast(array);
+                            context.EndBlock();
+                        }
                     }
                     else if (l.Tag == Tag.Brace_Right)
                     {
@@ -217,8 +229,6 @@ namespace StellarisEditor.ScriptEngine
                                 return objectStatement;
                         }
                     }
-
-
 
                     if (context.IsEmpty || Lexical.Curr.Tag == Tag.None)
                         break;
