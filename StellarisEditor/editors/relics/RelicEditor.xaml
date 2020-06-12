@@ -1,0 +1,52 @@
+﻿<Window x:Class="StellarisEditor.editors.relics.RelicEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StellarisEditor.editors.relics"
+        mc:Ignorable="d"
+        Title="RelicEditor" Height="720" Width="1280">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0">
+            <GroupBox Header="Key">
+                <TextBox/>
+            </GroupBox>
+            <GroupBox Header="Common" >
+                <WrapPanel Orientation="Vertical">
+                    <TextBlock Text="Activation Duration" Width="295" Block.TextAlignment="Center"/>
+                    <TextBox/>
+                    <TextBlock Text="Portrait" Block.TextAlignment="Center"/>
+                    <TextBox/>
+                    <TextBlock Text="Sound" Block.TextAlignment="Center"/>
+                    <TextBox/>
+                    <TextBlock Text="Score" Block.TextAlignment="Center"/>
+                    <TextBox/>
+                    <GroupBox Header="Resources">
+                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="350"/>
+                    </GroupBox>
+                </WrapPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Column="1">
+            <GroupBox Header="Ai Weight">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="300"/>
+            </GroupBox>
+            <GroupBox Header="Possible">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"/>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Column="2">
+            <GroupBox Header="Active Effect">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="300"/>
+            </GroupBox>
+            <GroupBox Header="Triggered Country Modifier">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" />
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</Window>

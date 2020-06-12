@@ -121,6 +121,9 @@
     <Compile Include="editors\governments\civics\CivicEditorWindow.xaml.cs">
       <DependentUpon>CivicEditorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="editors\relics\RelicEditor.xaml.cs">
+      <DependentUpon>RelicEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="extension\FileInfoExtension.cs" />
     <Compile Include="pdx\scriptobject\PdxAgenda.cs" />
     <Compile Include="ScriptEngine\Lexer\CharStream.cs" />
@@ -255,6 +258,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\localization\LocalizationItemEditeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\relics\RelicEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
