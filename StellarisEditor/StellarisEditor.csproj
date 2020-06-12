@@ -112,9 +112,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="editors\Agenda\AgendaEditorWindow.xaml.cs">
+      <DependentUpon>AgendaEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editors\governments\authorities\AuthorityEditor.xaml.cs">
+      <DependentUpon>AuthorityEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editors\governments\civics\CivicEditorWindow.xaml.cs">
+      <DependentUpon>CivicEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editors\relics\RelicEditor.xaml.cs">
+      <DependentUpon>RelicEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="extension\FileInfoExtension.cs" />
     <Compile Include="ScriptEngine\Expression\AssignExpression.cs" />
     <Compile Include="ScriptEngine\Expression\NumberExpression.cs" />
+    <Compile Include="pdx\scriptobject\PdxAgenda.cs" />
     <Compile Include="ScriptEngine\Lexer\CharStream.cs" />
     <Compile Include="component\WaitingProgressBar.xaml.cs">
       <DependentUpon>WaitingProgressBar.xaml</DependentUpon>
@@ -221,11 +234,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="editors\Agenda\AgendaEditorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="editors\building\BuildingEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\EditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\governments\authorities\AuthorityEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\governments\civics\CivicEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -238,6 +263,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\localization\LocalizationItemEditeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\relics\RelicEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2164,5 +2193,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,64 @@
+﻿<Window x:Class="StellarisEditor.editors.governments.authorities.AuthorityEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StellarisEditor.editors.governments.authorities"
+        mc:Ignorable="d"
+        Title="AuthorityEditor" Height="720" Width="1280">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0">
+            <GroupBox Header="Key">
+                <TextBox/>
+            </GroupBox>
+            <GroupBox Header="Rondom Weight">
+                <TextBox/>
+            </GroupBox>
+            <GroupBox Header="Common">
+                <WrapPanel Orientation="Vertical">
+                    <CheckBox Content="Playable" FontSize="15" Width="295"/>
+                    <CheckBox Content="Re Election Allowed" FontSize="15" />
+                    <CheckBox Content="Has Heir" FontSize="15"/>
+                    <CheckBox Content="Uses Mandates" FontSize="15"/>
+                    <CheckBox Content="Has Agendas" FontSize="15"/>
+                    <CheckBox Content="Can Reform" FontSize="15" IsChecked="True"/>
+                    <CheckBox Content="Has Factions" FontSize="15" IsChecked="True"/>
+                    <CheckBox Content ="Valid For Released Vassal" FontSize="15" IsChecked="True" />
+                    <CheckBox Content="Can Have Emergency Elections" FontSize="15"/>
+                    <TextBlock Text="Emergency Election Cost" HorizontalAlignment="Center"/>
+                    <TextBox/>
+                    <TextBlock Text="Election Type" HorizontalAlignment="Center"/>
+                    <ComboBox>
+                        <ComboBoxItem Content="None"/>
+                        <ComboBoxItem Content="Oligarchic"/>
+                        <ComboBoxItem Content="democratic"/>
+                    </ComboBox>
+                    <TextBlock Text="Max Election Candidates" HorizontalAlignment="Center"/>
+                    <TextBox/>
+                    <TextBlock Text="Election Term Years" HorizontalAlignment="Center"/>
+                    <TextBox/>
+                    <TextBlock Text="Election Term Variance" HorizontalAlignment="Center"/>
+                    <TextBox/>
+                    <GroupBox Header="Tags">
+                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="70"/>
+                    </GroupBox>
+                </WrapPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Column="1">
+            <GroupBox Header="Country Modifier">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"/>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Column="2">
+            <GroupBox Header="Possible">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"/>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</Window>
