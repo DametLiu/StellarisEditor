@@ -1,0 +1,21 @@
+﻿<Window x:Class="StellarisEditor.editors.Agenda.AgendaEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StellarisEditor.editors.Agenda"
+        mc:Ignorable="d"
+        Title="议程编辑器" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="363" Margin="10,26,0,0" VerticalAlignment="Top" Width="187">
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,63,0,0" TextWrapping="Wrap" Text="test_agenda" VerticalAlignment="Top" Width="177"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,122,0,0" TextWrapping="Wrap" Text="测试议程" VerticalAlignment="Top" Width="177"/>
+            <TextBox HorizontalAlignment="Left" Height="178" Margin="10,175,0,0" TextWrapping="Wrap" Text="这是一个测试用的议程。" VerticalAlignment="Top" Width="177"/>
+            <Label Content="名称/Key" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Height="52" Width="118"/>
+            <Label Content="本地化名称（中文）" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.908,1.284"/>
+            <Label Content="本地化注释/desc(中文)" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="140"/>
+        </Grid>
+        <GroupBox Header="出现权重/weight" HorizontalAlignment="Left" Height="331" Margin="243,50,0,0" VerticalAlignment="Top" Width="215" BorderThickness="1.5"/>
+        <GroupBox Header="国家修正/modifier" HorizontalAlignment="Left" Height="331" Margin="520,50,0,0" VerticalAlignment="Top" Width="215" BorderThickness="1.5"/>
+    </Grid>
+</Window>
