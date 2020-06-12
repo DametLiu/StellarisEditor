@@ -113,6 +113,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="extension\FileInfoExtension.cs" />
+    <Compile Include="ScriptEngine\Expression\AssignExpression.cs" />
+    <Compile Include="ScriptEngine\Expression\NumberExpression.cs" />
     <Compile Include="ScriptEngine\Lexer\CharStream.cs" />
     <Compile Include="component\WaitingProgressBar.xaml.cs">
       <DependentUpon>WaitingProgressBar.xaml</DependentUpon>
@@ -205,9 +207,12 @@
     <Compile Include="ScriptEngine\Parser\Parser.cs" />
     <Compile Include="ScriptEngine\Parser\ParserConfig.cs" />
     <Compile Include="ScriptEngine\Parser\ParserContext.cs" />
+    <Compile Include="ScriptEngine\Statment\ExpressionStatement.cs" />
+    <Compile Include="ScriptEngine\Statment\ObjectStatement.cs" />
     <Compile Include="ScriptEngine\Statment\Statement.cs" />
     <Compile Include="ScriptEngine\Statment\StatementCollection.cs" />
     <Compile Include="ScriptEngine\Expression\VariableExpression.cs" />
+    <Compile Include="ScriptEngine\Statment\UnknowStatement.cs" />
     <Compile Include="ScriptEngine\Statment\VariableStatement.cs" />
     <Compile Include="utils\BitmapUtil.cs" />
     <Compile Include="utils\FileUtil.cs" />

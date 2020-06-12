@@ -19,7 +19,7 @@ namespace StellarisEditor.ScriptEngine
         /// <summary>
         /// 脚本节点集合
         /// </summary>
-        public NodeCollection Nodes { get; set; }
+        public StatementCollection Nodes { get; set; }
         /// <summary>
         /// 脚本正文
         /// </summary>
@@ -33,7 +33,7 @@ namespace StellarisEditor.ScriptEngine
 
         public void Parse()
         {
-            Nodes = Parser.ParseLexeme();
+            Nodes = Parser.Parse();
         }
     }
 }

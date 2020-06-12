@@ -44,9 +44,21 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         Comment,
         /// <summary>
-        /// 块结构
+        /// 块结构开始
         /// </summary>
-        Block,
+        Brace_Left,
+        /// <summary>
+        /// 块结构结束
+        /// </summary>
+        Brace_Right,
+        /// <summary>
+        /// 等号
+        /// </summary>
+        Equal,
+        /// <summary>
+        /// 布尔值
+        /// </summary>
+        Boolean,
     }
 
     /// <summary>

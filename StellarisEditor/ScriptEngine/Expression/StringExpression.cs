@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.ScriptEngine
 {
-    public class Statement : Node
+    public class StringExpression : Expression
     {
+        public String Key { get; set; }
+
+        public override string ToString()
+        {
+            return Key;
+        }
     }
 }

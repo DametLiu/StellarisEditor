@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StellarisEditor.ScriptEngine
+namespace StellarisEditor.ScriptEngine.Statment
 {
-    public class Statement : Node
+    public class ExpressionStatement : Statement
     {
     }
 }

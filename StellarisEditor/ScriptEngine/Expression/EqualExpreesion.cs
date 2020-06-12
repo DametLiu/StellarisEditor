@@ -7,18 +7,15 @@ using System.Threading.Tasks;
 namespace StellarisEditor.ScriptEngine
 {
     /// <summary>
-    /// 脚本变量定义
+    /// 等号表达式
     /// </summary>
-    public class VariableExpression : Expression
+    public class EqualExpreesion : Expression
     {
-        /// <summary>
-        /// 变量名称
-        /// </summary>
         public string Key { get; set; }
 
         public override string ToString()
         {
-            return $"@{Key}";
+            return Key;
         }
     }
 }

@@ -139,12 +139,19 @@ namespace StellarisEditor.ScriptEngine
         {
             char c = stream.Read();
 
-            #region 空白字符和注释
+            #region 空白字符
             while (true)
             {
                 // 如果是空白字符则跳过字符
                 if (c == '\r' || c == '\t' || c == ' ' || c == '\n')
                     c = stream.Read();
+                // 跳过注释
+                else if (c == '#')
+                {
+                    c = stream.Read();
+                    while (c != '\n' && c != '\0')
+                        c = stream.Read();
+                }
                 // 如果读到文件末尾则直接返回结束词汇
                 else if (c == '\0')
                     return new Lexeme() { Tag = Tag.None, Content = "end", Pragma = new LinePragma() { Row = Row, Col = Col } };
@@ -154,24 +161,28 @@ namespace StellarisEditor.ScriptEngine
             #endregion
 
             #region 块
-            if (c == '{' || c == '}')
+            if (c == '{')
             {
-                return new Lexeme() { Tag = Tag.Block, Content = c.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
+                return new Lexeme() { Tag = Tag.Brace_Left, Content = c.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
+            }
+            if (c == '}')
+            {
+                return new Lexeme() { Tag = Tag.Brace_Right, Content = c.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion
 
             #region 注释
-            if (c == '#')
-            {
-                StringBuilder sc = new StringBuilder();
-                sc.Append(c);
-                while (c != '\n' && c != '\r' && c != '\0')
-                {
-                    sc.Append(c);
-                    c = stream.Read();
-                }
-                return new Lexeme() { Tag = Tag.Comment, Content = sc.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
-            }
+            //if (c == '#')
+            //{
+            //    StringBuilder sc = new StringBuilder();
+            //    sc.Append(c);
+            //    while (c != '\n' && c != '\r' && c != '\0')
+            //    {
+            //        sc.Append(c);
+            //        c = stream.Read();
+            //    }
+            //    return new Lexeme() { Tag = Tag.Comment, Content = sc.ToString(), Pragma = new LinePragma() { Row = Row, Col = Col } };
+            //}
             #endregion
 
             #region 变量
@@ -200,7 +211,7 @@ namespace StellarisEditor.ScriptEngine
                         return new Lexeme() { Tag = Tag.Operator, Content = ">=" };
                     return new Lexeme() { Tag = Tag.Operator, Content = ">", Pragma = new LinePragma() { Row = Row, Col = Col } };
                 case '=':
-                    return new Lexeme() { Tag = Tag.Operator, Content = "=", Pragma = new LinePragma() { Row = Row, Col = Col } };
+                    return new Lexeme() { Tag = Tag.Equal, Content = "=", Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion
 
@@ -269,6 +280,11 @@ namespace StellarisEditor.ScriptEngine
                     }
                     c = stream.Peek();
                 }
+
+                if ("yes" == si.ToString().ToLower())
+                    return new Lexeme { Content = si.ToString(), Tag = Tag.Boolean, Pragma = new LinePragma() { Row = Row, Col = Col } };
+                else if ("no" == si.ToString().ToLower())
+                    return new Lexeme { Content = si.ToString(), Tag = Tag.Boolean, Pragma = new LinePragma() { Row = Row, Col = Col } };
                 return new Lexeme { Content = si.ToString(), Tag = Tag.Id, Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
             #endregion

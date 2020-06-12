@@ -14,12 +14,12 @@ namespace StellarisEditor.ScriptEngine
         /// <summary>
         /// 内置堆栈
         /// </summary>
-        private readonly Stack<BlockInfo> ContextStack = new Stack<BlockInfo>();
+        private readonly Stack<ObjectStatement> ContextStack = new Stack<ObjectStatement>();
 
         /// <summary>
         /// 返回当前栈顶的块
         /// </summary>
-        public BlockInfo CurrentBlock
+        public ObjectStatement CurrentBlock
         {
             get
             {
@@ -27,58 +27,15 @@ namespace StellarisEditor.ScriptEngine
             }
         }
 
-        /// <summary>
-        /// 通过块类型访问栈中的块，如果没有返回null
-        /// </summary>
-        /// <param name="block"></param>
-        /// <returns></returns>
-        public BlockInfo this[Block block]
-        {
-            get
-            {
-                return GetBlockInfoBy(block);
-            }
-        }
-
-        /// <summary>
-        /// 返回栈中指定块类型的块，如果没有返回null
-        /// </summary>
-        /// <param name="area"></param>
-        /// <returns></returns>
-        private BlockInfo GetBlockInfoBy(Block area)
-        {
-            foreach (var a in ContextStack.ToArray())
-                if (a.Block == area)
-                    return a;
-            return null;
-        }
-
-        /// <summary>
-        /// 返回当前的块是否是指定的类型
-        /// </summary>
-        /// <param name="area"></param>
-        /// <returns></returns>
-        public bool BlockIs(Block area)
-        {
-            return GetBlockInfoBy(area) != null;
-        }
+        public bool IsEmpty => ContextStack.Count == 0;
 
         /// <summary>
         /// 开始解析指定的块
         /// </summary>
         /// <param name="block"></param>
-        public void BeginBlock(Block block)
+        public void BeginBlock(ObjectStatement statement)
         {
-            ContextStack.Push(new BlockInfo() { Block = block });
-        }
-
-        /// <summary>
-        /// 开始解析指定的块
-        /// </summary>
-        /// <param name="info"></param>
-        public void BeginBlock(BlockInfo info)
-        {
-            ContextStack.Push(info);
+            ContextStack.Push(statement);
         }
 
         /// <summary>

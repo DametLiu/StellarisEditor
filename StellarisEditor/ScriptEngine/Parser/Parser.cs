@@ -59,21 +59,19 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         /// <param name="block"></param>
         /// <returns></returns>
-        private StatementCollection Parse(BlockInfo block)
+        public StatementCollection Parse()
         {
-            Context.BeginBlock(block);
+            
             StatementCollection stems = new StatementCollection();
 
             while (true)
             {
-                ScriptStatement stem = ParseStatement();
+                Statement stem = ParseStatement();
                 if (stem == null)
                     break;
-                stem.LinePragma = new LinePragma() { Row = Lexical.Row, Col = Lexical.Col };
+                stem.Pragma = new LinePragma() { Row = Lexical.Row, Col = Lexical.Col };
                 stems.AddLast(stem);
             }
-
-            Context.EndBlock();
             return stems;
 
         }
@@ -82,46 +80,98 @@ namespace StellarisEditor.ScriptEngine
         /// 解析基本语句， 变量声明、对象
         /// </summary>
         /// <returns></returns>
-        private ScriptStatement ParseStatement()
+        private Statement ParseStatement()
         {
-            ScriptStatement stem = null;
-            // 解析字段、对象
-            if (Lexical.Read(Tag.Id))
+            // 如果是@开头的变量定义
+            if (Lexical.Read(Tag.Variable))
             {
-                Lexeme id = Lexical.Curr;
-                ScriptExpression rootRef = new ScriptVariableExpression() { Name = id.Content };
-
-
-            }
-            // 解析变量引用定义
-            else if (Lexical.Read(Tag.Variable)) {
                 Lexeme variable = Lexical.Curr;
-                ScriptExpression key = new ScriptVariableExpression() { Name = variable.Content };
-                ScriptExpression target = ParseVariableReferenceExpression(key);
-
-
+                VariableExpression variableExpression = new VariableExpression() { Key = variable.Content, Pragma = variable.Pragma};
+                
+                // 尝试读取等号
+                if (Lexical.Read(Tag.Equal))
+                {
+                    // 如果是数值赋值
+                    if (Lexical.Read(Tag.Number))
+                    {
+                        return new VariableStatement()
+                        {
+                            VariableExpression = variableExpression,
+                            AssignExpression = new AssignExpression() { Target = variableExpression, Express = new NumberExpression() { Key = Lexical.Curr.Content } }
+                        };
+                    }
+                    // 如果是变量引用
+                    else if (Lexical.Read(Tag.Variable))
+                    {
+                        return new VariableStatement()
+                        {
+                            VariableExpression = variableExpression,
+                            AssignExpression = new AssignExpression() { Target = variableExpression, Express = new VariableExpression() { Key = Lexical.Curr.Content } }
+                        };
+                    }
+                }
+                return new UnknowStatement() { Content = variable.Content, Pragma = variable.Pragma };
             }
-            else if (Lexical.NextIs(Tag.None) || Lexical.NextIs("}"))
-            {
-                return null;
-            }
+            // 如果是对象定义
             else
             {
+                ParserContext context = new ParserContext();
 
+                Lexeme l = null;
+                Lexeme m = null;
+                Lexeme r = null;
+                while (true)
+                {
+                    
+                    l = Lexical.Read();
+                    if (l.Tag == Tag.Id)
+                    {
+                        m = Lexical.Read();
+                        if (m.Tag == Tag.Equal)
+                        {
+                            r = Lexical.Read();
+                            if (r.Tag == Tag.Variable)
+                            {
+                                context.CurrentBlock.Statements.AddLast(new AssignmentStatement() { Key = new IdentifierExpression() { Key = l.Content }, Equal = new EqualExpreesion() { Key = m.Content }, Value = new VariableExpression() { Key = r.Content }, Content = $"{l.Content} {m.Content} {r.Content}", Pragma = l.Pragma });
+                            }
+                            else if (r.Tag == Tag.Number)
+                            {
+                                context.CurrentBlock.Statements.AddLast(new AssignmentStatement() { Key = new IdentifierExpression() { Key = l.Content }, Equal = new EqualExpreesion() { Key = m.Content }, Value = new NumberExpression() { Key = r.Content }, Content = $"{l.Content} {m.Content} {r.Content}", Pragma = l.Pragma });
+                            }
+                            else if (r.Tag == Tag.String)
+                            {
+                                context.CurrentBlock.Statements.AddLast(new AssignmentStatement() { Key = new IdentifierExpression() { Key = l.Content }, Equal = new EqualExpreesion() { Key = m.Content }, Value = new StringExpression() { Key = r.Content }, Content = $"{l.Content} {m.Content} {r.Content}", Pragma = l.Pragma });
+                            }
+                            else if (r.Tag == Tag.Id)
+                            {
+                                context.CurrentBlock.Statements.AddLast(new AssignmentStatement() { Key = new IdentifierExpression() { Key = l.Content }, Equal = new EqualExpreesion() { Key = m.Content }, Value = new IdentifierExpression() { Key = r.Content }, Content = $"{l.Content} {m.Content} {r.Content}", Pragma = l.Pragma });
+                            }
+                            else if (r.Tag == Tag.Boolean)
+                            {
+                                context.CurrentBlock.Statements.AddLast(new AssignmentStatement() { Key = new IdentifierExpression() { Key = l.Content }, Equal = new EqualExpreesion() { Key = m.Content }, Value = new BooleanExpression() { Key = r.Content }, Content = $"{l.Content} {m.Content} {r.Content}", Pragma = l.Pragma });
+                            }
+                            else if (r.Tag == Tag.Brace_Left)
+                            {
+                                context.BeginBlock(new ObjectStatement());
+                            }
+                        }
+                        
+
+                        
+                    }
+                    else if (l.Tag == Tag.Brace_Right)
+                    {
+                        context.EndBlock();
+                    }
+
+
+
+                    if (context.IsEmpty || Lexical.Curr.Tag == Tag.None)
+                        break;
+                }
             }
 
-            return stem;
-        }
-
-        private ScriptExpression ParseVariableReferenceExpression(ScriptExpression key)
-        {
-            ScriptExpression result = key;
-            Lexeme nsym = Lexical.Peek;
-            if (nsym.Content == "=")
-            {
-                
-            }
-            return null;
+            return new UnknowStatement() { Content = Lexical.Curr.Content, Pragma = Lexical.Curr.Pragma };
         }
     }
 }

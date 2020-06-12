@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.ScriptEngine
 {
-    public class StatementCollection : LinkedList<ScriptStatement>
+    public class StatementCollection : LinkedList<Statement>
     {
     }
 }

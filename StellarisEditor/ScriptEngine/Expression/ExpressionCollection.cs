@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.ScriptEngine
 {
-    public class Statement : Node
+    public class ExpressionCollection : List<Expression>
     {
     }
 }
