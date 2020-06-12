@@ -35,6 +35,11 @@ namespace StellarisEditor.data
         public static LinkedList<PdxTechnologyTier> TechnologyTiers = new LinkedList<PdxTechnologyTier>();
         public static LinkedList<PdxTechnologyCategory> TechnologyCategories = new LinkedList<PdxTechnologyCategory>();
 
+        public static void LoadDatas()
+        {
+
+        }
+
         public static void LoadTechnologyCategories(TaskCancel cancel)
         {
             LoadTechnologyCategory(Properties.Settings.Default.StellarisPath + STELLARIS_PATH_TECHNOLOGY_CATEGORY, TechnologyCategories, cancel);

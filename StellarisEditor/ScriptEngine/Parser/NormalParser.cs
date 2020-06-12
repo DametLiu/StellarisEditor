@@ -11,7 +11,7 @@ namespace StellarisEditor.ScriptEngine
     /// <summary>
     /// 脚本解析器
     /// </summary>
-    public class Parser
+    public class NormalParser :IParser
     {
         /// <summary>
         /// 内置词法分析器
@@ -22,7 +22,7 @@ namespace StellarisEditor.ScriptEngine
         /// 根据指定得词法分析器创建解析器
         /// </summary>
         /// <param name="lex"></param>
-        public Parser(Lexical lex)
+        public NormalParser(Lexical lex)
         {
             Lexical = lex;
         }
