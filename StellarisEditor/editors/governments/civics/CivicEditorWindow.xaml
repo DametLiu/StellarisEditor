@@ -1,0 +1,79 @@
+﻿<Window x:Class="StellarisEditor.editors.governments.civics.CivicEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StellarisEditor.editors.governments.civics"
+        mc:Ignorable="d"
+        Title="CivicEditorWindow" Height="720" Width="1280">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0" Margin="5">
+            <GroupBox Header="Key" FontSize="18">
+                <TextBox/>
+            </GroupBox>
+            <GroupBox Header="Radom Weight" FontSize="18">
+                <TextBox/>
+            </GroupBox>
+            <GroupBox Header="Common">
+                <WrapPanel Orientation="Vertical">
+                    <TextBlock Text="Starting Colony" HorizontalAlignment="Center"/>
+                    <TextBox Width="260" Margin="15 0 0 0"/>
+                    <TextBlock Text="Habitability Preference" HorizontalAlignment="Center"/>
+                    <TextBox Width="260" Margin="15 0 0 0"/>
+                    <TextBlock Text="Description" HorizontalAlignment="Center"/>
+                    <TextBox Width="260" Margin="15 0 0 0"/>
+                    <GroupBox Header="Has Secondary Species">
+                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="320"/>
+                    </GroupBox>
+                </WrapPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Column="1">
+            <GroupBox Header="Origin" FontSize="18">
+                <WrapPanel Orientation="Vertical">
+                    <CheckBox Content="is origin" FontSize="15"/>
+                    <CheckBox Content="advanced start" FontSize="15"/>
+                    <CheckBox Content="preferred planet" FontSize="15"/>
+                    <CheckBox Content="non colonizable planet class" FontSize="15"/>
+                    <TextBlock Text="Picture" HorizontalAlignment="Center" Margin="5 0 0 0"/>
+                    <TextBox Width="260" Margin="15 0 0 0"/>
+                    <TextBlock Text="Initializers " HorizontalAlignment="Center" Margin="5 0 0 0"/>
+                    <TextBox Width="260" Margin="15 0 0 0"/>
+                    <TextBlock Text="Flag " HorizontalAlignment="Center" Margin="5 0 0 0"/>
+                    <TextBox Width="260" Margin="15 0 0 0"/>
+                    <TextBlock Text="Icon " HorizontalAlignment="Center" Margin="5 0 0 0"/>
+                    <TextBox Width="260" Margin="15 0 0 0"/>
+                </WrapPanel>
+            </GroupBox>
+            <GroupBox Header="Civic">
+                <WrapPanel Orientation="Vertical">
+                    <CheckBox Content="pickable at start " FontSize="15"/>
+                    <CheckBox Content="modification" FontSize="15"/>
+                    <CheckBox Content="can build ruler ship" FontSize="15"/>
+                    <GroupBox Header="Swap Type" Width="280" Margin="7 0 0 0">
+                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="240"/>
+                    </GroupBox>
+                </WrapPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Column="2">
+            <GroupBox Header="Possible">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="300"/>
+            </GroupBox>
+            <GroupBox Header="Potential">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" />
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Column="3">
+            <GroupBox Header="Modifier">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"/>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</Window>

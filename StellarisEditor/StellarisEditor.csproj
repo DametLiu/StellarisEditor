@@ -112,6 +112,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="editors\governments\authorities\AuthorityEditor.xaml.cs">
+      <DependentUpon>AuthorityEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editors\governments\civics\CivicEditorWindow.xaml.cs">
+      <DependentUpon>CivicEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="extension\FileInfoExtension.cs" />
     <Compile Include="ScriptEngine\CharStream.cs" />
     <Compile Include="component\WaitingProgressBar.xaml.cs">
@@ -217,6 +223,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\EditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\governments\authorities\AuthorityEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\governments\civics\CivicEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2155,5 +2169,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
