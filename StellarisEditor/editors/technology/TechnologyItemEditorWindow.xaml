@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StellarisEditor.editors.technology"
         mc:Ignorable="d"
-        Title="TechnologyItemEditorWindow" Height="720" Width="1280">
+        Title="科技编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -37,7 +37,7 @@
                 </TextBox>
             </GroupBox>
             <GroupBox Header="Cost">
-                <TextBox>
+                <TextBox x:Name="Cost">
                     <TextBox.Resources>
                         <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                             <VisualBrush.Visual>
@@ -61,21 +61,21 @@
             </GroupBox>
             <GroupBox Header="Common">
                 <WrapPanel Orientation="Vertical">
-                    <CheckBox Content="Circulation" FontSize="15"/>
-                    <CheckBox Content="Is Rare" FontSize="15"/>
-                    <CheckBox Content="Is Dangerous " FontSize="15"/>
-                    <CheckBox Content="Is Reverse Engineerable" FontSize="15" IsChecked="True"/>
-                    <CheckBox Content="Ship" FontSize="15"/>
-                    <CheckBox Content="Custom" FontSize="15"/>
-                    <CheckBox Content="Start Technology" FontSize="15"/>
+                    <CheckBox x:Name="Circulation" Content="Circulation" FontSize="15" Click="Circulation_Click" />
+                    <CheckBox x:Name="Is_Rare" Content="Is Rare" FontSize="15" />
+                    <CheckBox x:Name="Is_Dangerous" Content="Is Dangerous " FontSize="15"/>
+                    <CheckBox x:Name="Is_Reverse_Engineerable" Content="Is Reverse Engineerable" FontSize="15" IsChecked="True"/>
+                    <CheckBox x:Name="Ship" Content="Ship" FontSize="15" Click="Ship_Click" />
+                    <CheckBox x:Name="Custom" Content="Custom" FontSize="15" Click="Custom_Click"/>
+                    <CheckBox x:Name="Start_Technology" Content="Start Technology" FontSize="15" Click="Start_Technology_Click" />
                     <TextBlock Text="Area" Block.TextAlignment="Center" Width="295"/>
-                    <ComboBox>
+                    <ComboBox x:Name="Area">
                         <ComboBoxItem Content="society"/>
                         <ComboBoxItem Content="physics"/>
                         <ComboBoxItem Content="engineering"/>
                     </ComboBox>
                     <TextBlock Text="Tier" Block.TextAlignment="Center"/>
-                    <TextBox>
+                    <TextBox x:Name="Tier">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -97,7 +97,7 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock Text="Category" Block.TextAlignment="Center"/>
-                    <TextBox>
+                    <TextBox x:Name="Category">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -119,7 +119,7 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock Text="Cost Pre Level" Block.TextAlignment="Center"/>
-                    <TextBox>
+                    <TextBox x:Name="Cost_Pre_Level" IsEnabled="False">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -141,7 +141,7 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock Text="Weight" Block.TextAlignment="Center"/>
-                    <TextBox>
+                    <TextBox x:Name="Weight">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -163,7 +163,7 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock Text="Ship" Block.TextAlignment="Center"/>
-                    <TextBox>
+                    <TextBox x:Name="Ship_title" IsEnabled="False">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -184,7 +184,7 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <TextBox>
+                    <TextBox x:Name="Ship_desc" IsEnabled="False">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -206,7 +206,7 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock Text="Custom" Block.TextAlignment="Center"/>
-                    <TextBox>
+                    <TextBox x:Name="Custom_title" IsEnabled="False">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -227,7 +227,7 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <TextBox>
+                    <TextBox x:Name="Custom_desc" IsEnabled="False">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -254,9 +254,9 @@
         <DockPanel Grid.Column="1">
             <GroupBox Header="Sundry">
                 <WrapPanel Orientation="Vertical">
-                    <CheckBox Content="gateway" FontSize="15"/>
+                    <CheckBox x:Name="Check_Gateway" Content="Gateway" FontSize="15" Click="Check_Gateway_Click"/>
                     <TextBlock Text="Weight Group" Width="455" Block.TextAlignment="Center"/>
-                    <TextBox>
+                    <TextBox x:Name="Weight_Group">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -278,7 +278,7 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock Text="Mod Weight If Group Picked" Block.TextAlignment="Center"/>
-                    <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap">
+                    <TextBox x:Name="Mod_Weight" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -304,21 +304,43 @@
                         <ComboBoxItem Content="military"/>
                         <ComboBoxItem Content="all"/>
                     </ComboBox>
+                    <TextBlock Text="Gateway" Block.TextAlignment="Center"/>
+                    <TextBox x:Name="Gateway" IsEnabled="False">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="biological"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
                     <GroupBox Header="Ai Weight">
-                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="200"/>
+                        <TextBox x:Name="Ai_Weight" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="150"/>
                     </GroupBox>
                     <GroupBox Header="Weight Modifier">
-                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="200"/>
+                        <TextBox x:Name="Weight_Modifier" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="200"/>
                     </GroupBox>
                 </WrapPanel>
             </GroupBox>
         </DockPanel>
         <DockPanel Grid.Column="2">
-            <GroupBox Header="Modifer">
-                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="400"/>
+            <GroupBox Header="Modifier">
+                <TextBox x:Name="Modifier" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="400"/>
             </GroupBox>
             <GroupBox Header="Potential">
-                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"/>
+                <TextBox x:Name="Potential" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"/>
             </GroupBox>
         </DockPanel>
     </Grid>

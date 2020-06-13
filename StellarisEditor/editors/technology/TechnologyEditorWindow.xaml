@@ -4,9 +4,86 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StellarisEditor.editors.technology"
+        xmlns:c="clr-namespace:StellarisEditor.component"
         mc:Ignorable="d"
-        Title="TechnologyEditorWindow" Height="450" Width="800">
+        Title="TechnologyEditorWindow" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico">
+    <Window.Resources>
+        <RoutedUICommand x:Key="Save" Text="Button Click"/>
+        <RoutedUICommand x:Key="Exit" Text="Button Click"/>
+        <RoutedUICommand x:Key="Add" Text="Button Click"/>
+        <RoutedUICommand x:Key="Delete" Text="Button Click"/>
+        <RoutedUICommand x:Key="Copy" Text="Button Click"/>
+        <RoutedUICommand x:Key="Paste" Text="Button Click"/>
+    </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="S" Command="{StaticResource Save}"/>
+        <KeyBinding Modifiers="Ctrl" Key="C" Command="{StaticResource Copy}"/>
+        <KeyBinding Modifiers="Ctrl" Key="V" Command="{StaticResource Paste}"/>
+        <KeyBinding Modifiers="Alt" Key="F4"  Command="{StaticResource Exit}"/>
+        <KeyBinding Modifiers="Ctrl" Key="N"  Command="{StaticResource Add}"/>
+        <KeyBinding Key="Delete"  Command="{StaticResource Delete}"/>
+    </Window.InputBindings>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource Save}" CanExecute="CommandExecuteSave" />
+        <CommandBinding Command="{StaticResource Copy}" CanExecute="CommandExecuteCopy" />
+        <CommandBinding Command="{StaticResource Paste}" CanExecute="CommandExecutePaste" />
+        <CommandBinding Command="{StaticResource Exit}" CanExecute="CommandExecuteExit" />
+        <CommandBinding Command="{StaticResource Add}" CanExecute="CommandExecuteAdd" />
+        <CommandBinding Command="{StaticResource Delete}" CanExecute="CommandExecuteDelete" />
+    </Window.CommandBindings>
     <Grid>
-        
+        <c:WaitingProgressBar x:Name="progressView" Value="0" Width="200" Height="200" Foreground="#FF008aff"/>
+        <DockPanel x:Name="dataPanel" Visibility="Collapsed">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="文件(_F)">
+                    <MenuItem Header="保存(_S)" InputGestureText="Ctrl+S" Click="MenuItemClickSave"/>
+                    <Separator />
+                    <MenuItem Header="退出(_X)" InputGestureText="Alt+F4" Click="MenuItemClickExit" />
+                </MenuItem>
+                <MenuItem Header="编辑(_E)">
+                    <MenuItem Header="添加(_N)" InputGestureText="Ctrl+N" Click="MenuItemClickAdd" />
+                    <MenuItem Header="删除(_X)" InputGestureText="Delete" Click="MenuItemClickDelete" />
+                    <Separator />
+                    <MenuItem Header="复制(_C)" InputGestureText="Ctrl+C" Click="MenuItemClickCopy" />
+                    <MenuItem Header="粘贴(_P)" InputGestureText="Ctrl+V" Click="MenuItemClickPaste" />
+                </MenuItem>
+            </Menu>
+            <DockPanel DockPanel.Dock="Top">
+                <FrameworkElement x:Name="proxyElement" Visibility="Collapsed"/>
+                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" SelectionUnit="FullRow" SelectionMode="Single" RowHeaderWidth="0" CanUserAddRows="False">
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type DataGridRow}">
+                            <EventSetter Event="Control.MouseDoubleClick" Handler="MouseDoubleClick_EditItem"/>
+                        </Style>
+                        <RoutedUICommand x:Key="Delete" Text="Button Click"/>
+                    </DataGrid.Resources>
+                    <DataGrid.InputBindings>
+                        <KeyBinding Key="Delete"  Command="{StaticResource Delete}"/>
+                        <KeyBinding Modifiers="Ctrl" Key="C" Command="{StaticResource Copy}"/>
+                        <KeyBinding Modifiers="Ctrl" Key="V" Command="{StaticResource Paste}"/>
+                    </DataGrid.InputBindings>
+                    <DataGrid.CommandBindings>
+                        <CommandBinding Command="{StaticResource Delete}" CanExecute="CommandExecuteDelete" />
+                    </DataGrid.CommandBindings>
+                    <DataGrid.ContextMenu>
+                        <ContextMenu x:Name="popMenu" StaysOpen="true">
+                            <MenuItem Header="添加(_N)" InputGestureText="Ctrl+N" Click="MenuItemClickAdd" />
+                            <MenuItem Header="删除(_X)" InputGestureText="Delete" Click="MenuItemClickDelete" />
+                            <Separator />
+                            <MenuItem Header="复制(_C)" InputGestureText="Ctrl+C" Click="MenuItemClickCopy" />
+                            <MenuItem Header="粘贴(_P)" InputGestureText="Ctrl+V" Click="MenuItemClickPaste" />
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="键" Width="250" IsReadOnly="True" />
+                        <DataGridTextColumn Header="花费" Width="250" IsReadOnly="True" />
+                        <DataGridTextColumn Header="类别" Width="250" IsReadOnly="True" />
+                        <DataGridTextColumn Header="子类别" Width="250" IsReadOnly="True" />
+                        <DataGridTextColumn Header="权重" Width="250" IsReadOnly="True" />
+                        <DataGridTextColumn Header="文件名" Width="250" IsReadOnly="True" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </DockPanel>
     </Grid>
 </Window>
