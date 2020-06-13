@@ -24,13 +24,9 @@ namespace StellarisEditor.mod.data
         public static LinkedList<PdxTechnologyTier> TechnologyTiers = new LinkedList<PdxTechnologyTier>();
         public static LinkedList<PdxTechnologyCategory> TechnologyCategories = new LinkedList<PdxTechnologyCategory>();
 
-        public static void LoadTechnologyCategories(TaskCancel cancel)
+        public static void LoadDatas()
         {
-            TechnologyCategories.Clear();
-            string dir_path = Properties.Settings.Default.ModPath + STELLARIS_PATH_TECHNOLOGY_CATEGORY;
-            if (Directory.Exists(dir_path)) {
-                LoadTechnologyCategory(dir_path, TechnologyCategories, cancel);
-            }
+            LoadTechnologyCategory(Properties.Settings.Default.ModPath, TechnologyCategories);
         }
 
         public static void LoadScriptedVariables(TaskCancel cancel)

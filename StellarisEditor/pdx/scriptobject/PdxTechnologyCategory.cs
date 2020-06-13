@@ -64,7 +64,7 @@ namespace StellarisEditor.pdx.scriptobject
 
         public override int GetHashCode() => base.GetHashCode();
 
-        public override string ToString() => $"{Key} = {{ {(String.IsNullOrWhiteSpace(Icon) ? "" : "icon = \"" + Icon + "\"")} }}";
+        public override string ToString() => $"{Key} = {{ {(String.IsNullOrWhiteSpace(Icon) ? "" : "icon = " + Icon)} }}";
 
         public PdxTechnologyCategory Clone() => new PdxTechnologyCategory() { Key = Key, Icon = Icon, IsModData = IsModData };
     }

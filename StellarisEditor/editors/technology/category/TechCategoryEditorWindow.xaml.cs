@@ -32,95 +32,20 @@ namespace StellarisEditor.editors.techEditor
             InitializeComponent();
             dataGrid.ItemsSource = TechnologyCategories;
 
-            ModGlobalData.LoadTechnologyCategories(null);
-            ProgressTask = new Thread(() => UpdateProgress(UpdateData));
-            ProgressTask.Start();
-        }
-        private Thread SaveTask;
-        private Thread ProgressTask;
-        private int value = 0;
-        delegate void DelegateThreadFunction();
-
-        private int updateCount = 0;
-        private void UpdateData()
-        {
-            if (TechnologyCategories.Count != 0 && updateCount > 0)
-                return;
-
-            var current = value; updateCount = ModGlobalData.TechnologyCategories.Count;
-            for (int i = 0; i < ModGlobalData.TechnologyCategories.Count; i++)
+            foreach (var item in ModGlobalData.TechnologyCategories)
             {
-                var item = ModGlobalData.TechnologyCategories.ElementAt(i);
-                if (!TechnologyCategories.Contains(item))
-                {
-                    int a = current + (TechnologyCategories.Count / ModGlobalData.TechnologyCategories.Count * (99 - current));
-                    dataGrid.Dispatcher.BeginInvoke(new Action(() => {
-                        TechnologyCategories.Add(item);
-                        progressView.Value = value = a;
-                        updateCount--;
-                    }), DispatcherPriority.Normal);
-                }
+                TechnologyCategories.Add(item);
             }
-        }
-
-        private void UpdateProgress(DelegateThreadFunction method)
-        {
-            Thread.Sleep(500);
-            StartProgress();
-
-            while (true)
-            {
-                ThreadPool.GetMaxThreads(out int maxWorkerThreads, out int maxPortThreads);
-                ThreadPool.GetAvailableThreads(out int workerThreads, out int portThreads);
-                if (maxWorkerThreads - workerThreads != 0)
-                {
-                    Thread.Sleep(1000);
-                    PlusProgress();
-                }
-                else
-                {
-
-                    if (!IsVisible)
-                        return;
-
-                    method?.Invoke();
-                    method = null;
-                    if (value < 99)
-                    {
-                        Thread.Sleep(10);
-                        PlusProgress();
-                    }
-                    else
-                    {
-                        CompleteProgress();
-                        return;
-                    }
-                }
-            }
-        }
-
-        private void StartSaveTask()
-        {
-            if (SaveTask != null && ProgressTask != null && SaveTask.ThreadState != ThreadState.Stopped && ProgressTask.ThreadState != ThreadState.Stopped)
-            {
-                MessageBox.Show("请等待上一次保存任务完成");
-                return;
-            }
-
-            SaveTask = new Thread(Save);
-            SaveTask.Start();
-            ProgressTask = new Thread(() => UpdateProgress(null));
-            ProgressTask.Start();
         }
 
         private void MenuItemClickSave(object sender, RoutedEventArgs e)
         {
-            StartSaveTask();
+            Save();
         }
 
         private void CommandExecuteSave(object sender, CanExecuteRoutedEventArgs e)
         {
-            StartSaveTask();
+            Save();
         }
 
         private void Save()
@@ -130,39 +55,14 @@ namespace StellarisEditor.editors.techEditor
             var gs = TechnologyCategories.GroupBy(l => l.FileName);
             foreach (var g in gs)
             {
-                MessageBox.Show($"{g.Key}");
                 String[] lines = new string[g.Count()];
                 int i = 0;
                 foreach (var l in g)
                     lines[i++] = l.ToString();
                 File.WriteAllLines($"{Properties.Settings.Default.ModPath + PdxGlobalData.STELLARIS_PATH_TECHNOLOGY_CATEGORY}{g.Key}.txt", lines, new UTF8Encoding(false));
             }
-        }
 
-        private void StartProgress()
-        {
-            progressView.Dispatcher.BeginInvoke(new Action(() => {
-                progressView.Value = value = 0;
-                progressView.Visibility = Visibility.Visible;
-                dataPanel.Visibility = Visibility.Hidden;
-            }), DispatcherPriority.Normal);
-        }
-
-        private void CompleteProgress()
-        {
-            progressView.Dispatcher.BeginInvoke(new Action(() => {
-                progressView.Value = value = 0;
-                progressView.Visibility = Visibility.Collapsed;
-                dataPanel.Visibility = Visibility.Visible;
-            }), DispatcherPriority.Normal);
-        }
-
-        private void PlusProgress()
-        {
-            progressView.Dispatcher.BeginInvoke(new Action(() =>
-            {
-                progressView.Value = ++value;
-            }), DispatcherPriority.Normal);
+            MessageBox.Show("保存完成");
         }
 
         private PdxTechnologyCategory CopyTechnologyCategory;

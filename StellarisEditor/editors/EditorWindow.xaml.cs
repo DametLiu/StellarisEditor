@@ -1,6 +1,7 @@
 ﻿using StellarisEditor.editors.job;
 using StellarisEditor.editors.localization;
 using StellarisEditor.editors.scriptedvariables;
+using StellarisEditor.mod.data;
 using StellarisEditor.pdx.scriptobject;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,8 @@ namespace StellarisEditor.editors
         public EditorWindow()
         {
             InitializeComponent();
+
+            ModGlobalData.LoadDatas();
         }
 
         private void OpenLocalizationEditor(object sender, RoutedEventArgs e)

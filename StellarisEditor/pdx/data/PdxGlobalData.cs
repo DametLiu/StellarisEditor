@@ -38,7 +38,15 @@ namespace StellarisEditor.data
 
         public static void LoadDatas()
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(Properties.Settings.Default.StellarisPath + STELLARIS_PATH_TECHNOLOGY_CATEGORY);
+            LoadTechnologyCategory(Properties.Settings.Default.StellarisPath, TechnologyCategories);
+        }
+
+        public static void LoadTechnologyCategory(string root, LinkedList<PdxTechnologyCategory> categories)
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY_CATEGORY);
+            if (!directoryInfo.Exists)
+                return;
+
             FileInfo[] fileInfos = directoryInfo.GetFiles();
             foreach (FileInfo file in fileInfos)
             {
@@ -48,46 +56,9 @@ namespace StellarisEditor.data
                 {
                     PdxTechnologyCategory category = PdxTechnologyCategory.Parse(item as ObjectStatement);
                     category.FileName = file.Name.Substring(0, file.Name.LastIndexOf('.'));
-                    TechnologyCategories.Add(category);
+                    categories.Add(category);
                 }
-                    
             }
-        }
-
-        public static void LoadTechnologyCategories(TaskCancel cancel)
-        {
-            LoadTechnologyCategory(Properties.Settings.Default.StellarisPath + STELLARIS_PATH_TECHNOLOGY_CATEGORY, TechnologyCategories, cancel);
-        }
-
-        public static void ExcuteTechnologyCategoryTask(object state)
-        {
-            TechnologyCategoryState technologyCategoryState = state as TechnologyCategoryState;
-            if (IsTaskCanceled(technologyCategoryState))
-                return;
-
-            LinkedList<PdxTechnologyCategory> categories = TechnologyCategoryParser.Parse(technologyCategoryState.file);
-
-            lock (technologyCategoryState.technologyCategories) {
-                foreach (var category in categories)
-                    if (!technologyCategoryState.technologyCategories.Contains(category)) {
-                        category.FileName = technologyCategoryState.file.SimpleName();
-                        technologyCategoryState.technologyCategories.Add(category);
-                    }
-            }
-        }
-
-        public static void LoadTechnologyCategory(string path, LinkedList<PdxTechnologyCategory> technologyCategories, TaskCancel cancel)
-        {
-            DirectoryInfo directoryInfo = new DirectoryInfo(path);
-            FileInfo[] fileInfos = directoryInfo.GetFiles();
-            foreach (FileInfo file in fileInfos)
-                ThreadPool.UnsafeQueueUserWorkItem(new WaitCallback(ExcuteTechnologyCategoryTask), new TechnologyCategoryState() { file = file, technologyCategories = technologyCategories, cancel = cancel });
-        }
-
-        public class TechnologyCategoryState : TaskState
-        {
-            public FileInfo file;
-            public LinkedList<PdxTechnologyCategory> technologyCategories;
         }
 
         public static void LoadTechnologyTiers(TaskCancel cancel)
