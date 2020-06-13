@@ -1,6 +1,7 @@
 ﻿using StellarisEditor.extension;
 using StellarisEditor.pdx.parser;
 using StellarisEditor.pdx.scriptobject;
+using StellarisEditor.ScriptEngine;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -37,7 +38,20 @@ namespace StellarisEditor.data
 
         public static void LoadDatas()
         {
+            DirectoryInfo directoryInfo = new DirectoryInfo(Properties.Settings.Default.StellarisPath + STELLARIS_PATH_TECHNOLOGY_CATEGORY);
+            FileInfo[] fileInfos = directoryInfo.GetFiles();
+            foreach (FileInfo file in fileInfos)
+            {
+                StatementCollection statements = new NormalParser(new Lexical(File.ReadAllText(file.FullName))).Parse();
 
+                foreach (var item in statements)
+                {
+                    PdxTechnologyCategory category = PdxTechnologyCategory.Parse(item as ObjectStatement);
+                    category.FileName = file.Name.Substring(0, file.Name.LastIndexOf('.'));
+                    TechnologyCategories.Add(category);
+                }
+                    
+            }
         }
 
         public static void LoadTechnologyCategories(TaskCancel cancel)

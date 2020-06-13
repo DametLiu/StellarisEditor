@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StellarisEditor.ScriptEngine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -51,6 +52,12 @@ namespace StellarisEditor.pdx.scriptobject
                 _FileName = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FileName"));
             }
+        }
+
+        public static PdxTechnologyCategory Parse(ObjectStatement statement)
+        {
+            var a = statement.Statements.First() as AssignmentStatement;
+            return new PdxTechnologyCategory() { Key = statement.Key, Icon = a.Value.Content };
         }
 
         public override bool Equals(object obj) => obj is PdxTechnologyCategory category && Key == category.Key && Icon == category.Icon;

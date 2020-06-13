@@ -216,14 +216,14 @@
     <Compile Include="pdx\scriptobject\PdxWeightModifier.cs" />
     <Compile Include="ScriptEngine\Expression\Expression.cs" />
     <Compile Include="ScriptEngine\NodeCollection.cs" />
-    <Compile Include="ScriptEngine\Script.cs" />
+    <Compile Include="ScriptEngine\Parser\IParser.cs" />
     <Compile Include="ScriptEngine\Node.cs" />
     <Compile Include="ScriptEngine\Parser\Block.cs" />
     <Compile Include="ScriptEngine\Parser\BlockInfo.cs" />
     <Compile Include="ScriptEngine\Lexer\Lexeme.cs" />
     <Compile Include="ScriptEngine\Lexer\Lexer.cs" />
     <Compile Include="ScriptEngine\LinePragma.cs" />
-    <Compile Include="ScriptEngine\Parser\Parser.cs" />
+    <Compile Include="ScriptEngine\Parser\NormalParser.cs" />
     <Compile Include="ScriptEngine\Parser\ParserConfig.cs" />
     <Compile Include="ScriptEngine\Parser\ParserContext.cs" />
     <Compile Include="ScriptEngine\Statment\ArrayStatement.cs" />

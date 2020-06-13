@@ -137,7 +137,7 @@ namespace StellarisEditor.ScriptEngine
                             }
                             else if (r.Tag == Tag.Brace_Left)
                             {
-                                context.BeginBlock(new ObjectStatement() { Statements = new StatementCollection(), Content = $"{l.Content} {m.Content} {r.Content}" });
+                                context.BeginBlock(new ObjectStatement() {Key = l.Content, Statements = new StatementCollection(), Content = $"{l.Content} {m.Content} {r.Content}" });
                             }
                             else
                             {
@@ -195,7 +195,7 @@ namespace StellarisEditor.ScriptEngine
                             r = Lexical.Read();
                             if (r.Tag == Tag.Brace_Left)
                             {
-                                context.BeginBlock(new ObjectStatement() { Statements = new StatementCollection(), Content = $"{l.Content} {m.Content} {r.Content}" });
+                                context.BeginBlock(new ObjectStatement() {Key = l.Content, Statements = new StatementCollection(), Content = $"{l.Content} {m.Content} {r.Content}" });
                             }
                         }
                         else
