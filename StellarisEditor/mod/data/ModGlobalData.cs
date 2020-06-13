@@ -27,6 +27,7 @@ namespace StellarisEditor.mod.data
         public static void LoadDatas()
         {
             LoadTechnologyCategory(Properties.Settings.Default.ModPath, TechnologyCategories);
+            LoadTechnologyTiers(Properties.Settings.Default.ModPath, TechnologyTiers);
         }
 
         public static void LoadScriptedVariables(TaskCancel cancel)
@@ -38,15 +39,6 @@ namespace StellarisEditor.mod.data
             if (Directory.Exists(dir_path)) {
                 LoadScriptedVariable(lines, dir_path, Variables, cancel);
                 ExcuteVariableTask(lines);
-            }
-        }
-
-        public static void LoadTechnologyTiers(TaskCancel cancel)
-        {
-            TechnologyTiers.Clear();
-            string dir_path = Properties.Settings.Default.ModPath + STELLARIS_PATH_TECHNOLOGY_TIER;
-            if (Directory.Exists(dir_path)) {
-                LoadTechnologyTier(dir_path, TechnologyTiers, cancel);
             }
         }
 

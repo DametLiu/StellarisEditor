@@ -30,12 +30,9 @@ namespace StellarisEditor.editors.techEditor
         public TechCategoryEditorWindow()
         {
             InitializeComponent();
-            dataGrid.ItemsSource = TechnologyCategories;
-
             foreach (var item in ModGlobalData.TechnologyCategories)
-            {
                 TechnologyCategories.Add(item);
-            }
+            dataGrid.ItemsSource = TechnologyCategories;
         }
 
         private void MenuItemClickSave(object sender, RoutedEventArgs e)

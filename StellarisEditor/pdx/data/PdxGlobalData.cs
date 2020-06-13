@@ -39,6 +39,7 @@ namespace StellarisEditor.data
         public static void LoadDatas()
         {
             LoadTechnologyCategory(Properties.Settings.Default.StellarisPath, TechnologyCategories);
+            LoadTechnologyTiers(Properties.Settings.Default.StellarisPath, TechnologyTiers);
         }
 
         public static void LoadTechnologyCategory(string root, LinkedList<PdxTechnologyCategory> categories)
@@ -61,42 +62,26 @@ namespace StellarisEditor.data
             }
         }
 
-        public static void LoadTechnologyTiers(TaskCancel cancel)
+        public static void LoadTechnologyTiers(string root, LinkedList<PdxTechnologyTier> tiers)
         {
-            LoadTechnologyTier(Properties.Settings.Default.StellarisPath + STELLARIS_PATH_TECHNOLOGY_TIER, TechnologyTiers, cancel);
-        }
-
-        public static void ExcuteTechnologyTierTask(object state)
-        {
-            TechnologyTierState technologyTierState = state as TechnologyTierState;
-            if (IsTaskCanceled(technologyTierState))
+            DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY_TIER);
+            if (!directoryInfo.Exists)
                 return;
 
-            LinkedList<PdxTechnologyTier> tiers = TechnologyTierParser.Parse(technologyTierState.file);
-
-            lock (technologyTierState.technologyTiers) {
-                foreach (var tier in tiers)
-                    if (!technologyTierState.technologyTiers.Contains(tier)) {
-                        tier.FileName = technologyTierState.file.SimpleName();
-                        technologyTierState.technologyTiers.Add(tier);
-                    }
-            }
-        }
-
-        public static void LoadTechnologyTier(string path, LinkedList<PdxTechnologyTier> technologyTiers, TaskCancel cancel)
-        {
-            DirectoryInfo directoryInfo = new DirectoryInfo(path);
             FileInfo[] fileInfos = directoryInfo.GetFiles();
             foreach (FileInfo file in fileInfos)
-                ThreadPool.UnsafeQueueUserWorkItem(new WaitCallback(ExcuteTechnologyTierTask), new TechnologyTierState() { file = file, technologyTiers = technologyTiers, cancel = cancel });
-        }
+            {
+                StatementCollection statements = new NormalParser(new Lexical(File.ReadAllText(file.FullName))).Parse();
 
-        public class TechnologyTierState : TaskState
-        {
-            public FileInfo file;
-            public LinkedList<PdxTechnologyTier> technologyTiers;
+                foreach (var item in statements)
+                {
+                    PdxTechnologyTier tier = PdxTechnologyTier.Parse(item as ObjectStatement);
+                    tier.FileName = file.Name.Substring(0, file.Name.LastIndexOf('.'));
+                    tiers.Add(tier);
+                }
+            }
         }
-
+       
         public static void LoadScriptedVariables(TaskCancel cancel)
         {
             LinkedList<VariableState> lines = new LinkedList<VariableState>();

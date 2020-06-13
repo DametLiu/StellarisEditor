@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StellarisEditor.ScriptEngine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -54,7 +55,10 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-
+        public static PdxTechnologyTier Parse(ObjectStatement statement)
+        {
+            return new PdxTechnologyTier() { Key = statement.Key, PreviouslyUnlocked = statement.Statements.Count == 0 ? "" : (statement.Statements.First() as AssignmentStatement).Value.Content };
+        }
 
         public override bool Equals(object obj) => obj is PdxTechnologyTier tier && Key == tier.Key && PreviouslyUnlocked == tier.PreviouslyUnlocked;
 

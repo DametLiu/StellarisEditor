@@ -30,99 +30,19 @@ namespace StellarisEditor.editors.techEditor
         public TechTierWindow()
         {
             InitializeComponent();
-
+            foreach (var item in ModGlobalData.TechnologyTiers)
+                TechnologyTiers.Add(item);
             dataGrid.ItemsSource = TechnologyTiers;
-
-            ModGlobalData.LoadTechnologyTiers(null);
-            ProgressTask = new Thread(() => UpdateProgress(UpdateData));
-            ProgressTask.Start();
-        }
-        private Thread SaveTask;
-        private Thread ProgressTask;
-        private int value = 0;
-        delegate void DelegateThreadFunction();
-
-        private int updateCount = 0;
-        private void UpdateData()
-        {
-            if (TechnologyTiers.Count != 0 || updateCount > 0)
-                return;
-            updateCount = ModGlobalData.TechnologyTiers.Count;
-
-            var current = value;
-            for (int i = 0; i < ModGlobalData.TechnologyTiers.Count; i++)
-            {
-                var item = ModGlobalData.TechnologyTiers.ElementAt(i);
-                if (!TechnologyTiers.Contains(item))
-                {
-                    int a = current + (TechnologyTiers.Count / ModGlobalData.TechnologyTiers.Count * (99 - current));
-                    dataGrid.Dispatcher.BeginInvoke(new Action(() => {
-                        TechnologyTiers.Add(item);
-                        progressView.Value = value = a;
-                        updateCount--;
-                    }), DispatcherPriority.Normal);
-                }
-            }
-        }
-
-        private void UpdateProgress(DelegateThreadFunction method)
-        {
-            Thread.Sleep(500);
-            StartProgress();
-
-            while (true)
-            {
-                ThreadPool.GetMaxThreads(out int maxWorkerThreads, out int maxPortThreads);
-                ThreadPool.GetAvailableThreads(out int workerThreads, out int portThreads);
-                if (maxWorkerThreads - workerThreads != 0)
-                {
-                    Thread.Sleep(1000);
-                    PlusProgress();
-                }
-                else
-                {
-
-                    if (!IsVisible)
-                        return;
-
-                    method?.Invoke();
-                    method = null;
-                    if (value < 99)
-                    {
-                        Thread.Sleep(1);
-                        PlusProgress();
-                    }
-                    else
-                    {
-                        CompleteProgress();
-                        return;
-                    }
-                }
-            }
-        }
-
-        private void StartSaveTask()
-        {
-            if (SaveTask != null && ProgressTask != null && SaveTask.ThreadState != ThreadState.Stopped && ProgressTask.ThreadState != ThreadState.Stopped)
-            {
-                MessageBox.Show("请等待上一次保存任务完成");
-                return;
-            }
-
-            SaveTask = new Thread(Save);
-            SaveTask.Start();
-            ProgressTask = new Thread(() => UpdateProgress(null));
-            ProgressTask.Start();
         }
 
         private void MenuItemClickSave(object sender, RoutedEventArgs e)
         {
-            StartSaveTask();
+            Save();
         }
 
         private void CommandExecuteSave(object sender, CanExecuteRoutedEventArgs e)
         {
-            StartSaveTask();
+            Save();
         }
 
         private void Save()
@@ -137,33 +57,8 @@ namespace StellarisEditor.editors.techEditor
                 foreach (var l in g)
                     lines[i++] = l.ToString();
                 File.WriteAllLines($"{Properties.Settings.Default.ModPath + PdxGlobalData.STELLARIS_PATH_TECHNOLOGY_TIER}{g.Key}.txt", lines, new UTF8Encoding(false));
+                MessageBox.Show("保存完成");
             }
-        }
-
-        private void StartProgress()
-        {
-            progressView.Dispatcher.BeginInvoke(new Action(() => {
-                progressView.Value = value = 0;
-                progressView.Visibility = Visibility.Visible;
-                dataPanel.Visibility = Visibility.Hidden;
-            }), DispatcherPriority.Normal);
-        }
-
-        private void CompleteProgress()
-        {
-            progressView.Dispatcher.BeginInvoke(new Action(() => {
-                progressView.Value = value = 0;
-                progressView.Visibility = Visibility.Collapsed;
-                dataPanel.Visibility = Visibility.Visible;
-            }), DispatcherPriority.Normal);
-        }
-
-        private void PlusProgress()
-        {
-            progressView.Dispatcher.BeginInvoke(new Action(() =>
-            {
-                progressView.Value = ++value;
-            }), DispatcherPriority.Normal);
         }
 
         private PdxTechnologyTier CopyTechnologyTier;
