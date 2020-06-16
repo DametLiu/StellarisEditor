@@ -35,14 +35,36 @@ namespace StellarisEditor.data
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();
         public static LinkedList<PdxTechnologyTier> TechnologyTiers = new LinkedList<PdxTechnologyTier>();
         public static LinkedList<PdxTechnologyCategory> TechnologyCategories = new LinkedList<PdxTechnologyCategory>();
+        public static LinkedList<PdxTechnology> Technologies = new LinkedList<PdxTechnology>();
 
         public static void LoadDatas()
         {
-            LoadTechnologyCategory(Properties.Settings.Default.StellarisPath, TechnologyCategories);
+            LoadTechnologyCategories(Properties.Settings.Default.StellarisPath, TechnologyCategories);
             LoadTechnologyTiers(Properties.Settings.Default.StellarisPath, TechnologyTiers);
+            LoadTechnologies(Properties.Settings.Default.StellarisPath, Technologies);
         }
 
-        public static void LoadTechnologyCategory(string root, LinkedList<PdxTechnologyCategory> categories)
+        public static void LoadTechnologies(string root, LinkedList<PdxTechnology> technologies)
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY);
+            if (!directoryInfo.Exists)
+                return;
+
+            FileInfo[] fileInfos = directoryInfo.GetFiles();
+            foreach (FileInfo file in fileInfos)
+            {
+                StatementCollection statements = new NormalParser(new Lexical(File.ReadAllText(file.FullName))).Parse();
+
+                foreach (var item in statements)
+                {
+                    PdxTechnology technology = PdxTechnology.Parse(item as ObjectStatement);
+                    technology.FileName = file.Name.Substring(0, file.Name.LastIndexOf('.'));
+                    technologies.Add(technology);
+                }
+            }
+        }
+
+        public static void LoadTechnologyCategories(string root, LinkedList<PdxTechnologyCategory> categories)
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY_CATEGORY);
             if (!directoryInfo.Exists)

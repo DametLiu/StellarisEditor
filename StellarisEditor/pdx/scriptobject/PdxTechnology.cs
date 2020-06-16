@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StellarisEditor.data;
+using StellarisEditor.ScriptEngine;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -11,6 +13,47 @@ namespace StellarisEditor.pdx.scriptobject
     public class PdxTechnology : PdxObject
     {
         public new event PropertyChangedEventHandler PropertyChanged;
+
+        public static PdxTechnology Parse(ObjectStatement objectStatement)
+        {
+            PdxTechnology technology = new PdxTechnology { Key = objectStatement.Key };
+
+            foreach (var item in objectStatement.Statements)
+            {
+                if (item is AssignmentStatement ai)
+                {
+                    if (ai.Key.Content == "cost")
+                        technology.Cost = ai.Value.Content;
+                    else if (ai.Key.Content == "area")
+                        technology.Area = ai.Value.Content;
+                    
+                }
+                else if (item is ObjectStatement oi)
+                {
+                    if (oi.Key == "tier" && oi.Statements.Count > 0)
+                    {
+                        var t = oi.Statements.First() as AssignmentStatement;
+                        technology.Tier = new PdxTechnologyTier() { Key = t.Key.Content, PreviouslyUnlocked = t.Value.Content };
+                    }
+                    else if (oi.Key == "category" && oi.Statements.Count > 0 && oi.Statements.First() is ArrayStatement ari)
+                    {
+                        foreach (var element in ari.Elements)
+                        {
+                            var a = PdxGlobalData.TechnologyCategories.Where(tc => tc.Key == element.Content);
+                            if (a.Count() > 0)
+                                technology.Category.Add(a.First());
+                            else
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            return technology;
+        }
 
         private String _Key;
         public String Key

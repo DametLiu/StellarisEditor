@@ -23,11 +23,13 @@ namespace StellarisEditor.mod.data
         public static LinkedList<PdxVariable> Variables = new LinkedList<PdxVariable>();
         public static LinkedList<PdxTechnologyTier> TechnologyTiers = new LinkedList<PdxTechnologyTier>();
         public static LinkedList<PdxTechnologyCategory> TechnologyCategories = new LinkedList<PdxTechnologyCategory>();
+        public static LinkedList<PdxTechnology> Technologies = new LinkedList<PdxTechnology>();
 
         public static void LoadDatas()
         {
-            LoadTechnologyCategory(Properties.Settings.Default.ModPath, TechnologyCategories);
+            LoadTechnologyCategories(Properties.Settings.Default.ModPath, TechnologyCategories);
             LoadTechnologyTiers(Properties.Settings.Default.ModPath, TechnologyTiers);
+            LoadTechnologies(Properties.Settings.Default.ModPath, Technologies);
         }
 
         public static void LoadScriptedVariables(TaskCancel cancel)
