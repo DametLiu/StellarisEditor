@@ -21,8 +21,7 @@
             </GroupBox>
             <GroupBox Header="Common">
                 <WrapPanel Orientation="Vertical">
-                    <CheckBox Content="Playable" FontSize="15" Width="295"/>
-                    <CheckBox Content="Re Election Allowed" FontSize="15" />
+                    <CheckBox Content="Re Election Allowed" FontSize="15" Width="295"/>
                     <CheckBox Content="Has Heir" FontSize="15"/>
                     <CheckBox Content="Uses Mandates" FontSize="15"/>
                     <CheckBox Content="Has Agendas" FontSize="15"/>
@@ -45,14 +44,17 @@
                     <TextBlock Text="Election Term Variance" HorizontalAlignment="Center"/>
                     <TextBox/>
                     <GroupBox Header="Tags">
-                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="70"/>
+                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="90"/>
                     </GroupBox>
                 </WrapPanel>
             </GroupBox>
         </DockPanel>
         <DockPanel Grid.Column="1">
             <GroupBox Header="Country Modifier">
-                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"/>
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="300"/>
+            </GroupBox>
+            <GroupBox Header="Playable">
+                <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Text="always = yes"/>
             </GroupBox>
         </DockPanel>
         <DockPanel Grid.Column="2">

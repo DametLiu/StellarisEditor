@@ -1,0 +1,37 @@
+﻿<Window x:Class="StellarisEditor.editors.AmbientObject.AmbientObjectEditeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StellarisEditor.editors.AmbientObject"
+        mc:Ignorable="d"
+        Title="环境物体编辑器" Height="450" Width="800">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="74" Margin="0,336,0,0" VerticalAlignment="Top" Width="285">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="146*"/>
+                <ColumnDefinition Width="143*"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Content="可被选中/selectable" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2"/>
+            <CheckBox Content="地图上显示名字/show_name" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.269,0.903" Grid.ColumnSpan="2"/>
+        </Grid>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="10,30,0,0" TextWrapping="Wrap" Text="test_ambient_object" VerticalAlignment="Top" Width="165"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="10,90,0,0" TextWrapping="Wrap" Text="test_ambient_object_desc" VerticalAlignment="Top" Width="165"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="10,150,0,0" TextWrapping="Wrap" Text="test_ambient_object_tooltip" VerticalAlignment="Top" Width="165"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="10,210,0,0" TextWrapping="Wrap" Text="probe_entity" VerticalAlignment="Top" Width="165"/>
+        <GroupBox Header="描述本地化" HorizontalAlignment="Left" Height="341" Margin="558,30,0,0" VerticalAlignment="Top" Width="226" BorderThickness="1.5">
+            <TextBox HorizontalAlignment="Left" Height="287" Margin="0,10,-2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+        </GroupBox>
+        <GroupBox Header="名称本地化" HorizontalAlignment="Left" Height="140" Margin="285,30,0,0" VerticalAlignment="Top" Width="226" BorderThickness="1.5">
+            <TextBox HorizontalAlignment="Left" Height="90" Margin="0,10,-2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+        </GroupBox>
+        <GroupBox Header="说明本地化" HorizontalAlignment="Left" Height="140" Margin="285,231,0,0" VerticalAlignment="Top" Width="226" BorderThickness="1.5">
+            <TextBox HorizontalAlignment="Left" Height="97" Margin="0,0,-2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+        </GroupBox>
+        <Label Content="名称/name" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="描述/description" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="说明/tooltip" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="模型/entity" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" Width="125"/>
+
+    </Grid>
+</Window>

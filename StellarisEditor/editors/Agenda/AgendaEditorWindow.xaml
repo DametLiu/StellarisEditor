@@ -15,7 +15,11 @@
             <Label Content="本地化名称（中文）" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.908,1.284"/>
             <Label Content="本地化注释/desc(中文)" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="140"/>
         </Grid>
-        <GroupBox Header="出现权重/weight" HorizontalAlignment="Left" Height="331" Margin="243,50,0,0" VerticalAlignment="Top" Width="215" BorderThickness="1.5"/>
-        <GroupBox Header="国家修正/modifier" HorizontalAlignment="Left" Height="331" Margin="520,50,0,0" VerticalAlignment="Top" Width="215" BorderThickness="1.5"/>
+        <GroupBox Header="出现权重/weight" HorizontalAlignment="Left" Height="331" Margin="243,50,0,0" VerticalAlignment="Top" Width="215" BorderThickness="1.5">
+            <TextBox HorizontalAlignment="Right" Height="286" Margin="0,0,1.6,0" TextWrapping="Wrap" Text="weight = 100" VerticalAlignment="Top" Width="192" AcceptsReturn="True" AcceptsTab="True" FontSize="12"/>
+        </GroupBox>
+        <GroupBox Header="国家修正/modifier" HorizontalAlignment="Left" Height="331" Margin="520,50,0,0" VerticalAlignment="Top" Width="215" BorderThickness="1.5">
+            <TextBox HorizontalAlignment="Right" Height="286" Margin="0,0,1.6,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" AcceptsReturn="True" AcceptsTab="True" FontSize="12"/>
+        </GroupBox>
     </Grid>
 </Window>

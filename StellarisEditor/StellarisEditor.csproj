@@ -124,6 +124,12 @@
     <Compile Include="editors\relics\RelicEditor.xaml.cs">
       <DependentUpon>RelicEditor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="editors\technology\TechnologyEditorWindow.xaml.cs">
+      <DependentUpon>TechnologyEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editors\technology\TechnologyItemEditorWindow.xaml.cs">
+      <DependentUpon>TechnologyItemEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="extension\FileInfoExtension.cs" />
     <Compile Include="ScriptEngine\Expression\AssignExpression.cs" />
     <Compile Include="ScriptEngine\Expression\BooleanExpression.cs" />
@@ -284,6 +290,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\technology\category\TechCategoryEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\technology\TechnologyEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\technology\TechnologyItemEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

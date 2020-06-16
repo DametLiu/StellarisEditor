@@ -40,27 +40,27 @@
         <DockPanel Grid.Column="1">
             <GroupBox Header="Origin" FontSize="18">
                 <WrapPanel Orientation="Vertical">
-                    <CheckBox Content="Is Origin" FontSize="15"/>
-                    <CheckBox Content="Advanced Start" FontSize="15"/>
-                    <CheckBox Content="Preferred Planet" FontSize="15"/>
-                    <CheckBox Content="Non Colonizable Planet Class" FontSize="15"/>
+                    <CheckBox x:Name="Is_Origin" Content="Is Origin" FontSize="15" Click="Is_Origin_Click"/>
+                    <CheckBox x:Name="Advanced_start" Content="Advanced Start" FontSize="15" IsEnabled="False"/>
+                    <CheckBox x:Name="Preferred_Planet" Content="Preferred Planet" FontSize="15" IsEnabled="False"/>
+                    <CheckBox x:Name="Non_Colonizable_Planet_Class" Content="Non Colonizable Planet Class" FontSize="15" IsEnabled="False"/>
                     <TextBlock Text="Picture" HorizontalAlignment="Center" Margin="5 0 0 0"/>
-                    <TextBox Width="260" Margin="15 0 0 0"/>
+                    <TextBox x:Name="Picture" Width="260" Margin="15 0 0 0" IsEnabled="False"/>
                     <TextBlock Text="Initializers " HorizontalAlignment="Center" Margin="5 0 0 0"/>
-                    <TextBox Width="260" Margin="15 0 0 0"/>
+                    <TextBox x:Name="Initializers" Width="260" Margin="15 0 0 0" IsEnabled="False"/>
                     <TextBlock Text="Flag " HorizontalAlignment="Center" Margin="5 0 0 0"/>
-                    <TextBox Width="260" Margin="15 0 0 0"/>
-                    <TextBlock Text="Icon " HorizontalAlignment="Center" Margin="5 0 0 0"/>
-                    <TextBox Width="260" Margin="15 0 0 0"/>
+                    <TextBox x:Name="Flag" Width="260" Margin="15 0 0 0" IsEnabled="False"/>
+                    <TextBlock Text="Icon " HorizontalAlignment="Center" Margin="5 0 0 0" />
+                    <TextBox x:Name="Icon" Width="260" Margin="15 0 0 0" IsEnabled="False"/>
                 </WrapPanel>
             </GroupBox>
             <GroupBox Header="Civic">
                 <WrapPanel Orientation="Vertical">
-                    <CheckBox Content="Pickable At Start " FontSize="15"/>
-                    <CheckBox Content="Modification" FontSize="15"/>
-                    <CheckBox Content="Can build Ruler Ship" FontSize="15"/>
+                    <CheckBox x:Name="Pickable_At_Start" Content="Pickable At Start " FontSize="15"/>
+                    <CheckBox x:Name="Modification" Content="Modification" FontSize="15"/>
+                    <CheckBox x:Name="Can_Build_Ruler_Ship" Content="Can build Ruler Ship" FontSize="15"/>
                     <GroupBox Header="Swap Type" Width="280" Margin="7 0 0 0">
-                        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="250"/>
+                        <TextBox x:Name="Swap_Type" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="250"/>
                     </GroupBox>
                 </WrapPanel>
             </GroupBox>

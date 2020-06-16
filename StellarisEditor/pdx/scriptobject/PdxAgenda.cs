@@ -11,5 +11,6 @@ namespace StellarisEditor.pdx.scriptobject
         public String Key;
         public LinkedList<PdxModifier> Modifier;
         public PdxWeightModifier WeightModifier;
+        public PdxLocalization Localization;
     }
 }
