@@ -259,14 +259,14 @@
         <DockPanel Grid.Column="3">
             <GroupBox Header="Additional Text">
                 <WrapPanel Orientation="Vertical">
-                    <CheckBox x:Name="Prereqfor_Desc" Content="Prereqfor Desc " FontSize="15"/>
-                    <CheckBox x:Name="Check_Hide_Prereq_For_Desc" Content="Hide Prereq For Desc" FontSize="15" IsEnabled="False" Click="Check_Hide_Prereq_For_Desc_Click"/>
-                    <CheckBox x:Name="Ship" Content="Ship" FontSize="15" IsEnabled="False" Click="Ship_Click" />
-                    <CheckBox x:Name="Custom" Content="Custom" FontSize="15" IsEnabled="False" Click="Custom_Click"/>
-                    <CheckBox x:Name="Component" Content="Component" FontSize="15" IsEnabled="False" Click="Component_Click"/>
-                    <CheckBox x:Name="Diplo_Action" Content="Diplo_Action" FontSize="15" IsEnabled="False" Click="Diplo_Action_Click"/>
-                    <CheckBox x:Name="Feature" Content="Feature" FontSize="15" IsEnabled="False" Click="Feature_Click"/>
-                    <CheckBox x:Name="Resource" Content="Resource" FontSize="15" IsEnabled="False" Click="Resource_Click"/>
+                    <CheckBox x:Name="Prereqfor_Desc" Content="Prereqfor Desc " FontSize="15" Click="Prereqfor_Desc_Click"/>
+                    <CheckBox x:Name="Check_Hide_Prereq_For_Desc" Content="Hide Prereq For Desc" FontSize="15" IsEnabled="False" Checked="Check_Hide_Prereq_For_Desc_Checked" Unchecked="Check_Hide_Prereq_For_Desc_Unchecked"/>
+                    <CheckBox x:Name="Ship" Content="Ship" FontSize="15" IsEnabled="False" Checked="Ship_Checked" Unchecked="Ship_Unchecked"/>
+                    <CheckBox x:Name="Custom" Content="Custom" FontSize="15" IsEnabled="False" Checked="Custom_Checked" Unchecked="Custom_Unchecked"/>
+                    <CheckBox x:Name="Component" Content="Component" FontSize="15" IsEnabled="False" Checked="Component_Checked" Unchecked="Component_Unchecked"/>
+                    <CheckBox x:Name="Diplo_Action" Content="Diplo_Action" FontSize="15" IsEnabled="False" Checked="Diplo_Action_Checked" Unchecked="Diplo_Action_Unchecked"/>
+                    <CheckBox x:Name="Feature" Content="Feature" FontSize="15" IsEnabled="False" Checked="Feature_Checked" Unchecked="Feature_Unchecked"/>
+                    <CheckBox x:Name="Resource" Content="Resource" FontSize="15" IsEnabled="False" Unchecked="Resource_Unchecked" Checked="Resource_Checked"/>
                     <TextBlock Text="Hide Prereq For Desc " Block.TextAlignment="Center" FontSize="15"/>
                     <ComboBox x:Name="Hide_Prereq_For_Desc" IsEnabled="False" FontSize="15">
                         <ComboBoxItem Content="resource"/>

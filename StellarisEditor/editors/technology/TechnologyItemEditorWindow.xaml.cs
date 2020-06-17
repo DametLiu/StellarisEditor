@@ -47,34 +47,6 @@ namespace StellarisEditor.editors.technology
             }
         }
 
-        private void Ship_Click(object sender, RoutedEventArgs e)
-        {
-            if (Ship.IsChecked.Value)
-            {
-                Ship_title.IsEnabled = true;
-                Ship_desc.IsEnabled = true;
-            }
-            else
-            {
-                Ship_title.IsEnabled = false;
-                Ship_desc.IsEnabled = false;
-            }
-        }
-
-        private void Custom_Click(object sender, RoutedEventArgs e)
-        {
-            if (Custom.IsChecked.Value)
-            {
-                Custom_desc.IsEnabled = true;
-                Custom_title.IsEnabled = true;
-            }
-            else
-            {
-                Custom_desc.IsEnabled = false;
-                Custom_title.IsEnabled = false;
-            }
-        }
-
         private void Check_Gateway_Click(object sender, RoutedEventArgs e)
         {
             if (Check_Gateway.IsChecked.Value)
@@ -108,65 +80,12 @@ namespace StellarisEditor.editors.technology
                 Tier.Text = null;
             }
         }
-        private void Component_Click(object sender, RoutedEventArgs e)
-        {
-            if (Component.IsChecked.Value)
-            {
-                Component_title.IsEnabled = true;
-                Component_desc.IsEnabled = true;
-            }
-            else
-            {
-                Component_title.IsEnabled = false;
-                Component_desc.IsEnabled = false;
-            }
-        }
-        private void Diplo_Action_Click(object sender, RoutedEventArgs e)
-        {
-            if (Diplo_Action.IsChecked.Value)
-            {
-                Diplo_Action_desc.IsEnabled = true;
-                Diplo_Action_title.IsEnabled = true;
-            }
-            else
-            {
-                Diplo_Action_desc.IsEnabled = false;
-                Diplo_Action_title.IsEnabled = false;
-            }
 
-        }
-        private void Feature_Click(object sender, RoutedEventArgs e)
+        private void Prereqfor_Desc_Click(object sender, RoutedEventArgs e)
         {
-            if (Feature.IsChecked.Value)
+            if (Prereqfor_Desc.IsChecked.Value)
             {
-                Feature_title.IsEnabled = true;
-                Feature_desc.IsEnabled = true;
-            }
-            else
-            {
-                Feature_title.IsEnabled = false;
-                Feature_desc.IsEnabled = false;
-            }
-        }
-        private void Resource_Click(object sender, RoutedEventArgs e)
-        {
-            if (Resource.IsChecked.Value)
-            {
-                Resource_title.IsEnabled = true;
-                Resource_desc.IsEnabled = true;
-            }
-            else
-            {
-                Resource_title.IsEnabled = false;
-                Resource_desc.IsEnabled = false;
-            }
-
-        }
-
-        private void Check_Hide_Prereq_For_Desc_Click(object sender, RoutedEventArgs e)
-        {
-            if (Check_Hide_Prereq_For_Desc.IsChecked.Value)
-            {
+                Check_Hide_Prereq_For_Desc.IsEnabled = true;
                 Ship.IsEnabled = true;
                 Resource.IsEnabled = true;
                 Custom.IsEnabled = true;
@@ -176,13 +95,118 @@ namespace StellarisEditor.editors.technology
             }
             else
             {
+                Check_Hide_Prereq_For_Desc.IsEnabled = false;
+                Check_Hide_Prereq_For_Desc.IsChecked = false;
                 Ship.IsEnabled = false;
+                Ship.IsChecked = false;
                 Resource.IsEnabled = false;
+                Resource.IsChecked = false;
                 Custom.IsEnabled = false;
+                Custom.IsChecked = false;
                 Component.IsEnabled = false;
+                Component.IsChecked = false;
                 Feature.IsEnabled = false;
+                Feature.IsChecked = false;
                 Diplo_Action.IsEnabled = false;
+                Diplo_Action.IsChecked = false;
             }
+        }
+
+        private void Check_Hide_Prereq_For_Desc_Checked(object sender, RoutedEventArgs e)
+        {
+            Hide_Prereq_For_Desc.IsEnabled = true;
+            Hide_Prereq_For_Desc.IsEnabled = true;
+        }
+
+        private void Check_Hide_Prereq_For_Desc_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Hide_Prereq_For_Desc.IsEnabled = false;
+            Hide_Prereq_For_Desc.IsEnabled = false;
+            Hide_Prereq_For_Desc.Text = "";
+        }
+
+        private void Ship_Checked(object sender, RoutedEventArgs e)
+        {
+            Ship_title.IsEnabled = true;
+            Ship_desc.IsEnabled = true;
+        }
+
+        private void Ship_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Ship_title.IsEnabled = false;
+            Ship_desc.IsEnabled = false;
+            Ship_title.Text = "";
+            Ship_desc.Text = "";
+        }
+
+        private void Custom_Checked(object sender, RoutedEventArgs e)
+        {
+            Custom_desc.IsEnabled = true;
+            Custom_title.IsEnabled = true;
+        }
+
+        private void Custom_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Custom_desc.IsEnabled = false;
+            Custom_title.IsEnabled = false;
+            Custom_desc.Text = "";
+            Custom_title.Text = "";
+        }
+
+        private void Component_Checked(object sender, RoutedEventArgs e)
+        {
+            Component_title.IsEnabled = true;
+            Component_desc.IsEnabled = true;
+        }
+
+        private void Component_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Component_title.IsEnabled = false;
+            Component_desc.IsEnabled = false;
+            Component_title.Text = "";
+            Component_desc.Text = "";
+        }
+
+        private void Diplo_Action_Checked(object sender, RoutedEventArgs e)
+        {
+            Diplo_Action_desc.IsEnabled = true;
+            Diplo_Action_title.IsEnabled = true;
+        }
+
+        private void Diplo_Action_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Diplo_Action_desc.IsEnabled = false;
+            Diplo_Action_title.IsEnabled = false;
+            Diplo_Action_desc.Text = "";
+            Diplo_Action_title.Text = "";
+        }
+
+        private void Feature_Checked(object sender, RoutedEventArgs e)
+        {
+            Feature_title.IsEnabled = true;
+            Feature_desc.IsEnabled = true;
+        }
+
+        private void Feature_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Feature_title.IsEnabled = false;
+            Feature_desc.IsEnabled = false;
+            Feature_desc.Text = "";
+            Feature_title.Text = "";
+        }
+
+        private void Resource_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Resource_title.IsEnabled = false;
+            Resource_desc.IsEnabled = false;
+            Resource_title.Text = "";
+            Resource_desc.Text = "";
+        }
+
+        private void Resource_Checked(object sender, RoutedEventArgs e)
+        {
+            Resource_title.IsEnabled = true;
+            Resource_desc.IsEnabled = true;
         }
     }
 }
