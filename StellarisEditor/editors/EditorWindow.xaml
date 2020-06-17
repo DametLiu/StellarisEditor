@@ -115,7 +115,7 @@
                     <Button Content="星系类型" Visibility="Collapsed"/>
                     <Button Content="科技层级" Visibility="Visible" Click="OpenTechTierEditor"/>
                     <Button Content="科技类别" Visibility="Visible" Click="OpenTechCategoryEditor"/>
-                    <Button Content="科技" Visibility="Collapsed"/>
+                    <Button Content="科技" Visibility="Visible" Click="OpenTechEditor"/>
                     <Button Content="星球改造" Visibility="Collapsed"/>
                     <Button Content="贸易转换" Visibility="Collapsed"/>
                     <Button Content="传统类型" Visibility="Collapsed"/>

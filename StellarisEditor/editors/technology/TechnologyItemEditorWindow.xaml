@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StellarisEditor.editors.technology"
         mc:Ignorable="d"
-        Title="科技编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico">
+        Title="科技编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Background="White">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0">
             <GroupBox Header="Key">
-                <TextBox>
+                <TextBox x:Name="Key" Text="{Binding Path=Key ,Mode=TwoWay}">
                     <TextBox.Resources>
                         <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                             <VisualBrush.Visual>
@@ -37,7 +38,7 @@
                 </TextBox>
             </GroupBox>
             <GroupBox Header="Cost">
-                <TextBox x:Name="Cost">
+                <TextBox x:Name="Cost" Text="{Binding Path=Cost ,Mode=TwoWay}">
                     <TextBox.Resources>
                         <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                             <VisualBrush.Visual>
@@ -65,17 +66,15 @@
                     <CheckBox x:Name="Is_Rare" Content="Is Rare" FontSize="15" />
                     <CheckBox x:Name="Is_Dangerous" Content="Is Dangerous " FontSize="15"/>
                     <CheckBox x:Name="Is_Reverse_Engineerable" Content="Is Reverse Engineerable" FontSize="15" IsChecked="True"/>
-                    <CheckBox x:Name="Ship" Content="Ship" FontSize="15" Click="Ship_Click" />
-                    <CheckBox x:Name="Custom" Content="Custom" FontSize="15" Click="Custom_Click"/>
                     <CheckBox x:Name="Start_Technology" Content="Start Technology" FontSize="15" Click="Start_Technology_Click" />
                     <TextBlock Text="Area" Block.TextAlignment="Center" Width="295"/>
-                    <ComboBox x:Name="Area">
+                    <ComboBox x:Name="Area" Text="{Binding Path=Area ,Mode=TwoWay}">
                         <ComboBoxItem Content="society"/>
                         <ComboBoxItem Content="physics"/>
                         <ComboBoxItem Content="engineering"/>
                     </ComboBox>
                     <TextBlock Text="Tier" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Tier">
+                    <TextBox x:Name="Tier" Text="{Binding Path=Tier ,Mode=TwoWay}">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -97,7 +96,7 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock Text="Category" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Category">
+                    <TextBox x:Name="Category" Text="{Binding Path=Category ,Mode=TwoWay}">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -119,7 +118,7 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock Text="Cost Pre Level" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Cost_Pre_Level" IsEnabled="False">
+                    <TextBox x:Name="Cost_Pre_Level" IsEnabled="False" Text="{Binding Path=CostPreLevel ,Mode=TwoWay}">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -141,7 +140,7 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock Text="Weight" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Weight">
+                    <TextBox x:Name="Weight" Text="{Binding Path=Weight ,Mode=TwoWay}">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -162,7 +161,122 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <TextBlock Text="Ship" Block.TextAlignment="Center"/>
+                </WrapPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Column="1">
+            <GroupBox Header="Sundry">
+                <WrapPanel Orientation="Vertical">
+                    <CheckBox x:Name="Check_Gateway" Content="Gateway" FontSize="15" Click="Check_Gateway_Click"/>
+                    <TextBlock Text="Weight Group" Width="296" Block.TextAlignment="Center"/>
+                    <TextBox x:Name="Weight_Group" Text="{Binding Path=WeightGroups ,Mode=TwoWay}">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="repeatable"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <TextBlock Text="Mod Weight If Group Picked" Block.TextAlignment="Center"/>
+                    <TextBox x:Name="Mod_Weight" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Text="{Binding Path=ModWeightIfGroupPicked ,Mode=TwoWay}">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="repeatable = 0.01"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <TextBlock Text="Ai Update Type" Block.TextAlignment="Center"/>
+                    <ComboBox Text="{Binding Path=AiUpdateType ,Mode=TwoWay}">
+                        <ComboBoxItem Content="military"/>
+                        <ComboBoxItem Content="all"/>
+                    </ComboBox>
+                    <TextBlock Text="Gateway" Block.TextAlignment="Center"/>
+                    <TextBox x:Name="Gateway" IsEnabled="False" Text="{Binding Path=Gateway ,Mode=TwoWay}">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="biological"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <GroupBox Header="Ai Weight">
+                        <TextBox x:Name="Ai_Weight" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="150" Text="{Binding Path=AiWeight ,Mode=TwoWay}"/>
+                    </GroupBox>
+                    <GroupBox Header="Weight Modifier">
+                        <TextBox x:Name="Weight_Modifier" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"  Text="{Binding Path=WeightModifier ,Mode=TwoWay}" Height="205"/>
+                    </GroupBox>
+                </WrapPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Column="2">
+            <GroupBox Header="Modifier">
+                <TextBox x:Name="Modifier" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="400" Text="{Binding Path=Modifier ,Mode=TwoWay}"/>
+            </GroupBox>
+            <GroupBox Header="Potential">
+                <TextBox x:Name="Potential" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Text="{Binding Path=Potential ,Mode=TwoWay}"/>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Column="3">
+            <GroupBox Header="Additional Text">
+                <WrapPanel Orientation="Vertical">
+                    <CheckBox x:Name="Prereqfor_Desc" Content="Prereqfor Desc " FontSize="15"/>
+                    <CheckBox x:Name="Check_Hide_Prereq_For_Desc" Content="Hide Prereq For Desc" FontSize="15" IsEnabled="False" Click="Check_Hide_Prereq_For_Desc_Click"/>
+                    <CheckBox x:Name="Ship" Content="Ship" FontSize="15" IsEnabled="False" Click="Ship_Click" />
+                    <CheckBox x:Name="Custom" Content="Custom" FontSize="15" IsEnabled="False" Click="Custom_Click"/>
+                    <CheckBox x:Name="Component" Content="Component" FontSize="15" IsEnabled="False" Click="Component_Click"/>
+                    <CheckBox x:Name="Diplo_Action" Content="Diplo_Action" FontSize="15" IsEnabled="False" Click="Diplo_Action_Click"/>
+                    <CheckBox x:Name="Feature" Content="Feature" FontSize="15" IsEnabled="False" Click="Feature_Click"/>
+                    <CheckBox x:Name="Resource" Content="Resource" FontSize="15" IsEnabled="False" Click="Resource_Click"/>
+                    <TextBlock Text="Hide Prereq For Desc " Block.TextAlignment="Center" FontSize="15"/>
+                    <ComboBox x:Name="Hide_Prereq_For_Desc" IsEnabled="False" FontSize="15">
+                        <ComboBoxItem Content="resource"/>
+                        <ComboBoxItem Content="component"/>
+                        <ComboBoxItem Content="custom"/>
+                        <ComboBoxItem Content="diplo_action"/>
+                        <ComboBoxItem Content="ship"/>
+                        <ComboBoxItem Content="feature"/>
+                    </ComboBox>
+                    <TextBlock Text="Ship" Block.TextAlignment="Center" Width="295" FontSize="15"/>
                     <TextBox x:Name="Ship_title" IsEnabled="False">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
@@ -205,7 +319,7 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <TextBlock Text="Custom" Block.TextAlignment="Center"/>
+                    <TextBlock Text="Custom" Block.TextAlignment="Center" FontSize="15"/>
                     <TextBox x:Name="Custom_title" IsEnabled="False">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
@@ -248,99 +362,179 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
+                    <TextBlock Text="Component" Block.TextAlignment="Center" FontSize="15"/>
+                    <TextBox x:Name="Component_title" IsEnabled="False">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="Title"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <TextBox x:Name="Component_desc" IsEnabled="False">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="Desc"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <TextBlock Text="Diplo Action" Block.TextAlignment="Center" FontSize="15"/>
+                    <TextBox x:Name="Diplo_Action_title" IsEnabled="False">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="Title"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <TextBox x:Name="Diplo_Action_desc" IsEnabled="False">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="Desc"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <TextBlock Text="Feature" Block.TextAlignment="Center" FontSize="15"/>
+                    <TextBox x:Name="Feature_title" IsEnabled="False">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="Title"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <TextBox x:Name="Feature_desc" IsEnabled="False">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="Desc"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <TextBlock Text="Resource" Block.TextAlignment="Center" FontSize="15"/>
+                    <TextBox x:Name="Resource_title" IsEnabled="False">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="Title"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <TextBox x:Name="Resource_desc" IsEnabled="False">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="Desc"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
                 </WrapPanel>
-            </GroupBox>
-        </DockPanel>
-        <DockPanel Grid.Column="1">
-            <GroupBox Header="Sundry">
-                <WrapPanel Orientation="Vertical">
-                    <CheckBox x:Name="Check_Gateway" Content="Gateway" FontSize="15" Click="Check_Gateway_Click"/>
-                    <TextBlock Text="Weight Group" Width="455" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Weight_Group">
-                        <TextBox.Resources>
-                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
-                                <VisualBrush.Visual>
-                                    <TextBlock FontStyle="Italic" Text="repeatable"/>
-                                </VisualBrush.Visual>
-                            </VisualBrush>
-                        </TextBox.Resources>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Text" Value="{x:Null}">
-                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
-                                    </Trigger>
-                                    <Trigger Property="Text" Value="">
-                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
-                    </TextBox>
-                    <TextBlock Text="Mod Weight If Group Picked" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Mod_Weight" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap">
-                        <TextBox.Resources>
-                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
-                                <VisualBrush.Visual>
-                                    <TextBlock FontStyle="Italic" Text="repeatable = 0.01"/>
-                                </VisualBrush.Visual>
-                            </VisualBrush>
-                        </TextBox.Resources>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Text" Value="{x:Null}">
-                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
-                                    </Trigger>
-                                    <Trigger Property="Text" Value="">
-                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
-                    </TextBox>
-                    <TextBlock Text="Ai Update Type" Block.TextAlignment="Center"/>
-                    <ComboBox>
-                        <ComboBoxItem Content="military"/>
-                        <ComboBoxItem Content="all"/>
-                    </ComboBox>
-                    <TextBlock Text="Gateway" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Gateway" IsEnabled="False">
-                        <TextBox.Resources>
-                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
-                                <VisualBrush.Visual>
-                                    <TextBlock FontStyle="Italic" Text="biological"/>
-                                </VisualBrush.Visual>
-                            </VisualBrush>
-                        </TextBox.Resources>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Text" Value="{x:Null}">
-                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
-                                    </Trigger>
-                                    <Trigger Property="Text" Value="">
-                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
-                    </TextBox>
-                    <GroupBox Header="Ai Weight">
-                        <TextBox x:Name="Ai_Weight" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="150"/>
-                    </GroupBox>
-                    <GroupBox Header="Weight Modifier">
-                        <TextBox x:Name="Weight_Modifier" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="200"/>
-                    </GroupBox>
-                </WrapPanel>
-            </GroupBox>
-        </DockPanel>
-        <DockPanel Grid.Column="2">
-            <GroupBox Header="Modifier">
-                <TextBox x:Name="Modifier" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="400"/>
-            </GroupBox>
-            <GroupBox Header="Potential">
-                <TextBox x:Name="Potential" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"/>
             </GroupBox>
         </DockPanel>
     </Grid>

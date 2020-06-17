@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StellarisEditor.editors.technology"
         xmlns:c="clr-namespace:StellarisEditor.component"
         mc:Ignorable="d"
-        Title="TechnologyEditorWindow" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico">
+        Title="科技编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Background="White">
     <Window.Resources>
         <RoutedUICommand x:Key="Save" Text="Button Click"/>
         <RoutedUICommand x:Key="Exit" Text="Button Click"/>
@@ -75,12 +75,12 @@
                         </ContextMenu>
                     </DataGrid.ContextMenu>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="键" Width="250" IsReadOnly="True" />
-                        <DataGridTextColumn Header="花费" Width="250" IsReadOnly="True" />
-                        <DataGridTextColumn Header="类别" Width="250" IsReadOnly="True" />
-                        <DataGridTextColumn Header="子类别" Width="250" IsReadOnly="True" />
-                        <DataGridTextColumn Header="权重" Width="250" IsReadOnly="True" />
-                        <DataGridTextColumn Header="文件名" Width="250" IsReadOnly="True" />
+                        <DataGridTextColumn Header="键" Width="250" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="花费" Width="250" IsReadOnly="True" Binding="{Binding Cost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="类别" Width="250" IsReadOnly="True" Binding="{Binding Area, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="子类别" Width="250" IsReadOnly="True" Binding="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="权重" Width="250" IsReadOnly="True" Binding="{Binding Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="文件名" Width="250" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </DockPanel>

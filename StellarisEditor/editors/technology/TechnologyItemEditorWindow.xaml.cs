@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StellarisEditor.pdx.parser;
+using StellarisEditor.pdx.scriptobject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +21,15 @@ namespace StellarisEditor.editors.technology
     /// </summary>
     public partial class TechnologyItemEditorWindow : Window
     {
+        public PdxTechnology Technology { get; set; }
+
+        public TechnologyItemEditorWindow(PdxTechnology Technology)
+        {
+            this.Technology = Technology;
+            InitializeComponent();
+            DataContext = Technology;
+        }
+
         public TechnologyItemEditorWindow()
         {
             InitializeComponent();
@@ -95,6 +106,82 @@ namespace StellarisEditor.editors.technology
                 Weight_Modifier.IsEnabled = true;
                 Modifier.IsEnabled = true;
                 Tier.Text = null;
+            }
+        }
+        private void Component_Click(object sender, RoutedEventArgs e)
+        {
+            if (Component.IsChecked.Value)
+            {
+                Component_title.IsEnabled = true;
+                Component_desc.IsEnabled = true;
+            }
+            else
+            {
+                Component_title.IsEnabled = false;
+                Component_desc.IsEnabled = false;
+            }
+        }
+        private void Diplo_Action_Click(object sender, RoutedEventArgs e)
+        {
+            if (Diplo_Action.IsChecked.Value)
+            {
+                Diplo_Action_desc.IsEnabled = true;
+                Diplo_Action_title.IsEnabled = true;
+            }
+            else
+            {
+                Diplo_Action_desc.IsEnabled = false;
+                Diplo_Action_title.IsEnabled = false;
+            }
+
+        }
+        private void Feature_Click(object sender, RoutedEventArgs e)
+        {
+            if (Feature.IsChecked.Value)
+            {
+                Feature_title.IsEnabled = true;
+                Feature_desc.IsEnabled = true;
+            }
+            else
+            {
+                Feature_title.IsEnabled = false;
+                Feature_desc.IsEnabled = false;
+            }
+        }
+        private void Resource_Click(object sender, RoutedEventArgs e)
+        {
+            if (Resource.IsChecked.Value)
+            {
+                Resource_title.IsEnabled = true;
+                Resource_desc.IsEnabled = true;
+            }
+            else
+            {
+                Resource_title.IsEnabled = false;
+                Resource_desc.IsEnabled = false;
+            }
+
+        }
+
+        private void Check_Hide_Prereq_For_Desc_Click(object sender, RoutedEventArgs e)
+        {
+            if (Check_Hide_Prereq_For_Desc.IsChecked.Value)
+            {
+                Ship.IsEnabled = true;
+                Resource.IsEnabled = true;
+                Custom.IsEnabled = true;
+                Component.IsEnabled = true;
+                Feature.IsEnabled = true;
+                Diplo_Action.IsEnabled = true;
+            }
+            else
+            {
+                Ship.IsEnabled = false;
+                Resource.IsEnabled = false;
+                Custom.IsEnabled = false;
+                Component.IsEnabled = false;
+                Feature.IsEnabled = false;
+                Diplo_Action.IsEnabled = false;
             }
         }
     }

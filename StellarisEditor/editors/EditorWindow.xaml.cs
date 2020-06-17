@@ -66,5 +66,10 @@ namespace StellarisEditor.editors
             var window = new techEditor.TechCategoryEditorWindow();
             window.ShowDialog();
         }
+        private void OpenTechEditor(object sender, RoutedEventArgs e)
+        {
+            var window = new technology.TechnologyEditorWindow();
+            window.ShowDialog();
+        }
     }
 }
