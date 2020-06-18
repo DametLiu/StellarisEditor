@@ -1,4 +1,5 @@
 ﻿using StellarisEditor.data;
+using StellarisEditor.mod.data;
 using StellarisEditor.ScriptEngine;
 using System;
 using System.Collections.Generic;
@@ -44,7 +45,9 @@ namespace StellarisEditor.pdx.scriptobject
                                 technology.Category.Add(a.First());
                             else
                             {
-
+                                a = ModGlobalData.TechnologyCategories.Where(tc => tc.Key == element.Content);
+                                if (a.Count() > 0)
+                                    technology.Category.Add(a.First());
                             }
                         }
                     }
