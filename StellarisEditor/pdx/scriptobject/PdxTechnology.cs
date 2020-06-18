@@ -481,8 +481,5 @@ namespace StellarisEditor.pdx.scriptobject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Desc"));
             }
         }
-
-
-
     }
 }

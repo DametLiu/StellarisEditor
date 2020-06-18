@@ -81,8 +81,8 @@ namespace StellarisEditor
                 new Thread(delegate ()
                 {
                     LoadModProjects();
-                    PdxGlobalData.LoadTechnologyTiers(null);
-                    PdxGlobalData.LoadTechnologyCategories(null);
+                    //PdxGlobalData.LoadTechnologyTiers(null);
+                    //PdxGlobalData.LoadTechnologyCategories(null);
                     //LoadScriptedVariablesData();
                     //LoadLocalizations();
 
