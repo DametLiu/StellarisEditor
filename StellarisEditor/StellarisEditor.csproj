@@ -112,6 +112,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="editors\Agenda\AgendaEditorlist.xaml.cs">
+      <DependentUpon>AgendaEditorlist.xaml</DependentUpon>
+    </Compile>
     <Compile Include="editors\Agenda\AgendaEditorWindow.xaml.cs">
       <DependentUpon>AgendaEditorWindow.xaml</DependentUpon>
     </Compile>
@@ -246,6 +249,10 @@
     <Compile Include="utils\LogUtil.cs" />
     <Compile Include="utils\RegexUtil.cs" />
     <Page Include="component\WaitingProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\Agenda\AgendaEditorlist.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
