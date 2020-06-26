@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StellarisEditor.pdx.parser;
+using StellarisEditor.pdx.scriptobject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,18 @@ namespace StellarisEditor.editors.Agenda
     /// </summary>
     public partial class AgendaEditorWindow : Window
     {
+        public PdxAgenda Agenda { get; set; }
+        public AgendaEditorWindow(PdxAgenda Agenda)
+        {
+            this.Agenda = Agenda;
+            InitializeComponent();
+            DataContext = Agenda;
+        }
+
         public AgendaEditorWindow()
         {
             InitializeComponent();
         }
+
     }
 }
