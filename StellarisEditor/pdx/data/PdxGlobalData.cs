@@ -31,11 +31,11 @@ namespace StellarisEditor.data
         public static String STELLARIS_PATH_TECHNOLOGY_CATEGORY = @"\common\technology\category\";
         public static String STELLARIS_PATH_TECHNOLOGY = @"\common\technology\";
 
-        public static LinkedList<PdxVariable> Variables = new LinkedList<PdxVariable>();
+        public static LinkedList<Variable> Variables = new LinkedList<Variable>();
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();
-        public static LinkedList<PdxTechnologyTier> TechnologyTiers = new LinkedList<PdxTechnologyTier>();
+        public static LinkedList<TechnologyTier> TechnologyTiers = new LinkedList<TechnologyTier>();
         public static LinkedList<PdxTechnologyCategory> TechnologyCategories = new LinkedList<PdxTechnologyCategory>();
-        public static LinkedList<PdxTechnology> Technologies = new LinkedList<PdxTechnology>();
+        public static LinkedList<Technology> Technologies = new LinkedList<Technology>();
 
         public static void LoadDatas()
         {
@@ -44,7 +44,7 @@ namespace StellarisEditor.data
             LoadTechnologies(Properties.Settings.Default.StellarisPath, Technologies);
         }
 
-        public static void LoadTechnologies(string root, LinkedList<PdxTechnology> technologies)
+        public static void LoadTechnologies(string root, LinkedList<Technology> technologies)
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY);
             if (!directoryInfo.Exists)
@@ -53,55 +53,47 @@ namespace StellarisEditor.data
             FileInfo[] fileInfos = directoryInfo.GetFiles();
             foreach (FileInfo file in fileInfos)
             {
-                StatementCollection statements = new NormalParser(new Lexical(File.ReadAllText(file.FullName))).Parse();
+                TechnologyScript technologyScript = new TechnologyParser(file).Parse();
 
-                foreach (var item in statements)
-                {
-                    PdxTechnology technology = PdxTechnology.Parse(item as ObjectStatement);
-                    technology.FileName = file.Name.Substring(0, file.Name.LastIndexOf('.'));
-                    technologies.Add(technology);
-                }
+                foreach (var item in technologyScript.Technologies)
+                    Technologies.Add(item);
+                foreach (var item in technologyScript.Variables)
+                    Variables.Add(item);
             }
         }
 
         public static void LoadTechnologyCategories(string root, LinkedList<PdxTechnologyCategory> categories)
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY_CATEGORY);
-            if (!directoryInfo.Exists)
-                return;
+            //DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY_CATEGORY);
+            //if (!directoryInfo.Exists)
+            //    return;
 
-            FileInfo[] fileInfos = directoryInfo.GetFiles();
-            foreach (FileInfo file in fileInfos)
-            {
-                StatementCollection statements = new NormalParser(new Lexical(File.ReadAllText(file.FullName))).Parse();
+            //FileInfo[] fileInfos = directoryInfo.GetFiles();
+            //foreach (FileInfo file in fileInfos)
+            //{
+            //    Statement statements = new TechnologyParser(new Lexical(File.ReadAllText(file.FullName))).Parse();
 
-                foreach (var item in statements)
-                {
-                    PdxTechnologyCategory category = PdxTechnologyCategory.Parse(item as ObjectStatement);
-                    category.FileName = file.Name.Substring(0, file.Name.LastIndexOf('.'));
-                    categories.Add(category);
-                }
-            }
+            //    foreach (var item in statements.Statements)
+            //    {
+            //        PdxTechnologyCategory category = PdxTechnologyCategory.Parse(item as ObjectStatement);
+            //        category.FileName = file.Name.Substring(0, file.Name.LastIndexOf('.'));
+            //        categories.Add(category);
+            //    }
+            //}
         }
 
-        public static void LoadTechnologyTiers(string root, LinkedList<PdxTechnologyTier> tiers)
+        public static void LoadTechnologyTiers(string root, LinkedList<TechnologyTier> tiers)
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY_TIER);
-            if (!directoryInfo.Exists)
-                return;
+            //DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY_TIER);
+            //if (!directoryInfo.Exists)
+            //    return;
 
-            FileInfo[] fileInfos = directoryInfo.GetFiles();
-            foreach (FileInfo file in fileInfos)
-            {
-                StatementCollection statements = new NormalParser(new Lexical(File.ReadAllText(file.FullName))).Parse();
-
-                foreach (var item in statements)
-                {
-                    PdxTechnologyTier tier = PdxTechnologyTier.Parse(item as ObjectStatement);
-                    tier.FileName = file.Name.Substring(0, file.Name.LastIndexOf('.'));
-                    tiers.Add(tier);
-                }
-            }
+            //FileInfo[] fileInfos = directoryInfo.GetFiles();
+            //foreach (FileInfo file in fileInfos)
+            //{
+            //    TechnologyScript statements = new TechnologyParser(file).Parse();
+                
+            //}
         }
        
         public static void LoadScriptedVariables(TaskCancel cancel)
@@ -112,7 +104,7 @@ namespace StellarisEditor.data
             ExcuteVariableTask(lines);
         }
 
-        public static void LoadScriptedVariable(LinkedList<VariableState> lines, String path, LinkedList<PdxVariable> variables, TaskCancel cancel)
+        public static void LoadScriptedVariable(LinkedList<VariableState> lines, String path, LinkedList<Variable> variables, TaskCancel cancel)
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
             FileInfo[] fileInfos = directoryInfo.GetFiles();
@@ -132,7 +124,7 @@ namespace StellarisEditor.data
             if (IsTaskCanceled(variableFileState))
                 return;
 
-            PdxVariable variable = ScriptedVariablesParser.parseVariable(variableFileState.line);
+            Variable variable = ScriptedVariablesParser.parseVariable(variableFileState.line);
 
             if (variable != null) {
                 variable.FileName = variableFileState.file.Name.Substring(0, variableFileState.file.Name.LastIndexOf("."));
@@ -153,7 +145,7 @@ namespace StellarisEditor.data
             public FileInfo file;
             public String line;
 
-            public LinkedList<PdxVariable> variables;
+            public LinkedList<Variable> variables;
         }
 
         public class TaskState

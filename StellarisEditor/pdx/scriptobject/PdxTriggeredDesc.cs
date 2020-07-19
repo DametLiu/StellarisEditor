@@ -9,6 +9,6 @@ namespace StellarisEditor.pdx.scriptobject
     public class PdxTriggeredDesc
     {
         public PdxText Text;
-        public LinkedList<PdxTrigger> Trigger;
+        public LinkedList<Expression> Trigger;
     }
 }

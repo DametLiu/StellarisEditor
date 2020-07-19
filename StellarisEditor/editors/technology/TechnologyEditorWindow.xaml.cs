@@ -30,7 +30,7 @@ namespace StellarisEditor.editors.technology
     /// </summary>
     public partial class TechnologyEditorWindow : Window
     {
-        public ObservableCollection<PdxTechnology> Technologies = new ObservableCollection<PdxTechnology>();
+        public ObservableCollection<Technology> Technologies = new ObservableCollection<Technology>();
         public TaskCancel cancel = new TaskCancel();
         public TechnologyEditorWindow()
         {
@@ -149,7 +149,7 @@ namespace StellarisEditor.editors.technology
 
         private void MouseDoubleClick_EditItem(object sender, MouseButtonEventArgs e)
         {
-            if (dataGrid.SelectedItem is PdxTechnology technology)
+            if (dataGrid.SelectedItem is Technology technology)
             {
                 TechnologyItemEditorWindow window = new TechnologyItemEditorWindow(technology);
                 window.ShowDialog();
@@ -194,7 +194,7 @@ namespace StellarisEditor.editors.technology
            
         }
 
-        private PdxTechnology CopyTechnology;
+        private Technology CopyTechnology;
         private void CommandExecuteCopy(object sender, CanExecuteRoutedEventArgs e)
         {
             Copy();
@@ -207,7 +207,7 @@ namespace StellarisEditor.editors.technology
 
         private void Copy()
         {
-            if (dataGrid.SelectedItem is PdxTechnology technology)
+            if (dataGrid.SelectedItem is Technology technology)
                 CopyTechnology = technology;
         }
 
@@ -258,7 +258,7 @@ namespace StellarisEditor.editors.technology
 
         private void Delete()
         {
-            if (dataGrid.SelectedItem is PdxTechnology technology)
+            if (dataGrid.SelectedItem is Technology technology)
                 Technologies.Remove(technology);
         }
 
@@ -274,10 +274,10 @@ namespace StellarisEditor.editors.technology
 
         private void Add()
         {
-            if (dataGrid.SelectedItem is PdxTechnology technology)
-                Technologies.Insert(Technologies.IndexOf(technology), new PdxTechnology() { Key = $"new_technology{++NewIndex}" });
+            if (dataGrid.SelectedItem is Technology technology)
+                Technologies.Insert(Technologies.IndexOf(technology), new Technology() { Key = $"new_technology{++NewIndex}" });
             else
-                Technologies.Insert(0, new PdxTechnology() { Key = $"new_technology{++NewIndex}" });
+                Technologies.Insert(0, new Technology() { Key = $"new_technology{++NewIndex}" });
         }
 
         private int NewIndex = 0;

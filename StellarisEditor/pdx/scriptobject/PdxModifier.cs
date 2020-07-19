@@ -10,7 +10,7 @@ namespace StellarisEditor.pdx.scriptobject
     /// <summary>
     /// 修正，每一个对象是一个修正
     /// </summary>
-    public class PdxModifier : PdxObject
+    public class Modifier : PdxObject
     {
         public new event PropertyChangedEventHandler PropertyChanged;
 
@@ -29,6 +29,22 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
+        private String _Operator;
+        public String Operator
+        {
+            get
+            {
+                return _Operator;
+            }
+            set
+            {
+                _Operator = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Operator"));
+            }
+        }
+
+
+
         private String _Value;
         public String Value
         {
@@ -42,7 +58,5 @@ namespace StellarisEditor.pdx.scriptobject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Value"));
             }
         }
-
-
     }
 }

@@ -12,7 +12,7 @@ namespace StellarisEditor.pdx.parser
 {
     public class ScriptedVariablesParser
     {
-        public static PdxVariable parseVariable(String line)
+        public static Variable parseVariable(String line)
         {
             line = Regex.Replace(line, @"[\s ]", "", RegexOptions.Singleline);
             if (String.IsNullOrWhiteSpace(line) || line.StartsWith("#") || !line.Contains("@") || !line.Contains("="))
@@ -22,14 +22,14 @@ namespace StellarisEditor.pdx.parser
             var key = Regex.Match(line, ".*?(?==)").Value;
             var value = Regex.Match(line, "(?<==).*").Value;
 
-            PdxVariable variable = new PdxVariable() { Key = key };
+            Variable variable = new Variable() { Key = key };
             try
             {
                 
                 if (value.Contains("@"))
-                    variable.Reference = new PdxVariable() { Key = value.Substring(1) };
+                    variable.Reference = new Variable() { Key = value.Substring(1) };
                 else
-                    variable.Value = double.Parse(value);
+                    variable.Value = value;
             }
             catch (Exception) {}
 

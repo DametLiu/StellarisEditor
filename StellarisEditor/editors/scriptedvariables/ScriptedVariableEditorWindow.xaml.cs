@@ -29,7 +29,7 @@ namespace StellarisEditor.editors.scriptedvariables
     /// </summary>
     public partial class ScriptedVariableEditorWindow : Window
     {
-        public ObservableCollection<PdxVariable> Variables = new ObservableCollection<PdxVariable>();
+        public ObservableCollection<Variable> Variables = new ObservableCollection<Variable>();
         public ScriptedVariableEditorWindow()
         {
             InitializeComponent();
@@ -169,7 +169,7 @@ namespace StellarisEditor.editors.scriptedvariables
             }), DispatcherPriority.Normal);
         }
 
-        private PdxVariable CopyVariable;
+        private Variable CopyVariable;
         private void CommandExecuteCopy(object sender, CanExecuteRoutedEventArgs e)
         {
             Copy();
@@ -182,7 +182,7 @@ namespace StellarisEditor.editors.scriptedvariables
 
         private void Copy()
         {
-            if (dataGrid.SelectedItem is PdxVariable variable)
+            if (dataGrid.SelectedItem is Variable variable)
                 CopyVariable = variable;
         }
 
@@ -198,9 +198,9 @@ namespace StellarisEditor.editors.scriptedvariables
 
         private void Paste()
         {
-            if (CopyVariable is PdxVariable variable)
+            if (CopyVariable is Variable variable)
             {
-                PdxVariable pdxVariable = variable.Clone();
+                Variable pdxVariable = variable.Clone();
                 pdxVariable.Key = pdxVariable.Key + "_copy";
                 Variables.Insert(Variables.IndexOf(variable), pdxVariable);
             }
@@ -233,7 +233,7 @@ namespace StellarisEditor.editors.scriptedvariables
 
         private void Delete()
         {
-            if (dataGrid.SelectedItem is PdxVariable variable)
+            if (dataGrid.SelectedItem is Variable variable)
                 Variables.Remove(variable);
         }
 
@@ -249,10 +249,10 @@ namespace StellarisEditor.editors.scriptedvariables
 
         private void Add()
         {
-            if (dataGrid.SelectedItem is PdxVariable variable)
-                Variables.Insert(Variables.IndexOf(variable), new PdxVariable() { Key = $"new_variable{++NewIndex}" });
+            if (dataGrid.SelectedItem is Variable variable)
+                Variables.Insert(Variables.IndexOf(variable), new Variable() { Key = $"new_variable{++NewIndex}" });
             else
-                Variables.Insert(0, new PdxVariable() { Key = $"new_variable{++NewIndex}" });
+                Variables.Insert(0, new Variable() { Key = $"new_variable{++NewIndex}" });
         }
 
         private int NewIndex = 0;

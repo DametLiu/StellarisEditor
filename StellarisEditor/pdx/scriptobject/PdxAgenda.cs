@@ -10,27 +10,9 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.pdx.scriptobject
 {
-    public class PdxAgenda
+    public class PdxAgenda : PdxObject
     {
         public new event PropertyChangedEventHandler PropertyChanged;
-
-        public static PdxAgenda Parse(ObjectStatement objectStatement)
-        {
-            PdxAgenda agenda = new PdxAgenda { Key = objectStatement.Key };
-
-            foreach (var item in objectStatement.Statements)
-            {
-                if (item is ObjectStatement oi)
-                {
-                    if (oi.Key == "weight_modifier" && oi.Statements.Count > 0) 
-                    {
-                       
-                        
-                    }
-                }
-            }
-            return agenda;
-        }
 
         private String _Key;
         public String Key
@@ -46,8 +28,8 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-        private LinkedList<PdxModifier> _Modifier;
-        public LinkedList<PdxModifier> Modifier
+        private LinkedList<Modifier> _Modifier;
+        public LinkedList<Modifier> Modifier
         {
             get
             {
@@ -60,8 +42,8 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-        private PdxWeightModifier _WeightModifier;
-        public PdxWeightModifier WeightModifier
+        private WeightModifier _WeightModifier;
+        public WeightModifier WeightModifier
         {
             get
             {

@@ -10,6 +10,6 @@ namespace StellarisEditor.pdx.scriptobject
     {
         public PdxNumber Factor;
         public PdxNumber Weight;
-        public LinkedList<PdxWeightModifier> Modifier;
+        public LinkedList<WeightModifier> Modifier;
     }
 }

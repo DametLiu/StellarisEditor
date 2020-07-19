@@ -21,9 +21,7 @@ namespace StellarisEditor.utils
 
         public static void Log(string text)
         {
-#if DEBUG
-            File.WriteAllText(PATH, File.ReadAllText(PATH) + text +"\n");
-#endif
+            File.WriteAllText(PATH, File.ReadAllText(PATH) + text + "\n");
         }
 
         public static void ErrorLog(Exception ex)

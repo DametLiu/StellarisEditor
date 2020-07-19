@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.pdx.scriptobject.conditiontriggers
 {
-    public class PdxConditionTrigger : PdxTrigger
+    public class PdxConditionTrigger : Expression
     {
         public new Boolean IsConditionTrigger = true;
     }

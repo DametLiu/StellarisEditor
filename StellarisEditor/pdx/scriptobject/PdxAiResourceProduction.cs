@@ -9,6 +9,6 @@ namespace StellarisEditor.pdx.scriptobject
     public class PdxAiResourceProduction
     {
         public Dictionary<PdxStrategicResource, PdxNumber> Resource;
-        public LinkedList<PdxTrigger> Trigger;
+        public LinkedList<Expression> Trigger;
     }
 }

@@ -8,55 +8,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace StellarisEditor.pdx.scriptobject
 {
-    public class PdxTechnology : PdxObject
+    public class Technology : PdxObject
     {
         public new event PropertyChangedEventHandler PropertyChanged;
-
-        public static PdxTechnology Parse(ObjectStatement objectStatement)
-        {
-            PdxTechnology technology = new PdxTechnology { Key = objectStatement.Key };
-
-            foreach (var item in objectStatement.Statements)
-            {
-                if (item is AssignmentStatement ai)
-                {
-                    if (ai.Key.Content == "cost")
-                        technology.Cost = ai.Value.Content;
-                    else if (ai.Key.Content == "area")
-                        technology.Area = ai.Value.Content;
-                    
-                }
-                else if (item is ObjectStatement oi)
-                {
-                    if (oi.Key == "tier" && oi.Statements.Count > 0)
-                    {
-                        var t = oi.Statements.First() as AssignmentStatement;
-                        technology.Tier = new PdxTechnologyTier() { Key = t.Key.Content, PreviouslyUnlocked = t.Value.Content };
-                    }
-                    else if (oi.Key == "category" && oi.Statements.Count > 0 && oi.Statements.First() is ArrayStatement ari)
-                    {
-                        foreach (var element in ari.Elements)
-                        {
-                            var a = PdxGlobalData.TechnologyCategories.Where(tc => tc.Key == element.Content);
-                            if (a.Count() > 0)
-                                technology.Category.Add(a.First());
-                            else
-                            {
-                                a = ModGlobalData.TechnologyCategories.Where(tc => tc.Key == element.Content);
-                                if (a.Count() > 0)
-                                    technology.Category.Add(a.First());
-                            }
-                        }
-                    }
-                }
-            }
-
-
-            return technology;
-        }
 
         private String _Key;
         public String Key
@@ -71,6 +29,23 @@ namespace StellarisEditor.pdx.scriptobject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Key"));
             }
         }
+
+
+        private String _Icon;
+        public String Icon
+        {
+            get
+            {
+                return _Icon;
+            }
+            set
+            {
+                _Icon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Icon"));
+            }
+        }
+
+
 
         public String _Cost;
         public String Cost
@@ -102,8 +77,8 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private PdxTechnologyTier _Tier;
-        public PdxTechnologyTier Tier
+        private String _Tier;
+        public String Tier
         {
             get
             {
@@ -117,8 +92,8 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<PdxTechnologyCategory> _Category;
-        public ObservableCollection<PdxTechnologyCategory> Category
+        private ObservableCollection<String> _Category;
+        public ObservableCollection<String> Category
         {
             get
             {
@@ -162,8 +137,8 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<PdxTechnology> _Prerequisites;
-        public ObservableCollection<PdxTechnology> Prerequisites
+        private ObservableCollection<String> _Prerequisites;
+        public ObservableCollection<String> Prerequisites
         {
             get
             {
@@ -237,8 +212,8 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<PdxModifier> _Modifier;
-        public ObservableCollection<PdxModifier> Modifier
+        private ObservableCollection<Expression> _Modifier;
+        public ObservableCollection<Expression> Modifier
         {
             get
             {
@@ -267,8 +242,8 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private PdxPrereqforDesc _PrereqforDesc;
-        public PdxPrereqforDesc PrereqforDesc
+        private PrereqforDesc _PrereqforDesc;
+        public PrereqforDesc PrereqforDesc
         {
             get
             {
@@ -282,8 +257,8 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<PdxTrigger> _Potential;
-        public ObservableCollection<PdxTrigger> Potential
+        private ObservableCollection<Expression> _Potential;
+        public ObservableCollection<Expression> Potential
         {
             get
             {
@@ -297,8 +272,8 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private PdxWeightModifier _WeightModifier;
-        public PdxWeightModifier WeightModifier
+        private WeightModifier _WeightModifier;
+        public WeightModifier WeightModifier
         {
             get
             {
@@ -312,8 +287,8 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private PdxWeightModifier _AiWeight;
-        public PdxWeightModifier AiWeight
+        private WeightModifier _AiWeight;
+        public WeightModifier AiWeight
         {
             get
             {
@@ -342,8 +317,8 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<PdxWeightGroupPicked> _ModWeightIfGroupPicked;
-        public ObservableCollection<PdxWeightGroupPicked> ModWeightIfGroupPicked
+        private ObservableCollection<WeightGroupPicked> _ModWeightIfGroupPicked;
+        public ObservableCollection<WeightGroupPicked> ModWeightIfGroupPicked
         {
             get
             {
@@ -353,6 +328,51 @@ namespace StellarisEditor.pdx.scriptobject
             {
                 _ModWeightIfGroupPicked = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ModWeightIfGroupPicked"));
+            }
+        }
+
+
+        private String _IsRare;
+        public String IsRare
+        {
+            get
+            {
+                return _IsRare;
+            }
+            set
+            {
+                _IsRare = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsRare"));
+            }
+        }
+
+
+        private String _IsDangerous;
+        public String IsDangerous
+        {
+            get
+            {
+                return _IsDangerous;
+            }
+            set
+            {
+                _IsDangerous = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDangerous"));
+            }
+        }
+
+
+        private String _IsReverseEngineerable;
+        public String IsReverseEngineerable
+        {
+            get
+            {
+                return _IsReverseEngineerable;
+            }
+            set
+            {
+                _IsReverseEngineerable = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsReverseEngineerable"));
             }
         }
 
@@ -373,7 +393,7 @@ namespace StellarisEditor.pdx.scriptobject
         }
     }
 
-    public class PdxWeightGroupPicked : PdxObject
+    public class WeightGroupPicked : PdxObject
     {
         public new event PropertyChangedEventHandler PropertyChanged;
 
@@ -391,6 +411,19 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
+        private String _Operator;
+        public String Operator
+        {
+            get
+            {
+                return _Operator;
+            }
+            set
+            {
+                _Operator = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Operator"));
+            }
+        }
 
         private String _Value;
         public String Value
@@ -409,17 +442,12 @@ namespace StellarisEditor.pdx.scriptobject
 
     }
 
-    public enum PrereqforDescCetegory
-    {
-        Ship, Component, Custom, DiploAction, Feature, Resource
-    }
-
-    public class PdxPrereqforDesc : PdxObject
+    public class PrereqforDesc : PdxObject
     {
         public new event PropertyChangedEventHandler PropertyChanged;
 
-        private PrereqforDescCetegory _HidePrereqForDesc;
-        public PrereqforDescCetegory HidePrereqForDesc
+        private String _HidePrereqForDesc;
+        public String HidePrereqForDesc
         {
             get
             {
@@ -433,8 +461,8 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<PdxPrereqforDescCetegory> _Cotegories;
-        public ObservableCollection<PdxPrereqforDescCetegory> Cotegories
+        private ObservableCollection<PrereqforDescCetegory> _Cotegories = new ObservableCollection<PrereqforDescCetegory>();
+        public ObservableCollection<PrereqforDescCetegory> Cotegories
         {
             get
             {
@@ -450,9 +478,25 @@ namespace StellarisEditor.pdx.scriptobject
 
     }
 
-    public class PdxPrereqforDescCetegory : PdxObject
+    public class PrereqforDescCetegory : PdxObject
     {
         public new event PropertyChangedEventHandler PropertyChanged;
+        
+        private String _Key;
+        public String Key
+        {
+            get
+            {
+                return _Key;
+            }
+            set
+            {
+                _Key = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Key"));
+            }
+        }
+
+
 
         private String _Title;
         public String Title

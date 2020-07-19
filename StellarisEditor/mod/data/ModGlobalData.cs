@@ -20,10 +20,10 @@ namespace StellarisEditor.mod.data
 
         public static ObservableCollection<PdxMod> ModProjects = new ObservableCollection<PdxMod>();
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();
-        public static LinkedList<PdxVariable> Variables = new LinkedList<PdxVariable>();
-        public static LinkedList<PdxTechnologyTier> TechnologyTiers = new LinkedList<PdxTechnologyTier>();
+        public static LinkedList<Variable> Variables = new LinkedList<Variable>();
+        public static LinkedList<TechnologyTier> TechnologyTiers = new LinkedList<TechnologyTier>();
         public static LinkedList<PdxTechnologyCategory> TechnologyCategories = new LinkedList<PdxTechnologyCategory>();
-        public static LinkedList<PdxTechnology> Technologies = new LinkedList<PdxTechnology>();
+        public static LinkedList<Technology> Technologies = new LinkedList<Technology>();
 
         public static void LoadDatas()
         {

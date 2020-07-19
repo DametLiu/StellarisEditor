@@ -11,9 +11,9 @@ namespace StellarisEditor.pdx.parser
 {
     public class TechnologyTierParser
     {
-        public static LinkedList<PdxTechnologyTier> Parse(FileInfo file)
+        public static LinkedList<TechnologyTier> Parse(FileInfo file)
         {
-            LinkedList<PdxTechnologyTier> tiers = new LinkedList<PdxTechnologyTier>();
+            LinkedList<TechnologyTier> tiers = new LinkedList<TechnologyTier>();
             String text = File.ReadAllText(file.FullName);
             if (String.IsNullOrWhiteSpace(text))
                 return tiers;

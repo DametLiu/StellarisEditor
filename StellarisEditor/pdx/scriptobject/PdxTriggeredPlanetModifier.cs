@@ -8,7 +8,7 @@ namespace StellarisEditor.pdx.scriptobject
 {
     public class PdxTriggeredPlanetModifier
     {
-        public LinkedList<PdxTrigger> Potential;
-        public LinkedList<PdxModifier> Modifier;
+        public LinkedList<Expression> Potential;
+        public LinkedList<Modifier> Modifier;
     }
 }

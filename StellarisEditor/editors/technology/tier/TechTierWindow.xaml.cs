@@ -26,7 +26,7 @@ namespace StellarisEditor.editors.techEditor
     /// </summary>
     public partial class TechTierWindow : Window
     {
-        public ObservableCollection<PdxTechnologyTier> TechnologyTiers = new ObservableCollection<PdxTechnologyTier>();
+        public ObservableCollection<TechnologyTier> TechnologyTiers = new ObservableCollection<TechnologyTier>();
         public TechTierWindow()
         {
             InitializeComponent();
@@ -61,7 +61,7 @@ namespace StellarisEditor.editors.techEditor
             }
         }
 
-        private PdxTechnologyTier CopyTechnologyTier;
+        private TechnologyTier CopyTechnologyTier;
         private void CommandExecuteCopy(object sender, CanExecuteRoutedEventArgs e)
         {
             Copy();
@@ -74,7 +74,7 @@ namespace StellarisEditor.editors.techEditor
 
         private void Copy()
         {
-            if (dataGrid.SelectedItem is PdxTechnologyTier technologyTier)
+            if (dataGrid.SelectedItem is TechnologyTier technologyTier)
                 CopyTechnologyTier = technologyTier;
         }
 
@@ -90,9 +90,9 @@ namespace StellarisEditor.editors.techEditor
 
         private void Paste()
         {
-            if (CopyTechnologyTier is PdxTechnologyTier technologyTier)
+            if (CopyTechnologyTier is TechnologyTier technologyTier)
             {
-                PdxTechnologyTier pdxTechnologyTier = technologyTier.Clone();
+                TechnologyTier pdxTechnologyTier = technologyTier.Clone();
                 pdxTechnologyTier.Key = pdxTechnologyTier.Key + "_copy";
                 TechnologyTiers.Insert(TechnologyTiers.IndexOf(technologyTier), pdxTechnologyTier);
             }
@@ -125,7 +125,7 @@ namespace StellarisEditor.editors.techEditor
 
         private void Delete()
         {
-            if (dataGrid.SelectedItem is PdxTechnologyTier technologyTier)
+            if (dataGrid.SelectedItem is TechnologyTier technologyTier)
                 TechnologyTiers.Remove(technologyTier);
         }
 
@@ -141,10 +141,10 @@ namespace StellarisEditor.editors.techEditor
 
         private void Add()
         {
-            if (dataGrid.SelectedItem is PdxTechnologyTier technologyTier)
-                TechnologyTiers.Insert(TechnologyTiers.IndexOf(technologyTier), new PdxTechnologyTier() { Key = $"new_technology_tier{++NewIndex}" });
+            if (dataGrid.SelectedItem is TechnologyTier technologyTier)
+                TechnologyTiers.Insert(TechnologyTiers.IndexOf(technologyTier), new TechnologyTier() { Key = $"new_technology_tier{++NewIndex}" });
             else
-                TechnologyTiers.Insert(0, new PdxTechnologyTier() { Key = $"new_technology_tier{++NewIndex}" });
+                TechnologyTiers.Insert(0, new TechnologyTier() { Key = $"new_technology_tier{++NewIndex}" });
         }
 
         private int NewIndex = 0;

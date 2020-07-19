@@ -21,9 +21,9 @@ namespace StellarisEditor.editors.technology
     /// </summary>
     public partial class TechnologyItemEditorWindow : Window
     {
-        public PdxTechnology Technology { get; set; }
+        public Technology Technology { get; set; }
 
-        public TechnologyItemEditorWindow(PdxTechnology Technology)
+        public TechnologyItemEditorWindow(Technology Technology)
         {
             this.Technology = Technology;
             InitializeComponent();

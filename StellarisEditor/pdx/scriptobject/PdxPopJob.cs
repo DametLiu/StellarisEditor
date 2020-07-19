@@ -15,15 +15,15 @@ namespace StellarisEditor.pdx.scriptobject
         public string BuildingIcon;
         public PdxNumber ClothesTextureIndex;
         public string Icon;
-        public LinkedList<PdxTrigger> PossiblePreTriggers;
+        public LinkedList<Expression> PossiblePreTriggers;
 
-        public LinkedList<PdxTrigger> Possible;
+        public LinkedList<Expression> Possible;
         public PdxResources Resources;
-        public LinkedList<PdxModifier> PlanetModifier;
-        public LinkedList<PdxModifier> CountryModifier;
+        public LinkedList<Modifier> PlanetModifier;
+        public LinkedList<Modifier> CountryModifier;
         public LinkedList<PdxTriggeredPlanetModifier> TriggeredPlanetModifier;
         public LinkedList<PdxTriggeredPlanetModifier> TriggeredCountryModifier;
-        public LinkedList<PdxModifier> PopModifier;
+        public LinkedList<Modifier> PopModifier;
         public PdxWeight Weight;
     }
 }

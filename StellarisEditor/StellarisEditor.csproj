@@ -134,15 +134,9 @@
       <DependentUpon>TechnologyItemEditorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="extension\FileInfoExtension.cs" />
-    <Compile Include="ScriptEngine\Expression\AssignExpression.cs" />
-    <Compile Include="ScriptEngine\Expression\BooleanExpression.cs" />
-    <Compile Include="ScriptEngine\Expression\EqualExpreesion.cs" />
-    <Compile Include="ScriptEngine\Expression\ExpressionCollection.cs" />
-    <Compile Include="ScriptEngine\Expression\IdentifierExpression.cs" />
-    <Compile Include="ScriptEngine\Expression\NumberExpression.cs" />
+    <Compile Include="ScriptEngine\collections\TechnologyColletion.cs" />
+    <Compile Include="ScriptEngine\collections\VariableCollection.cs" />
     <Compile Include="pdx\scriptobject\PdxAgenda.cs" />
-    <Compile Include="ScriptEngine\Expression\StringExpression.cs" />
-    <Compile Include="ScriptEngine\Expression\UnknowExpression.cs" />
     <Compile Include="ScriptEngine\Lexer\CharStream.cs" />
     <Compile Include="component\WaitingProgressBar.xaml.cs">
       <DependentUpon>WaitingProgressBar.xaml</DependentUpon>
@@ -223,27 +217,13 @@
     <Compile Include="pdx\scriptobject\PdxVariable.cs" />
     <Compile Include="pdx\scriptobject\PdxWeight.cs" />
     <Compile Include="pdx\scriptobject\PdxWeightModifier.cs" />
-    <Compile Include="ScriptEngine\Expression\Expression.cs" />
     <Compile Include="ScriptEngine\NodeCollection.cs" />
-    <Compile Include="ScriptEngine\Parser\IParser.cs" />
     <Compile Include="ScriptEngine\Node.cs" />
-    <Compile Include="ScriptEngine\Parser\Block.cs" />
-    <Compile Include="ScriptEngine\Parser\BlockInfo.cs" />
     <Compile Include="ScriptEngine\Lexer\Lexeme.cs" />
-    <Compile Include="ScriptEngine\Lexer\Lexer.cs" />
-    <Compile Include="ScriptEngine\LinePragma.cs" />
-    <Compile Include="ScriptEngine\Parser\NormalParser.cs" />
-    <Compile Include="ScriptEngine\Parser\ParserConfig.cs" />
-    <Compile Include="ScriptEngine\Parser\ParserContext.cs" />
-    <Compile Include="ScriptEngine\Statment\ArrayStatement.cs" />
-    <Compile Include="ScriptEngine\Statment\AssignmentStatement.cs" />
-    <Compile Include="ScriptEngine\Statment\ExpressionStatement.cs" />
-    <Compile Include="ScriptEngine\Statment\ObjectStatement.cs" />
-    <Compile Include="ScriptEngine\Statment\Statement.cs" />
-    <Compile Include="ScriptEngine\Statment\StatementCollection.cs" />
-    <Compile Include="ScriptEngine\Expression\VariableExpression.cs" />
-    <Compile Include="ScriptEngine\Statment\UnknowStatement.cs" />
-    <Compile Include="ScriptEngine\Statment\VariableStatement.cs" />
+    <Compile Include="ScriptEngine\Lexer\Lexical.cs" />
+    <Compile Include="ScriptEngine\Lexer\LinePragma.cs" />
+    <Compile Include="ScriptEngine\Parser\Parser.cs" />
+    <Compile Include="ScriptEngine\Parser\TechnologyParser.cs" />
     <Compile Include="utils\BitmapUtil.cs" />
     <Compile Include="utils\FileUtil.cs" />
     <Compile Include="utils\LogUtil.cs" />

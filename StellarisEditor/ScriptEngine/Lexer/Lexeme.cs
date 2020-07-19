@@ -28,10 +28,6 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         String,
         /// <summary>
-        /// 运算符
-        /// </summary>
-        Operator,
-        /// <summary>
         /// 已结束
         /// </summary>
         None,
@@ -56,6 +52,22 @@ namespace StellarisEditor.ScriptEngine
         /// </summary>
         Equal,
         /// <summary>
+        /// 小于
+        /// </summary>
+        Less,
+        /// <summary>
+        /// 小于等于
+        /// </summary>
+        LessEqual,
+        /// <summary>
+        /// 大于
+        /// </summary>
+        Greater,
+        /// <summary>
+        /// 大于等于
+        /// </summary>
+        GreaterEqual,
+        /// <summary>
         /// 布尔值
         /// </summary>
         Boolean,
@@ -65,8 +77,15 @@ namespace StellarisEditor.ScriptEngine
     /// <para>词汇</para>
     /// <para>词汇实体包括词汇的标签和词汇字符串</para>
     /// </summary>
-    public class Lexeme : Node
+    public class Lexeme
     {
+        /// <summary>
+        /// 行列标注
+        /// </summary>
+        public LinePragma Pragma { get; set; } = new LinePragma() { Row = -1, Col = -1 };
+
+        public string Content { get; set; }
+
         /// <summary>
         /// 表示文本结束
         /// </summary>

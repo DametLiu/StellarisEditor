@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.pdx.scriptobject
 {
-    public class PdxTechnologyTier : PdxObject
+    public class TechnologyTier : PdxObject
     {
         public new event PropertyChangedEventHandler PropertyChanged;
 
@@ -55,17 +55,13 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-        public static PdxTechnologyTier Parse(ObjectStatement statement)
-        {
-            return new PdxTechnologyTier() { Key = statement.Key, PreviouslyUnlocked = statement.Statements.Count == 0 ? "" : (statement.Statements.First() as AssignmentStatement).Value.Content };
-        }
 
-        public override bool Equals(object obj) => obj is PdxTechnologyTier tier && Key == tier.Key && PreviouslyUnlocked == tier.PreviouslyUnlocked;
+        public override bool Equals(object obj) => obj is TechnologyTier tier && Key == tier.Key && PreviouslyUnlocked == tier.PreviouslyUnlocked;
 
         public override int GetHashCode() => base.GetHashCode();
 
         public override string ToString() => $"{Key} = {{ {(String.IsNullOrWhiteSpace(PreviouslyUnlocked) ? "" : "previously_unlocked = " + PreviouslyUnlocked)} }}";
 
-        public PdxTechnologyTier Clone() => new PdxTechnologyTier() { Key = Key, PreviouslyUnlocked = PreviouslyUnlocked, IsModData = IsModData };
+        public TechnologyTier Clone() => new TechnologyTier() { Key = Key, PreviouslyUnlocked = PreviouslyUnlocked, IsModData = IsModData };
     }
 }

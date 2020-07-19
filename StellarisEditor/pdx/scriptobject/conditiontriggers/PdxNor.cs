@@ -14,7 +14,7 @@ namespace StellarisEditor.pdx.scriptobject.conditiontriggers
         {
             StringBuilder sb = new StringBuilder();
             sb.Append($"{Key} = {{\n");
-            foreach (PdxTrigger trigger in Children)
+            foreach (Expression trigger in Children)
             {
                 sb.Append(trigger.ToString());
             }

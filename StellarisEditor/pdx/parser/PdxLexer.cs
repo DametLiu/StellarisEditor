@@ -21,7 +21,7 @@ namespace StellarisEditor.pdx.parser
             currentHanlde = context.ToCharArray()[position];
         }
 
-        public PdxVariable ParseVariable()
+        public Variable ParseVariable()
         {
             if (currentHanlde == '@')
             {
@@ -40,11 +40,11 @@ namespace StellarisEditor.pdx.parser
 
                 try
                 {
-                    return new PdxVariable
+                    return new Variable
                     {
                         Key = name,
-                        Value = isR ? 0 : value.Contains(".") ? Double.Parse(value) : int.Parse(value),
-                        Reference = isR ? new PdxVariable() { Key = value.Substring(1) } : null
+                        Value = isR ? "0" : value,
+                        Reference = isR ? new Variable() { Key = value.Substring(1) } : null
                     };
                 }
                 catch (Exception) { SkipLine(); }
@@ -73,7 +73,7 @@ namespace StellarisEditor.pdx.parser
             return new PdxTechnologyCategory() { Key = key, Icon = value };
         }
 
-        public PdxTechnologyTier ParseTechnologyTier()
+        public TechnologyTier ParseTechnologyTier()
         {
             SkipWhitespace();
 
@@ -83,14 +83,14 @@ namespace StellarisEditor.pdx.parser
             if (currentHanlde == '}')
             {
                 Next();
-                return new PdxTechnologyTier() { Key = key, PreviouslyUnlocked = "" };
+                return new TechnologyTier() { Key = key, PreviouslyUnlocked = "" };
             }
             String previously_unlocked = ParseStringKey();
             SkipEqualSign();
             String value = ParseStringValue();
             SkipRightBrace();
 
-            return new PdxTechnologyTier() { Key = key, PreviouslyUnlocked = value };
+            return new TechnologyTier() { Key = key, PreviouslyUnlocked = value };
         }
 
         public void SkipRightBrace()

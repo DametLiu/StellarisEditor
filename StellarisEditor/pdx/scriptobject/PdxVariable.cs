@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StellarisEditor.ScriptEngine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,10 +8,13 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.pdx.scriptobject
 {
-    public class PdxVariable : PdxObject
+    public class Variable : PdxObject
     {
         public new event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// 变量名称
+        /// </summary>
         private String _Key;
         public String Key
         {
@@ -25,8 +29,11 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-        private Double _Value;
-        public Double Value
+        /// <summary>
+        /// 变量得值，如果引用不为空，才应该取值，否则应该取引用得变量得值
+        /// </summary>
+        private String _Value;
+        public String Value
         {
             get
             {
@@ -39,6 +46,9 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
+        /// <summary>
+        /// 所属文件名称
+        /// </summary>
         private String _FileName;
         public String FileName
         {
@@ -53,8 +63,11 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-        private PdxVariable _Reference;
-        public PdxVariable Reference
+        /// <summary>
+        /// 引用值。该值指向了一个变量
+        /// </summary>
+        private Variable _Reference;
+        public Variable Reference
         {
             get
             {
@@ -67,10 +80,22 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-        public bool IsDouble() => Value % 1 != 0;
+        /// <summary>
+        /// 是否是浮点类型
+        /// </summary>
+        /// <returns></returns>
+        public bool IsDouble() => double.Parse(Value) % 1 != 0;
 
-        public bool IsInt() => Value % 1 == 0;
+        /// <summary>
+        /// 是否是整数
+        /// </summary>
+        /// <returns></returns>
+        public bool IsInt() => double.Parse(Value) % 1 == 0;
 
+        /// <summary>
+        /// 是否是引用类型
+        /// </summary>
+        /// <returns></returns>
         public bool IsReference() => Reference != null;
 
         
@@ -82,21 +107,22 @@ namespace StellarisEditor.pdx.scriptobject
 
         public override string ToString()
         {
-            if (Reference is PdxVariable variable)
+            if (Reference is Variable variable)
                 return $"@{Key} = @{variable.Key}";
-            return $"@{Key} = {(Value % 1 == 0 ? ((int)Value).ToString() : String.Format("%0", Value.ToString()))}";
+            return $"@{Key} = {Value}";
         }
 
         public override bool Equals(object obj)
         {
-            var variable = obj as PdxVariable;
+            var variable = obj as Variable;
             return variable != null &&
                    Key == variable.Key &&
                    Value == variable.Value &&
                    FileName == variable.FileName &&
-                   EqualityComparer<PdxVariable>.Default.Equals(Reference, variable.Reference);
+                   EqualityComparer<Variable>.Default.Equals(Reference, variable.Reference);
         }
 
-        public PdxVariable Clone() => new PdxVariable() { Key = Key, Value = Value, FileName = FileName, IsModData = IsModData, Reference = Reference };
+        public Variable Clone() => new Variable() { Key = Key, Value = Value, FileName = FileName, IsModData = IsModData, Reference = Reference };
+
     }
 }

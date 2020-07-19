@@ -173,7 +173,7 @@ namespace StellarisEditor.editors.Agenda
 
         }
 
-        private PdxTechnology CopyTechnology;
+        private Technology CopyTechnology;
         private void CommandExecuteCopy(object sender, CanExecuteRoutedEventArgs e)
         {
             Copy();
@@ -186,7 +186,7 @@ namespace StellarisEditor.editors.Agenda
 
         private void Copy()
         {
-            if (dataGrid.SelectedItem is PdxTechnology technology)
+            if (dataGrid.SelectedItem is Technology technology)
                 CopyTechnology = technology;
         }
 
@@ -237,7 +237,7 @@ namespace StellarisEditor.editors.Agenda
 
         private void Delete()
         {
-            if (dataGrid.SelectedItem is PdxTechnology technology)
+            if (dataGrid.SelectedItem is Technology technology)
                 Technologies.Remove(technology);
         }
 

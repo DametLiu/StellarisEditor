@@ -11,16 +11,10 @@ namespace StellarisEditor.ScriptEngine
     /// </summary>
     public class Node
     {
-        /// <summary>
-        /// 行列标注
-        /// </summary>
-        public LinePragma Pragma { get; set; } = new LinePragma() { Row = -1, Col = -1 };
+        public string Key { get; set; }
+        public string Operator { get; set; }
+        public string Value { get; set; }
 
-        /// <summary>
-        /// 子节点集合
-        /// </summary>
-        public NodeCollection Objects { get; } = new NodeCollection();
-
-        public string Content { get; set; }
+        public NodeCollection Nodes { get; private set; } = new NodeCollection();
     }
 }

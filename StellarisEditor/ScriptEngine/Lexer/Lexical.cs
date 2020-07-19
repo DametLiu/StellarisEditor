@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StellarisEditor.utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,6 +51,7 @@ namespace StellarisEditor.ScriptEngine
         {
             Curr = Peek;
             Peek = Scan();
+            LogUtil.Log($"{Curr.Content}");
             return Curr;
         }
 
@@ -188,7 +190,6 @@ namespace StellarisEditor.ScriptEngine
             #region 变量
             if (c == '@')
             {
-                c = stream.Read();
                 StringBuilder sv = new StringBuilder();
                 while (c != ' ' && c != '\n' && c != '\r' && c != '\t' && c != '=' && c != '\0')
                 {
@@ -204,12 +205,12 @@ namespace StellarisEditor.ScriptEngine
             {
                 case '<':
                     if (stream.NextIs('='))
-                        return new Lexeme() { Tag = Tag.Operator, Content = "<=" };
-                    return new Lexeme() { Tag = Tag.Operator, Content = "<", Pragma = new LinePragma() { Row = Row, Col = Col } };
+                        return new Lexeme() { Tag = Tag.LessEqual, Content = "<=" };
+                    return new Lexeme() { Tag = Tag.Less, Content = "<", Pragma = new LinePragma() { Row = Row, Col = Col } };
                 case '>':
                     if (stream.NextIs('='))
-                        return new Lexeme() { Tag = Tag.Operator, Content = ">=" };
-                    return new Lexeme() { Tag = Tag.Operator, Content = ">", Pragma = new LinePragma() { Row = Row, Col = Col } };
+                        return new Lexeme() { Tag = Tag.GreaterEqual, Content = ">=" };
+                    return new Lexeme() { Tag = Tag.Greater, Content = ">", Pragma = new LinePragma() { Row = Row, Col = Col } };
                 case '=':
                     return new Lexeme() { Tag = Tag.Equal, Content = "=", Pragma = new LinePragma() { Row = Row, Col = Col } };
             }
