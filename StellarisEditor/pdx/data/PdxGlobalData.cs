@@ -41,10 +41,10 @@ namespace StellarisEditor.data
         {
             LoadTechnologyCategories(Properties.Settings.Default.StellarisPath, TechnologyCategories);
             LoadTechnologyTiers(Properties.Settings.Default.StellarisPath, TechnologyTiers);
-            LoadTechnologies(Properties.Settings.Default.StellarisPath, Technologies);
+            LoadTechnologies(Properties.Settings.Default.StellarisPath, Technologies, Variables);
         }
 
-        public static void LoadTechnologies(string root, LinkedList<Technology> technologies)
+        public static void LoadTechnologies(string root, LinkedList<Technology> technologies, LinkedList<Variable> variables)
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY);
             if (!directoryInfo.Exists)
@@ -56,9 +56,9 @@ namespace StellarisEditor.data
                 TechnologyScript technologyScript = new TechnologyParser(file).Parse();
 
                 foreach (var item in technologyScript.Technologies)
-                    Technologies.Add(item);
+                    technologies.Add(item);
                 foreach (var item in technologyScript.Variables)
-                    Variables.Add(item);
+                    variables.Add(item);
             }
         }
 

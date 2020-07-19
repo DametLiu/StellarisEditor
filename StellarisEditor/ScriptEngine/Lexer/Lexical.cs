@@ -51,7 +51,6 @@ namespace StellarisEditor.ScriptEngine
         {
             Curr = Peek;
             Peek = Scan();
-            LogUtil.Log($"{Curr.Content}");
             return Curr;
         }
 

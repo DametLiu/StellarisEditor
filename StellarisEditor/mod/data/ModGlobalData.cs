@@ -29,7 +29,7 @@ namespace StellarisEditor.mod.data
         {
             LoadTechnologyCategories(Properties.Settings.Default.ModPath, TechnologyCategories);
             LoadTechnologyTiers(Properties.Settings.Default.ModPath, TechnologyTiers);
-            LoadTechnologies(Properties.Settings.Default.ModPath, Technologies);
+            LoadTechnologies(Properties.Settings.Default.ModPath, Technologies, Variables);
         }
 
         public static void LoadScriptedVariables(TaskCancel cancel)
