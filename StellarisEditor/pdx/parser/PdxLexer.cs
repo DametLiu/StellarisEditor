@@ -53,7 +53,7 @@ namespace StellarisEditor.pdx.parser
             return null;
         }
 
-        public PdxTechnologyCategory ParseTechnologyCategory()
+        public TechnologyCategory ParseTechnologyCategory()
         {
             SkipWhitespace();
 
@@ -63,14 +63,14 @@ namespace StellarisEditor.pdx.parser
             if (currentHanlde == '}')
             {
                 Next();
-                return new PdxTechnologyCategory() { Key = key, Icon = "" };
+                return new TechnologyCategory() { Key = key, Icon = "" };
             }
             String previously_unlocked = ParseStringKey();
             SkipEqualSign();
             String value = ParseStringValueInQuotes();
             SkipRightBrace();
 
-            return new PdxTechnologyCategory() { Key = key, Icon = value };
+            return new TechnologyCategory() { Key = key, Icon = value };
         }
 
         public TechnologyTier ParseTechnologyTier()

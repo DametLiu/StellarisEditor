@@ -134,6 +134,7 @@
       <DependentUpon>TechnologyItemEditorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="extension\FileInfoExtension.cs" />
+    <Compile Include="ScriptEngine\collections\TechnologyCategoryCollection.cs" />
     <Compile Include="ScriptEngine\collections\TechnologyColletion.cs" />
     <Compile Include="ScriptEngine\collections\VariableCollection.cs" />
     <Compile Include="pdx\scriptobject\PdxAgenda.cs" />
@@ -178,7 +179,6 @@
     <Compile Include="pdx\parser\PdxLexer.cs" />
     <Compile Include="pdx\parser\PdxRichTextPreviewParser.cs" />
     <Compile Include="pdx\parser\ScriptedVariablesParser.cs" />
-    <Compile Include="pdx\parser\TechnologyCategoryParser.cs" />
     <Compile Include="pdx\parser\TechnologyTierParser.cs" />
     <Compile Include="pdx\scriptobject\PdxPopJob.cs" />
     <Compile Include="pdx\scriptobject\PdxTechnologyCategory.cs" />
@@ -223,6 +223,7 @@
     <Compile Include="ScriptEngine\Lexer\Lexical.cs" />
     <Compile Include="ScriptEngine\Lexer\LinePragma.cs" />
     <Compile Include="ScriptEngine\Parser\Parser.cs" />
+    <Compile Include="ScriptEngine\Parser\TechnologyCategoryParser.cs" />
     <Compile Include="ScriptEngine\Parser\TechnologyParser.cs" />
     <Compile Include="utils\BitmapUtil.cs" />
     <Compile Include="utils\FileUtil.cs" />

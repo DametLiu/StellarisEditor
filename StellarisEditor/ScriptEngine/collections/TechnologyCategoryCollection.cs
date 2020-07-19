@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.ScriptEngine.collections
 {
-    public class TechnologyColletion : ObservableCollection<Technology>
+    public class TechnologyCategoryCollection : ObservableCollection<TechnologyCategory>
     {
     }
 }

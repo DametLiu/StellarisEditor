@@ -26,7 +26,7 @@ namespace StellarisEditor.editors.techEditor
     /// </summary>
     public partial class TechCategoryEditorWindow : Window
     {
-        public ObservableCollection<PdxTechnologyCategory> TechnologyCategories = new ObservableCollection<PdxTechnologyCategory>();
+        public ObservableCollection<TechnologyCategory> TechnologyCategories = new ObservableCollection<TechnologyCategory>();
         public TechCategoryEditorWindow()
         {
             InitializeComponent();
@@ -62,7 +62,7 @@ namespace StellarisEditor.editors.techEditor
             MessageBox.Show("保存完成");
         }
 
-        private PdxTechnologyCategory CopyTechnologyCategory;
+        private TechnologyCategory CopyTechnologyCategory;
         private void CommandExecuteCopy(object sender, CanExecuteRoutedEventArgs e)
         {
             Copy();
@@ -75,7 +75,7 @@ namespace StellarisEditor.editors.techEditor
 
         private void Copy()
         {
-            if (dataGrid.SelectedItem is PdxTechnologyCategory technologyCategory)
+            if (dataGrid.SelectedItem is TechnologyCategory technologyCategory)
                 CopyTechnologyCategory = technologyCategory;
         }
 
@@ -91,9 +91,9 @@ namespace StellarisEditor.editors.techEditor
 
         private void Paste()
         {
-            if (CopyTechnologyCategory is PdxTechnologyCategory technologyCategory)
+            if (CopyTechnologyCategory is TechnologyCategory technologyCategory)
             {
-                PdxTechnologyCategory pdxTechnologyCategory = technologyCategory.Clone();
+                TechnologyCategory pdxTechnologyCategory = technologyCategory.Clone();
                 pdxTechnologyCategory.Key = pdxTechnologyCategory.Key + "_copy";
                 TechnologyCategories.Insert(TechnologyCategories.IndexOf(technologyCategory), pdxTechnologyCategory);
             }
@@ -126,7 +126,7 @@ namespace StellarisEditor.editors.techEditor
 
         private void Delete()
         {
-            if (dataGrid.SelectedItem is PdxTechnologyCategory technologyCategory)
+            if (dataGrid.SelectedItem is TechnologyCategory technologyCategory)
                 TechnologyCategories.Remove(technologyCategory);
         }
 
@@ -142,10 +142,10 @@ namespace StellarisEditor.editors.techEditor
 
         private void Add()
         {
-            if (dataGrid.SelectedItem is PdxTechnologyCategory technologyCategory)
-                TechnologyCategories.Insert(TechnologyCategories.IndexOf(technologyCategory), new PdxTechnologyCategory() { Key = $"new_technology_category{++NewIndex}" });
+            if (dataGrid.SelectedItem is TechnologyCategory technologyCategory)
+                TechnologyCategories.Insert(TechnologyCategories.IndexOf(technologyCategory), new TechnologyCategory() { Key = $"new_technology_category{++NewIndex}" });
             else
-                TechnologyCategories.Insert(0, new PdxTechnologyCategory() { Key = $"new_technology_category{++NewIndex}" });
+                TechnologyCategories.Insert(0, new TechnologyCategory() { Key = $"new_technology_category{++NewIndex}" });
         }
 
         private int NewIndex = 0;

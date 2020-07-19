@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.pdx.scriptobject
 {
-    public class PdxTechnologyCategory : PdxObject
+    public class TechnologyCategory : PdxObject
     {
         public new event PropertyChangedEventHandler PropertyChanged;
 
@@ -54,12 +54,12 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-        public override bool Equals(object obj) => obj is PdxTechnologyCategory category && Key == category.Key && Icon == category.Icon;
+        public override bool Equals(object obj) => obj is TechnologyCategory category && Key == category.Key && Icon == category.Icon;
 
         public override int GetHashCode() => base.GetHashCode();
 
         public override string ToString() => $"{Key} = {{ {(String.IsNullOrWhiteSpace(Icon) ? "" : "icon = " + Icon)} }}";
 
-        public PdxTechnologyCategory Clone() => new PdxTechnologyCategory() { Key = Key, Icon = Icon, IsModData = IsModData };
+        public TechnologyCategory Clone() => new TechnologyCategory() { Key = Key, Icon = Icon, IsModData = IsModData };
     }
 }

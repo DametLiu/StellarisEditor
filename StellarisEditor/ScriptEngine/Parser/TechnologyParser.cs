@@ -35,9 +35,9 @@ namespace StellarisEditor.ScriptEngine
             while (Lexical.Peek.Tag != Tag.None)
             {
                 if (IsVariable(Lexical.Peek))
-                    technologyScript.Variables.AddLast(ParseVariable());
+                    technologyScript.Variables.Add(ParseVariable());
                 else if (IsIdentifier(Lexical.Peek))
-                    technologyScript.Technologies.AddLast(ParseTechnology());
+                    technologyScript.Technologies.Add(ParseTechnology());
                 else
                     throw new ArgumentException($"TechnologyParser 无法识别该脚本语句:{FileName} {Lexical.Peek.Pragma.Row} {Lexical.Peek.Pragma.Col} {Lexical.Peek.Content}");
             }

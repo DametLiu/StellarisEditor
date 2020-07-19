@@ -22,7 +22,7 @@ namespace StellarisEditor.mod.data
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();
         public static LinkedList<Variable> Variables = new LinkedList<Variable>();
         public static LinkedList<TechnologyTier> TechnologyTiers = new LinkedList<TechnologyTier>();
-        public static LinkedList<PdxTechnologyCategory> TechnologyCategories = new LinkedList<PdxTechnologyCategory>();
+        public static LinkedList<TechnologyCategory> TechnologyCategories = new LinkedList<TechnologyCategory>();
         public static LinkedList<Technology> Technologies = new LinkedList<Technology>();
 
         public static void LoadDatas()

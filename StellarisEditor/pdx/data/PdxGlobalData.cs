@@ -34,7 +34,7 @@ namespace StellarisEditor.data
         public static LinkedList<Variable> Variables = new LinkedList<Variable>();
         public static LinkedList<PdxLocalization> Localizations = new LinkedList<PdxLocalization>();
         public static LinkedList<TechnologyTier> TechnologyTiers = new LinkedList<TechnologyTier>();
-        public static LinkedList<PdxTechnologyCategory> TechnologyCategories = new LinkedList<PdxTechnologyCategory>();
+        public static LinkedList<TechnologyCategory> TechnologyCategories = new LinkedList<TechnologyCategory>();
         public static LinkedList<Technology> Technologies = new LinkedList<Technology>();
 
         public static void LoadDatas()
@@ -62,24 +62,22 @@ namespace StellarisEditor.data
             }
         }
 
-        public static void LoadTechnologyCategories(string root, LinkedList<PdxTechnologyCategory> categories)
+        public static void LoadTechnologyCategories(string root, LinkedList<TechnologyCategory> categories)
         {
-            //DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY_CATEGORY);
-            //if (!directoryInfo.Exists)
-            //    return;
+            DirectoryInfo directoryInfo = new DirectoryInfo(root + STELLARIS_PATH_TECHNOLOGY_CATEGORY);
+            if (!directoryInfo.Exists)
+                return;
 
-            //FileInfo[] fileInfos = directoryInfo.GetFiles();
-            //foreach (FileInfo file in fileInfos)
-            //{
-            //    Statement statements = new TechnologyParser(new Lexical(File.ReadAllText(file.FullName))).Parse();
+            FileInfo[] fileInfos = directoryInfo.GetFiles();
+            foreach (FileInfo file in fileInfos)
+            {
+                TechnologyCategoryScript technologyCategoryScript = new TechnologyCategoryParser(file).Parse();
 
-            //    foreach (var item in statements.Statements)
-            //    {
-            //        PdxTechnologyCategory category = PdxTechnologyCategory.Parse(item as ObjectStatement);
-            //        category.FileName = file.Name.Substring(0, file.Name.LastIndexOf('.'));
-            //        categories.Add(category);
-            //    }
-            //}
+                foreach (var item in technologyCategoryScript.TechnologyCategories)
+                    categories.Add(item);
+
+                MessageBox.Show($"{categories.Count}");
+            }
         }
 
         public static void LoadTechnologyTiers(string root, LinkedList<TechnologyTier> tiers)
