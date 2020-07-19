@@ -22,6 +22,7 @@ namespace StellarisEditor.editors.technology
     public partial class TechnologyItemEditorWindow : Window
     {
         public Technology Technology { get; set; }
+        public string test = null;
 
         public TechnologyItemEditorWindow(Technology Technology)
         {
@@ -40,10 +41,12 @@ namespace StellarisEditor.editors.technology
             if (Circulation.IsChecked.Value)
             {
                 Cost_Pre_Level.IsEnabled = true;
+                CycleIndex.IsEnabled = true;
             }
             else
             {
                 Cost_Pre_Level.IsEnabled = false;
+                CycleIndex.IsEnabled = false;
             }
         }
 
@@ -208,5 +211,6 @@ namespace StellarisEditor.editors.technology
             Resource_title.IsEnabled = true;
             Resource_desc.IsEnabled = true;
         }
+
     }
 }

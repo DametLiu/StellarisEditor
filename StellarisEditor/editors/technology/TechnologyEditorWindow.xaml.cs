@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -281,5 +282,33 @@ namespace StellarisEditor.editors.technology
         }
 
         private int NewIndex = 0;
+    }
+    public class StrToBool : IValueConverter//string转换为bool
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string strToBool = (string)value;
+            if (strToBool == "yes")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            bool? boolToStr = (bool?)value;
+            if (boolToStr == true)
+            {
+                return "yes";
+            }
+            else
+            {
+                return "no";
+            }
+        }
     }
 }
