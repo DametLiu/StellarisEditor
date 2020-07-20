@@ -6,10 +6,16 @@
         xmlns:local="clr-namespace:StellarisEditor.editors.technology"
         mc:Ignorable="d"
         Title="科技编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Background="White" FontFamily="华文中宋" FontSize="15">
-    <Window.Resources><!--导入类型转换器资源-->
+    <Window.Resources>
+        <!--导入类型转换器资源-->
         <local:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
         <local:GatherToStr x:Key="gatherToStr"/>
+        <local:GatherToStrBlank x:Key="gatherToStrBlank"/>
         <local:StrToBoolDefaultTure x:Key="strToBoolTure"/>
+        <local:LevelTransition x:Key="levelTransition"/>
+        <!--<ContextMenu x:Key="deletNode">
+            <MenuItem x:Name="remove" Header="删除节点" Click="Remove_Click"/>
+        </ContextMenu>-->
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -67,7 +73,7 @@
             </GroupBox>
             <GroupBox Header="Common">
                 <DockPanel>
-                    <CheckBox x:Name="Circulation" Content="Circulation" FontSize="15" Click="Circulation_Click" DockPanel.Dock="Top"/>
+                    <CheckBox x:Name="Circulation" Content="Circulation" FontSize="15" Click="Circulation_Click" DockPanel.Dock="Top" IsChecked="{Binding Path=Levels,Mode=OneWay,Converter={StaticResource levelTransition}}"/>
                     <CheckBox x:Name="Is_Rare" Content="Is Rare" FontSize="15" IsChecked="{Binding Path=IsRare, Converter={StaticResource strToBoolFalse}}" DockPanel.Dock="Top"/><!--调用类型转换-->
                     <CheckBox x:Name="Is_Dangerous" Content="Is Dangerous " FontSize="15" IsChecked="{Binding Path=Dangerous,Converter={StaticResource strToBoolFalse}}" DockPanel.Dock="Top"/>
                     <CheckBox x:Name="Is_Reverse_Engineerable" Content="Is Reverse Engineerable" FontSize="15" IsChecked="{Binding Path=IsReverseEngineerable, Converter={StaticResource strToBoolTure}}" DockPanel.Dock="Top"/>
@@ -101,7 +107,7 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock Text="Category" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
-                    <TextBox x:Name="Category" Text="{Binding Path=Category ,Mode=TwoWay}" DockPanel.Dock="Top">
+                    <TextBox x:Name="Category" Text="{Binding Path=Category ,Mode=TwoWay,Converter={StaticResource gatherToStrBlank}}" DockPanel.Dock="Top">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -203,7 +209,7 @@
                 <StackPanel>
                     <CheckBox x:Name="Check_Gateway" Content="Gateway" FontSize="15" Click="Check_Gateway_Click"/>
                     <TextBlock Text="Weight Group" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Weight_Group" Text="{Binding Path=/WeightGroups/ ,Mode=TwoWay}">
+                    <TextBox x:Name="Weight_Group" Text="{Binding Path=WeightGroups ,Mode=TwoWay,Converter={StaticResource gatherToStrBlank}}">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -284,13 +290,32 @@
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="0.4*"/>
+                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
             <GroupBox Header="Modifier" Grid.Row="0">
-                <TextBox x:Name="Modifier" TextWrapping="Wrap" Text="{Binding Path=Modifier ,Mode=TwoWay}" AcceptsReturn="True" AcceptsTab="True"/>
+                <TreeView x:Name="Modifier" ItemsSource="{Binding Modifier}">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key}" Margin="2,0,0,0"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator}" Margin="2,0,0,0"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value}" Margin="2,0,0,0"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
             </GroupBox>
-            <GroupBox Header="Potential" Grid.Row="1">
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Delte" Click="Button_Click" FontSize="15"/>
+                <Button Grid.Column="1" Content="Add" Click="Button_Click_1" FontSize="15"/>
+            </Grid>
+            <GroupBox Header="Potential" Grid.Row="2">
                 <TextBox x:Name="Potential" TextWrapping="Wrap" Text="{Binding Path=Potential ,Mode=TwoWay}" AcceptsReturn="True"  AcceptsTab="True"/>
             </GroupBox>
         </Grid>

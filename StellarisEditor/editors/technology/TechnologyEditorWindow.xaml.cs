@@ -315,8 +315,8 @@ namespace StellarisEditor.editors.technology
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string strToBool = (string)value;
-            if (strToBool == "no")
+            string str = (string)value;
+            if (str == "no")
             {
                 return false;
             }
@@ -328,8 +328,8 @@ namespace StellarisEditor.editors.technology
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool? boolToStr = (bool?)value;
-            if (boolToStr == false)
+            bool? toStr = (bool?)value;
+            if (toStr == false)
             {
                 return "no";
             }
@@ -340,7 +340,7 @@ namespace StellarisEditor.editors.technology
         }
     }
 
-    public class GatherToStr : IValueConverter//集合与string相互转换，通过\n进行分隔
+    public class GatherToStr : IValueConverter//string集合与string相互转换，通过\n进行分隔
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -365,6 +365,53 @@ namespace StellarisEditor.editors.technology
             string str = (string)value;
             ObservableCollection<string> vs = new ObservableCollection<string>(str.Split('\n'));
             return vs;
+        }
+    }
+    public class GatherToStrBlank : IValueConverter//string集合与string相互转换，通过' '进行分隔
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            ObservableCollection<string> vs = (ObservableCollection<string>)value;
+            string str = null;
+            if (vs == null)
+            {
+                return str;
+            }
+            else
+            {
+                foreach (var item in vs)
+                {
+                    str += (item.ToString() + " ");
+                }
+                return str;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string str = (string)value;
+            ObservableCollection<string> vs = new ObservableCollection<string>(str.Split(' '));
+            return vs;
+        }
+    }
+    public class LevelTransition : IValueConverter//用于level判定是否循环
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string str = (string)value;
+            if (str != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }

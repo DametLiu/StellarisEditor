@@ -2,6 +2,7 @@
 using StellarisEditor.pdx.scriptobject;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +47,9 @@ namespace StellarisEditor.editors.technology
             else
             {
                 Cost_Pre_Level.IsEnabled = false;
+                Cost_Pre_Level.Text = "0";
                 CycleIndex.IsEnabled = false;
+                CycleIndex.Text = "0";
             }
         }
 
@@ -202,8 +205,8 @@ namespace StellarisEditor.editors.technology
         {
             Resource_title.IsEnabled = false;
             Resource_desc.IsEnabled = false;
-            Resource_title.Text = "";
-            Resource_desc.Text = "";
+            Resource_title.Text = null;
+            Resource_desc.Text = null;
         }
 
         private void Resource_Checked(object sender, RoutedEventArgs e)
@@ -212,5 +215,86 @@ namespace StellarisEditor.editors.technology
             Resource_desc.IsEnabled = true;
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Technology.Modifier.RemoveAt(Technology.Modifier.Count - 1);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Technology.Modifier.Add(new pdx.scriptobject.Expression() { Key = "", Operator = "", Value = "" });
+        }
+        //删除按钮
+        //private void Remove_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (!string.IsNullOrWhiteSpace(_target.Uid))
+        //    {
+        //        foreach (TreeViewItem item in this.Modifier.Items)
+        //        {
+        //            if (item.Uid == _target.Uid)
+        //            {
+        //                this.Modifier.Items.Remove(_target);
+        //                break;
+        //            }
+        //            TraverseNodeInfo(item, _target);
+        //        }
+        //    }
+        //}
+        ////需要删除的节点信息
+        //TreeViewItem _target;
+        ////鼠标右键点击事件
+        //private void Modifier_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    TreeViewItem targetItem = GetNearestContainer(e.OriginalSource as UIElement);
+        //    {
+        //        if (targetItem != null)
+        //        {
+        //            ContextMenu contextMenu = this.FindResource("deletNode") as ContextMenu;
+        //            contextMenu.PlacementTarget = sender as TreeViewItem;
+        //            contextMenu.IsOpen = true;
+        //            FindParent(targetItem);
+        //        }
+        //    }
+        //}
+        //private TreeViewItem GetNearestContainer(UIElement element)
+        //{
+        //    TreeViewItem container = element as TreeViewItem;
+        //    while ((container == null) && (element != null))
+        //    {
+        //        element = VisualTreeHelper.GetParent(element) as UIElement;
+        //        container = element as TreeViewItem;
+        //    }
+        //    return container;
+        //}
+        //private void FindParent(TreeViewItem treeView)
+        //{
+        //    _target = new TreeViewItem();
+        //    TreeViewItem parentTree = treeView.Parent as TreeViewItem;
+        //    if (parentTree != null && parentTree.Items.Count > 1)
+        //    {
+        //        _target = treeView;
+        //    }
+        //    else if (parentTree != null && parentTree.Items.Count == 1)
+        //    {
+        //        _target = parentTree;
+        //        FindParent(parentTree);
+        //    }
+        //    else
+        //    {
+        //        _target = treeView;
+        //    }
+        //}
+        //private void TraverseNodeInfo(TreeViewItem viewItem,TreeViewItem tree)
+        //{
+        //    foreach (TreeViewItem item in viewItem.Items)
+        //    {
+        //        if (item.Uid == tree.Uid)
+        //        {
+        //            viewItem.Items.Remove(tree);
+        //            return;
+        //        }
+        //        TraverseNodeInfo(item, _target);
+        //    }
+        //}
     }
 }

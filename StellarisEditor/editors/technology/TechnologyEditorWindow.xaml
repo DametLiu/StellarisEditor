@@ -16,6 +16,8 @@
         <RoutedUICommand x:Key="Paste" Text="Button Click"/>
         <local:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
         <local:StrToBoolDefaultTure x:Key="strToboolTure"/>
+        <local:GatherToStrBlank x:Key="gatherToStrBlank"/>
+        <local:LevelTransition x:Key="levelTransition"/>
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Modifiers="Ctrl" Key="S" Command="{StaticResource Save}"/>
@@ -77,16 +79,18 @@
                         </ContextMenu>
                     </DataGrid.ContextMenu>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="键" Width="250" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="键" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <DataGridTextColumn Header="花费" Width="100" IsReadOnly="True" Binding="{Binding Cost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <DataGridTextColumn Header="类别" Width="100" IsReadOnly="True" Binding="{Binding Area, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="子类别" Width="250" IsReadOnly="True" Binding="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="子类别" IsReadOnly="True" Binding="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource gatherToStrBlank}}"/>
                         <DataGridTextColumn Header="权重" Width="100" IsReadOnly="True" Binding="{Binding Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="文件名" Width="250" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <DataGridCheckBoxColumn Header="稀有科技" Width="80" IsReadOnly="True" Binding="{Binding IsRare, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
                         <DataGridCheckBoxColumn Header="危险科技" Width="80" IsReadOnly="True" Binding="{Binding IsDangerous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
                         <DataGridCheckBoxColumn Header="起始科技" Width="80" IsReadOnly="True" Binding="{Binding StartTech, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
                         <DataGridCheckBoxColumn Header="逆向科技" Width="80" IsReadOnly="True" Binding="{Binding IsReverseEngineerable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToboolTure}}"/>
+                        <DataGridCheckBoxColumn Header="循环科技" Width="80" IsReadOnly="True" Binding="{Binding Levels, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource levelTransition}}"/>
+                        <DataGridTextColumn Header="前置科技" IsReadOnly="True" Binding="{Binding Prerequisites, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,Converter={StaticResource gatherToStrBlank}}"/>
+                        <DataGridTextColumn Header="文件名" Width="250" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </DockPanel>
