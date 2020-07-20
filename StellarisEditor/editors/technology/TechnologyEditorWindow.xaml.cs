@@ -283,7 +283,7 @@ namespace StellarisEditor.editors.technology
 
         private int NewIndex = 0;
     }
-    public class StrToBool : IValueConverter//string转换为bool
+    public class StrToBoolDefultFalse : IValueConverter//string与bool相互转换，默认为false
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -309,6 +309,62 @@ namespace StellarisEditor.editors.technology
             {
                 return "no";
             }
+        }
+    }
+    public class StrToBoolDefaultTure : IValueConverter//string与bool相互转换，默认为true
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string strToBool = (string)value;
+            if (strToBool == "no")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            bool? boolToStr = (bool?)value;
+            if (boolToStr == false)
+            {
+                return "no";
+            }
+            else
+            {
+                return "yes";
+            }
+        }
+    }
+
+    public class GatherToStr : IValueConverter//集合与string相互转换，通过\n进行分隔
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            ObservableCollection<string> vs = (ObservableCollection<string>)value;
+            string str = null;
+            if (vs == null)
+            {
+                return str;
+            }
+            else
+            {
+                foreach (var item in vs)
+                {
+                    str += (item.ToString() + "\n");
+                }
+                return str;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string str = (string)value;
+            ObservableCollection<string> vs = new ObservableCollection<string>(str.Split('\n'));
+            return vs;
         }
     }
 }

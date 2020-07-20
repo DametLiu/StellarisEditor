@@ -14,7 +14,8 @@
         <RoutedUICommand x:Key="Delete" Text="Button Click"/>
         <RoutedUICommand x:Key="Copy" Text="Button Click"/>
         <RoutedUICommand x:Key="Paste" Text="Button Click"/>
-        <local:StrToBool x:Key="strToBool"/>
+        <local:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
+        <local:StrToBoolDefaultTure x:Key="strToboolTure"/>
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Modifiers="Ctrl" Key="S" Command="{StaticResource Save}"/>
@@ -82,10 +83,10 @@
                         <DataGridTextColumn Header="子类别" Width="250" IsReadOnly="True" Binding="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <DataGridTextColumn Header="权重" Width="100" IsReadOnly="True" Binding="{Binding Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <DataGridTextColumn Header="文件名" Width="250" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridCheckBoxColumn Header="稀有科技" Width="80" IsReadOnly="True" Binding="{Binding IsRare, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBool}}"/>
-                        <DataGridCheckBoxColumn Header="危险科技" Width="80" IsReadOnly="True" Binding="{Binding IsDangerous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBool}}"/>
-                        <DataGridCheckBoxColumn Header="起始科技" Width="80" IsReadOnly="True" Binding="{Binding StartTech, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBool}}"/>
-                        <DataGridCheckBoxColumn Header="逆向科技" Width="80" IsReadOnly="True" Binding="{Binding IsReverseEngineerable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBool}}"/>
+                        <DataGridCheckBoxColumn Header="稀有科技" Width="80" IsReadOnly="True" Binding="{Binding IsRare, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
+                        <DataGridCheckBoxColumn Header="危险科技" Width="80" IsReadOnly="True" Binding="{Binding IsDangerous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
+                        <DataGridCheckBoxColumn Header="起始科技" Width="80" IsReadOnly="True" Binding="{Binding StartTech, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
+                        <DataGridCheckBoxColumn Header="逆向科技" Width="80" IsReadOnly="True" Binding="{Binding IsReverseEngineerable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToboolTure}}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </DockPanel>

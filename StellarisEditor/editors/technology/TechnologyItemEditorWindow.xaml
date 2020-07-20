@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="科技编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Background="White" FontFamily="华文中宋" FontSize="15">
     <Window.Resources><!--导入类型转换器资源-->
-        <local:StrToBool x:Key="strToBool"/>
+        <local:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
+        <local:GatherToStr x:Key="gatherToStr"/>
+        <local:StrToBoolDefaultTure x:Key="strToBoolTure"/>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -64,20 +66,20 @@
                 </TextBox>
             </GroupBox>
             <GroupBox Header="Common">
-                <WrapPanel Orientation="Vertical">
-                    <CheckBox x:Name="Circulation" Content="Circulation" FontSize="15" Click="Circulation_Click" />
-                    <CheckBox x:Name="Is_Rare" Content="Is Rare" FontSize="15" IsChecked="{Binding Path=IsRare, Converter={StaticResource strToBool}}"/><!--调用类型转换-->
-                    <CheckBox x:Name="Is_Dangerous" Content="Is Dangerous " FontSize="15" IsChecked="{Binding Path=Dangerous,Converter={StaticResource strToBool}}"/>
-                    <CheckBox x:Name="Is_Reverse_Engineerable" Content="Is Reverse Engineerable" FontSize="15" IsChecked="{Binding Path=IsReverseEngineerable, Converter={StaticResource strToBool}}"/>
-                    <CheckBox x:Name="Start_Technology" Content="Start Technology" FontSize="15" Click="Start_Technology_Click" IsChecked="{Binding Path=StartTech, Converter={StaticResource strToBool}}"/>
-                    <TextBlock Text="Area" Block.TextAlignment="Center" Width="295"/>
-                    <ComboBox x:Name="Area" Text="{Binding Path=Area ,Mode=TwoWay}">
+                <DockPanel>
+                    <CheckBox x:Name="Circulation" Content="Circulation" FontSize="15" Click="Circulation_Click" DockPanel.Dock="Top"/>
+                    <CheckBox x:Name="Is_Rare" Content="Is Rare" FontSize="15" IsChecked="{Binding Path=IsRare, Converter={StaticResource strToBoolFalse}}" DockPanel.Dock="Top"/><!--调用类型转换-->
+                    <CheckBox x:Name="Is_Dangerous" Content="Is Dangerous " FontSize="15" IsChecked="{Binding Path=Dangerous,Converter={StaticResource strToBoolFalse}}" DockPanel.Dock="Top"/>
+                    <CheckBox x:Name="Is_Reverse_Engineerable" Content="Is Reverse Engineerable" FontSize="15" IsChecked="{Binding Path=IsReverseEngineerable, Converter={StaticResource strToBoolTure}}" DockPanel.Dock="Top"/>
+                    <CheckBox x:Name="Start_Technology" Content="Start Technology" FontSize="15" Click="Start_Technology_Click" IsChecked="{Binding Path=StartTech, Converter={StaticResource strToBoolFalse}}" DockPanel.Dock="Top"/>
+                    <TextBlock Text="Area" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <ComboBox x:Name="Area" Text="{Binding Path=Area ,Mode=TwoWay}" DockPanel.Dock="Top">
                         <ComboBoxItem Content="society"/>
                         <ComboBoxItem Content="physics"/>
                         <ComboBoxItem Content="engineering"/>
                     </ComboBox>
-                    <TextBlock Text="Tier" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Tier" Text="{Binding Path=Tier ,Mode=TwoWay}">
+                    <TextBlock Text="Tier" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="Tier" Text="{Binding Path=Tier ,Mode=TwoWay}" DockPanel.Dock="Top">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -98,8 +100,8 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <TextBlock Text="Category" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Category" Text="{Binding Path=Category ,Mode=TwoWay}">
+                    <TextBlock Text="Category" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="Category" Text="{Binding Path=Category ,Mode=TwoWay}" DockPanel.Dock="Top">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -120,8 +122,8 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <TextBlock Text="Cycle Index" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="CycleIndex" Text="{Binding Path=Levels,Mode=TwoWay}">
+                    <TextBlock Text="Cycle Index" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="CycleIndex" Text="{Binding Path=Levels,Mode=TwoWay}" DockPanel.Dock="Top">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -142,8 +144,8 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <TextBlock Text="Cost Pre Level" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Cost_Pre_Level" IsEnabled="False" Text="{Binding Path=CostPerLevel ,Mode=TwoWay}">
+                    <TextBlock Text="Cost Pre Level" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="Cost_Pre_Level" IsEnabled="False" Text="{Binding Path=CostPerLevel ,Mode=TwoWay}" DockPanel.Dock="Top">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -164,8 +166,8 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <TextBlock Text="Weight" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Weight" Text="{Binding Path=Weight ,Mode=TwoWay}">
+                    <TextBlock Text="Weight" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="Weight" Text="{Binding Path=Weight ,Mode=TwoWay}" DockPanel.Dock="Top">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -186,16 +188,21 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <TextBlock Text="Prerequisites" Block.TextAlignment="Center"/>
-                    <TextBox x:Name="Prerequisites" Text="{Binding Path=Prerequisites, Mode=TwoWay}"/>
-                </WrapPanel>
+                    <TextBlock Text="Prerequisites" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="Prerequisites" Text="{Binding Path=Prerequisites, Mode=TwoWay,Converter={StaticResource gatherToStr}}" TextWrapping="Wrap" AcceptsReturn="True"/>
+                </DockPanel>
             </GroupBox>
         </DockPanel>
-        <DockPanel Grid.Column="1">
-            <GroupBox Header="Sundry">
-                <WrapPanel Orientation="Vertical">
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Sundry" Grid.Row="0">
+                <StackPanel>
                     <CheckBox x:Name="Check_Gateway" Content="Gateway" FontSize="15" Click="Check_Gateway_Click"/>
-                    <TextBlock Text="Weight Group" Width="296" Block.TextAlignment="Center"/>
+                    <TextBlock Text="Weight Group" Block.TextAlignment="Center"/>
                     <TextBox x:Name="Weight_Group" Text="{Binding Path=/WeightGroups/ ,Mode=TwoWay}">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
@@ -266,26 +273,30 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <GroupBox Header="Ai Weight">
-                        <TextBox x:Name="Ai_Weight" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="150" Text="{Binding Path=AiWeight ,Mode=TwoWay}"/>
-                    </GroupBox>
-                    <GroupBox Header="Weight Modifier">
-                        <TextBox x:Name="Weight_Modifier" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"  Text="{Binding Path=Weight_Modifier ,Mode=TwoWay}" Height="180" AcceptsReturn="True" AcceptsTab="True"/>
-                    </GroupBox>
-                </WrapPanel>
+                </StackPanel>
             </GroupBox>
-        </DockPanel>
-        <DockPanel Grid.Column="2">
-            <GroupBox Header="Modifier">
-                <TextBox x:Name="Modifier" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Height="400" Text="{Binding Path=Modifier ,Mode=TwoWay}"/>
+            <GroupBox Header="Ai Weight" Grid.Row="1">
+                <TextBox x:Name="Ai_Weight" TextWrapping="Wrap" Text="{Binding Path=AiWeight ,Mode=TwoWay}" AcceptsReturn="True" AcceptsTab="True"/>
             </GroupBox>
-            <GroupBox Header="Potential">
-                <TextBox x:Name="Potential" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Text="{Binding Path=Potential ,Mode=TwoWay}"/>
+            <GroupBox Header="Weight Modifier" Grid.Row="2">
+                <TextBox x:Name="Weight_Modifier" TextWrapping="Wrap"  Text="{Binding Path=Weight_Modifier ,Mode=TwoWay}" AcceptsReturn="True" AcceptsTab="True"/>
             </GroupBox>
-        </DockPanel>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Modifier" Grid.Row="0">
+                <TextBox x:Name="Modifier" TextWrapping="Wrap" Text="{Binding Path=Modifier ,Mode=TwoWay}" AcceptsReturn="True" AcceptsTab="True"/>
+            </GroupBox>
+            <GroupBox Header="Potential" Grid.Row="1">
+                <TextBox x:Name="Potential" TextWrapping="Wrap" Text="{Binding Path=Potential ,Mode=TwoWay}" AcceptsReturn="True"  AcceptsTab="True"/>
+            </GroupBox>
+        </Grid>
         <DockPanel Grid.Column="3">
             <GroupBox Header="Additional Text">
-                <WrapPanel Orientation="Vertical">
+                <StackPanel>
                     <CheckBox x:Name="Prereqfor_Desc" Content="Prereqfor Desc " FontSize="15" Click="Prereqfor_Desc_Click"/>
                     <CheckBox x:Name="Check_Hide_Prereq_For_Desc" Content="Hide Prereq For Desc" FontSize="15" IsEnabled="False" Checked="Check_Hide_Prereq_For_Desc_Checked" Unchecked="Check_Hide_Prereq_For_Desc_Unchecked"/>
                     <CheckBox x:Name="Ship" Content="Ship" FontSize="15" IsEnabled="False" Checked="Ship_Checked" Unchecked="Ship_Unchecked"/>
@@ -295,7 +306,7 @@
                     <CheckBox x:Name="Feature" Content="Feature" FontSize="15" IsEnabled="False" Checked="Feature_Checked" Unchecked="Feature_Unchecked"/>
                     <CheckBox x:Name="Resource" Content="Resource" FontSize="15" IsEnabled="False" Unchecked="Resource_Unchecked" Checked="Resource_Checked"/>
                     <TextBlock Text="Hide Prereq For Desc " Block.TextAlignment="Center" FontSize="15"/>
-                    <ComboBox x:Name="Hide_Prereq_For_Desc" IsEnabled="False" FontSize="15">
+                    <ComboBox x:Name="Hide_Prereq_For_Desc" IsEnabled="False" FontSize="15" Text="{Binding Path=HidePrereqForDesc,Mode=TwoWay}" IsEditable="True">
                         <ComboBoxItem Content="resource"/>
                         <ComboBoxItem Content="component"/>
                         <ComboBoxItem Content="custom"/>
@@ -303,7 +314,7 @@
                         <ComboBoxItem Content="ship"/>
                         <ComboBoxItem Content="feature"/>
                     </ComboBox>
-                    <TextBlock Text="Ship" Block.TextAlignment="Center" Width="295" FontSize="15"/>
+                    <TextBlock Text="Ship" Block.TextAlignment="Center" FontSize="15"/>
                     <TextBox x:Name="Ship_title" IsEnabled="False">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
@@ -561,7 +572,7 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                </WrapPanel>
+                </StackPanel>
             </GroupBox>
         </DockPanel>
     </Grid>
