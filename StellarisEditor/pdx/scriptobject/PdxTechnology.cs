@@ -107,6 +107,36 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
+        private ObservableCollection<TechnologyCategory> _CategorySource = new ObservableCollection<TechnologyCategory>();
+        public ObservableCollection<TechnologyCategory> CategorySource
+        {
+            get {
+                foreach (var item in ModGlobalData.TechnologyCategories)
+                {
+                    _CategorySource.Add(item);
+                }
+                _CategorySource.Add(new TechnologyCategory { Key = "materials" });
+                _CategorySource.Add(new TechnologyCategory { Key = "propulsion" });
+                _CategorySource.Add(new TechnologyCategory { Key = "voidcraft" });
+                _CategorySource.Add(new TechnologyCategory { Key = "industry" });
+                _CategorySource.Add(new TechnologyCategory { Key = "field_manipulation" });
+                _CategorySource.Add(new TechnologyCategory { Key = "particles" });
+                _CategorySource.Add(new TechnologyCategory { Key = "computing" });
+                _CategorySource.Add(new TechnologyCategory { Key = "psionics" });
+                _CategorySource.Add(new TechnologyCategory { Key = "new_worlds" });
+                _CategorySource.Add(new TechnologyCategory { Key = "statecraft" });
+                _CategorySource.Add(new TechnologyCategory { Key = "biology" });
+                _CategorySource.Add(new TechnologyCategory { Key = "military_theory" });
+                return _CategorySource;
+            }
+            set {
+                _CategorySource = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CategorySource"));
+            }
+        }
+
+
+
         private String _Levels;
         public String Levels
         {
@@ -473,8 +503,6 @@ namespace StellarisEditor.pdx.scriptobject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cotegories"));
             }
         }
-
-
     }
 
     public class PrereqforDescCetegory : PdxObject

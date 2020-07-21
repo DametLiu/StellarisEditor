@@ -37,87 +37,6 @@ namespace StellarisEditor.editors.technology
             InitializeComponent();
         }
 
-        private void Circulation_Click(object sender, RoutedEventArgs e)
-        {
-            if (Circulation.IsChecked.Value)
-            {
-                Cost_Pre_Level.IsEnabled = true;
-                CycleIndex.IsEnabled = true;
-            }
-            else
-            {
-                Cost_Pre_Level.IsEnabled = false;
-                Cost_Pre_Level.Text = "0";
-                CycleIndex.IsEnabled = false;
-                CycleIndex.Text = "0";
-            }
-        }
-
-        private void Check_Gateway_Click(object sender, RoutedEventArgs e)
-        {
-            if (Check_Gateway.IsChecked.Value)
-            {
-                Gateway.IsEnabled = true;
-            }
-            else
-            {
-                Gateway.IsEnabled = false;
-            }
-        }
-
-        private void Start_Technology_Click(object sender, RoutedEventArgs e)
-        {
-            if (Start_Technology.IsChecked.Value)
-            {
-                Cost.IsEnabled = false;
-                Tier.IsEnabled = false;
-                Ai_Weight.IsEnabled = false;
-                Weight_Modifier.IsEnabled = false;
-                Modifier.IsEnabled = false;
-                Tier.Text = "0";
-            }
-            else
-            {
-                Cost.IsEnabled = true;
-                Tier.IsEnabled = true;
-                Ai_Weight.IsEnabled = true;
-                Weight_Modifier.IsEnabled = true;
-                Modifier.IsEnabled = true;
-                Tier.Text = null;
-            }
-        }
-
-        private void Prereqfor_Desc_Click(object sender, RoutedEventArgs e)
-        {
-            if (Prereqfor_Desc.IsChecked.Value)
-            {
-                Check_Hide_Prereq_For_Desc.IsEnabled = true;
-                Ship.IsEnabled = true;
-                Resource.IsEnabled = true;
-                Custom.IsEnabled = true;
-                Component.IsEnabled = true;
-                Feature.IsEnabled = true;
-                Diplo_Action.IsEnabled = true;
-            }
-            else
-            {
-                Check_Hide_Prereq_For_Desc.IsEnabled = false;
-                Check_Hide_Prereq_For_Desc.IsChecked = false;
-                Ship.IsEnabled = false;
-                Ship.IsChecked = false;
-                Resource.IsEnabled = false;
-                Resource.IsChecked = false;
-                Custom.IsEnabled = false;
-                Custom.IsChecked = false;
-                Component.IsEnabled = false;
-                Component.IsChecked = false;
-                Feature.IsEnabled = false;
-                Feature.IsChecked = false;
-                Diplo_Action.IsEnabled = false;
-                Diplo_Action.IsChecked = false;
-            }
-        }
-
         private void Check_Hide_Prereq_For_Desc_Checked(object sender, RoutedEventArgs e)
         {
             Hide_Prereq_For_Desc.IsEnabled = true;
@@ -223,6 +142,79 @@ namespace StellarisEditor.editors.technology
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Technology.Modifier.Add(new pdx.scriptobject.Expression() { Key = "", Operator = "", Value = "" });
+        }
+
+        private void Prereqfor_Desc_Checked(object sender, RoutedEventArgs e)
+        {
+            Check_Hide_Prereq_For_Desc.IsEnabled = true;
+            Ship.IsEnabled = true;
+            Resource.IsEnabled = true;
+            Custom.IsEnabled = true;
+            Component.IsEnabled = true;
+            Feature.IsEnabled = true;
+            Diplo_Action.IsEnabled = true;
+        }
+
+        private void Prereqfor_Desc_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Check_Hide_Prereq_For_Desc.IsEnabled = false;
+            Check_Hide_Prereq_For_Desc.IsChecked = false;
+            Ship.IsEnabled = false;
+            Ship.IsChecked = false;
+            Resource.IsEnabled = false;
+            Resource.IsChecked = false;
+            Custom.IsEnabled = false;
+            Custom.IsChecked = false;
+            Component.IsEnabled = false;
+            Component.IsChecked = false;
+            Feature.IsEnabled = false;
+            Feature.IsChecked = false;
+            Diplo_Action.IsEnabled = false;
+            Diplo_Action.IsChecked = false;
+        }
+
+        private void Start_Technology_Checked(object sender, RoutedEventArgs e)
+        {
+            Cost.IsEnabled = false;
+            Tier.IsEnabled = false;
+            Ai_Weight.IsEnabled = false;
+            Weight_Modifier.IsEnabled = false;
+            Modifier.IsEnabled = false;
+            Tier.Text = "0";
+        }
+
+        private void Start_Technology_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Cost.IsEnabled = true;
+            Tier.IsEnabled = true;
+            Ai_Weight.IsEnabled = true;
+            Weight_Modifier.IsEnabled = true;
+            Modifier.IsEnabled = true;
+            Tier.Text = null;
+        }
+
+        private void Check_Gateway_Checked(object sender, RoutedEventArgs e)
+        {
+            Gateway.IsEnabled = true;
+        }
+
+        private void Check_Gateway_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Gateway.IsEnabled = false;
+        }
+
+        private void Circulation_Checked(object sender, RoutedEventArgs e)
+        {
+            Cost_Pre_Level.IsEnabled = true;
+            CycleIndex.IsEnabled = true;
+        }
+
+        private void Circulation_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Cost_Pre_Level.IsEnabled = false;
+            Cost_Pre_Level.Text = "0";
+            CycleIndex.IsEnabled = false;
+            CycleIndex.Text = "0";
         }
         //删除按钮
         //private void Remove_Click(object sender, RoutedEventArgs e)

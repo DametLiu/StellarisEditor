@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StellarisEditor.editors.technology"
         xmlns:c="clr-namespace:StellarisEditor.component"
+        xmlns:data="clr-namespace:StellarisEditor.editors.dataConversion"
         mc:Ignorable="d"
         Title="科技编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Background="White" FontFamily="华文中宋" FontSize="15">
     <Window.Resources>
@@ -14,10 +15,10 @@
         <RoutedUICommand x:Key="Delete" Text="Button Click"/>
         <RoutedUICommand x:Key="Copy" Text="Button Click"/>
         <RoutedUICommand x:Key="Paste" Text="Button Click"/>
-        <local:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
-        <local:StrToBoolDefaultTure x:Key="strToboolTure"/>
-        <local:GatherToStrBlank x:Key="gatherToStrBlank"/>
-        <local:LevelTransition x:Key="levelTransition"/>
+        <data:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
+        <data:StrToBoolDefaultTure x:Key="strToboolTure"/>
+        <data:GatherToStrBlank x:Key="gatherToStrBlank"/>
+        <data:VarTransition x:Key="varTransition"/>
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Modifiers="Ctrl" Key="S" Command="{StaticResource Save}"/>
@@ -88,7 +89,7 @@
                         <DataGridCheckBoxColumn Header="危险科技" Width="80" IsReadOnly="True" Binding="{Binding IsDangerous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
                         <DataGridCheckBoxColumn Header="起始科技" Width="80" IsReadOnly="True" Binding="{Binding StartTech, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
                         <DataGridCheckBoxColumn Header="逆向科技" Width="80" IsReadOnly="True" Binding="{Binding IsReverseEngineerable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToboolTure}}"/>
-                        <DataGridCheckBoxColumn Header="循环科技" Width="80" IsReadOnly="True" Binding="{Binding Levels, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource levelTransition}}"/>
+                        <DataGridCheckBoxColumn Header="循环科技" Width="80" IsReadOnly="True" Binding="{Binding Levels, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource varTransition}}"/>
                         <DataGridTextColumn Header="前置科技" IsReadOnly="True" Binding="{Binding Prerequisites, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,Converter={StaticResource gatherToStrBlank}}"/>
                         <DataGridTextColumn Header="文件名" Width="250" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"/>
                     </DataGrid.Columns>

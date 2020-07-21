@@ -118,6 +118,7 @@
     <Compile Include="editors\Agenda\AgendaEditorWindow.xaml.cs">
       <DependentUpon>AgendaEditorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="editors\DataConversion.cs" />
     <Compile Include="editors\governments\authorities\AuthorityEditor.xaml.cs">
       <DependentUpon>AuthorityEditor.xaml</DependentUpon>
     </Compile>
