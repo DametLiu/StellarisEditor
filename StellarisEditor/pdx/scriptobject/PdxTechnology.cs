@@ -241,7 +241,7 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-        private ObservableCollection<Expression> _Modifier;
+        private ObservableCollection<Expression> _Modifier = new ObservableCollection<Expression>() {new pdx.scriptobject.Expression() { Key = "", Operator = "", Value = "" } };
         public ObservableCollection<Expression> Modifier
         {
             get

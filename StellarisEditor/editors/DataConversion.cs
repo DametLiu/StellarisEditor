@@ -162,22 +162,25 @@ namespace StellarisEditor.editors.dataConversion
         public static void TrimModifierTransition(ObservableCollection<StellarisEditor.pdx.scriptobject.Expression> expressions)
         {
             int i = 0, j = 0;
-            for (i = 0; i < expressions.Count; i++)
+            if (expressions != null)
             {
-                for (j = 0; j < expressions[i].Children.Count; j++)
+                for (i = 0; i < expressions.Count; i++)
                 {
-                    if (expressions[i].Children[j] != null)
+                    for (j = 0; j < expressions[i].Children.Count; j++)
                     {
-                        expressions.Add(new pdx.scriptobject.Expression()
+                        if (expressions[i].Children[j] != null)
                         {
-                            Key = expressions[i].Children[j].Key,
-                            Operator = expressions[i].Children[j].Operator,
-                            Value = expressions[i].Children[j].Value
-                        });
-                        i = 0;
+                            expressions.Add(new pdx.scriptobject.Expression()
+                            {
+                                Key = expressions[i].Children[j].Key,
+                                Operator = expressions[i].Children[j].Operator,
+                                Value = expressions[i].Children[j].Value
+                            });
+                            i = 0;
+                        }
                     }
+                    expressions.Remove(expressions[i]);
                 }
-                expressions.Remove(expressions[i]);
             }
         }
     }
