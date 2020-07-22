@@ -300,7 +300,17 @@
                 <Button Grid.Column="1" Content="Add" Click="Button_Click_1" FontSize="15"/>
             </Grid>
             <GroupBox Header="Potential" Grid.Row="2">
-                <TextBox x:Name="Potential" TextWrapping="Wrap" Text="{Binding Path=Potential ,Mode=TwoWay}" AcceptsReturn="True"  AcceptsTab="True"/>
+                <TreeView x:Name="Potential" ItemsSource="{Binding Potential, Mode=TwoWay}">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
             </GroupBox>
         </Grid>
         <DockPanel Grid.Column="3">

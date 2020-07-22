@@ -162,6 +162,7 @@ namespace StellarisEditor.editors.dataConversion
         public static void TrimModifierTransition(ObservableCollection<StellarisEditor.pdx.scriptobject.Expression> expressions)
         {
             int i = 0, j = 0;
+            bool judge = false;
             if (expressions != null)
             {
                 for (i = 0; i < expressions.Count; i++)
@@ -176,10 +177,14 @@ namespace StellarisEditor.editors.dataConversion
                                 Operator = expressions[i].Children[j].Operator,
                                 Value = expressions[i].Children[j].Value
                             });
-                            i = 0;
+                            judge = true;
                         }
                     }
-                    expressions.Remove(expressions[i]);
+                    if (judge)
+                    {
+                        expressions.Remove(expressions[i]);
+                        judge = false;
+                    }
                 }
             }
         }
