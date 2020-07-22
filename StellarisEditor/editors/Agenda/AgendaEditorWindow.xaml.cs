@@ -34,5 +34,14 @@ namespace StellarisEditor.editors.Agenda
             InitializeComponent();
         }
 
+        private void AgendaModifierDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Agenda.Modifier.RemoveAt(Agenda.Modifier.Count - 1);
+        }
+
+        private void AgendaModifierAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Agenda.Modifier.Add(new pdx.scriptobject.Expression() { Key = "", Operator = "", Value = "" });
+        }
     }
 }

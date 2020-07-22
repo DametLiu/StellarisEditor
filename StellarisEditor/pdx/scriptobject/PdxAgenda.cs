@@ -28,8 +28,8 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-        private LinkedList<Modifier> _Modifier;
-        public LinkedList<Modifier> Modifier
+        private ObservableCollection<Expression> _Modifier;
+        public ObservableCollection<Expression> Modifier
         {
             get
             {

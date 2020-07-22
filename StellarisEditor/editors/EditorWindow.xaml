@@ -18,7 +18,7 @@
             </Grid.RowDefinitions>
             <GroupBox Header="COMMON" Grid.Row="0" Padding="10,5" FontSize="24">
                 <WrapPanel ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <Button Content="议程" Visibility="Collapsed"/>
+                    <Button Content="议程" Visibility="Collapsed" Click="OpenAgendaEditor"/>
                     <Button Content="AI预算" Visibility="Collapsed"/>
                     <Button Content="环境物体" Visibility="Collapsed"/>
                     <Button Content="异常现象" Visibility="Collapsed"/>
