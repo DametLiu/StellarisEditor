@@ -142,4 +142,43 @@ namespace StellarisEditor.editors.dataConversion
             throw new NotImplementedException();
         }
     }
+    public class TreeViewTransition//将适用于TreeView的数据类型转换
+    {
+        //Expression类转换为string
+        public static string TriggerToStr(StellarisEditor.pdx.scriptobject.Expression expression)
+        {
+            string str = null;
+            foreach (var item in expression.Children)
+            {
+                str += $"{item.Key} {item.Operator} {item.Value}";
+                if (item.Children != null)
+                {
+                    str += TriggerToStr(item) + "\n";
+                }
+            }
+            return str;
+        }
+        //整理Expression类使得所有Children的子节点元素全部集合到根节点上以便于在TreeView上显示
+        public static void TrimModifierTransition(ObservableCollection<StellarisEditor.pdx.scriptobject.Expression> expressions)
+        {
+            int i = 0, j = 0;
+            for (i = 0; i < expressions.Count; i++)
+            {
+                for (j = 0; j < expressions[i].Children.Count; j++)
+                {
+                    if (expressions[i].Children[j] != null)
+                    {
+                        expressions.Add(new pdx.scriptobject.Expression()
+                        {
+                            Key = expressions[i].Children[j].Key,
+                            Operator = expressions[i].Children[j].Operator,
+                            Value = expressions[i].Children[j].Value
+                        });
+                        i = 0;
+                    }
+                }
+                expressions.Remove(expressions[i]);
+            }
+        }
+    }
 }

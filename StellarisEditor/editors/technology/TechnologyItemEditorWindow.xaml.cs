@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using StellarisEditor.editors.dataConversion;
 
 namespace StellarisEditor.editors.technology
 {
@@ -215,6 +216,30 @@ namespace StellarisEditor.editors.technology
             Cost_Pre_Level.Text = "0";
             CycleIndex.IsEnabled = false;
             CycleIndex.Text = "0";
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //int i = 0, j = 0;
+            //for (i = 0; i < Technology.Modifier.Count; i++)
+            //{
+            //    for (j = 0; j < Technology.Modifier[i].Children.Count; j++)
+            //    {
+            //        if (Technology.Modifier[i].Children[j] != null)
+            //        {
+            //            Technology.Modifier.Add(new pdx.scriptobject.Expression()
+            //            {
+            //                Key = Technology.Modifier[i].Children[j].Key,
+            //                Operator = Technology.Modifier[i].Children[j].Operator,
+            //                Value = Technology.Modifier[i].Children[j].Value
+            //            });
+            //            i = 0;
+            //        }
+            //    }
+            //    Technology.Modifier.Remove(Technology.Modifier[i]);
+            //}
+            TreeViewTransition.TrimModifierTransition(Technology.Modifier);
+            Modifier.IsEnabled = true;
         }
         //删除按钮
         //private void Remove_Click(object sender, RoutedEventArgs e)
