@@ -1,4 +1,5 @@
 ﻿using StellarisEditor.data;
+using StellarisEditor.editors.technology.category;
 using StellarisEditor.mod.data;
 using StellarisEditor.pdx.scriptobject;
 using System;
@@ -33,6 +34,12 @@ namespace StellarisEditor.editors.techEditor
             foreach (var item in ModGlobalData.TechnologyCategories)
                 TechnologyCategories.Add(item);
             dataGrid.ItemsSource = TechnologyCategories;
+        }
+
+        private void MouseDoubleClick_EditItem(object sender, MouseButtonEventArgs e)
+        {
+            TechnologyCategoryItemEditor window = new TechnologyCategoryItemEditor(dataGrid.SelectedItem as TechnologyCategory);
+            window.Show();
         }
 
         private void MenuItemClickSave(object sender, RoutedEventArgs e)

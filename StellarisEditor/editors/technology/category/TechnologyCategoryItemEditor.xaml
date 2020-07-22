@@ -1,0 +1,33 @@
+﻿<Window x:Class="StellarisEditor.editors.technology.category.TechnologyCategoryItemEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StellarisEditor.editors.technology.category"
+        mc:Ignorable="d"
+        Title="科技类别编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Left" Width="400" Margin="0 0 10 0">
+                <GroupBox Header="键">
+                    <TextBox Text="{Binding Key}" FontSize="24" MaxLines="1" DockPanel.Dock="Top" Margin="5" />
+                </GroupBox>
+                <GroupBox Header="文件名">
+                    <TextBox Text="{Binding FileName}"  FontSize="24" MaxLines="1" DockPanel.Dock="Top" Margin="5"/>
+                </GroupBox>
+                <GroupBox Header="图标">
+                    <DockPanel>
+                        <TextBox x:Name="filepath" Text="{Binding Icon}" FontSize="24" TextWrapping="WrapWithOverflow" DockPanel.Dock="Top" Margin="5"/>
+                        <Button DockPanel.Dock="Top" Content="选择图标" FontSize="24" Click="Button_Click" />
+                    </DockPanel>
+                </GroupBox>
+                <FrameworkElement/>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Left">
+                <GroupBox Header="预览图">
+                    <WrapPanel Name="ImagePanel" />
+                </GroupBox>
+            </DockPanel>
+        </DockPanel>
+    </Grid>
+</Window>

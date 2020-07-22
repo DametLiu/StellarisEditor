@@ -86,6 +86,9 @@
     <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
     </Reference>
+    <Reference Include="Pfim, Version=0.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pfim.0.9.1\lib\netstandard2.0\Pfim.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -126,6 +129,9 @@
     </Compile>
     <Compile Include="editors\relics\RelicEditor.xaml.cs">
       <DependentUpon>RelicEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editors\technology\category\TechnologyCategoryItemEditor.xaml.cs">
+      <DependentUpon>TechnologyCategoryItemEditor.xaml</DependentUpon>
     </Compile>
     <Compile Include="editors\technology\TechnologyEditorWindow.xaml.cs">
       <DependentUpon>TechnologyEditorWindow.xaml</DependentUpon>
@@ -278,6 +284,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\technology\category\TechCategoryEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\technology\category\TechnologyCategoryItemEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
