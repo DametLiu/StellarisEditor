@@ -76,7 +76,7 @@
                     </DataGrid.ContextMenu>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="键" Width="250" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="基础权重" Width="250" IsReadOnly="True" Binding="{Binding WeghtModifier, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="基础权重" Width="250" IsReadOnly="True" Binding="{Binding WeghtModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <DataGridTextColumn Header="文件名" Width="250" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </DataGrid.Columns>
                 </DataGrid>

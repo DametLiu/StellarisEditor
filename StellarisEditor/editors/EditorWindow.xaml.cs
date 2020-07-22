@@ -71,5 +71,10 @@ namespace StellarisEditor.editors
             var window = new technology.TechnologyEditorWindow();
             window.ShowDialog();
         }
+        private void OpenAgendaEditor(object sender, RoutedEventArgs e)
+        {
+            var window = new Agenda.AgendaEditorlist();
+            window.ShowDialog();
+        }
     }
 }

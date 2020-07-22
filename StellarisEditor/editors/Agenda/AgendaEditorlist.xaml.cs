@@ -58,7 +58,7 @@ namespace StellarisEditor.editors.Agenda
                 current = progressView.Value;
             }), DispatcherPriority.Normal);
 
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < FakeGlobleData.Agendas.Count; i++)
             {
                 var item = FakeGlobleData.Agendas.ElementAt(i);
                 if (!Agendas.Contains(item))
@@ -127,6 +127,20 @@ namespace StellarisEditor.editors.Agenda
                 progressView.Visibility = Visibility.Collapsed;
                 dataPanel.Visibility = Visibility.Visible;
             }), DispatcherPriority.Normal);
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            if (SaveTask != null && SaveTask.IsAlive)
+            {
+                e.Cancel = true;
+                MessageBox.Show("请等待保存完成在关闭窗口");
+            }
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            cancel.Cancel = true;
         }
 
         private void PlusProgress()
@@ -266,7 +280,7 @@ namespace StellarisEditor.editors.Agenda
         {
             if (dataGrid.SelectedItem is PdxAgenda agenda)
             {
-                AgendaEditorWindow window = new AgendaEditorWindow();
+                AgendaEditorWindow window = new AgendaEditorWindow(agenda);
                 window.ShowDialog();
 
                 var selectIndex = dataGrid.SelectedIndex;

@@ -118,6 +118,9 @@
     <Compile Include="editors\Agenda\AgendaEditorWindow.xaml.cs">
       <DependentUpon>AgendaEditorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="editors\army\ArmyItemEditorWindow.xaml.cs">
+      <DependentUpon>ArmyItemEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="editors\DataConversion.cs" />
     <Compile Include="editors\governments\authorities\AuthorityEditor.xaml.cs">
       <DependentUpon>AuthorityEditor.xaml</DependentUpon>
@@ -135,6 +138,7 @@
       <DependentUpon>TechnologyItemEditorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="extension\FileInfoExtension.cs" />
+    <Compile Include="pdx\scriptobject\PdxArmy.cs" />
     <Compile Include="ScriptEngine\collections\TechnologyCategoryCollection.cs" />
     <Compile Include="ScriptEngine\collections\TechnologyColletion.cs" />
     <Compile Include="ScriptEngine\collections\VariableCollection.cs" />
@@ -241,6 +245,10 @@
     <Page Include="editors\Agenda\AgendaEditorWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="editors\army\ArmyItemEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\building\BuildingEditorWindow.xaml">
       <SubType>Designer</SubType>
