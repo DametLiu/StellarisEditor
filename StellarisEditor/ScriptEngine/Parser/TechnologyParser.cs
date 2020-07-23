@@ -254,7 +254,7 @@ namespace StellarisEditor.ScriptEngine
                 Lexeme p1 = Lexical.Read();
                 Lexeme p2 = Lexical.Read();
                 Lexeme p3 = Lexical.Read();
-                System.Windows.MessageBox.Show($"{p1.Content}{p2.Content}{p3.Content}");
+                //System.Windows.MessageBox.Show($"{p1.Content}{p2.Content}{p3.Content}");
                 if (p3.Tag == Tag.Brace_Left)
                 {
                     var c = new Expression() { Key = p1.Content, Operator = p2.Content, Value = p3.Content };

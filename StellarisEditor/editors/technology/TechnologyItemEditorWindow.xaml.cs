@@ -137,7 +137,14 @@ namespace StellarisEditor.editors.technology
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Technology.Modifier.RemoveAt(Technology.Modifier.Count - 1);
+            try
+            {
+                Technology.Modifier.RemoveAt(Technology.Modifier.Count - 1);
+            }
+            catch
+            {
+                MessageBox.Show("没有条目可以被删除！");
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -238,8 +245,10 @@ namespace StellarisEditor.editors.technology
             //    }
             //    Technology.Modifier.Remove(Technology.Modifier[i]);
             //}
-            TreeViewTransition.TrimModifierTransition(Technology.Modifier);
+            TreeViewTransition.TrimExpressionTransition(Technology.Modifier);
+            TreeViewTransition.TrimExpressionTransition(Technology.Potential);
             Modifier.IsEnabled = true;
+            Potential.IsEnabled = true;
         }
         //删除按钮
         //private void Remove_Click(object sender, RoutedEventArgs e)

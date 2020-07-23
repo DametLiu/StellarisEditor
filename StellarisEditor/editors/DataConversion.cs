@@ -161,33 +161,15 @@ namespace StellarisEditor.editors.dataConversion
             return str;
         }
         //整理Expression类使得所有Children的子节点元素全部集合到根节点上以便于在TreeView上显示
-        public static void TrimModifierTransition(ObservableCollection<StellarisEditor.pdx.scriptobject.Expression> expressions)
+        public static void TrimExpressionTransition(ObservableCollection<StellarisEditor.pdx.scriptobject.Expression> expressions)
         {
-            int i = 0, j = 0;
-            bool judge = false;
-            if (expressions != null)
+            if (expressions != null && expressions[0].Children != null)
             {
-                for (i = 0; i < expressions.Count; i++)
+                for (int i = 0; i < expressions[0].Children.Count; i++)
                 {
-                    for (j = 0; j < expressions[i].Children.Count; j++)
-                    {
-                        if (expressions[i].Children[j] != null)
-                        {
-                            expressions.Add(new pdx.scriptobject.Expression()
-                            {
-                                Key = expressions[i].Children[j].Key,
-                                Operator = expressions[i].Children[j].Operator,
-                                Value = expressions[i].Children[j].Value
-                            });
-                            judge = true;
-                        }
-                    }
-                    if (judge)
-                    {
-                        expressions.Remove(expressions[i]);
-                        judge = false;
-                    }
+                    expressions.Add(expressions[0].Children[i]);
                 }
+                expressions.Remove(expressions[0]);
             }
         }
     }
