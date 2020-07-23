@@ -72,5 +72,45 @@ namespace StellarisEditor.ScriptEngine
             Skip(1);
             return vs;
         }
+
+        protected ObservableCollection<Expression> ParseTriggers()
+        {
+            ObservableCollection<Expression> triggers = new ObservableCollection<Expression>();
+            Skip(3);
+
+            while (CheckBlock())
+            {
+                triggers.Add(ParseTrigger(null));
+            }
+            Skip(1);
+
+            return triggers;
+        }
+
+        protected Expression ParseTrigger(Expression parent)
+        {
+            Expression result = parent ?? new Expression();
+
+            while (CheckBlock())
+            {
+                Lexeme p1 = Lexical.Read();
+                Lexeme p2 = Lexical.Read();
+                Lexeme p3 = Lexical.Read();
+
+                if (p3.Tag == Tag.Brace_Left)
+                {
+                    var c = new Expression() { Key = p1.Content, Operator = p2.Content, Value = p3.Content };
+                    result.Children.Add(ParseTrigger(c)); Skip(1);
+                }
+                else
+                    result.Children.Add(new Expression() { Key = p1.Content, Operator = p2.Content, Value = p3.Content });
+            }
+            return result;
+        }
+
+        protected bool CheckBlock()
+        {
+            return Lexical.Peek.Tag != Tag.Brace_Right && Lexical.Peek.Tag != Tag.None;
+        }
     }
 }
