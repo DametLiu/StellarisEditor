@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StellarisEditor.editors.Agenda"
         xmlns:c="clr-namespace:StellarisEditor.component"
         mc:Ignorable="d"
-        Title="AgendaEditorlist" Height="450" Width="800">
+        Title="AgendaEditorlist" Height="450" Width="800" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <RoutedUICommand x:Key="Save" Text="Button Click"/>
         <RoutedUICommand x:Key="Exit" Text="Button Click"/>
@@ -75,9 +75,8 @@
                         </ContextMenu>
                     </DataGrid.ContextMenu>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="键" Width="250" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="基础权重" Width="250" IsReadOnly="True" Binding="{Binding WeghtModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="文件名" Width="250" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="键" Width="300" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="文件名" Width="400" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </DockPanel>

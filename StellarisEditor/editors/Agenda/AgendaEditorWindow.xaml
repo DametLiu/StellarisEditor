@@ -4,8 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StellarisEditor.editors.Agenda"
+        xmlns:data="clr-namespace:StellarisEditor.editors.dataConversion"
         mc:Ignorable="d"
-        Title="议程编辑器" Height="450" Width="800" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen">
+        Title="议程编辑器" Height="450" Width="800" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Window.Resources>
+        <!--导入类型转换器资源-->
+        <data:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
+        <data:GatherToStr x:Key="gatherToStr"/>
+        <data:GatherToStrBlank x:Key="gatherToStrBlank"/>
+        <data:StrToBoolDefaultTure x:Key="strToBoolTure"/>
+        <data:VarTransition x:Key="varTransition"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -30,13 +39,13 @@
                 <RowDefinition Height="0.8*"/>
             </Grid.RowDefinitions>
             <GroupBox Header="国家修正/modifier" BorderThickness="1.5" Grid.Row="1">
-                <TreeView x:Name="Modifier" ItemsSource="{Binding Modifier}">
+                <TreeView x:Name="Modifier" ItemsSource="{Binding Modifier, Mode=TwoWay}">
                     <TreeView.ItemTemplate>
-                        <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                        <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key}" Margin="2,0,0,0"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator}" Margin="2,0,0,0"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value}" Margin="2,0,0,0"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}"/>
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>
