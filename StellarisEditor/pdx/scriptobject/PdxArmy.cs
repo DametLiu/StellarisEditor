@@ -41,6 +41,19 @@ namespace StellarisEditor.pdx.scriptobject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Defensive"));
             }
         }
+        private String _IsPopSpawned;
+        public String IsPopSpawned
+        {
+            get
+            {
+                return _IsPopSpawned;
+            }
+            set
+            {
+                _IsPopSpawned = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsPopSpawned"));
+            }
+        }
 
         private String _Damage;
         public String Damage

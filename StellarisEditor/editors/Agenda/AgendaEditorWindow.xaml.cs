@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using StellarisEditor.editors.dataConversion;
 
 namespace StellarisEditor.editors.Agenda
 {
@@ -37,11 +38,21 @@ namespace StellarisEditor.editors.Agenda
         private void AgendaModifierDelete_Click(object sender, RoutedEventArgs e)
         {
             Agenda.Modifier.RemoveAt(Agenda.Modifier.Count - 1);
+            if (Agenda.Modifier.Count==0)
+            {
+                AgendaModifierDelete.IsEnabled = false;
+            }
         }
 
         private void AgendaModifierAdd_Click(object sender, RoutedEventArgs e)
         {
             Agenda.Modifier.Add(new pdx.scriptobject.Expression() { Key = "", Operator = "", Value = "" });
+            AgendaModifierDelete.IsEnabled = true;
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            TreeViewTransition.TrimModifierTransition(Agenda.Modifier);
+            Modifier.IsEnabled = true;
         }
     }
 }

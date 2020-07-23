@@ -4,25 +4,100 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StellarisEditor.editors.army"
+        xmlns:data="clr-namespace:StellarisEditor.editors.dataConversion"
         mc:Ignorable="d"
-        Title="ArmyItemEditorWindow" Height="450" Width="800">
+        Title="陆军编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Background="White" FontFamily="华文中宋" FontSize="15"  >
+    <Window.Resources>
+        <!--导入类型转换器资源-->
+        <data:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
+        <data:GatherToStr x:Key="gatherToStr"/>
+        <data:GatherToStrBlank x:Key="gatherToStrBlank"/>
+        <data:StrToBoolDefaultTure x:Key="strToBoolTure"/>
+        <!--<ContextMenu x:Key="deletNode">
+            <MenuItem x:Name="remove" Header="删除节点" Click="Remove_Click"/>
+        </ContextMenu>-->
+        <data:VarTransition x:Key="varTransition"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="0.45*"/>
                 <RowDefinition Height="3*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.36*"/>
             </Grid.RowDefinitions>
             <GroupBox Header="名称/key" BorderThickness="1.5" Grid.Row="0">
                 <TextBox TextWrapping="Wrap" Text="{Binding Key, Mode=TwoWay}"/>
             </GroupBox>
             <GroupBox Header="参数" BorderThickness="1.5" Grid.Row="1">
-                
+                <DockPanel>
+                    <CheckBox x:Name="Defensive" Content="Defensive" FontSize="15" DockPanel.Dock="Top" IsChecked="{Binding Path=Defensive, Converter={StaticResource strToBoolFalse}}"/>
+                    <CheckBox x:Name="IsPopSpawned" Content="Is Pop Spawned" FontSize="15" DockPanel.Dock="Top" IsChecked="{Binding Path=IsPopSpawned,Mode=OneWay,Converter={StaticResource varTransition}}"/>
+                    <TextBlock Text="生命值/Health" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="Health" Text="{Binding Path=Health,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
+                    <TextBlock Text="伤害/Damage" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="Damage" Text="{Binding Path=Damage,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
+                    <TextBlock Text="士气/Moracle" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="Moracle" Text="{Binding Path=Moracle,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
+                    <TextBlock Text="士气伤害/Moracle Damage" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="MoracleDamage" Text="{Binding Path=MoracleDamage,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
+                    <TextBlock Text="连带伤害/Collateral Damage" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="CollateralDamage" Text="{Binding Path=CollateralDamage,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
+                    <TextBlock Text="厌战度/War Exhaustion" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="WarExhaustion" Text="{Binding Path=WarExhaustion,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
+                    <TextBlock Text="建造时间/Time" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="Time" Text="{Binding Path=Time,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
+                    <TextBlock Text="图标/Icon Frame" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
+                    <TextBox x:Name="IconFrame" Text="{Binding Path=IconFrame,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
+                </DockPanel>
+            </GroupBox>
+            <GroupBox Header="Show Tech Unlock If" BorderThickness="1.5" Grid.Row="2">
+                <TreeView x:Name="ShowTechUnlockIf" ItemsSource="{Binding ShowTechUnlockIf, Mode=TwoWay}">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Potential" BorderThickness="1.5" Grid.Row="0">
+                <TreeView x:Name="Potential" ItemsSource="{Binding Potential, Mode=TwoWay}">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </GroupBox>
+            <GroupBox Header="Allow" BorderThickness="1.5" Grid.Row="2">
+                <TreeView x:Name="Allow" ItemsSource="{Binding Allow, Mode=TwoWay}">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
             </GroupBox>
         </Grid>
     </Grid>
