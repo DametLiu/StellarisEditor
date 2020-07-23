@@ -63,6 +63,7 @@ namespace StellarisEditor.editors.techEditor
                 int i = 0;
                 foreach (var l in g)
                     lines[i++] = l.ToString();
+
                 File.WriteAllLines($"{Properties.Settings.Default.ModPath + PdxGlobalData.STELLARIS_PATH_TECHNOLOGY_CATEGORY}{g.Key}.txt", lines, new UTF8Encoding(false));
             }
 

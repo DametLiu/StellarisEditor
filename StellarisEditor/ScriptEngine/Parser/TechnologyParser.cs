@@ -185,6 +185,7 @@ namespace StellarisEditor.ScriptEngine
                 triggers.Add(ParseTrigger(null));
             }
             Skip(1);
+            
             return triggers;
         }
 
@@ -253,15 +254,17 @@ namespace StellarisEditor.ScriptEngine
                 Lexeme p1 = Lexical.Read();
                 Lexeme p2 = Lexical.Read();
                 Lexeme p3 = Lexical.Read();
-
+                System.Windows.MessageBox.Show($"{p1.Content}{p2.Content}{p3.Content}");
                 if (p3.Tag == Tag.Brace_Left)
                 {
-                    result.Children.Add(ParseTrigger(result)); Skip(1);
+                    var c = new Expression() { Key = p1.Content, Operator = p2.Content, Value = p3.Content };
+
+                    //result.Children.Add(c);
+                    result.Children.Add(ParseTrigger(c)); Skip(1);
                 }
                 else
                     result.Children.Add(new Expression() { Key = p1.Content, Operator = p2.Content, Value = p3.Content });
             }
-            
             return result;
         }
     }

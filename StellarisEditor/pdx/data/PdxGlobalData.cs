@@ -59,6 +59,7 @@ namespace StellarisEditor.data
                     technologies.Add(item);
                 foreach (var item in technologyScript.Variables)
                     variables.Add(item);
+                
             }
         }
 
@@ -75,8 +76,6 @@ namespace StellarisEditor.data
 
                 foreach (var item in technologyCategoryScript.TechnologyCategories)
                     categories.Add(item);
-
-                MessageBox.Show($"{categories.Count}");
             }
         }
 

@@ -81,5 +81,10 @@ namespace StellarisEditor.pdx.scriptobject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Children"));
             }
         }
+
+        public override string ToString()
+        {
+            return $"{Key} {Operator} {Value}";
+        }
     }
 }

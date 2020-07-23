@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Data;
 using StellarisEditor.pdx.scriptobject;
 using System.Globalization;
+using System.Windows;
 
 namespace StellarisEditor.editors.dataConversion
 {
@@ -156,6 +157,7 @@ namespace StellarisEditor.editors.dataConversion
                     str += TriggerToStr(item) + "\n";
                 }
             }
+            MessageBox.Show(str);
             return str;
         }
         //整理Expression类使得所有Children的子节点元素全部集合到根节点上以便于在TreeView上显示
