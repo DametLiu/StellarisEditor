@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StellarisEditor.editors.Agenda"
         xmlns:data="clr-namespace:StellarisEditor.editors.dataConversion"
         mc:Ignorable="d"
-        Title="议程编辑器" Height="450" Width="800" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="议程编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Window.Resources>
         <!--导入类型转换器资源-->
         <data:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
@@ -22,19 +22,19 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
             <GroupBox Header="名称/Key" BorderThickness="1.5" Grid.Row="0">
                 <TextBox TextWrapping="Wrap" Text="{Binding Key, Mode=TwoWay}"/>
             </GroupBox>
             <GroupBox Header="出现权重/weight" BorderThickness="1.5" Grid.Row="1">
-                <TextBox x:Name="WeightModifierBox" Height="286" TextWrapping="Wrap" Text="{Binding Path=WeightModifier ,Mode=TwoWay}" VerticalAlignment="Top" AcceptsReturn="True" AcceptsTab="True" FontSize="12" Margin="0,0,2.2,0"/>
+                <TextBox x:Name="Weight" TextWrapping="Wrap" Text="{Binding Path=Weight ,Mode=TwoWay}" AcceptsReturn="True" AcceptsTab="True"/>
             </GroupBox>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="3.2*"/>
                 <RowDefinition Height="0.8*"/>
             </Grid.RowDefinitions>

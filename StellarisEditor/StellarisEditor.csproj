@@ -122,6 +122,9 @@
     <Compile Include="editors\Agenda\AgendaEditorWindow.xaml.cs">
       <DependentUpon>AgendaEditorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="editors\army\ArmyEditorWindow.xaml.cs">
+      <DependentUpon>ArmyEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="editors\army\ArmyItemEditorWindow.xaml.cs">
       <DependentUpon>ArmyItemEditorWindow.xaml</DependentUpon>
     </Compile>
@@ -252,6 +255,10 @@
     <Page Include="editors\Agenda\AgendaEditorWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="editors\army\ArmyEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\army\ArmyItemEditorWindow.xaml">
       <SubType>Designer</SubType>

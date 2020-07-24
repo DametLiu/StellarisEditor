@@ -34,8 +34,8 @@
             </GroupBox>
             <GroupBox Header="参数" BorderThickness="1.5" Grid.Row="1">
                 <DockPanel>
-                    <CheckBox x:Name="Defensive" Content="Defensive" FontSize="15" DockPanel.Dock="Top" IsChecked="{Binding Path=Defensive, Converter={StaticResource strToBoolFalse}}"/>
-                    <CheckBox x:Name="IsPopSpawned" Content="Is Pop Spawned" FontSize="15" DockPanel.Dock="Top" IsChecked="{Binding Path=IsPopSpawned,Mode=OneWay,Converter={StaticResource varTransition}}"/>
+                    <CheckBox x:Name="Defensive" Content="防御部队/Defensive" FontSize="15" DockPanel.Dock="Top" IsChecked="{Binding Path=Defensive, Converter={StaticResource strToBoolFalse}}"/>
+                    <CheckBox x:Name="IsPopSpawned" Content="由人口生成/Is Pop Spawned" FontSize="15" DockPanel.Dock="Top" IsChecked="{Binding Path=IsPopSpawned,Mode=OneWay,Converter={StaticResource varTransition}}"/>
                     <TextBlock Text="生命值/Health" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
                     <TextBox x:Name="Health" Text="{Binding Path=Health,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
                     <TextBlock Text="伤害/Damage" Block.TextAlignment="Center" DockPanel.Dock="Top"/>

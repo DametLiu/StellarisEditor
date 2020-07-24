@@ -22,25 +22,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using static StellarisEditor.data.PdxGlobalData;
-
-namespace StellarisEditor.editors.Agenda
+namespace StellarisEditor.editors.army
 {
     /// <summary>
-    /// AgendaEditorlist.xaml 的交互逻辑
+    /// ArmyEditorWindow.xaml 的交互逻辑
     /// </summary>
-     
     public class FakeGlobleData
     {
-        public static LinkedList<PdxAgenda> Agendas = new LinkedList<PdxAgenda>();//这是假的数据
+        public static LinkedList<PdxArmy> Armies = new LinkedList<PdxArmy>();//这是假的数据
     }
-    public partial class AgendaEditorlist : Window
+    public partial class ArmyEditorWindow : Window
     {
-        public ObservableCollection<PdxAgenda> Agendas = new ObservableCollection<PdxAgenda>();
+        public ObservableCollection<PdxArmy> Armies = new ObservableCollection<PdxArmy>();
         public TaskCancel cancel = new TaskCancel();
-        public AgendaEditorlist()
+        public ArmyEditorWindow()
         {
             InitializeComponent();
-            dataGrid.ItemsSource = Agendas;
+            dataGrid.ItemsSource = Armies;
             ProgressTask = new Thread(() => UpdateProgress(UpdateData));
             ProgressTask.Start();
         }
@@ -49,24 +47,24 @@ namespace StellarisEditor.editors.Agenda
 
         private void UpdateData()
         {
-            if (Agendas.Count != 0 || updateCount > 0)
+            if (Armies.Count != 0 || updateCount > 0)
                 return;
 
-            var current = 0;updateCount = FakeGlobleData.Agendas.Count;//globledata没有做
+            var current = 0; updateCount = FakeGlobleData.Armies.Count;//globledata没有做
             dataGrid.Dispatcher.Invoke(new Action(() =>
             {
                 current = progressView.Value;
             }), DispatcherPriority.Normal);
 
-            for (int i = 0; i < FakeGlobleData.Agendas.Count; i++)
+            for (int i = 0; i < FakeGlobleData.Armies.Count; i++)
             {
-                var item = FakeGlobleData.Agendas.ElementAt(i);
-                if (!Agendas.Contains(item))
+                var item = FakeGlobleData.Armies.ElementAt(i);
+                if (!Armies.Contains(item))
                 {
                     dataGrid.Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        Agendas.Add(item);
-                        int a = current + (Agendas.Count / FakeGlobleData.Agendas.Count * (99 - current));
+                        Armies.Add(item);
+                        int a = current + (Armies.Count / FakeGlobleData.Armies.Count * (99 - current));
                         progressView.Value = value = a;
                         updateCount--;
                     }), DispatcherPriority.Normal);
@@ -108,6 +106,7 @@ namespace StellarisEditor.editors.Agenda
                 }
             }
         }
+
 
         delegate void DelegateThreadFunction();
 
@@ -187,7 +186,7 @@ namespace StellarisEditor.editors.Agenda
 
         }
 
-        private PdxAgenda CopyAgenda;
+        private PdxArmy CopyArmy;
         private void CommandExecuteCopy(object sender, CanExecuteRoutedEventArgs e)
         {
             Copy();
@@ -200,8 +199,8 @@ namespace StellarisEditor.editors.Agenda
 
         private void Copy()
         {
-            if (dataGrid.SelectedItem is PdxAgenda agenda)
-                CopyAgenda = agenda;
+            if (dataGrid.SelectedItem is PdxArmy army)
+                CopyArmy = army;
         }
 
         private void CommandExecutePaste(object sender, CanExecuteRoutedEventArgs e)
@@ -251,8 +250,8 @@ namespace StellarisEditor.editors.Agenda
 
         private void Delete()
         {
-            if (dataGrid.SelectedItem is PdxAgenda agenda)
-                Agendas.Remove(agenda);
+            if (dataGrid.SelectedItem is PdxArmy army)
+                Armies.Remove(army);
         }
 
         private void CommandExecuteAdd(object sender, CanExecuteRoutedEventArgs e)
@@ -267,26 +266,27 @@ namespace StellarisEditor.editors.Agenda
 
         private void Add()
         {
-            if (dataGrid.SelectedItem is PdxAgenda agenda)
-                Agendas.Insert(Agendas.IndexOf(agenda), new PdxAgenda() { Key = $"new_agenda{++NewIndex}" });
+            if (dataGrid.SelectedItem is PdxArmy army)
+                Armies.Insert(Armies.IndexOf(army), new PdxArmy() { Key = $"new_army{++NewIndex}" });
             else
-                Agendas.Insert(0, new PdxAgenda() { Key = $"new_agenda{++NewIndex}" });
+                Armies.Insert(0, new PdxArmy() { Key = $"new_army{++NewIndex}" });
         }
 
         private int NewIndex = 0;
-    
+
 
         private void MouseDoubleClick_EditItem(object sender, MouseButtonEventArgs e)
         {
-            if (dataGrid.SelectedItem is PdxAgenda agenda)
+            if (dataGrid.SelectedItem is PdxArmy army)
             {
-                AgendaEditorWindow window = new AgendaEditorWindow(agenda);
+                ArmyItemEditorWindow window = new ArmyItemEditorWindow(army);
                 window.ShowDialog();
 
                 var selectIndex = dataGrid.SelectedIndex;
-                Agendas.RemoveAt(selectIndex);
-                Agendas.Insert(selectIndex, window.Agenda);
+                Armies.RemoveAt(selectIndex);
+                Armies.Insert(selectIndex, window.Army);
             }
         }
     }
+}
 }

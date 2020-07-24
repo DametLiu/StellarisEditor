@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StellarisEditor.pdx.parser;
+using StellarisEditor.pdx.scriptobject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using StellarisEditor.editors.dataConversion;
 
 namespace StellarisEditor.editors.army
 {
@@ -19,6 +22,14 @@ namespace StellarisEditor.editors.army
     /// </summary>
     public partial class ArmyItemEditorWindow : Window
     {
+        public PdxArmy Army { get; set; }
+
+        public ArmyItemEditorWindow(PdxArmy Army)
+        {
+            this.Army = Army;
+            InitializeComponent();
+            DataContext = Army;
+        }
         public ArmyItemEditorWindow()
         {
             InitializeComponent();
