@@ -1,12 +1,14 @@
-﻿<Window x:Class="StellarisEditor.editors.Agenda.AgendaEditorlist"
+﻿<Window x:Class="StellarisEditor.editors.army.ArmyEditorWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:StellarisEditor.editors.Agenda"
+        xmlns:local="clr-namespace:StellarisEditor.editors.army"
         xmlns:c="clr-namespace:StellarisEditor.component"
+        xmlns:data="clr-namespace:StellarisEditor.editors.dataConversion"
         mc:Ignorable="d"
-        Title="议程编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen">
+        Title="陆军编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen">
+
     <Window.Resources>
         <RoutedUICommand x:Key="Save" Text="Button Click"/>
         <RoutedUICommand x:Key="Exit" Text="Button Click"/>
@@ -14,6 +16,10 @@
         <RoutedUICommand x:Key="Delete" Text="Button Click"/>
         <RoutedUICommand x:Key="Copy" Text="Button Click"/>
         <RoutedUICommand x:Key="Paste" Text="Button Click"/>
+        <data:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
+        <data:StrToBoolDefaultTure x:Key="strToboolTure"/>
+        <data:GatherToStrBlank x:Key="gatherToStrBlank"/>
+        <data:VarTransition x:Key="varTransition"/>
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Modifiers="Ctrl" Key="S" Command="{StaticResource Save}"/>
@@ -40,13 +46,13 @@
                     <Separator />
                     <MenuItem Header="退出(_X)" InputGestureText="Alt+F4" Click="MenuItemClickExit" />
                 </MenuItem>
-                 <MenuItem Header="编辑(_E)">
+                <MenuItem Header="编辑(_E)">
                     <MenuItem Header="添加(_N)" InputGestureText="Ctrl+N" Click="MenuItemClickAdd" />
                     <MenuItem Header="删除(_X)" InputGestureText="Delete" Click="MenuItemClickDelete" />
                     <Separator />
                     <MenuItem Header="复制(_C)" InputGestureText="Ctrl+C" Click="MenuItemClickCopy" />
                     <MenuItem Header="粘贴(_P)" InputGestureText="Ctrl+V" Click="MenuItemClickPaste" />
-                 </MenuItem>
+                </MenuItem>
             </Menu>
             <DockPanel DockPanel.Dock="Top">
                 <FrameworkElement x:Name="proxyElement" Visibility="Collapsed"/>
@@ -75,7 +81,17 @@
                         </ContextMenu>
                     </DataGrid.ContextMenu>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="键" Width="300" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="键" Width="100" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridCheckBoxColumn Header="防御部队" Width="80" IsReadOnly="True" Binding="{Binding Defensive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
+                        <DataGridCheckBoxColumn Header="由人口生成" Width="80" IsReadOnly="True" Binding="{Binding IsPopSpawned, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
+                        <DataGridTextColumn Header="伤害" Width="100" IsReadOnly="True" Binding="{Binding Damage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="生命" Width="100" IsReadOnly="True" Binding="{Binding Health, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="士气" Width="100" IsReadOnly="True" Binding="{Binding Moracle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="士气伤害" Width="100" IsReadOnly="True" Binding="{Binding MoracleDamage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="连带伤害" Width="100" IsReadOnly="True" Binding="{Binding CollateralDamage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="厌战度" Width="100" IsReadOnly="True" Binding="{Binding WarExhaustion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="建造时间" Width="100" IsReadOnly="True" Binding="{Binding Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="图标" Width="100" IsReadOnly="True" Binding="{Binding IconFrame, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <DataGridTextColumn Header="文件名" Width="400" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </DataGrid.Columns>
                 </DataGrid>
