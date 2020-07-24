@@ -223,7 +223,7 @@
     <Compile Include="pdx\scriptobject\PdxStrategicResource.cs" />
     <Compile Include="pdx\scriptobject\PdxTechnology.cs" />
     <Compile Include="pdx\scriptobject\PdxText.cs" />
-    <Compile Include="pdx\scriptobject\PdxTrigger.cs" />
+    <Compile Include="ScriptEngine\expression\Expression.cs" />
     <Compile Include="pdx\scriptobject\PdxTriggeredDesc.cs" />
     <Compile Include="pdx\scriptobject\PdxTriggeredPlanetModifier.cs" />
     <Compile Include="pdx\scriptobject\PdxVariable.cs" />

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.ScriptEngine
 {
-    public class Parser
+    public abstract class Parser<T>
     {
         /// <summary>
         /// 内置词法分析器
@@ -30,6 +30,8 @@ namespace StellarisEditor.ScriptEngine
         protected bool IsValidRight(Lexeme lexeme) => lexeme.Tag == Tag.Number || lexeme.Tag == Tag.Variable || lexeme.Tag == Tag.String || lexeme.Tag == Tag.Id;
 
         protected bool IsNumber(Lexeme lexeme) => lexeme.Tag == Tag.Number;
+
+        public abstract T Parse();
 
         protected Variable ParseVariable()
         {

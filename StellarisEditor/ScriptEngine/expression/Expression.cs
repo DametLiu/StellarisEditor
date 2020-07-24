@@ -54,19 +54,35 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
-        private Boolean _IsConditionTrigger;
-        public Boolean IsConditionTrigger
+        private Boolean _IsVariableExpression;
+        public Boolean IsVariableExpression
         {
             get
             {
-                return _IsConditionTrigger;
+                return _IsVariableExpression;
             }
             set
             {
-                _IsConditionTrigger = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsConditionTrigger"));
+                _IsVariableExpression = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsVariableExpression"));
             }
         }
+
+        private Boolean _IsArrayExpression;
+        public Boolean IsArrayExpression
+        {
+            get
+            {
+                return _IsArrayExpression;
+            }
+            set
+            {
+                _IsArrayExpression = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsArrayExpression"));
+            }
+        }
+
+
 
         private ObservableCollection<Expression> _Children = new ObservableCollection<Expression>();
         public ObservableCollection<Expression> Children
@@ -81,6 +97,8 @@ namespace StellarisEditor.pdx.scriptobject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Children"));
             }
         }
+
+
 
         public override string ToString()
         {
