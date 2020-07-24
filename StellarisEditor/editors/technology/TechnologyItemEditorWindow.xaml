@@ -17,6 +17,7 @@
             <MenuItem x:Name="remove" Header="删除节点" Click="Remove_Click"/>
         </ContextMenu>-->
         <data:VarTransition x:Key="varTransition"/>
+        <data:DisplayContentJudgment x:Key="displayContentJudgment"/>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -296,7 +297,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Delte" Click="Button_Click" FontSize="15"/>
+                <Button Grid.Column="0" Content="Delete" Click="Button_Click" FontSize="15"/>
                 <Button Grid.Column="1" Content="Add" Click="Button_Click_1" FontSize="15"/>
             </Grid>
             <GroupBox Header="Potential" Grid.Row="2">
@@ -304,9 +305,9 @@
                     <TreeView.ItemTemplate>
                         <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}"/>
+                                <TextBox x:Name="PotentialKey" VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
+                                <TextBox x:Name="PotentialOperato" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
+                                <TextBox x:Name="PotentialValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>

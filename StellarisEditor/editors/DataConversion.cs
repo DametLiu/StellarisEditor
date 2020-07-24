@@ -143,6 +143,35 @@ namespace StellarisEditor.editors.dataConversion
             throw new NotImplementedException();
         }
     }
+    public class DisplayContentJudgment : IValueConverter//判断是否隐藏“={”字符
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string str = (string)value;
+            if (str == "{")
+            {
+                return Visibility.Hidden;
+            }
+            else
+            {
+                return Visibility.Visible;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            Visibility visibility = (Visibility)value;
+            if (visibility == Visibility.Visible)
+            {
+                return value;
+            }
+            else
+            {
+                return "{";
+            }
+        }
+    }
+
     public class TreeViewTransition//将适用于TreeView的数据类型转换
     {
         //Expression类转换为string
@@ -161,7 +190,7 @@ namespace StellarisEditor.editors.dataConversion
             return str;
         }
         //整理Expression类使得所有Children的子节点元素全部集合到根节点上以便于在TreeView上显示
-        public static void TrimExpressionTransition(ObservableCollection<StellarisEditor.pdx.scriptobject.Expression> expressions)
+        public static void TrimExpressionTransform(ObservableCollection<StellarisEditor.pdx.scriptobject.Expression> expressions)
         {
             if (expressions != null && expressions[0].Children != null)
             {

@@ -245,8 +245,8 @@ namespace StellarisEditor.editors.technology
             //    }
             //    Technology.Modifier.Remove(Technology.Modifier[i]);
             //}
-            TreeViewTransition.TrimExpressionTransition(Technology.Modifier);
-            TreeViewTransition.TrimExpressionTransition(Technology.Potential);
+            TreeViewTransition.TrimExpressionTransform(Technology.Modifier);
+            TreeViewTransition.TrimExpressionTransform(Technology.Potential);
             Modifier.IsEnabled = true;
             Potential.IsEnabled = true;
         }

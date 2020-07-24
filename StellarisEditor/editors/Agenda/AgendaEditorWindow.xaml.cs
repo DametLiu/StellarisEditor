@@ -51,7 +51,7 @@ namespace StellarisEditor.editors.Agenda
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            TreeViewTransition.TrimExpressionTransition(Agenda.Modifier);
+            TreeViewTransition.TrimExpressionTransform(Agenda.Modifier);
             Modifier.IsEnabled = true;
         }
     }
