@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StellarisEditor.ScriptEngine
 {
-    public class TechnologyCategoryParser : Parser
+    public class TechnologyCategoryParser : Parser<TechnologyCategoryScript>
     {
         /// <summary>
         /// 根据指定得词法分析器创建解析器
@@ -25,7 +25,7 @@ namespace StellarisEditor.ScriptEngine
         /// 解析并返回语法定义集合
         /// </summary>
         /// <returns></returns>
-        public TechnologyCategoryScript Parse()
+        public override TechnologyCategoryScript Parse()
         {
             TechnologyCategoryScript technologyCategoryScript = new TechnologyCategoryScript();
 

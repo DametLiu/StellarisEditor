@@ -10,7 +10,7 @@ namespace StellarisEditor.ScriptEngine
     /// <summary>
     /// 脚本解析器
     /// </summary>
-    public class TechnologyParser : Parser
+    public class TechnologyParser : Parser<TechnologyScript>
     {
         
         
@@ -28,7 +28,7 @@ namespace StellarisEditor.ScriptEngine
         /// 解析并返回语法定义集合
         /// </summary>
         /// <returns></returns>
-        public TechnologyScript Parse()
+        public override TechnologyScript Parse()
         {
             TechnologyScript technologyScript = new TechnologyScript();
 
