@@ -34,5 +34,17 @@ namespace StellarisEditor.editors.army
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            TreeViewTransition.TrimExpressionTransform(Army.Allow);
+            TreeViewTransition.TrimExpressionTransform(Army.Potential);
+            TreeViewTransition.TrimExpressionTransform(Army.ShowTechUnlockIf);
+            TreeViewTransition.TrimExpressionTransform(Army.Resource);
+            Allow.IsEnabled = true;
+            Potential.IsEnabled = true;
+            ShowTechUnlockIf.IsEnabled = true;
+            Resource.IsEnabled = true;
+        }
     }
 }

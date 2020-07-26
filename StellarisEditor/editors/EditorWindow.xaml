@@ -23,7 +23,7 @@
                     <Button Content="环境物体" Visibility="Collapsed"/>
                     <Button Content="异常现象" Visibility="Collapsed"/>
                     <Button Content="考古遗址类型" Visibility="Collapsed"/>
-                    <Button Content="陆军" Visibility="Collapsed"/>
+                    <Button Content="陆军" Visibility="Collapsed" Click="OpenArmyEditor"/>
                     <Button Content="稀有文物行动" Visibility="Collapsed"/>
                     <Button Content="飞升" Visibility="Collapsed"/>
                     <Button Content="小行星带" Visibility="Collapsed"/>
@@ -120,7 +120,7 @@
                     <Button Content="贸易转换" Visibility="Collapsed"/>
                     <Button Content="传统类型" Visibility="Collapsed"/>
                     <Button Content="传统" Visibility="Collapsed"/>
-                    <Button Content="特质" Visibility="Collapsed"/>
+                    <Button Content="特质" Visibility="Collapsed" Click="OpenTraitEditor"/>
                     <Button Content="战争目标" Visibility="Collapsed"/>
                 </WrapPanel>
             </GroupBox>

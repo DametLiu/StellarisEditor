@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StellarisEditor.editors.army"
         xmlns:data="clr-namespace:StellarisEditor.editors.dataConversion"
         mc:Ignorable="d"
-        Title="陆军编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Background="White" FontFamily="华文中宋" FontSize="15"  >
+        Title="陆军编辑器" Height="720" Width="1280" Icon="pack://siteoforigin:,,,/Resources/Icon.ico" WindowStartupLocation="CenterScreen" Background="White" FontFamily="华文中宋" FontSize="15"  Loaded="Window_Loaded">
     <Window.Resources>
         <!--导入类型转换器资源-->
         <data:StrToBoolDefultFalse x:Key="strToBoolFalse"/>
@@ -17,10 +17,12 @@
             <MenuItem x:Name="remove" Header="删除节点" Click="Remove_Click"/>
         </ContextMenu>-->
         <data:VarTransition x:Key="varTransition"/>
+        <data:DisplayContentJudgment x:Key="displayContentJudgment"/>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.1*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
@@ -33,9 +35,9 @@
                 <TextBox TextWrapping="Wrap" Text="{Binding Key, Mode=TwoWay}"/>
             </GroupBox>
             <GroupBox Header="参数" BorderThickness="1.5" Grid.Row="1">
-                <DockPanel>
+                <DockPanel LastChildFill="False">
                     <CheckBox x:Name="Defensive" Content="防御部队/Defensive" FontSize="15" DockPanel.Dock="Top" IsChecked="{Binding Path=Defensive, Converter={StaticResource strToBoolFalse}}"/>
-                    <CheckBox x:Name="IsPopSpawned" Content="由人口生成/Is Pop Spawned" FontSize="15" DockPanel.Dock="Top" IsChecked="{Binding Path=IsPopSpawned,Mode=OneWay,Converter={StaticResource varTransition}}"/>
+                    <CheckBox x:Name="IsPopSpawned" Content="由人口生成/Is Pop Spawned" FontSize="15" DockPanel.Dock="Top" IsChecked="{Binding Path=IsPopSpawned,Converter={StaticResource strToBoolFalse}}"/>
                     <TextBlock Text="生命值/Health" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
                     <TextBox x:Name="Health" Text="{Binding Path=Health,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
                     <TextBlock Text="伤害/Damage" Block.TextAlignment="Center" DockPanel.Dock="Top"/>
@@ -54,18 +56,8 @@
                     <TextBox x:Name="IconFrame" Text="{Binding Path=IconFrame,Mode=TwoWay}" DockPanel.Dock="Top" IsEnabled="True"/>
                 </DockPanel>
             </GroupBox>
-            <GroupBox Header="Show Tech Unlock If" BorderThickness="1.5" Grid.Row="2">
-                <TreeView x:Name="ShowTechUnlockIf" ItemsSource="{Binding ShowTechUnlockIf, Mode=TwoWay}">
-                    <TreeView.ItemTemplate>
-                        <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}"/>
-                            </StackPanel>
-                        </HierarchicalDataTemplate>
-                    </TreeView.ItemTemplate>
-                </TreeView>
+            <GroupBox Header="前置科技/Prerequisites" Grid.Row="2" BorderThickness="1.5">
+                <TextBox x:Name="Prerequisites" Text="{Binding Path=Prerequisites, Mode=TwoWay,Converter={StaticResource gatherToStr}}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </GroupBox>
         </Grid>
         <Grid Grid.Column="1">
@@ -78,9 +70,9 @@
                     <TreeView.ItemTemplate>
                         <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}"/>
+                                <TextBox x:Name="PotentialKey" VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
+                                <TextBox x:Name="PotentialOperator" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
+                                <TextBox x:Name="PotentialValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>
@@ -91,9 +83,41 @@
                     <TreeView.ItemTemplate>
                         <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}"/>
+                                <TextBox x:Name="AllowKey" VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
+                                <TextBox x:Name="AllowOperator" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
+                                <TextBox x:Name="AllowValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Show Tech Unlock If" BorderThickness="1.5" Grid.Row="0">
+                <TreeView x:Name="ShowTechUnlockIf" ItemsSource="{Binding ShowTechUnlockIf, Mode=TwoWay}">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="ShowTechUnlockIfKey" VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
+                                <TextBox x:Name="ShowTechUnlockIfOperator" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
+                                <TextBox x:Name="ShowTechUnlockIfValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </GroupBox>
+            <GroupBox Header="Resource" BorderThickness="1.5" Grid.Row="1">
+                <TreeView x:Name="Resource" ItemsSource="{Binding Allow, Mode=TwoWay}">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="ResourceKey" VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
+                                <TextBox x:Name="ResourceOperator" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
+                                <TextBox x:Name="ResourceValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>

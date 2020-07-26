@@ -192,13 +192,16 @@ namespace StellarisEditor.editors.dataConversion
         //整理Expression类使得所有Children的子节点元素全部集合到根节点上以便于在TreeView上显示
         public static void TrimExpressionTransform(ObservableCollection<StellarisEditor.pdx.scriptobject.Expression> expressions)
         {
-            if (expressions != null && expressions[0].Children != null)
+            if (expressions != null && expressions.Count>0 ) 
             {
-                for (int i = 0; i < expressions[0].Children.Count; i++)
+                if (expressions[0].Children.Count > 0)
                 {
-                    expressions.Add(expressions[0].Children[i]);
+                    for (int i = 0; i < expressions[0].Children.Count; i++)
+                    {
+                        expressions.Add(expressions[0].Children[i]);
+                    }
+                    expressions.Remove(expressions[0]);
                 }
-                expressions.Remove(expressions[0]);
             }
         }
     }

@@ -76,5 +76,17 @@ namespace StellarisEditor.editors
             var window = new Agenda.AgendaEditorlist();
             window.ShowDialog();
         }
+
+        private void OpenArmyEditor(object sender, RoutedEventArgs e)
+        {
+            var window = new army.ArmyEditorWindow();
+            window.ShowDialog();
+        }
+
+        private void OpenTraitEditor(object sender, RoutedEventArgs e)
+        {
+            var window = new trait.TraitEditorWindow();
+            window.ShowDialog();
+        }
     }
 }
