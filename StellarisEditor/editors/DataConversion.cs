@@ -122,6 +122,7 @@ namespace StellarisEditor.editors.dataConversion
             return vs;
         }
     }
+
     public class VarTransition : IValueConverter//用于判断某项属性是否启用 (var)->(bool)(OneWay)
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -143,6 +144,7 @@ namespace StellarisEditor.editors.dataConversion
             throw new NotImplementedException();
         }
     }
+
     public class DisplayContentJudgment : IValueConverter//判断是否隐藏“={”字符
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -174,6 +176,7 @@ namespace StellarisEditor.editors.dataConversion
 
     public class TreeViewTransition//将适用于TreeView的数据类型转换
     {
+        public static int onceOnly = 0;
         //Expression类转换为string
         public static string TriggerToStr(StellarisEditor.pdx.scriptobject.Expression expression)
         {
@@ -192,16 +195,14 @@ namespace StellarisEditor.editors.dataConversion
         //整理Expression类使得所有Children的子节点元素全部集合到根节点上以便于在TreeView上显示
         public static void TrimExpressionTransform(ObservableCollection<StellarisEditor.pdx.scriptobject.Expression> expressions)
         {
-            if (expressions != null && expressions.Count>0 ) 
+            if (expressions != null && expressions.Count > 0 &&expressions[0].Key == null)
             {
-                if (expressions[0].Children.Count > 0)
+                for (int i = 0; i < expressions[0].Children.Count; i++)
                 {
-                    for (int i = 0; i < expressions[0].Children.Count; i++)
-                    {
-                        expressions.Add(expressions[0].Children[i]);
-                    }
-                    expressions.Remove(expressions[0]);
+                    expressions.Add(expressions[0].Children[i]);
+                    
                 }
+                expressions.Remove(expressions[0]);
             }
         }
     }

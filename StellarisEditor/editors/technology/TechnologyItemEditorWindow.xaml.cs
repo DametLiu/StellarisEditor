@@ -51,89 +51,89 @@ namespace StellarisEditor.editors.technology
             Hide_Prereq_For_Desc.Text = "";
         }
 
-        private void Ship_Checked(object sender, RoutedEventArgs e)
-        {
-            Ship_title.IsEnabled = true;
-            Ship_desc.IsEnabled = true;
-        }
+        //private void Ship_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    Ship_title.IsEnabled = true;
+        //    Ship_desc.IsEnabled = true;
+        //}
 
-        private void Ship_Unchecked(object sender, RoutedEventArgs e)
-        {
-            Ship_title.IsEnabled = false;
-            Ship_desc.IsEnabled = false;
-            Ship_title.Text = "";
-            Ship_desc.Text = "";
-        }
+        //private void Ship_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    Ship_title.IsEnabled = false;
+        //    Ship_desc.IsEnabled = false;
+        //    Ship_title.Text = "";
+        //    Ship_desc.Text = "";
+        //}
 
-        private void Custom_Checked(object sender, RoutedEventArgs e)
-        {
-            Custom_desc.IsEnabled = true;
-            Custom_title.IsEnabled = true;
-        }
+        //private void Custom_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    Custom_desc.IsEnabled = true;
+        //    Custom_title.IsEnabled = true;
+        //}
 
-        private void Custom_Unchecked(object sender, RoutedEventArgs e)
-        {
-            Custom_desc.IsEnabled = false;
-            Custom_title.IsEnabled = false;
-            Custom_desc.Text = "";
-            Custom_title.Text = "";
-        }
+        //private void Custom_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    Custom_desc.IsEnabled = false;
+        //    Custom_title.IsEnabled = false;
+        //    Custom_desc.Text = "";
+        //    Custom_title.Text = "";
+        //}
 
-        private void Component_Checked(object sender, RoutedEventArgs e)
-        {
-            Component_title.IsEnabled = true;
-            Component_desc.IsEnabled = true;
-        }
+        //private void Component_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    Component_title.IsEnabled = true;
+        //    Component_desc.IsEnabled = true;
+        //}
 
-        private void Component_Unchecked(object sender, RoutedEventArgs e)
-        {
-            Component_title.IsEnabled = false;
-            Component_desc.IsEnabled = false;
-            Component_title.Text = "";
-            Component_desc.Text = "";
-        }
+        //private void Component_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    Component_title.IsEnabled = false;
+        //    Component_desc.IsEnabled = false;
+        //    Component_title.Text = "";
+        //    Component_desc.Text = "";
+        //}
 
-        private void Diplo_Action_Checked(object sender, RoutedEventArgs e)
-        {
-            Diplo_Action_desc.IsEnabled = true;
-            Diplo_Action_title.IsEnabled = true;
-        }
+        //private void Diplo_Action_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    Diplo_Action_desc.IsEnabled = true;
+        //    Diplo_Action_title.IsEnabled = true;
+        //}
 
-        private void Diplo_Action_Unchecked(object sender, RoutedEventArgs e)
-        {
-            Diplo_Action_desc.IsEnabled = false;
-            Diplo_Action_title.IsEnabled = false;
-            Diplo_Action_desc.Text = "";
-            Diplo_Action_title.Text = "";
-        }
+        //private void Diplo_Action_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    Diplo_Action_desc.IsEnabled = false;
+        //    Diplo_Action_title.IsEnabled = false;
+        //    Diplo_Action_desc.Text = "";
+        //    Diplo_Action_title.Text = "";
+        //}
 
-        private void Feature_Checked(object sender, RoutedEventArgs e)
-        {
-            Feature_title.IsEnabled = true;
-            Feature_desc.IsEnabled = true;
-        }
+        //private void Feature_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    Feature_title.IsEnabled = true;
+        //    Feature_desc.IsEnabled = true;
+        //}
 
-        private void Feature_Unchecked(object sender, RoutedEventArgs e)
-        {
-            Feature_title.IsEnabled = false;
-            Feature_desc.IsEnabled = false;
-            Feature_desc.Text = "";
-            Feature_title.Text = "";
-        }
+        //private void Feature_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    Feature_title.IsEnabled = false;
+        //    Feature_desc.IsEnabled = false;
+        //    Feature_desc.Text = "";
+        //    Feature_title.Text = "";
+        //}
 
-        private void Resource_Unchecked(object sender, RoutedEventArgs e)
-        {
-            Resource_title.IsEnabled = false;
-            Resource_desc.IsEnabled = false;
-            Resource_title.Text = null;
-            Resource_desc.Text = null;
-        }
+        //private void Resource_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    Resource_title.IsEnabled = false;
+        //    Resource_desc.IsEnabled = false;
+        //    Resource_title.Text = null;
+        //    Resource_desc.Text = null;
+        //}
 
-        private void Resource_Checked(object sender, RoutedEventArgs e)
-        {
-            Resource_title.IsEnabled = true;
-            Resource_desc.IsEnabled = true;
-        }
+        //private void Resource_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    Resource_title.IsEnabled = true;
+        //    Resource_desc.IsEnabled = true;
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -155,30 +155,30 @@ namespace StellarisEditor.editors.technology
         private void Prereqfor_Desc_Checked(object sender, RoutedEventArgs e)
         {
             Check_Hide_Prereq_For_Desc.IsEnabled = true;
-            Ship.IsEnabled = true;
-            Resource.IsEnabled = true;
-            Custom.IsEnabled = true;
-            Component.IsEnabled = true;
-            Feature.IsEnabled = true;
-            Diplo_Action.IsEnabled = true;
+            //Ship.IsEnabled = true;
+            //Resource.IsEnabled = true;
+            //Custom.IsEnabled = true;
+            //Component.IsEnabled = true;
+            //Feature.IsEnabled = true;
+            //Diplo_Action.IsEnabled = true;
         }
 
         private void Prereqfor_Desc_Unchecked(object sender, RoutedEventArgs e)
         {
             Check_Hide_Prereq_For_Desc.IsEnabled = false;
             Check_Hide_Prereq_For_Desc.IsChecked = false;
-            Ship.IsEnabled = false;
-            Ship.IsChecked = false;
-            Resource.IsEnabled = false;
-            Resource.IsChecked = false;
-            Custom.IsEnabled = false;
-            Custom.IsChecked = false;
-            Component.IsEnabled = false;
-            Component.IsChecked = false;
-            Feature.IsEnabled = false;
-            Feature.IsChecked = false;
-            Diplo_Action.IsEnabled = false;
-            Diplo_Action.IsChecked = false;
+            //Ship.IsEnabled = false;
+            //Ship.IsChecked = false;
+            //Resource.IsEnabled = false;
+            //Resource.IsChecked = false;
+            //Custom.IsEnabled = false;
+            //Custom.IsChecked = false;
+            //Component.IsEnabled = false;
+            //Component.IsChecked = false;
+            //Feature.IsEnabled = false;
+            //Feature.IsChecked = false;
+            //Diplo_Action.IsEnabled = false;
+            //Diplo_Action.IsChecked = false;
         }
 
         private void Start_Technology_Checked(object sender, RoutedEventArgs e)
@@ -227,24 +227,6 @@ namespace StellarisEditor.editors.technology
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //int i = 0, j = 0;
-            //for (i = 0; i < Technology.Modifier.Count; i++)
-            //{
-            //    for (j = 0; j < Technology.Modifier[i].Children.Count; j++)
-            //    {
-            //        if (Technology.Modifier[i].Children[j] != null)
-            //        {
-            //            Technology.Modifier.Add(new pdx.scriptobject.Expression()
-            //            {
-            //                Key = Technology.Modifier[i].Children[j].Key,
-            //                Operator = Technology.Modifier[i].Children[j].Operator,
-            //                Value = Technology.Modifier[i].Children[j].Value
-            //            });
-            //            i = 0;
-            //        }
-            //    }
-            //    Technology.Modifier.Remove(Technology.Modifier[i]);
-            //}
             TreeViewTransition.TrimExpressionTransform(Technology.Modifier);
             TreeViewTransition.TrimExpressionTransform(Technology.Potential);
             Modifier.IsEnabled = true;
