@@ -200,7 +200,6 @@ namespace StellarisEditor.editors.dataConversion
                 for (int i = 0; i < expressions[0].Children.Count; i++)
                 {
                     expressions.Add(expressions[0].Children[i]);
-                    
                 }
                 expressions.Remove(expressions[0]);
             }
