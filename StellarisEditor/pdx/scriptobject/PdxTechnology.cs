@@ -92,7 +92,7 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<String> _Category;
+        private ObservableCollection<String> _Category = new ObservableCollection<string>();
         public ObservableCollection<String> Category
         {
             get
@@ -167,7 +167,7 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<String> _Prerequisites;
+        private ObservableCollection<String> _Prerequisites = new ObservableCollection<string>();
         public ObservableCollection<String> Prerequisites
         {
             get
@@ -256,7 +256,7 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<String> _FeatureFlags;
+        private ObservableCollection<String> _FeatureFlags = new ObservableCollection<string>();
         public ObservableCollection<String> FeatureFlags
         {
             get
@@ -286,7 +286,7 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<Expression> _Potential;
+        private ObservableCollection<Expression> _Potential = new ObservableCollection<Expression>();
         public ObservableCollection<Expression> Potential
         {
             get
@@ -301,7 +301,7 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private WeightModifier _WeightModifier;
+        private WeightModifier _WeightModifier = new WeightModifier();
         public WeightModifier WeightModifier
         {
             get
@@ -316,7 +316,7 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private WeightModifier _AiWeight;
+        private WeightModifier _AiWeight = new WeightModifier();
         public WeightModifier AiWeight
         {
             get
@@ -331,7 +331,7 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<String> _WeightGroups;
+        private ObservableCollection<String> _WeightGroups = new ObservableCollection<string>();
         public ObservableCollection<String> WeightGroups
         {
             get
@@ -346,7 +346,7 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private ObservableCollection<WeightGroupPicked> _ModWeightIfGroupPicked;
+        private ObservableCollection<WeightGroupPicked> _ModWeightIfGroupPicked = new ObservableCollection<WeightGroupPicked>();
         public ObservableCollection<WeightGroupPicked> ModWeightIfGroupPicked
         {
             get
