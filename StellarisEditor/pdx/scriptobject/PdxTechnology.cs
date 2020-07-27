@@ -271,7 +271,7 @@ namespace StellarisEditor.pdx.scriptobject
         }
 
 
-        private PrereqforDesc _PrereqforDesc;
+        private PrereqforDesc _PrereqforDesc = new PrereqforDesc();
         public PrereqforDesc PrereqforDesc
         {
             get
