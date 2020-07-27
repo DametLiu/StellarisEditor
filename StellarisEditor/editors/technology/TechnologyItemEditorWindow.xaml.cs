@@ -31,6 +31,9 @@ namespace StellarisEditor.editors.technology
             this.Technology = Technology;
             InitializeComponent();
             DataContext = Technology;
+            dataGrid.ItemsSource = Technology.PrereqforDesc.Cotegories;
+            //Ai_Weight.ItemsSource = null;
+            //Ai_Weight.ItemsSource = Technology.AiWeight.Modifiers;
         }
 
         public TechnologyItemEditorWindow()

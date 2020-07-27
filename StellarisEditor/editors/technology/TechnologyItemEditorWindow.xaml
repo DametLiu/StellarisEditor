@@ -259,11 +259,11 @@
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="Ai Weight" Grid.Row="1">
-                <TreeView x:Name="Ai_Weight" ItemsSource="{Binding AiWeight.Modifiers, Mode=TwoWay}">
+                <TreeView x:Name="Ai_Weight">
                     <TextBox Text="{Binding Path=Factor}"/>
                     <TextBox Text="{Binding Path=Weight}"/>
                     <TreeView.ItemTemplate>
-                        <HierarchicalDataTemplate ItemsSource="{Binding AiWeight}">
+                        <HierarchicalDataTemplate x:Name="ChildrenItem">
                             <StackPanel Orientation="Horizontal">
                                 <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Path=Key,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                                 <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Path=Operator,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
@@ -350,13 +350,17 @@
                     </ComboBox>
                 </StackPanel>
             </GroupBox>
-            <DataGrid x:Name="Text" AutoGenerateColumns="False" SelectionUnit="FullRow" SelectionMode="Single" RowHeaderWidth="0" CanUserAddRows="False" ItemsSource="{Binding Path=Cotegories}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="TextKey" Header="Key" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn x:Name="TextTitle" Header="Title" Binding="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn x:Name="TextDesc" Header="Desc" Binding="{Binding Desc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+            <GroupBox Header="Additional Text List">
+                <Grid>
+                    <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" SelectionUnit="FullRow" SelectionMode="Single" RowHeaderWidth="0" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Key" Binding="{Binding Key,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            <DataGridTextColumn Header="Title" Binding="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <DataGridTextColumn Header="Desc" Binding="{Binding Desc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
             <!--<TextBlock Text="Ship" Block.TextAlignment="Center" FontSize="15"/>
                     <TextBox x:Name="Ship_title" IsEnabled="False">
                         <TextBox.Resources>
