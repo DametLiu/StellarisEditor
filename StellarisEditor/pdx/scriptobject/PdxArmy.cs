@@ -198,6 +198,34 @@ namespace StellarisEditor.pdx.scriptobject
             }
         }
 
+        private ObservableCollection<Expression> _Allow;
+        public ObservableCollection<Expression> Allow
+        {
+            get
+            {
+                return _Allow;
+            }
+            set
+            {
+                _Allow = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Allow"));
+            }
+        }
+
+        private ObservableCollection<Expression> _Resource;
+        public ObservableCollection<Expression> Resource
+        {
+            get
+            {
+                return _Resource;
+            }
+            set
+            {
+                _Resource = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Resource"));
+            }
+        }
+
         private ObservableCollection<String> _Prerequisites;
         public ObservableCollection<String> Prerequisites
         {

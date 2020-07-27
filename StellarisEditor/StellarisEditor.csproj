@@ -147,8 +147,15 @@
     <Compile Include="editors\technology\TechnologyItemEditorWindow.xaml.cs">
       <DependentUpon>TechnologyItemEditorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="editors\trait\TraitEditorWindow.xaml.cs">
+      <DependentUpon>TraitEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="editors\trait\TraitItemEditorWindow.xaml.cs">
+      <DependentUpon>TraitItemEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="extension\FileInfoExtension.cs" />
     <Compile Include="pdx\scriptobject\PdxArmy.cs" />
+    <Compile Include="pdx\scriptobject\PdxTrait.cs" />
     <Compile Include="ScriptEngine\collections\TechnologyCategoryCollection.cs" />
     <Compile Include="ScriptEngine\collections\TechnologyColletion.cs" />
     <Compile Include="ScriptEngine\collections\VariableCollection.cs" />
@@ -317,6 +324,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="editors\technology\tier\TechTierWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\trait\TraitEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="editors\trait\TraitItemEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
