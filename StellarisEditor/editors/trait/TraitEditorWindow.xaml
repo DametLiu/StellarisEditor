@@ -72,16 +72,16 @@
                         </ContextMenu>
                     </DataGrid.ContextMenu>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="键" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="点数消耗" Width="100" IsReadOnly="True" Binding="{Binding Cost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="杂交产生几率" Width="100" IsReadOnly="True" Binding="{Binding PotentialCrossBreedingChance, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridCheckBoxColumn Header="领袖特质" Width="80" IsReadOnly="True" Binding="{Binding LeaderTrait, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource varTransition}}"/>
-                        <DataGridCheckBoxColumn Header="开局可用" Width="80" IsReadOnly="True" Binding="{Binding Initial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToboolTure}}"/>
-                        <DataGridCheckBoxColumn Header="随机生成" Width="80" IsReadOnly="True" Binding="{Binding Randomized, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToboolTure}}"/>
-                        <DataGridCheckBoxColumn Header="可以修改" Width="80" IsReadOnly="True" Binding="{Binding Modification, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToboolTure}}"/>
-                        <DataGridCheckBoxColumn Header="高级特质" Width="80" IsReadOnly="True" Binding="{Binding AdvancedTrait, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
-                        <DataGridTextColumn Header="前置科技" IsReadOnly="True" Binding="{Binding Prerequisites, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,Converter={StaticResource gatherToStrBlank}}"/>
-                        <DataGridTextColumn Header="文件名" Width="250" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"/>
+                        <DataGridTextColumn Header="键" Width="150" IsReadOnly="True" Binding="{Binding Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="点数消耗" Width="120" IsReadOnly="True" Binding="{Binding Cost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="杂交产生几率" Width="120" IsReadOnly="True" Binding="{Binding PotentialCrossBreedingChance, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridCheckBoxColumn Header="领袖特质" Width="100" IsReadOnly="True" Binding="{Binding LeaderTrait, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource varTransition}}"/>
+                        <DataGridCheckBoxColumn Header="开局可用" Width="100" IsReadOnly="True" Binding="{Binding Initial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToboolTure}}"/>
+                        <DataGridCheckBoxColumn Header="随机生成" Width="100" IsReadOnly="True" Binding="{Binding Randomized, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToboolTure}}"/>
+                        <DataGridCheckBoxColumn Header="可以修改" Width="100" IsReadOnly="True" Binding="{Binding Modification, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToboolTure}}"/>
+                        <DataGridCheckBoxColumn Header="高级特质" Width="100" IsReadOnly="True" Binding="{Binding AdvancedTrait, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource strToBoolFalse}}"/>
+                        <DataGridTextColumn Header="前置科技" Width="120" IsReadOnly="True" Binding="{Binding Prerequisites, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,Converter={StaticResource gatherToStrBlank}}"/>
+                        <DataGridTextColumn Header="文件名" Width="260" IsReadOnly="True" Binding="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </DockPanel>

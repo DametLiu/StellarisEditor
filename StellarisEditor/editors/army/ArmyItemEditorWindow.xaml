@@ -84,8 +84,8 @@
                         <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
                             <StackPanel Orientation="Horizontal">
                                 <TextBox x:Name="AllowKey" VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
-                                <TextBox x:Name="AllowOperator" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
-                                <TextBox x:Name="AllowValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
+                                <TextBox x:Name="AllowOperator" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=AllowValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
+                                <TextBox x:Name="AllowValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=AllowValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>
@@ -103,8 +103,8 @@
                         <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
                             <StackPanel Orientation="Horizontal">
                                 <TextBox x:Name="ShowTechUnlockIfKey" VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
-                                <TextBox x:Name="ShowTechUnlockIfOperator" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
-                                <TextBox x:Name="ShowTechUnlockIfValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
+                                <TextBox x:Name="ShowTechUnlockIfOperator" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=ShowTechUnlockIfValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
+                                <TextBox x:Name="ShowTechUnlockIfValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=ShowTechUnlockIfValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>
@@ -116,8 +116,8 @@
                         <HierarchicalDataTemplate ItemsSource="{Binding Children,Mode=TwoWay}">
                             <StackPanel Orientation="Horizontal">
                                 <TextBox x:Name="ResourceKey" VerticalAlignment="Center" FontSize="18" Text="{Binding Key,Mode=TwoWay}"/>
-                                <TextBox x:Name="ResourceOperator" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
-                                <TextBox x:Name="ResourceValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=PotentialValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
+                                <TextBox x:Name="ResourceOperator" VerticalAlignment="Center" FontSize="18" Text="{Binding Operator,Mode=TwoWay}" Visibility="{Binding Text,ElementName=ResourceValue,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}"/>
+                                <TextBox x:Name="ResourceValue" VerticalAlignment="Center" FontSize="18" Text="{Binding Value,Mode=TwoWay}" Visibility="{Binding Text,ElementName=ResourceValue ,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource displayContentJudgment}}" />
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>

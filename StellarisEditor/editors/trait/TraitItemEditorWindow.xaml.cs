@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using StellarisEditor.editors.dataConversion;
+using System.Collections.ObjectModel;
+using System.Globalization;
 
 namespace StellarisEditor.editors.trait
 {
@@ -28,6 +30,7 @@ namespace StellarisEditor.editors.trait
         {
             this.Trait = Trait;
             InitializeComponent();
+            changable = false;
             DataContext = Trait;
         }
         public TraitItemEditorWindow()
@@ -79,6 +82,302 @@ namespace StellarisEditor.editors.trait
             Modifier.IsEnabled = true;
             LeaderPotentialAdd.IsEnabled = true;
             SlaveCost.IsEnabled = true;
+            changable = true;
+        }
+
+        private void IsLeaderTraitChecked(object sender, RoutedEventArgs e)
+        {
+            LeaderTrait.IsEnabled = true;
+            LeaderClass.IsEnabled = true;
+            LeaderPotentialAdd.IsEnabled = true;
+            SlaveCost.IsEnabled = false;
+            AddSlaveCostB.IsEnabled = false;
+            DeleteSlaveCostB.IsEnabled = false;
+            if (Trait.SlaveCost!= null)
+            {
+                if (Trait.SlaveCost.Count > 0)
+                {
+                    for (int i = 0; i < Trait.SlaveCost.Count; i++)
+                    {
+                        Trait.SlaveCost.RemoveAt(i);
+                    }
+                }
+            }
+        }
+
+        private void IsLeaderTraitUnchecked(object sender, RoutedEventArgs e)
+        {
+            LeaderTrait.IsEnabled = false;
+            Trait.LeaderTrait = null;
+            LeaderClass.IsEnabled = false;
+            Trait.LeaderClass = null;
+            LeaderPotentialAdd.IsEnabled = false;
+            SlaveCost.IsEnabled = true;
+            AddSlaveCostB.IsEnabled = true;
+            DeleteSlaveCostB.IsEnabled = true;
+            if (Trait.LeaderPotentialAdd != null)
+            {
+                if (Trait.LeaderPotentialAdd.Count > 0)
+                {
+                    for (int i = 0; i < Trait.LeaderPotentialAdd.Count; i++)
+                    {
+                        Trait.LeaderPotentialAdd.RemoveAt(i);
+                    }
+                }
+            }
+        }
+
+        bool changable;
+
+        private void LeaderTraitChecked(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<string> vs = new ObservableCollection<string>();
+            if (LeaderTraitRuler.IsChecked == true)
+            {
+                vs.Add("ruler");
+            }
+            if (LeaderTraitScientist.IsChecked == true)
+            {
+                vs.Add("scientist");
+            }
+            if (LeaderTraitAdmiral.IsChecked == true)
+            {
+                vs.Add("admiral");
+            }
+            if (LeaderTraitGeneral.IsChecked == true)
+            {
+                vs.Add("general");
+            }
+            if (LeaderTraitGovernor.IsChecked == true)
+            {
+                vs.Add("governor");
+            }
+            if (changable == true)
+            {
+                Trait.LeaderTrait = vs;
+            }
+        }
+        private void LeaderTraitUnchecked(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<string> vs = new ObservableCollection<string>();
+            if (LeaderTraitRuler.IsChecked == true)
+            {
+                vs.Add("ruler");
+            }
+            if (LeaderTraitScientist.IsChecked == true)
+            {
+                vs.Add("scientist");
+            }
+            if (LeaderTraitAdmiral.IsChecked == true)
+            {
+                vs.Add("admiral");
+            }
+            if (LeaderTraitGeneral.IsChecked == true)
+            {
+                vs.Add("general");
+            }
+            if (LeaderTraitGovernor.IsChecked == true)
+            {
+                vs.Add("governor");
+            }
+            Trait.LeaderTrait = vs;
+        }
+        private void LeaderClassChecked(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<string> vs = new ObservableCollection<string>();
+            if (LeaderClassRuler.IsChecked == true)
+            {
+                vs.Add("ruler");
+            }
+            if (LeaderClassScientist.IsChecked == true)
+            {
+                vs.Add("scientist");
+            }
+            if (LeaderClassAdmiral.IsChecked == true)
+            {
+                vs.Add("admiral");
+            }
+            if (LeaderClassGeneral.IsChecked == true)
+            {
+                vs.Add("general");
+            }
+            if (LeaderClassGovernor.IsChecked == true)
+            {
+                vs.Add("governor");
+            }
+            if (changable == true)
+            {
+                Trait.LeaderClass = vs;
+            }
+        }
+        private void LeaderClassUnchecked(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<string> vs = new ObservableCollection<string>();
+            if (LeaderClassRuler.IsChecked == true)
+            {
+                vs.Add("ruler");
+            }
+            if (LeaderClassScientist.IsChecked == true)
+            {
+                vs.Add("scientist");
+            }
+            if (LeaderClassAdmiral.IsChecked == true)
+            {
+                vs.Add("admiral");
+            }
+            if (LeaderClassGeneral.IsChecked == true)
+            {
+                vs.Add("general");
+            }
+            if (LeaderClassGovernor.IsChecked == true)
+            {
+                vs.Add("governor");
+            }
+            Trait.LeaderClass = vs;
+        }
+    }
+
+
+
+
+    public class GatherSearchRuler : IValueConverter//搜索集合中的ruler
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            ObservableCollection<string> vs = (ObservableCollection<string>)value;
+            bool hasleader = false;
+            if (vs == null)
+            {
+                return hasleader;
+            }
+            else
+            {
+                foreach (var item in vs)
+                {
+                    if (item == "ruler" || item == "all")
+                    {
+                        hasleader = true;
+                    };
+                }
+                return hasleader;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class GatherSearchScientist : IValueConverter//搜索集合中的scientist
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            ObservableCollection<string> vs = (ObservableCollection<string>)value;
+            bool hasleader = false;
+            if (vs == null)
+            {
+                return hasleader;
+            }
+            else
+            {
+                foreach (var item in vs)
+                {
+                    if (item == "scientist" || item == "all")
+                    {
+                        hasleader = true;
+                    };
+                }
+                return hasleader;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class GatherSearchAdmiral : IValueConverter//搜索集合中的Admiral
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            ObservableCollection<string> vs = (ObservableCollection<string>)value;
+            bool hasleader = false;
+            if (vs == null)
+            {
+                return hasleader;
+            }
+            else
+            {
+                foreach (var item in vs)
+                {
+                    if (item == "admiral" || item == "all")
+                    {
+                        hasleader = true;
+                    };
+                }
+                return hasleader;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class GatherSearchGeneral : IValueConverter//搜索集合中的General
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            ObservableCollection<string> vs = (ObservableCollection<string>)value;
+            bool hasleader = false;
+            if (vs == null)
+            {
+                return hasleader;
+            }
+            else
+            {
+                foreach (var item in vs)
+                {
+                    if (item == "general" || item == "all")
+                    {
+                        hasleader = true;
+                    };
+                }
+                return hasleader;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class GatherSearchGovernor : IValueConverter//搜索集合中的Governor
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            ObservableCollection<string> vs = (ObservableCollection<string>)value;
+            bool hasleader = false;
+            if (vs == null)
+            {
+                return hasleader;
+            }
+            else
+            {
+                foreach (var item in vs)
+                {
+                    if (item == "governor"||item == "all")
+                    {
+                        hasleader = true;
+                    };
+                }
+                return hasleader;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }
