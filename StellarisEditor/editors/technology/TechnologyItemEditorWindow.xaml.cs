@@ -32,8 +32,35 @@ namespace StellarisEditor.editors.technology
             InitializeComponent();
             DataContext = Technology;
             dataGrid.ItemsSource = Technology.PrereqforDesc.Cotegories;
-            //Ai_Weight.ItemsSource = null;
-            //Ai_Weight.ItemsSource = Technology.AiWeight.Modifiers;
+            //Technology.AiWeight = new WeightModifier()
+            //{
+            //    Factor = "100",
+            //    Weight = "100",
+            //    Modifiers = new ObservableCollection<WeightModifier.Modifier>()
+            //    {
+            //        new WeightModifier.Modifier()
+            //        {
+            //            Factor = "10",
+            //            Weight = "10",
+            //            Triggers = new ObservableCollection<pdx.scriptobject.Expression>()
+            //            {
+            //                new pdx.scriptobject.Expression()
+            //                {
+            //                    Key = "is_ai",
+            //                    Operator = "=",
+            //                    Value = "no"
+            //                }
+            //            }
+            //        }
+            //    }
+            //};
+            Ai_Weight.ItemsSource = Technology.AiWeight.Modifiers;
+            //TreeView tree = new TreeView();
+            //tree = ControlsSearchHelper.GetChildObject<TreeView>(Find, "weightModifer");
+            //tree.ItemsSource = Technology.AiWeight.Modifiers;
+            //string str = null;
+            //str = TreeViewTransition.WeightToStr(Technology.AiWeight);
+            //MessageBox.Show(str);
         }
 
         public TechnologyItemEditorWindow()
@@ -307,5 +334,24 @@ namespace StellarisEditor.editors.technology
         //        TraverseNodeInfo(item, _target);
         //    }
         //}
+    }
+    class ControlsSearchHelper
+    {
+        //查找父控件
+        public static T GetParentObject<T>(DependencyObject obj,string name)where T:FrameworkElement
+        {
+            DependencyObject parent = VisualTreeHelper.GetParent(obj);
+
+            while (parent != null)
+            {
+                if (parent is T &&(((T)parent).Name == name || string.IsNullOrEmpty(name)))
+                {
+                    return (T)parent;
+                }
+                parent = VisualTreeHelper.GetParent(parent);
+            }
+            return null;
+        }
+        //查找子控件
     }
 }

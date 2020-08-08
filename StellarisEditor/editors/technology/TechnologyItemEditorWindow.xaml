@@ -258,16 +258,26 @@
                     </TextBox>
                 </StackPanel>
             </GroupBox>
-            <GroupBox Header="Ai Weight" Grid.Row="1">
+            <GroupBox x:Name="Find" Header="Ai Weight" Grid.Row="1">
                 <TreeView x:Name="Ai_Weight">
-                    <TextBox Text="{Binding Path=Factor}"/>
-                    <TextBox Text="{Binding Path=Weight}"/>
                     <TreeView.ItemTemplate>
-                        <HierarchicalDataTemplate x:Name="ChildrenItem">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Path=Key,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Path=Operator,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Path=Value,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Modifiers}">
+                            <StackPanel Orientation="Vertical">
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Path=Factor,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Path=Weight,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <GroupBox Header="test">
+                                    <TreeView x:Name="weightModifer" ItemsSource="{Binding Triggers}">
+                                        <TreeView.ItemTemplate>
+                                            <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Path=Key,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                                    <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Path=Operator,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                                    <TextBox VerticalAlignment="Center" FontSize="18" Text="{Binding Path=Value,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                                </StackPanel>
+                                            </HierarchicalDataTemplate>
+                                        </TreeView.ItemTemplate>
+                                    </TreeView>
+                                </GroupBox>
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>
@@ -276,7 +286,7 @@
             <GroupBox Header="Weight Modifier" Grid.Row="2">
                 <TreeView x:Name="Weight_Modifier">
                     <TreeView.ItemTemplate>
-                        <HierarchicalDataTemplate>
+                        <HierarchicalDataTemplate x:Name="hierachicalDateaTemplate">
                             <StackPanel Orientation="Horizontal">
                                 <TextBox VerticalAlignment="Center" FontSize="18"/>
                                 <TextBox VerticalAlignment="Center" FontSize="18"/>

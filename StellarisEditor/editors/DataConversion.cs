@@ -8,6 +8,7 @@ using System.Windows.Data;
 using StellarisEditor.pdx.scriptobject;
 using System.Globalization;
 using System.Windows;
+using System.Windows.Media;
 
 namespace StellarisEditor.editors.dataConversion
 {
@@ -189,7 +190,19 @@ namespace StellarisEditor.editors.dataConversion
                     str += TriggerToStr(item) + "\n";
                 }
             }
-            MessageBox.Show(str);
+            return str;
+        }
+        public static string WeightToStr(WeightModifier weightModifier)
+        {
+            string str = $"{weightModifier.Factor}\n{weightModifier.Weight}\n";
+            foreach (var item in weightModifier.Modifiers)
+            {
+                str += $"{item.Factor}\n{item.Weight}\n";
+                foreach (var items in item.Triggers)
+                {
+                    str += TriggerToStr(items);
+                }
+            }
             return str;
         }
         //整理Expression类使得所有Children的子节点元素全部集合到根节点上以便于在TreeView上显示
@@ -203,6 +216,32 @@ namespace StellarisEditor.editors.dataConversion
                 }
                 expressions.Remove(expressions[0]);
             }
+        }
+    }
+    public class FindControl
+    {
+        public static T GetChildObject<T>(DependencyObject obj, string name) where T : FrameworkElement
+        {
+            DependencyObject child = null;
+            T grandChild = null;
+
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
+            {
+                child = VisualTreeHelper.GetChild(obj, i);
+                if (child is T && (((T)child).Name == name || string.IsNullOrEmpty(name)))
+                {
+                    return (T)child;
+                }
+                else
+                {
+                    grandChild = GetChildObject<T>(child, name);
+                    if (grandChild != null)
+                    {
+                        return grandChild;
+                    }
+                }
+            }
+            return null;
         }
     }
 }
