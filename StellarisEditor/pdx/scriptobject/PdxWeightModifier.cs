@@ -55,7 +55,7 @@ namespace StellarisEditor.pdx.scriptobject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Modifiers"));
             }
         }
-        
+
 
         public class Modifier : PdxObject
         {
@@ -95,12 +95,12 @@ namespace StellarisEditor.pdx.scriptobject
             {
                 get
                 {
-                    return _Triggers = new ObservableCollection<Expression>();
+                    return _Triggers;
                 }
                 set
                 {
                     _Triggers = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Triggers = new ObservableCollection<Trigger>()"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Triggers"));
                 }
             }
 
